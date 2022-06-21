@@ -6,3 +6,4 @@
 .LSOverride
 cypress/videos
 cypress/fixtures/*.js
+dist
