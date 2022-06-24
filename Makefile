@@ -8,14 +8,14 @@ BIN_PYTHON3 = $(shell which python3)
 SERVE_PORT = 8000
 SERVE_DIR = .
 
-default: serve
+default: link serve
 
 git:
 	make
 	git add . && git commit -m "Experimental" && git push
 
 link:
-	@ln -s front/dist/ dist
+	@rm -f dist && ln -s front/dist/ dist
 
 serve:
 	@if [ $(BIN_PYTHON3) ] ; then \
