@@ -12,7 +12,7 @@
 
 <section id="global-variables">
     <h2 globalize="global_variables">Global variables</h2>
-    <p>Global variables are variables with global scope, meaning that they can be accessed throughout the entire application.</p>
+    <p>Global variables are core variables with global scope, meaning that they can be accessed throughout the entire application.</p>
     <code class="antiquewhite" run="false">
         {&#65130; <span class="navajowhite">globalVariable</span> &#65130;}
     </code>
@@ -35,6 +35,7 @@
 
 <section id="local-variables">
     <h2 globalize="local_variables">Local variables</h2>
+    <p>Local variables are variables with local scope, meaning that they can only be accessed inside of the current running application page.</p>
     <code class="antiquewhite" run="false">
         {{ <span class="navajowhite">localVariable</span> }}
     </code>
@@ -42,6 +43,7 @@
 
 <section id="library-variables">
     <h2 globalize="library_variables">Library variables</h2>
+    <p>Library variables are extra variables with global scope, meaning that they can be accessed throughout the entire application when libraries are imported.</p>
     <code class="antiquewhite" run="false">
         {{ <span class="navajowhite">library:variable</span> }}
     </code>
