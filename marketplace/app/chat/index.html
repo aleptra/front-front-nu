@@ -26,10 +26,9 @@
             <div id="chat-posts" class="box cards list bcwhite- gut2-" iterate="true" json="true" datasource="{{ storage:api.chat.endpoint }}" dataheader="{{ storage:api.chat.headers }}" filter="true">
                 <figure class="p1 fdc" jsonset="id">
                     <div>
-                        <p>#{{ jsonget:id }}</p>
-                        <small class="gray" jsonget="timestamp" format="date(H:i:s)"></small>
+                        <p>#{{ jsonget:id }} <small class="di gray" jsonget="timestamp" format="date(H:i:s)"></small></p>
+                        <p class="f2" jsonget="post" filteron="true" key="13" keyaction=""></p>
                     </div>
-                    <p class="f2" jsonget="post" filteron="true" key="13" keyaction=""></p>
                 </figure>
             </div>
         </section>
