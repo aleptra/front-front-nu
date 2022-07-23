@@ -6,11 +6,18 @@
 
       <details open>
         <summary globalize="get_started">Get started</summary>
-        <a href="./documentation#setup">1. Setup</a>
-        <a href="./documentation#css">2. Style Sheets</a>
-        <a href="./documentation#js">3. JavaScript</a>
-        <a href="./documentation#structure">4. Setup structure</a>
-        <a href="./documentation#layout">5. Setup layout</a>
+        <details>
+          <summary globalize="setup">Setup</summary>
+          <a href="./documentation/index.html#automatic" globalize="automatic">Automatic</a>
+          <a href="./documentation/index.html#manual" globalize="manual">Manual</a>
+        </details>
+        <details>
+          <summary globalize="fundamental">Fundamental</summary>
+          <a href="./documentation/fundamental/page.html" globalize="page">Page</a>
+          <a href="./documentation/fundamental/template.html" globalize="template">Template</a>
+          <a href="./documentation/fundamental/library.html" globalize="library">Library</a>
+          <a href="./documentation/fundamental/plugin.html" globalize="plugin">Plugin</a>
+        </details>
       </details>
 
       <details>
@@ -47,8 +54,7 @@
         <summary globalize="development">Development</summary>
         <details>
           <summary globalize="markup">Markup</summary>
-          <a href="./documentation/dev/markup/conditional-statements.html"
-            globalize="conditional_statements">Conditional Statements</a>
+          <a href="./documentation/dev/markup/conditional-statements.html" globalize="conditional_statements">Conditional Statements</a>
           <a href="./documentation/dev/markup/event-listeners.html" globalize="event_listeners">Event Listeners</a>
           <a href="./documentation/dev/markup/filters.html" globalize="filters">Filters</a>
           <a href="./documentation/dev/markup/iteration.html" globalize="iteration">Iteration</a>
@@ -106,12 +112,12 @@
     <p>Set up your environment for Front development using GIT and the CLI tool.</p>
     <b class="mt2">1. Clone project</b>
     <code class="markup antiquewhite" formatify="colors:silver,cornsilk,navajowhite,slategray,green;true">
-    git clone https://github.com/aleptra/front.git
-  </code>
+      git clone https://github.com/aleptra/front.git
+    </code>
     <b class="mt2">2. Create an application</b>
     <code class="markup antiquewhite" formatify="colors:silver,cornsilk,navajowhite,slategray,green;true">
-    make app:create
-  </code>
+      make app:create
+    </code>
   </section>
   <hr class="bcblack mt3">
   <section id="setup2">
@@ -124,13 +130,13 @@
     <p>The starter structure is a basic structure for holding files and folders that will function as URLs.</p>
     <b class="mt2">1. Create folders and files</b>
     <code>
-    .<br>
-    ├── assets<br>
-    │&emsp; &nbsp;├── img<br>
-    home.html<br>
-    index.html<br>
-    page1.html
-  </code>
+      .<br>
+      ├── assets<br>
+      │&emsp; &nbsp;├── img<br>
+      home.html<br>
+      index.html<br>
+      page1.html
+    </code>
   </section>
 
   <section id="layout">
