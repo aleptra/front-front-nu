@@ -1,22 +1,26 @@
 <script src="https://cdn.front.nu/dist/front.js" template="index;documentation/index"></script>
 
-<title globalize="template">Template</title>
+<title globalize="template_page"></title>
 
-<h1 globalize="template">Template</h1>
+<h1 globalize="template_page"></h1>
 <nav class="crumbs pointer pt05">
   <ol selective="main?id">
     <li><a href="#" globalize="documentation"></a></li>
     <li><a globalize="get_started"></a></li>
     <li><a globalize="fundamental"></a></li>
-    <li globalize="template"></li>
+    <li globalize="template_page"></li>
   </ol>
 </nav>
 
 <article class="mt1">
-  <p>Templates are .</p>
+  <p>Templates are often used for overriding the content of the Holy Grail layout.</p>
   <b class="mt2">Example template.html:</b>
   <code class="markup antiquewhite" formatify="colors:silver,cornsilk,navajowhite,slategray,green;true">
-    &lt;script src="https://cdn.front.nu/dist/front.js"&gt;&lt;/script&gt;
-    &lt;title&gt;Page 1&lt;/title&gt;
+    &lt;script src="https://cdn.front.nu/dist/front.js" template="index"&gt;&lt;/script&gt;
+    &lt;template&gt;
+    &lt;aside index="0"&gt;&lt;/aside&gt;
+    &lt;aside index="1"&gt;&lt;/aside&gt;
+    &lt;/template&gt;
+    &lt;p&gt;Content&lt;/p&gt;
   </code>
 </article>
