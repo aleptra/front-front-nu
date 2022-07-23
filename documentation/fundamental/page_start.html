@@ -1,0 +1,81 @@
+<script src="https://cdn.front.nu/dist/front.js" template="index;documentation/index"></script>
+
+<title globalize="start_page"></title>
+
+<h1 globalize="start_page"></h1>
+<nav class="crumbs pointer pt05">
+  <ol selective="main?id">
+    <li><a href="#" globalize="documentation"></a></li>
+    <li><a globalize="get_started"></a></li>
+    <li><a globalize="fundamental"></a></li>
+    <li globalize="start_page"></li>
+  </ol>
+</nav>
+
+<article class="mt1">
+  <section id="layout">
+    <p>The start page uses the Holy Grail layout as a base and is predefined with all associated HTML5 elements.</p>
+    <b class="mt2">Example of index.html</b>
+    <code class="markup antiquewhite" formatify="colors:silver,cornsilk,navajowhite,slategray,green;true">
+      &lt;!doctype html &gt;
+      &lt;html lang="en"&gt;
+      &emsp;&lt;head&gt;
+      &emsp;&emsp; &lt;title&gt;My application&lt;/title&gt;
+      &emsp;&emsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+      &emsp;&emsp; &lt;meta http-equiv="X-UA-Compatible" content="ie=edge;ie=10;chrome=1"&gt;
+      &emsp;&emsp; &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+      &emsp;&emsp; &lt;base env="local:/;prod:/"&gt;
+      &emsp;&emsp; &lt;link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet"&gt;
+      &emsp;&emsp; &lt;link type="text/css" href="https://cdn.front.nu/dist/design/front/theme/front.css" rel="stylesheet"&gt;
+      &emsp;&emsp; &lt;script src="https://cdn.front.nu/dist/front.js" lib="nav;json"&gt;&lt;/script&gt;
+      &emsp;&lt;/head&gt;
+      &emsp;&lt;body&gt;
+      &emsp;&emsp; &lt;header&gt;&lt;/header&gt;
+      &emsp;&emsp; &lt;nav&gt;&lt;/nav&gt;
+      &emsp;&emsp; &lt;aside&gt;&lt;/aside&gt;
+      &emsp;&emsp; &lt;main include="home.html"&gt;&lt;/main&gt;
+      &emsp;&emsp; &lt;aside&gt;&lt;/aside&gt;
+      &emsp;&emsp; &lt;footer&gt;&lt;/footer&gt;
+      &emsp;&lt;/body&gt;
+      &lt;/html&gt;
+    </code>
+  </section>
+
+  <section id="css">
+    <h6>CSS</h6>
+    <p>Cascading Style Sheets are used to render and style the User Interface.</p>
+    <code class="markup antiquewhite" formatify="colors:silver,cornsilk,navajowhite,slategray,green;true">
+      &lt;link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet"&gt;
+    </code>
+  </section>
+
+  <section id="js">
+    <h6 globalize="javascript">JavaScript</h6>
+    <p>FAML (Front Attribute Markup Language) and FTML (Front Template Markup Language) uses JavaScript to run.</p>
+    <code class="markup antiquewhite" formatify="colors:silver,cornsilk,navajowhite,slategray,green;true">
+      &lt;script src="https://cdn.front.nu/dist/front.js"&gt;&lt;/script&gt;
+    </code>
+
+    <table class="mt1">
+      <caption class="tal">
+        <img src="./assets/img/icon_black.svg" class="di" height="24">Front attributes
+      </caption>
+      <thead>
+        <tr>
+          <th globalize="attribute">Attribute</th>
+          <th globalize="description">Description</th>
+        </tr>
+      </thead>
+      <tbody class="z09">
+        <tr>
+          <td>lib</td>
+          <td>Load required libraries.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert bccornsilk snack shade0 mt1">
+      <i class="icon24 pr2">&#128712;</i><a href="./documentation/reference/library">See all available libraries</a>
+    </div>
+  </section>
+</article>

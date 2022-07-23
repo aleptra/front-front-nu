@@ -13,8 +13,9 @@
         </details>
         <details>
           <summary globalize="fundamental"></summary>
-          <a href="./documentation/fundamental/page.html" globalize="page"></a>
-          <a href="./documentation/fundamental/template.html" globalize="template"></a>
+          <a href="./documentation/fundamental/page_start.html" globalize="start_page"></a>
+          <a href="./documentation/fundamental/page_navigation.html" globalize="navigation_page"></a>
+          <a href="./documentation/fundamental/page_template.html" globalize="template_page"></a>
           <a href="./documentation/fundamental/library.html" globalize="library"></a>
           <a href="./documentation/fundamental/plugin.html" globalize="plugin"></a>
         </details>
@@ -54,7 +55,8 @@
         <summary globalize="development">Development</summary>
         <details>
           <summary globalize="markup">Markup</summary>
-          <a href="./documentation/dev/markup/conditional-statements.html" globalize="conditional_statements">Conditional Statements</a>
+          <a href="./documentation/dev/markup/conditional-statements.html"
+            globalize="conditional_statements">Conditional Statements</a>
           <a href="./documentation/dev/markup/event-listeners.html" globalize="event_listeners">Event Listeners</a>
           <a href="./documentation/dev/markup/filters.html" globalize="filters">Filters</a>
           <a href="./documentation/dev/markup/iteration.html" globalize="iteration">Iteration</a>
@@ -127,7 +129,8 @@
 
   <section id="structure">
     <h5>Starter structure</h5>
-    <p>The starter structure is a basic structure for holding files and folders that will function as URLs.</p>
+    <p>The starter structure is a basic structure for holding files and folders that will function as URLs for the user.
+    </p>
     <b class="mt2">1. Create folders and files</b>
     <code>
       .<br>
@@ -139,70 +142,50 @@
     </code>
   </section>
 
-  <section id="layout">
-    <h4>Starter layout template</h4>
-    <p>The starter layout template uses the Holy Grail layout as a base and is predefined with all associated HTML5 elements.</p>
-    <b class="mt2">2. Insert FML code into index.html</b>
+  <section id="pages">
+    <h4 globalize="start_page"></h4>
+    <b class="mt1">2. Insert FML code into index.html</b>
     <code class="markup antiquewhite" formatify="colors:silver,cornsilk,navajowhite,slategray,green;true">
       &lt;!doctype html &gt;
       &lt;html lang="en"&gt;
-      &emsp;&lt;head&gt;
-      &emsp;&emsp; &lt;title&gt;My application&lt;/title&gt;
-      &emsp;&emsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
-      &emsp;&emsp; &lt;meta http-equiv="X-UA-Compatible" content="ie=edge;ie=10;chrome=1"&gt;
-      &emsp;&emsp; &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
-      &emsp;&emsp; &lt;base env="local:/;prod:/"&gt;
-      &emsp;&emsp; &lt;link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet"&gt;
-      &emsp;&emsp; &lt;link type="text/css" href="https://cdn.front.nu/dist/design/front/theme/front.css" rel="stylesheet"&gt;
-      &emsp;&emsp; &lt;script src="https://cdn.front.nu/dist/front.js" lib="nav;json"&gt;&lt;/script&gt;
-      &emsp;&lt;/head&gt;
-      &emsp;&lt;body&gt;
-      &emsp;&emsp; &lt;header&gt;&lt;/header&gt;
-      &emsp;&emsp; &lt;nav&gt;&lt;/nav&gt;
-      &emsp;&emsp; &lt;aside&gt;&lt;/aside&gt;
-      &emsp;&emsp; &lt;main include="home.html"&gt;&lt;/main&gt;
-      &emsp;&emsp; &lt;aside&gt;&lt;/aside&gt;
-      &emsp;&emsp; &lt;footer&gt;&lt;/footer&gt;
-      &emsp;&lt;/body&gt;
+      &lt;head&gt;
+      &lt;title&gt;My application&lt;/title&gt;
+      &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+      &lt;meta http-equiv="X-UA-Compatible" content="ie=edge;ie=10;chrome=1"&gt;
+      &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+      &lt;base env="local:/;prod:/"&gt;
+      &lt;link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet"&gt;
+      &lt;link type="text/css" href="https://cdn.front.nu/dist/design/front/theme/front.css" rel="stylesheet"&gt;
+      &lt;script src="https://cdn.front.nu/dist/front.js" lib="nav;json"&gt;&lt;/script&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+      &lt;header&gt;&lt;/header&gt;
+      &lt;nav&gt;&lt;/nav&gt;
+      &lt;aside&gt;&lt;/aside&gt;
+      &lt;main include="home.html"&gt;&lt;/main&gt;
+      &lt;aside&gt;&lt;/aside&gt;
+      &lt;footer&gt;&lt;/footer&gt;
+      &lt;/body&gt;
       &lt;/html&gt;
     </code>
-  </section>
-
-  <section id="css">
-    <h6>CSS</h6>
-    <p>Cascading Style Sheets are used to render and style the User Interface.</p>
+    <h4 class="mt2" globalize="template_page"></h4>
+    <b class="mt1">3. Insert FML code into home.html</b>
+    <script src="https://cdn.front.nu/dist/front.js" template="index"></script>
     <code class="markup antiquewhite" formatify="colors:silver,cornsilk,navajowhite,slategray,green;true">
-      &lt;link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet"&gt;
+      &lt;script src="https://cdn.front.nu/dist/front.js" template="index"&gt;&lt;/script&gt;
+      &lt;template&gt;
+      &lt;aside index="0"&gt;&lt;/aside&gt;
+      &lt;aside index="1"&gt;&lt;/aside&gt;
+      &lt;/template&gt;
+      &lt;p&gt;Content&lt;/p&gt;
     </code>
-  </section>
-
-  <section id="js">
-    <h6 globalize="javascript">JavaScript</h6>
-    <p>FAML (Front Attribute Markup Language) and FTML (Front Template Markup Language) uses JavaScript to run.</p>
+    <h4 class="mt2" globalize="navigation_page"></h4>
+    <b class="mt1">4. Insert FML code into page1.html</b>
+    <script src="https://cdn.front.nu/dist/front.js" template="index"></script>
     <code class="markup antiquewhite" formatify="colors:silver,cornsilk,navajowhite,slategray,green;true">
-      &lt;script src="https://cdn.front.nu/dist/front.js"&gt;&lt;/script&gt;
+      &lt;script src="https://cdn.front.nu/dist/front.js" template="index"&gt;&lt;/script&gt;
+      &lt;title&gt;Page 1&lt;/title&gt;
+      &lt;p&gt;Content&lt;/p&gt;
     </code>
-
-    <table class="mt1">
-      <caption class="tal">
-        <img src="./assets/img/icon_black.svg" class="di" height="24">Front attributes
-      </caption>
-      <thead>
-        <tr>
-          <th globalize="attribute">Attribute</th>
-          <th globalize="description">Description</th>
-        </tr>
-      </thead>
-      <tbody class="z09">
-        <tr>
-          <td>lib</td>
-          <td>Load required libraries.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="alert bccornsilk snack shade0 mt1">
-      <i class="icon24 pr2">&#128712;</i><a href="./documentation/reference/library">See all available libraries</a>
-    </div>
   </section>
 </article>
