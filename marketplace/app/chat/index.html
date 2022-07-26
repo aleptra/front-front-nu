@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" cache="no">
+<html lang="en" debug="true" cache="no">
 <head>
     <title>Chat</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge;ie=10;chrome=1">
@@ -21,9 +21,9 @@
         </nav>
     </header>
 
-    <main class="light p1">
+    <main class="light p1" scroll="0;200">
         <section id="chat" storage="api">
-            <div id="chat-posts" class="box cards list bcwhite- gut2-" iterate="true" json="true" datasource="{{ storage:api.chat.endpoint }}" dataheader="{{ storage:api.chat.headers }}" filter="true">
+            <div id="chat-posts" class="box cards list bcwhite- gut2-" iterate="true" json="true" datapull="10000" datasource="{{ storage:api.chat.endpoint }}" dataheader="{{ storage:api.chat.headers }}" filter="true">
                 <figure class="p1 fdc" jsonset="id">
                     <div>
                         <p>#{{ jsonget:id }} <small class="di gray" jsonget="timestamp" format="date(H:i:s)"></small></p>
