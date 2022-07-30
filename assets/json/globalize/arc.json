@@ -7,10 +7,12 @@
     "buttons": "ܙܕܦܬܐ",
     "categories": "ܩܛܓܘܪܝܰܐ",
     "contact_us": "ܡܘܛܝܐ",
-    "documentation": "ܐܒܙܪܘܬ݂ܐ",
+    "documentation": "ܐܒܙܪܘܬܐ",
     "icons": "ܝܩܢ",
     "languages": "ܠܫܢܐ",
+    "library": "ܒܝܬ ܐܪܟܐ",
     "marketplace": "ܫܘܩܐ",
-    "material": "ܡܬܪܝܠ"
+    "material": "ܡܬܪܝܠ",
+    "overview": "ܓܘܕܡܐ"
   }
 }
