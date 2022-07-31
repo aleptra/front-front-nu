@@ -60,6 +60,7 @@
     "iterate_numerical_text": "Iterate over a series of numbers using a variable and optionally a set of keywords to specify the step size and bounds.",
     "iterate_json_text": "Iterate through a JSON data structure using a datasource.",
     "key": "Tangent",
+    "key_codes": "Key Codes",
     "languages": "Languages",
     "languages_text": "The documentation is available in the following languages:",
     "layout": "Layout",

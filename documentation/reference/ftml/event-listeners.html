@@ -1,21 +1,26 @@
 <script src="https://cdn.front.nu/dist/front.js" template="index;documentation/index"></script>
+
 <title globalize="event_listeners"></title>
-<h1 globalize="event_listeners"></h1>
-<nav class="crumbs pointer pt05">
-  <ol>
-    <li><a href="./documentation" globalize="documentation"></a></li>
-    <li><a globalize="reference"></a></li>
-    <li><a globalize="ftml"></a></li>
-    <li globalize="event_listeners"></li>
-  </ol>
-</nav>
+
+<template>
+  <aside index="0" inherit="true"></aside>
+  <aside index="1"></aside>
+</template>
 
 <article>
+  <h1 globalize="event_listeners"></h1>
+  <nav class="crumbs pointer pt05">
+    <ol>
+      <li><a href="./documentation" globalize="documentation"></a></li>
+      <li><a globalize="reference"></a></li>
+      <li><a globalize="ftml"></a></li>
+      <li globalize="event_listeners"></li>
+    </ol>
+  </nav>
   <section>
     <table class="mt1 w100p">
       <caption class="tal">
-        <img src="assets/img/icon_black.svg" class="di" height="24"><span globalize="front_class_attributes">Front
-          attributes</span>
+        <img src="assets/img/icon_black.svg" class="di" height="24"><span globalize="front_class_attributes">Front attributes</span>
       </caption>
       <thead>
         <tr>
@@ -23,7 +28,7 @@
           <th globalize="description" class="w5r">Description</th>
         </tr>
       </thead>
-      <tbody class="z09" json="true" iterate="ftml[3].eventlisteners"  datasource="./assets/json/references.json">
+      <tbody class="z09" json="true" iterate="ftml[3].eventlisteners" datasource="./assets/json/references.json">
         <tr>
           <td jsonget="name"></td>
           <td jsonget="description"></td>

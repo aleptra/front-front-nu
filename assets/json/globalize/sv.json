@@ -60,6 +60,7 @@
     "iterate_numerical_text": "Iterera över en serie siffror med en variabel och eventuellt en uppsättning nyckelord för att ange stegstorlek och gränser.",
     "iterate_json_text": "Iterera genom en JSON-datastruktur.",
     "key": "Tangent",
+    "key_codes": "Tangentkoder",
     "languages": "Språk",
     "languages_text": "Dokumentationen finns tillgängligt på följande språk:",
     "layout": "Layout",
