@@ -3,12 +3,12 @@
     {
       "properties": [
         {
-          "property": "core.runAttributesInElement()",
-          "description": "Executes all attributes in element."
-        },
-        {
           "property": "core.hasTemplateLayout()",
           "description": ""
+        },
+        {
+          "property": "core.runAttributesInElement()",
+          "description": "Runs all attributes in element."
         },
         {
           "property": "core.runFrontAttributes()",
@@ -19,16 +19,16 @@
           "description": ""
         },
         {
+          "property": "core.runLibPreloads()",
+          "description": ""
+        },
+        {
           "property": "core.isLibLoaded()",
           "description": ""
         },
         {
           "property": "core.lowercase()",
           "description": "Converts a string to lowercase letters."
-        },
-        {
-          "property": "core.runLibPreloads()",
-          "description": ""
         },
         {
           "property": "core.trim()",
