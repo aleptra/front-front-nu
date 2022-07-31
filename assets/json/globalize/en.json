@@ -61,6 +61,7 @@
     "iterate_json_text": "Iterate through a JSON data structure using a datasource.",
     "key": "Tangent",
     "key_codes": "Key Codes",
+    "key_triggers": "Key Triggers",
     "languages": "Languages",
     "languages_text": "The documentation is available in the following languages:",
     "layout": "Layout",

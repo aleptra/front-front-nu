@@ -1,19 +1,19 @@
 <script src="https://cdn.front.nu/dist/front.js" template="index;documentation/index"></script>
 
-<title globalize="key_codes"></title>
+<title globalize="key_triggers"></title>
 
 <template>
   <aside index="0" inherit="true"></aside>
   <aside index="1"></aside>
 </template>
 
-<h1 globalize="key_codes"></h1>
+<h1 globalize="key_triggers"></h1>
 <nav class="crumbs pointer pt05">
   <ol>
     <li><a href="./documentation" globalize="documentation"></a></li>
     <li><a globalize="reference"></a></li>
     <li><a globalize="ftml"></a></li>
-    <li globalize="key_codes"></li>
+    <li globalize="key_triggers"></li>
   </ol>
 </nav>
 
@@ -30,7 +30,7 @@
         <th globalize="code" class="w4r">Code</th>
       </tr>
     </thead>
-    <tbody class="z09" json="true" iterate="ftml[4].keycodes" datasource="./assets/json/references.json">
+    <tbody class="z09" json="true" iterate="ftml[4].keytriggers" datasource="./assets/json/references.json">
       <tr>
         <td jsonget="name"></td>
         <td jsonget="event_which"></td>

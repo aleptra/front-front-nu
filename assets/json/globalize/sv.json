@@ -61,6 +61,7 @@
     "iterate_json_text": "Iterera genom en JSON-datastruktur.",
     "key": "Tangent",
     "key_codes": "Tangentkoder",
+    "key_triggers": "Tangentutlösare",
     "languages": "Språk",
     "languages_text": "Dokumentationen finns tillgängligt på följande språk:",
     "layout": "Layout",

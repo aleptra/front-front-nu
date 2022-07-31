@@ -352,7 +352,7 @@
       ]
     },
     {
-      "keycodes": [
+      "keytriggers": [
         {
           "name": "backspace",
           "event_which": 8,
