@@ -1,0 +1,36 @@
+<script src="https://cdn.front.nu/dist/front.js" template="index;documentation/index"></script>
+
+<title globalize="core_elements"></title>
+
+<template>
+  <aside index="0" inherit="true"></aside>
+  <aside index="1"></aside>
+</template>
+
+<article>
+  <h1 globalize="elements"></h1>
+  <nav class="crumbs pointer pt05">
+    <ol>
+      <li><a href="./documentation" globalize="documentation"></a></li>
+      <li><a globalize="reference"></a></li>
+      <li><a globalize="ftml"></a></li>
+      <li globalize="elements"></li>
+    </ol>
+  </nav>
+  <section>
+    <table class="mt1 w100p">
+      <thead>
+        <tr>
+          <th globalize="tag">Tag</th>
+          <th class="w50" globalize="description">Description</th>
+        </tr>
+      </thead>
+      <tbody class="z09" json="true" iterate="ftml[1].elements" datasource="./assets/json/references.json">
+        <tr>
+          <td jsonget="element" jsonbefore="&#65124;" jsonafter="&#65125;"></td>
+          <td jsonget="description"></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</article>

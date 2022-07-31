@@ -79,7 +79,7 @@
       ]
     }
   ],
-  "core": [
+  "ftml": [
     {
       "attributes": [
         {
@@ -336,6 +336,18 @@
           "variable": "title",
           "output": "Title",
           "description": "The title variable prints out the title of the current page."
+        }
+      ]
+    },
+    {
+      "eventlisteners": [
+        {
+          "name": "online",
+          "description": "Checking if the Internet connection is online."
+        },
+        {
+          "name": "offline",
+          "description": "Checking if the Internet connection is offline."
         }
       ]
     }
