@@ -1,0 +1,56 @@
+<script src="https://cdn.front.nu/dist/front.js" template="index;documentation/index"></script>
+<title globalize="string_handling"></title>
+<template>
+  <aside index="0" inherit="true"></aside>
+  <aside index="1"></aside>
+</template>
+
+<h1 globalize="string_handling"></h1>
+<nav class="crumbs pointer pt05">
+  <ol>
+    <li><a href="#" globalize="documentation"></a></li>
+    <li><a globalize="development"></a></li>
+    <li><a globalize="markup"></a></li>
+    <li globalize="string_handling"></li>
+  </ol>
+</nav>
+
+<section id="uppercase">
+  <h4 class="mt1" globalize="uppercase">Lowercase</h4>
+  <p></p>
+  <nav class="tabs mt1">
+    <input type="radio" name="panel4" id="tab4" checked>
+    <label class="z09" for="tab4" globalize="code"></label>
+    <section>
+      <code class="markup wsp lavender" content="source4:false" formatify="colors:silver,cornsilk,navajowhite,slategray,green"></code>
+    </section>
+
+    <input type="radio" name="panel4" id="tab5">
+    <label class="z09" for="tab5" globalize="preview" onclick="_.run('source4')"></label>
+    <section run="false">
+      <pre id="source4">
+        <p lowercase="true">TEST</p>
+      </pre>
+    </section>
+  </nav>
+</section>
+
+<section id="uppercase">
+  <h4 class="mt1" globalize="uppercase">Uppercase</h4>
+  <p></p>
+  <nav class="tabs mt1">
+    <input type="radio" name="panel5" id="tab9" checked>
+    <label class="z09" for="tab9" globalize="code"></label>
+    <section>
+      <code class="markup wsp lavender" content="source5:false" formatify="colors:silver,cornsilk,navajowhite,slategray,green"></code>
+    </section>
+
+    <input type="radio" name="panel5" id="tab10">
+    <label class="z09" for="tab10" globalize="preview" onclick="_.run('source5')"></label>
+    <section run="false">
+      <pre id="source5">
+        <p uppercase="true">test</p>
+      </pre>
+    </section>
+  </nav>
+</section>

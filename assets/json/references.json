@@ -59,6 +59,26 @@
           "description": ""
         }
       ]
+    },
+    {
+      "stringhandling": [
+        {
+          "name": "core.toUpper",
+          "description": "The toUpper filter converts a string to lowercase letters."
+        },
+        {
+          "name": "core.toLower",
+          "description": "The toLower filter converts a string to uppercase letters."
+        },
+        {
+          "name": "core.replace",
+          "description": ""
+        },
+        {
+          "name": "core.trim",
+          "description": ""
+        }
+      ]
     }
   ],
   "cli": [
