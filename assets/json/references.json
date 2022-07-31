@@ -4,7 +4,7 @@
       "properties": [
         {
           "property": "core.runAttributesInElement()",
-          "description": "Runs all attributes in element."
+          "description": "Executes all attributes in element."
         },
         {
           "property": "core.hasTemplateLayout()",

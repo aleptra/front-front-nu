@@ -25,10 +25,13 @@
         <summary globalize="reference">Reference</summary>
         <details>
           <summary globalize="api">API</summary>
-          <a href="./documentation/reference/api" globalize="overview">Overview</a>
-          <a href="./documentation/reference/api/core.html" globalize="core">Core</a>
-          <a href="./documentation/reference/api/dom.html" globalize="dom">DOM</a>
-          <a href="./documentation/reference/api/storage.html" globalize="storage">Storage</a>
+          <details>
+            <summary globalize="plugin"></summary>
+            <a href="./documentation/reference/api" globalize="overview">Overview</a>
+            <a href="./documentation/reference/api/core.html" globalize="core">Core</a>
+            <a href="./documentation/reference/api/dom.html" globalize="dom">DOM</a>
+            <a href="./documentation/reference/api/storage.html" globalize="storage">Storage</a>
+          </details>
         </details>
         <details>
           <summary globalize="cli">CLI</summary>
@@ -37,18 +40,20 @@
           <a href="./documentation/reference/cli/help.html">make help</a>
         </details>
         <details>
-          <summary globalize="core">Core</summary>
+          <summary globalize="ftml">FTML</summary>
+          <a href="./documentation/reference/api" globalize="overview">Overview</a>
           <a href="./documentation/reference/core/attributes.html" globalize="attributes">Attributes</a>
           <a href="./documentation/reference/core/elements.html" globalize="elements">Elements</a>
+          <a href="./documentation/reference/library" globalize="libraries">Libraries</a>
           <a href="./documentation/reference/core/variables.html" globalize="variables">Variables</a>
         </details>
-        <details>
+<!--        <details>
           <summary globalize="library">Library</summary>
           <a href="./documentation/reference/library" globalize="overview">Overview</a>
           <a href="./documentation/reference/library/globalize.html">Globalize</a>
           <a href="./documentation/reference/library/json.html">JSON</a>
           <a href="./documentation/reference/library/navigation.html">Navigation</a>
-        </details>
+        </details>-->
       </details>
 
       <details>
@@ -111,11 +116,19 @@
   <section id="automatic">
     <h2 globalize="automatic_installation"></h2>
     <p globalize="installation_automatic_description"></p>
-    <b class="mt2">1. Clone project</b>
+    <p class="mt2">
+      <b>1. Install Git on your machine.</b>
+      <ul class="list">
+        <li><a target="_blank" href="https://git-scm.com/download/mac">macOS</a></li>
+        <li><a target="_blank" href="https://git-scm.com/download/win">Windows</a></li>
+        <li><a target="_blank" href="https://git-scm.com/download/linux">Linux/Unix</a></li>
+      </ul>
+    </p>
+    <b class="mt2">2. Clone project</b>
     <code class="markup antiquewhite" formatify="colors:silver,cornsilk,navajowhite,slategray,green;true">
       git clone https://github.com/aleptra/front.git
     </code>
-    <b class="mt2">2. Create an application</b>
+    <b class="mt2">3. Create an application</b>
     <code class="markup antiquewhite" formatify="colors:silver,cornsilk,navajowhite,slategray,green;true">
       make app:create
     </code>
