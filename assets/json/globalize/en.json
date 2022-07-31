@@ -132,6 +132,8 @@
     "views": "Views",
     "widget": "Widget",
     "widgets": "Widgets",
+    "string_handling_uppercase_text": "Convert uppercase value to lowercase.",
+    "string_handling_lowercase_text": "Convert lowercase value to uppercase.",
     "icons_description": "Front offers a variety of popular icon sets.",
     "installation_automatic_description": "Set up development environment automatically using GIT and the CLI tool.",
     "installation_manual_description": "Set up development environment manually step by step.",
