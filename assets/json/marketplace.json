@@ -45,39 +45,6 @@
       "cost": "0"
     },
     {
-      "id": 5,
-      "title": "Crypto",
-      "version": "0.1",
-      "screenshot": "",
-      "icon": "./marketplace/app/crypto/assets/img/icon.svg",
-      "url": "./marketplace/app/crypto",
-      "type": 1,
-      "author": "Front",
-      "cost": "0"
-    },
-    {
-      "id": 6,
-      "title": "Corona",
-      "version": "0.1",
-      "screenshot": "",
-      "icon": "./assets/img/icon_app.svg",
-      "url": "./marketplace/app/corona",
-      "type": 1,
-      "author": "Front",
-      "cost": "0"
-    },
-    {
-      "id": 7,
-      "title": "Dictionary",
-      "version": "0.1",
-      "screenshot": "",
-      "icon": "./assets/img/icon_app.svg",
-      "url": "./marketplace/app/dictionary",
-      "type": 1,
-      "author": "Front",
-      "cost": "0"
-    },
-    {
       "id": 8,
       "title": "Formatify",
       "description": "Beautify or uglify code.",
