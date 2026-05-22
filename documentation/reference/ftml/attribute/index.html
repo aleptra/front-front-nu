@@ -1,4 +1,4 @@
-<script src="http://localhost/front/front.js"></script>
+<script src="https://cdn.front.nu/nightly/front.js"></script>
 <title globalize-get>Attribute</title>
 <template srcdoc="../../../../index" src="../../../../_templates/documentation"></template>
 <article color="silver" data-src="assets/json/data/v1/attributes.json" data-ttl="600000">
@@ -7,7 +7,8 @@
       <li><a href="documentation" globalize-get>Documentation</a></li>
       <li><a href="#" globalize-get>Reference</a></li>
       <li><a href="documentation/reference/ftml" globalize-get>FTML</a></li>
-      <li><a href="documentation/reference/ftml/attributes.html" bindglobal="title:title" settext="{title}" globalize-get>Attribute</a></li>
+      <li><a href="documentation/reference/ftml/attributes.html" bindglobal="title:title" settext="{title}"
+          globalize-get>Attribute</a></li>
       <li bindquery="a:a" settext="{a}"></li>
     </ol>
   </nav>
@@ -33,12 +34,12 @@
       <ul data-onkeyempty="hide:#relatedto" bindquery="a:a" data-iterate="{a}.related_to">
         <li><a data-set="name:[*]" data-get="[*]" href="documentation/reference/ftml/attribute/?a={name}"></a></li>
       </ul>
-    </section>
-    <div paddingtop="1rem" id="seealso">
-      <h6 zoom=".9" color="white" paddingbottom="1rem" globalize-get>See also</h6>
-      <ul data-onkeyempty="hide:#seealso" bindquery="a:a" data-iterate="{a}.see_also">
-        <li><a data-set="name:[*]" data-get="[*]" href="documentation/reference/ftml/attribute/?a={name}"></a></li>
-      </ul>
-    </div>
+  </section>
+  <div paddingtop="1rem" id="seealso">
+    <h6 zoom=".9" color="white" paddingbottom="1rem" globalize-get>See also</h6>
+    <ul data-onkeyempty="hide:#seealso" bindquery="a:a" data-iterate="{a}.see_also">
+      <li><a data-set="name:[*]" data-get="[*]" href="documentation/reference/ftml/attribute/?a={name}"></a></li>
+    </ul>
+  </div>
   </section>
 </article>

@@ -1,23 +1,23 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <base hrefhost="aleptra.github.io:[front-front2-nu]">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="version" content="1.0.0">
-  <script
-    src="http://localhost/front/front.js"
-    module="globalize;chronotize;data;navigate;keyboard;screen;canvas"
+  <script src="https://cdn.front.nu/nightly/front.js" module="globalize;chronotize;data;navigate;keyboard;screen;canvas"
     plugin="particles;syntaxhighlighting;filtersearch;clipboard;scrollbar"
     conf="debug:false;debugLocalhost:false;varsDir:/assets/json/vars;storageKey:front"
     globalize-conf="folder:assets/json/locales;ttl:3600000"
     navigate-conf="startpage:front-front2-nu;startpageLocal:github-test-folder"
     scrollbar--conf="width:auto;radius:3;thumb:white;hover:#ffffff;track:#0b0d10">
-  </script>
+    </script>
   <link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet">
   <link rel="icon" href="data:,">
   <style>
-    .box *, .cards{
+    .box *,
+    .cards {
       box-sizing: border-box;
       width: 100%
     }
@@ -26,7 +26,8 @@
       color: inherit
     }
 
-    .bottombar *, .topbar *{
+    .bottombar *,
+    .topbar * {
       max-height: unset;
     }
 
@@ -43,18 +44,15 @@
 </head>
 
 <body bgcolor="black" color="white">
-  <div id="navloader" class="navloader pa t0 bcwhite05" width="100%" height="2" hide><div bgcolor="black" height="2"></div></div>
-  <header class="topbar" maxheight="unset" screen-xxs="padding:[0px 1rem 0px 1rem];height:[3.5rem]" screen-sm="padding:[0px 1.5rem 0px 1.5rem];height:[3.5rem]" screen-md="padding:[0 3rem 0 2.5rem];height:[4.5rem]" screen-lg="padding:[0px 3.5rem 0rem 3.5rem];height:[4.5rem]" color="white" zindex="60">
-    <button
-      click="toggledisplay:*aside[0]"
-      bgcolor="black"
-      color="white"
-      bindglobal="href:href"
-      if="([{href}]!~[/documentation])/hide"
-      screen-xxs="show;runattr:[if]"
-      screen-lg="hide;runattr:[if]"
-      padding="0 0.5rem 0 0.5rem"
-      marginright="1rem"><i class="icon32">≡</i>
+  <div id="navloader" class="navloader pa t0 bcwhite05" width="100%" height="2" hide>
+    <div bgcolor="black" height="2"></div>
+  </div>
+  <header class="topbar" maxheight="unset" screen-xxs="padding:[0px 1rem 0px 1rem];height:[3.5rem]"
+    screen-sm="padding:[0px 1.5rem 0px 1.5rem];height:[3.5rem]" screen-md="padding:[0 3rem 0 2.5rem];height:[4.5rem]"
+    screen-lg="padding:[0px 3.5rem 0rem 3.5rem];height:[4.5rem]" color="white" zindex="60">
+    <button click="toggledisplay:*aside[0]" bgcolor="black" color="white" bindglobal="href:href"
+      if="([{href}]!~[/documentation])/hide" screen-xxs="show;runattr:[if]" screen-lg="hide;runattr:[if]"
+      padding="0 0.5rem 0 0.5rem" marginright="1rem"><i class="icon32">≡</i>
     </button>
     <figure margin="0">
       <a href="./" key="0" marginright="2rem"><img height="85%" maxwidth="unset" src="assets/img/logo.png"></a>
@@ -63,31 +61,43 @@
       <div class="pr f1" screen-xs="hide" screen-sm="hide" screen-md="hide" screen-lg="show">
         <div zindex="100" bindglobal="href:href" if="([{href}]~[/documentation])/show?hide">
           <form class="zi3" id="form" method="get" action="search.html" target="_top">
-            <input id="querysearch" onvaluechange="filtersearch--run:#searchTable;show:#searchTable" name="q" type="text" height="2.75rem" radius="0.25rem" bgcolor="white01" width="100%" color="white" padding="1rem" class="zi3" globalize-get="input_search" globalize-target="placeholder" autocomplete="off" placeholder="Search for words...">
+            <input id="querysearch" onvaluechange="filtersearch--run:#searchTable;show:#searchTable" name="q"
+              type="text" height="2.75rem" radius="0.25rem" bgcolor="white01" width="100%" color="white" padding="1rem"
+              class="zi3" globalize-get="input_search" globalize-target="placeholder" autocomplete="off"
+              placeholder="Search for words...">
             <input type="submit" padding="1rem" height="4rem" class="bos0 bc0 white w4 icon icon16 pa r0" value="🔍">
           </form>
-          <div id="searchTableEmpty" bgcolor="black" padding="1rem" class="box pa w100 ail- autocomplete" border="1px solid #333" hide>
+          <div id="searchTableEmpty" bgcolor="black" padding="1rem" class="box pa w100 ail- autocomplete"
+            border="1px solid #333" hide>
             <figure>
               <span bindfield="q:#querysearch">No results found for <b>{q}</b></span>
             </figure>
           </div>
-          <div id="searchTable" filtersearch--onempty="#searchTableEmpty" data-src="assets/json/data/doc.json" data-iterate="true" bgcolor="black" class="box pa w100 ail- autocomplete" border="1px solid #333" data-onempty="#empty2" hide>
+          <div id="searchTable" filtersearch--onempty="#searchTableEmpty" data-src="assets/json/data/doc.json"
+            data-iterate="true" bgcolor="black" class="box pa w100 ail- autocomplete" border="1px solid #333"
+            data-onempty="#empty2" hide>
             <figure stop>
-              <a style="align-items: normal;" bindglobal="l:globalize.code" data-set="link:link" data-get="title" href="{link}" class="p1" stop="data-set;data-get;href;class" filtersearch--select></a>
+              <a style="align-items: normal;" bindglobal="l:globalize.code" data-set="link:link" data-get="title"
+                href="{link}" class="p1" stop="data-set;data-get;href;class" filtersearch--select></a>
             </figure>
           </div>
         </div>
       </div>
-      <div flex screen-sm="hide;zoom:[0.7];gap:[0rem]" screen-lg="show;zoom:[0.9];gap:[2rem]" screen-xxl="gap:[4rem];zoom:[1]" flex="auto">
-        <a href="documentation" globalize-get bindglobal="href:href" if="([{href}]~[/documentation])/underline">Documentation</a>
+      <div flex screen-sm="hide;zoom:[0.7];gap:[0rem]" screen-lg="show;zoom:[0.9];gap:[2rem]"
+        screen-xxl="gap:[4rem];zoom:[1]" flex="auto">
+        <a href="documentation" globalize-get bindglobal="href:href"
+          if="([{href}]~[/documentation])/underline">Documentation</a>
         <a href="workshop" globalize-get bindglobal="href:href" if="([{href}]~[/workshop])/underline">Workshop</a>
-        <a href="marketplace" globalize-get bindglobal="href:href" if="([{href}]~[/marketplace])/underline">Marketplace</a>
-        <a href="playground.html" globalize-get bindglobal="href:href" if="([{href}]~[/playground])/underline">Playground</a>
+        <a href="marketplace" globalize-get bindglobal="href:href"
+          if="([{href}]~[/marketplace])/underline">Marketplace</a>
+        <a href="playground.html" globalize-get bindglobal="href:href"
+          if="([{href}]~[/playground])/underline">Playground</a>
       </div>
     </div>
   </header>
   <nav></nav>
-  <aside height="100%" screen-xs="hide;fixed" screen-lg="flex;relative" scrollbar--set="width:thin;thumb:white" top="0" zindex="20"></aside>
+  <aside height="100%" screen-xs="hide;fixed" screen-lg="flex;relative" scrollbar--set="width:thin;thumb:white" top="0"
+    zindex="20"></aside>
   <main height="100%" include="_includes/home.html" scrollbar--set></main>
   <aside></aside>
   <footer></footer>
