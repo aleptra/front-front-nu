@@ -1,0 +1,88 @@
+<script src="https://cdn.front.nu/nightly/front.js"></script>
+<title globalize-get>Advanced Templating</title>
+<template srcdoc="../../../index" src="../../../_templates/documentation"></template>
+<article color="silver">
+  <nav class="crumbs pointer pt05" zoom="0.9" margintop="-2rem" marginbottom="2rem" color="white">
+    <ol>
+      <li><a href="documentation" globalize-get>Documentation</a></li>
+      <li><a href="documentation/guides" globalize-get>Guides</a></li>
+      <li color="silver" bindglobal="title:title" settext="{title}" globalize-get></li>
+    </ol>
+  </nav>
+
+  <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get marginbottom="2rem"
+    runorder="bindglobal;settext;globalize-get"></h1>
+
+  <p margintop="1rem">
+    This guide explains how to use advanced templating features to create flexible and reusable templates.
+  </p>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Define Template File</h2>
+
+    <p><b>Best practice:</b></p>
+    <ul>
+      <li>Template should be wrapped inside a <b>&lt;template&gt;</b> element.</li>
+      <li>No other tags should be outside the <b>&lt;template&gt;</b> element.</li>
+      <li>Store template files inside a <b>_templates</b> folder at the root of your project.</li>
+    </ul>
+
+    <p margintop="1rem">Example:</p>
+
+    <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem">
+      <span flex="1" lineheight="1.85rem" paddingleft="1rem" style="flex: 1">FTML (_templates/template1.html)</span>
+    </small>
+
+    <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" screen-xs="padding:[1rem]"
+      screen-md="padding:[1.5rem]" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;!-- Defines a reusable layout --&gt;
+&lt;template&gt;
+  &lt;header&gt;&lt;/header&gt;
+  &lt;aside&gt;&lt;/aside&gt;
+  &lt;main include&gt;&lt;/main&gt;
+  &lt;aside&gt;&lt;/aside&gt;
+  &lt;footer&gt;&lt;/footer&gt;
+&lt;/template&gt;
+    </code>
+
+    <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
+      <b>Note:</b> If an FTML attribute is without a value, it will be removed from the final output.
+    </div>
+  </section>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Load Template in a Standard Page</h2>
+
+    <p>
+      Once you have defined a template file (e.g., <b>template1.html</b>), you can load it into a Standard Page using
+      the <b>&lt;template&gt;</b> element and <b>src</b> attribute.
+    </p>
+
+    <p><b>Important:</b></p>
+    <ul>
+      <li>
+        <b>src</b> attribute, which points to a layout template, requires a <b>srcdoc</b> attribute.
+      </li>
+      <li>
+        <b>srcdoc</b> attribute defines the base Start Page layout, and <b>src</b> will override or inject content into
+        it.
+      </li>
+    </ul>
+
+    <p margintop="1rem">Example:</p>
+
+    <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem">
+      <span flex="1" lineheight="1.85rem" paddingleft="1rem" style="flex: 1">FTML Usage</span>
+    </small>
+
+    <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" screen-xs="padding:[1rem]"
+      screen-md="padding:[1.5rem]" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;!-- Loads two templates:
+1. Start Page (srcdoc="./index") - base layout
+2. Layout template (src="./_templates/template1") - overrides base layout --&gt;
+&lt;template srcdoc="./index" src="./_templates/template1"&gt;&lt;/template&gt;
+</code>
+
+    <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
+      <b>Note:</b> Ensure template paths are correct and do not include file extensions.
+    </div>
+  </section>
+</article>

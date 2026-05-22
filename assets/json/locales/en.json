@@ -1,0 +1,23 @@
+{
+  "name": "English",
+  "code": "eng",
+  "direction": "ltr",
+  "translations": {
+    "Marketplace": "Marketplace",
+    "section1_title": "The Intelligent Low-Code Framework",
+    "section1_subtitle": "Harness the power with FTML",
+    "section2_title": "Paradigm",
+    "section2_subtitle": "Low-code approach with minimalistic logic making it easy for developers to understand and maintain. Combining imperative and declarative style creates a new way of coding in abstractive mode.",
+    "section5_title": "Cross-Platform",
+    "section5_subtitle": "A unified framework allows applications to run across web, desktop, and mobile platforms. A single codebase ensures consistent performance and simplifies development while supporting efficient creation, maintenance, and extension of applications.",
+    "section3_title": "Performance",
+    "section3_subtitle": "Maximum speed and efficiency are achieved through continuous source-code optimizations and direct manipulation of the real DOM. By avoiding reliance on a virtual DOM and its associated overhead, this approach delivers highly responsive and performant user interfaces.",
+    "section4_title": "Source Code",
+    "section4_subtitle": "Free and open source under the MIT License. Written in ECMAScript 5 for broad browser compatibility; source code is available to explore, fork, and modify as needed.",
+    "movie": "Movie",
+    "Movies": "Movies",
+    "show": "Show",
+    "Shows": "Shows",
+    "input_search": "Search in documentation..."
+  }
+}

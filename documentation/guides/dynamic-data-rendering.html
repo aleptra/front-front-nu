@@ -1,0 +1,142 @@
+<script src="https://cdn.front.nu/nightly/front.js"></script>
+<title globalize-get>Dynamic Data Rendering</title>
+<template srcdoc="../../../index" src="../../../_templates/documentation"></template>
+<article color="silver">
+
+  <nav class="crumbs pointer pt05" zoom="0.9" margintop="-2rem" marginbottom="2rem" color="white">
+    <ol>
+      <li><a href="documentation" globalize-get>Documentation</a></li>
+      <li><a href="documentation/guides" globalize-get>Guides</a></li>
+      <li color="silver" bindglobal="title:title" settext="{title}" globalize-get></li>
+    </ol>
+  </nav>
+
+  <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get marginbottom="2rem"
+    runorder="bindglobal;settext;globalize-get"></h1>
+
+  <p margintop="1rem">
+    This guide explains how to use Front’s Data module to fetch, bind, and render dynamic JSON data directly into HTML
+    elements.
+  </p>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Overview</h2>
+    <p margintop="1rem">
+      The Data module allows you to fetch remote data, bind it to DOM elements, iterate over lists, filter, sort, merge
+      multiple responses, refresh periodically, and cache results.
+    </p>
+  </section>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Basic Usage</h2>
+    <p margintop="1rem">
+      Include the Data module via Front and add <b>data-*</b> attributes to your elements:
+    </p>
+
+    <nav flexdirection="column" margintop="1.5rem" maxwidth="60rem" minwidth="30vw">
+
+      <!-- Tabpanel 1 -->
+      <div id="tab1" role="tabpanel" onshow="hide:#tab2">
+        <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" height="1.8rem"><span
+            bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+            style="flex: 1">FTML</span><button id="copy1" bgcolor="unset" mouseover="color:[lightgray]"
+            mouseout="color:[unset]" zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0"
+            click="clipboard--copy:*code[1]" onclicked="settext:[✓ Copied]"
+            onsettext="rundelay[2000]:reset">Copy</button></small>
+        <code id="code" bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
+          whitespace="pre" font="monospace" syntaxhighlighting--set>&lt;ul data-src="https://aleptra.github.io/front-front2-nu/assets/json/data/dummy.json" data-iterate="dynamic-data-rendering.features"&gt;
+  &lt;li data-get="key"&gt;&lt;/li&gt;
+&lt;/ul&gt;</code>
+      </div>
+
+      <!-- Tabpanel 2 -->
+      <div id="tab2" role="tabpanel" hide onshow="hide:#tab1;sethtml:#preview:#code">
+        <pre
+          id="preview"
+          minheight="10rem"
+          maxheight="5rem"
+          bgcolor="white"
+          padding="1rem"
+          color="black"
+          onsethtml="start:#preview"
+          overflow="scroll"
+          scrollbar--set="thumb:black"></pre>
+      </div>
+
+      <!-- Tab Menu -->
+      <menu zoom="0.8" bgcolor="white01" bordertop="1px solid black" height="2rem" lineheight="2rem">
+        <a
+          id="tab1link"
+          click="show:#tab1"
+          onclicked="bgcolor:#tab2link:[initial];bgcolor:#tab1link:[black03]"
+          bgcolor="black03"
+          padding="0 0.75rem"
+          borderright="1px solid black"
+        ><b width="1.25rem">&#9781;</b>Source</a>
+        <a
+          id="tab2link"
+          click="show:#tab2"
+          onclicked="bgcolor:#tab1link:[initial];bgcolor:#tab2link:[black03]"
+          padding="0 0.75rem"
+          borderright="1px solid black"
+        ><b width="1.25rem">&#9654;</b>Preview</a>
+      </menu>
+    </nav>
+  </section>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Supported Features</h2>
+    <ul>
+      <li><b>Fetching data:</b> <i>data-src</i></li>
+      <li><b>Triggering API actions:</b> GET, POST, PATCH, DELETE</li>
+      <li><b>Binding values:</b> <i>data-get</i>, <i>data-set</i>, <i>data-bind</i></li>
+      <li><b>Iterating lists:</b> <i>data-iterate</i></li>
+      <li><b>Filtering arrays:</b> <i>data-filteritem</i>, <i>data-filterkey</i></li>
+      <li><b>Sorting arrays:</b> <i>data-sort</i>, <i>data-sortorder</i></li>
+      <li><b>Merging multiple API responses:</b> <i>data-srcjoin</i>, <i>data-merge</i></li>
+      <li><b>Transforming response data:</b> <i>data-replace</i></li>
+      <li><b>Loading indicators:</b> <i>data-loader</i></li>
+      <li><b>Delayed requests:</b> <i>data-wait</i></li>
+      <li><b>Handling empty responses:</b> <i>data-onempty</i></li>
+      <li><b>Handling response status:</b> <i>data-status</i></li>
+      <li><b>Lifecycle hooks:</b> <i>data-onsuccess</i>, <i>data-onerror</i>, <i>data-onfinish</i></li>
+      <li><b>Periodic refreshing:</b> <i>data-interval</i></li>
+      <li><b>Caching responses:</b> <i>data-ttl</i></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Advanced Example</h2>
+    <p margintop="1rem">
+      Fetch users and orders, merge responses, filter, sort, and iterate:
+    </p>
+
+    <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem">
+      <span flex="1" lineheight="1.85rem" paddingleft="1rem" style="flex: 1">FTML</span>
+      <button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]" zoom="0.9" padding="0.45rem 0.6rem"
+        minheight="0" margin="0" click="clipboard--copy:*code[1]" onclicked="settext:[✓ Copied]"
+        onsettext="rundelay[2000]:reset">Copy</button>
+    </small>
+    <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
+      whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;div data-src="/api/users" data-srcjoin="/api/orders" data-merge="users;orders" data-filteritem="status:'active'" data-sort="name"&gt;&lt;/div&gt;
+&lt;ul data-iterate="users"&gt;
+  &lt;li&gt;
+    &lt;span data-get="name"&gt;&lt;/span&gt; -
+    &lt;span data-get="orderCount"&gt;&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+    </code>
+  </section>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Best Practices</h2>
+    <ul>
+      <li>Always use <b>data-*</b> attributes instead of direct DOM manipulation for dynamic data.</li>
+      <li>Use <b>data-interval</b> only when needed to avoid unnecessary network calls.</li>
+      <li>Use <b>data-ttl</b> for caching frequently fetched data to improve performance.</li>
+      <li>Break complex pipelines into smaller elements to keep templates readable.</li>
+      <li>Test merged responses to ensure keys align correctly when using <b>data-merge</b>.</li>
+    </ul>
+  </section>
+
+</article>

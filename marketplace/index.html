@@ -1,26 +1,49 @@
-<script src="https://cdn.front.nu/dist/front.js" template="index" enumsource="marketplace"></script>
-
-<title globalize="marketplace">Marketplace</title>
-
-<template>
-    <aside index="0"></aside>
-    <aside index="1"></aside>
-</template>
-
+<script src="http://localhost/front/front.js"></script>
+<title globalize-get>Marketplace</title>
+<template srcdoc="../index" src="../_templates/marketplace"></template>
 <article>
-<h1 globalize="marketplace">Marketplace</h1>
-<p globalize="marketplace_description">Buy, sell or give away items easily.</p>
-<section class="mt2">
-    <div class="box cards gut5- br05- bcwhite- zoom-" json="true" iterate="market" datasource="./assets/json/marketplace.json">
-        <a jsonget="url" if="{{ jsonget:url_target }};0;target:_self" target="_blank">
-            <figure jsonset="id" class="p1">
-                <img class="w5r m0a" jsonget="icon">
-                <figcaption class="fwb" jsonget="title"></figcaption>
-                <small jsonget="author"></small>
-                <small class="z09" jsonget="version" jsonbefore="Version: "></small>
-                <!--<small jsonget="cost" class="fr pr2"></small>-->
-            </figure>
-        </a>
+  <section bgcolor="white01" padding="2rem">
+  <form alignitems="center" style="align-items:center">
+    <h1 zoom="0.8" bindglobal="title:title" settext="{title}" globalize-get="{title}"></h1>
+    <input id="filter" type="text" placeholder="Filter" onvaluechange="filtersearch--run" margintop="0.5rem" width="15rem"
+      padding="0.75rem 1rem" bgcolor="white01" radius="0.25rem" autocomplete="off" focus>
+  </form>
+  </section>
+    
+  <!--<canvas id="canvas"
+      canvas-target="#canvas" canvas-grad 
+      canvas-grad-orientation="vertical" canvas-grad-stops="lightgreen[0],darkgreen[1]"
+      canvas-rec="0,50,3000,2000"
+      class="br1" width="1000" height="1000px" zindex="-1">
+  </canvas>-->
+
+  <section screen-xs="padding:[1.5rem 1.5rem]" screen-sm="padding:[2rem 2rem]" screen-md="padding:[3rem 3rem]" screen-lg="padding:[1.5rem 4rem]">
+    <a href="#down"><h3>Featured</h3></a>
+    <hr class="bcblack01">
+    <div id="loader" class="loader" flex></div>
+    <div id="error" class="red mb2" hide>Something went wrong!</div>
+    <div id="empty" class="mb2 fwb" hide>Not found!</div>
+    <div
+      bindquery="page:page"
+      data-src="./assets/json/data/extensions.json"
+      data-set="page:#page;total_pages:#pages;total_results:#results"
+      data-iterate="extensions"
+      data-loader="#loader"
+      data-onerror="show:#error"
+      data-onempty="#empty"
+      class="cards gut5-"
+      width="inherit"
+    >
+      <a href="marketplace/plugin.html?k={k}" data-set="k:key" class="br05-" bgcolor="#212121" filtersearch--select>
+        <figure screen-xxs="flexdirection:[row]" screen-lg="flexdirection:[column]" width="100%" class="bw1 p1">
+          <img radius="1rem" width="4rem" screen-xxs="marginbottom:[0]" screen-lg="marginbottom:[1rem]" marginright="1rem" data-get="icon">
+          <div flexdirection="column">
+            <figcaption class="fwb" data-get="title" paddingright="1rem"></figcaption>
+            <small data-get="author">Front</small>
+            <small class="z09" data-get="version" jsonbefore="Version: ">Version: 0.1</small>
+          </div>
+        </figure>
+      </a>
     </div>
-</section>
+  </section>
 </article>

@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Attributes",
+    "link": "documentation/reference/ftml/attributes.html"
+  },
+  {
+    "title": "Functions",
+    "link": "documentation/reference/api/functions.html"
+  },
+  {
+    "title": "Variables",
+    "link": "documentation/reference/ftml/variables.html"
+  }
+]

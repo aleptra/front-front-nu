@@ -1,0 +1,758 @@
+{
+  "append": {},
+  "alert": {
+    "description_short": "Displays an alert dialog with a message to the user.",
+    "example": "<button click=\"alert:[Hello World!]\">Show Alert</button>"
+  },
+  "align": {
+    "category": "content",
+    "description_short": "Sets alignment of content within the element.",
+    "example": "<div align=\"left\">Left aligned</div>\n<div align=\"center\">Center aligned</div>\n<div align=\"right\">Right aligned</div>"
+  },
+  "valign": {
+    "category": "content",
+    "description_short": "Sets the vertical alignment of content within the element.",
+    "example": "<table border=\"1\" height=\"100px\" width=\"300px\">\n  <tr>\n    <td valign=\"top\">Top aligned</td>\n    <td valign=\"middle\">Middle aligned</td>\n    <td valign=\"bottom\">Bottom aligned</td>\n  </tr>\n</table>",
+    "see_also": [
+      "align"
+    ]
+  },
+  "bgcolor": {
+    "category": "style",
+    "description_short": "Sets the background color of the element.",
+    "example": "<div bgcolor=\"lightblue\">This div has a light blue background</div>",
+    "see_also": [
+      "color"
+    ]
+  },
+  "bgimage": {
+    "category": "style",
+    "description_short": "Sets the background image of the element.",
+    "example": "<div bgimage=\"https://placehold.co/200x100\" height=\"200px\">Content with background image</div>"
+  },
+  "bindvar": {
+    "category": "binding",
+    "description_short": "Binds a variable.",
+    "example": "",
+    "see_also": [
+      "bindasset",
+      "bindfield",
+      "bindglobal",
+      "bindquery"
+    ]
+  },
+  "bindquery": {
+    "category": "binding",
+    "description_short": "Binds data from a query.",
+    "example": "",
+    "see_also": [
+      "bindasset",
+      "bindfield",
+      "bindglobal",
+      "bindvar"
+    ]
+  },
+  "bindasset": {
+    "category": "binding",
+    "description_short": "Binds an asset.",
+    "example": "",
+    "see_also": [
+      "bindfield",
+      "bindglobal",
+      "bindvar",
+      "bindquery"
+    ]
+  },
+  "bindglobal": {
+    "category": "binding",
+    "description_short": "Binds a global variable.",
+    "example": "",
+    "see_also": [
+      "bindasset",
+      "bindfield",
+      "bindvar",
+      "bindquery"
+    ]
+  },
+  "bindfield": {
+    "category": "binding",
+    "description_short": "Binds a specific field.",
+    "example": "",
+    "see_also": [
+      "bindasset",
+      "bindglobal",
+      "bindvar",
+      "bindquery"
+    ]
+  },
+  "border": {
+    "category": "style",
+    "description_short": "Sets the border of the element.",
+    "example": "<div border=\"1px solid black\">This div has a black border</div>"
+  },
+  "blur": {
+    "category": "behavior",
+    "description_short": "Removes focus from the element.",
+    "example": "<input type=\"text\" value=\"Hello\" focus blur>",
+    "see_also": [
+      "focus"
+    ]
+  },
+  "bold": {
+    "category": "style",
+    "description_short": "Makes text bold.",
+    "example": "<p bold>This is bold text</p>"
+  },
+  "boxshadow": {
+    "category": "style",
+    "description_short": "Applies a shadow effect to the element.",
+    "example": "<div boxshadow=\"2px 2px 5px gray\">This div has a shadow</div>"
+  },
+  "click": {
+    "category": "interactive",
+    "description_short": "Executes an action or expression when the element is clicked.",
+    "example": "<button click=\"settext:[Button clicked!]\">Click me</button>",
+    "related_to": [
+      "onclicked"
+    ],
+    "see_also": [
+      "mouseover",
+      "mouseout"
+    ]
+  },
+  "color": {
+    "category": "style",
+    "description_short": "Sets the text color.",
+    "example": "<p color=\"red\">This is red text</p>",
+    "see_also": [
+      "bgcolor"
+    ]
+  },
+  "cursor": {
+    "category": "style",
+    "description_short": "Sets the cursor when hovering over the element.",
+    "example": "<span cursor=\"default\">Default</span>\n<span cursor=\"pointer\">Pointer</span>\n<span cursor=\"text\">Text</span>\n<span cursor=\"move\">Move</span>\n<span cursor=\"wait\">Wait</span>\n<span cursor=\"crosshair\">Crosshair</span>\n<span cursor=\"not-allowed\">Not Allowed</span>\n<span cursor=\"help\">Help</span>\n<span cursor=\"progress\">Progress</span>\n<span cursor=\"grab\">Grab</span>\n<span cursor=\"grabbing\">Grabbing</span>\n<span cursor=\"cell\">Cell</span>\n<span cursor=\"copy\">Copy</span>\n<span cursor=\"alias\">Alias</span>\n<span cursor=\"zoom-in\">Zoom In</span>\n<span cursor=\"zoom-out\">Zoom Out</span>\n<span cursor=\"col-resize\">Col Resize</span>\n<span cursor=\"row-resize\">Row Resize</span>\n<span cursor=\"n-resize\">N Resize</span>\n<span cursor=\"s-resize\">S Resize</span>\n<span cursor=\"e-resize\">E Resize</span>\n<span cursor=\"w-resize\">W Resize</span>\n<span cursor=\"ne-resize\">NE Resize</span>\n<span cursor=\"nw-resize\">NW Resize</span>\n<span cursor=\"se-resize\">SE Resize</span>\n<span cursor=\"sw-resize\">SW Resize</span>"
+  },
+  "confirm": {
+    "category": "interactive",
+    "description_short": "Shows a confirmation dialog to the user.",
+    "example": "<button click=\"confirm:[Are you sure?]\">Delete</button>",
+    "related_to": [
+      "onconfirm"
+    ]
+  },
+  "data-src": {
+    "category": "binding",
+    "description_short": "Specifies the source URL or endpoint for data to be fetched and bound to the element.",
+    "example": "<div data-src=\"https://dummyjson.com/products\" data-iterate=\"true\">Product info here</div>",
+    "see_also": [
+      "data-iterate"
+    ]
+  },
+  "data-iterate": {
+    "category": "binding",
+    "description_short": "Indicates that the element should iterate over an array from the data source.",
+    "example": "<div data-src=\"/api/users\" data-iterate=\"true\">User info here</div>",
+    "see_also": [
+      "data-src"
+    ]
+  },
+  "escape": {
+    "category": "content",
+    "description_short": "Escapes HTML or special characters to display as plain text.",
+    "example": "<div escape=\"<b>Hello</b>\">Displays &lt;b&gt;Hello&lt;/b&gt;</div>"
+  },
+  "flex": {
+    "category": "style",
+    "description_short": "Sets flex properties for the element.",
+    "example": ""
+  },
+  "flexdirection": {
+    "category": "style",
+    "description_short": "Sets the flex direction.",
+    "example": "",
+    "see_also": [
+      "flex"
+    ]
+  },
+  "flexitem": {
+    "category": "style",
+    "description_short": "Sets properties of a flex item.",
+    "example": "",
+    "see_also": [
+      "flex"
+    ]
+  },
+  "focus": {
+    "category": "behavior",
+    "description_short": "Gives focus to the element.",
+    "example": "<input type=\"text\" value=\"Hello\" focus>",
+    "related_to": [
+      "onfocused"
+    ],
+    "see_also": [
+      "blur"
+    ]
+  },
+  "font": {
+    "category": "style",
+    "description_short": "Sets font style and size.",
+    "example": "<p font=\"Comic Sans MS\">This text uses a custom font</p>",
+    "see_also": [
+      "fontsize"
+    ]
+  },
+  "fontsize": {
+    "category": "style",
+    "description_short": "Sets font size.",
+    "example": "<p fontsize=\"25px\">This text uses fontsize</p>",
+    "see_also": [
+      "font"
+    ]
+  },
+  "grid": {},
+  "height": {
+    "category": "style",
+    "description_short": "Sets the height of the element.",
+    "example": "<div height=\"100px\" bgcolor=\"lightblue\">100px tall div</div>",
+    "see_also": [
+      "maxheight",
+      "minheight",
+      "maxwidth",
+      "minwidth"
+    ]
+  },
+  "hide": {
+    "category": "behavior",
+    "description_short": "Hides the element.",
+    "example": "<span hide>This text is hidden</span>",
+    "related_to": [
+      "onhide"
+    ],
+    "see_also": [
+      "show"
+    ]
+  },
+  "hrefhost": {
+    "category": "configuration",
+    "description_short": "Sets the base URL based on host match.",
+    "example": "<base hrefhost=\"localhost:https://example.com/\">\n<a sethref=\"page.html\">Go to Page</a>"
+  },
+  "if": {
+    "category": "logic",
+    "description_short": "Conditional insertion.",
+    "example": ""
+  },
+  "include": {
+    "category": "content",
+    "description_short": "Includes another internal HTML file or page fragment into the element.",
+    "example": "<div include=\"assets/html/dummy.html\"></div>"
+  },
+  "insertbeforebegin": {
+    "category": "content",
+    "description_short": "Inserts new content immediately before the element.",
+    "example": "<p insertbeforebegin=\"Note: \">Hello World</p>",
+    "see_also": [
+      "insertafterbegin",
+      "insertafterend",
+      "insertbeforeend"
+    ]
+  },
+  "insertafterbegin": {
+    "category": "content",
+    "description_short": "Inserts new content just inside the element, before its first child.",
+    "example": "<p insertafterbegin=\"Intro: \">Hello World</p>",
+    "see_also": [
+      "insertafterend",
+      "insertbeforebegin",
+      "insertbeforeend"
+    ]
+  },
+  "insertbeforeend": {
+    "category": "content",
+    "description_short": "Inserts new content just inside the element, after its last child.",
+    "example": "<div insertbeforeend=\"!\">Hello World</div>",
+    "see_also": [
+      "insertafterbegin",
+      "insertafterend",
+      "insertbeforebegin"
+    ]
+  },
+  "insertafterend": {
+    "category": "content",
+    "description_short": "Inserts new content immediately after the element.",
+    "example": "<div insertafterend=\"!\">Hello World</div>",
+    "see_also": [
+      "insertafterbegin",
+      "insertbeforebegin",
+      "insertbeforeend"
+    ]
+  },
+  "justifycontent": {
+    "category": "style",
+    "description_short": "Aligns flex items along the main axis.",
+    "example": ""
+  },
+  "keyboard-key": {
+    "category": "behavior",
+    "description_short": "Defines one or more keys that trigger the element's action. Multiple keys can be separated by a semicolon.",
+    "example": "<div keyboard-key=\"Enter\" keyboard-action=\"alert:[Pressed]\">Press Enter</div>"
+  },
+  "lineheight": {
+    "category": "style",
+    "description_short": "Sets the height of text lines.",
+    "example": "<p lineheight=\"2\">This paragraph<br>has double<br>line height</p>"
+  },
+  "lowercase": {
+    "category": "content",
+    "description_short": "Converts content to lowercase.",
+    "example": "<p lowercase>THIS TEXT WILL APPEAR IN LOWERCASE LETTERS</p>",
+    "see_also": [
+      "uppercase"
+    ]
+  },
+  "mapbindvar": {
+    "category": "mapping",
+    "description_short": "Maps a bound variable.",
+    "example": ""
+  },
+  "mapclass": {
+    "category": "mapping",
+    "description_short": "Maps classes based on rules.",
+    "example": ""
+  },
+  "mapmargin": {
+    "category": "mapping",
+    "description_short": "Maps margin values.",
+    "example": ""
+  },
+  "margin": {
+    "category": "style",
+    "description_short": "Sets margin around the element.",
+    "example": "<div margin=\"20px\">This div has 20px margin on all sides</div>",
+    "see_also": [
+      "marginbottom",
+      "marginleft",
+      "marginright",
+      "margintop"
+    ]
+  },
+  "marginbottom": {
+    "category": "style",
+    "description_short": "Sets bottom margin.",
+    "example": "<div marginbottom=\"15px\">This div has 15px bottom margin</div>",
+    "see_also": [
+      "margin",
+      "marginleft",
+      "marginright",
+      "margintop"
+    ]
+  },
+  "marginleft": {
+    "category": "style",
+    "description_short": "Sets left margin.",
+    "example": "<div marginleft=\"5px\">This div has 5px left margin</div>",
+    "see_also": [
+      "margin",
+      "marginbottom",
+      "marginright",
+      "margintop"
+    ]
+  },
+  "marginright": {
+    "category": "style",
+    "description_short": "Sets right margin.",
+    "example": "<div marginright=\"8px\">This div has 8px right margin</div>",
+    "see_also": [
+      "margin",
+      "marginbottom",
+      "marginleft",
+      "margintop"
+    ]
+  },
+  "margintop": {
+    "category": "style",
+    "description_short": "Sets top margin.",
+    "example": "<div margintop=\"10px\">This div has 10px top margin</div>",
+    "see_also": [
+      "margin",
+      "marginbottom",
+      "marginleft",
+      "marginright"
+    ]
+  },
+  "minheight": {
+    "category": "style",
+    "description_short": "Sets the minimum height.",
+    "example": "<div minheight=\"100px\">This div cannot be shorter than 100px</div>",
+    "see_also": [
+      "height",
+      "maxheight"
+    ]
+  },
+  "minwidth": {
+    "category": "style",
+    "description_short": "Sets the minimum width.",
+    "example": "<div minwidth=\"200px\">This div cannot be narrower than 200px</div>",
+    "see_also": [
+      "maxwidth",
+      "width"
+    ]
+  },
+  "maxwidth": {
+    "category": "style",
+    "description_short": "Sets the maximum width.",
+    "example": "<div maxwidth=\"400px\">This div cannot be wider than 400px</div>",
+    "see_also": [
+      "minwidth",
+      "width"
+    ]
+  },
+  "mouseout": {
+    "category": "behavior",
+    "description_short": "Executes an action when the mouse leaves the element.",
+    "example": "<button mouseover=\"bgcolor:[yellow]\" mouseout=\"bgcolor:[white]\">Hover over me</button>",
+    "see_also": [
+      "mouseover"
+    ]
+  },
+  "mouseover": {
+    "category": "behavior",
+    "description_short": "Executes an action when the mouse enters the element.",
+    "example": "<button mouseover=\"bgcolor:[yellow]\">Hover over me</button>",
+    "see_also": [
+      "click",
+      "mouseout"
+    ]
+  },
+  "navigate-go": {
+    "category": "interactive",
+    "module": "navigate",
+    "description_short": "Programmatically triggers navigation as if a user clicked a link. Loads the target page via the Navigate module into the specified container without a full page reload."
+  },
+  "onconfirm": {
+    "category": "event",
+    "description_short": "Triggered when the user confirms an action in a confirmation dialog.",
+    "example": "<button click=\"confirm:[Are you sure?]\" onconfirm=\"settext:[Confirmed!]\">Confirm Action</button>",
+    "related_to": [
+      "confirm"
+    ]
+  },
+  "onconfirmvalue": {
+    "category": "event",
+    "description_short": "Triggered when a confirmation dialog is accepted; typically used to pass a value or trigger chained actions.",
+    "example": "<button click=\"confirm:[Are you sure?]\" onconfirmvalue=\"true;settext:[Confirmed with yes]\">Delete Item</button>",
+    "related_to": [
+      "confirm"
+    ]
+  },
+  "onclicked": {
+    "category": "event",
+    "description_short": "Triggered when the element is clicked.",
+    "example": "<button click=\"sethtml:[Button clicked!]\" onclicked=\"insertbeforeend:[ Added after]\">Click me</button>",
+    "related_to": [
+      "click"
+    ]
+  },
+  "onenabled": {
+    "category": "event",
+    "description_short": "Triggered when the element or feature becomes enabled.",
+    "example": "<input type=\"checkbox\" click=\"enable\" onenabled=\"insertbeforebegin:[Enabled!]\"> Enable me"
+  },
+  "ondisabled": {
+    "category": "event",
+    "description_short": "Triggered when the element or feature becomes disabled.",
+    "example": "<input type=\"checkbox\" click=\"disable\" ondisabled=\"insertbeforebegin:[Disabled!]\"> Disable me"
+  },
+  "onfocused": {
+    "category": "event",
+    "description_short": "Triggered when the element gains focus.",
+    "example": "<button click=\"focus:#field1\">Focus</button>\n<input type=\"text\" id=\"field1\" onfocused=\"setvalue:[onfocused]\">",
+    "related_to": [
+      "focus"
+    ]
+  },
+  "onblur": {
+    "category": "event",
+    "description_short": "Triggered when the element loses focus.",
+    "example": "<button click=\"blur:#field1\">Blur</button>\n<input type=\"text\" id=\"field1\" focus onblur=\"setvalue:[onblur]\">",
+    "see_also": [
+      "blur"
+    ]
+  },
+  "onhide": {
+    "category": "event",
+    "description_short": "Triggered when the element is hidden.",
+    "example": "<button click=\"hide\" onhide=\"insertafterend:[Element hidden]\">Hide me</button>",
+    "related_to": [
+      "hide"
+    ]
+  },
+  "onshow": {
+    "category": "event",
+    "description_short": "Triggered when the element is shown.",
+    "example": "<div id=\"panel\" bgcolor=\"lightgreen\" hide onshow=\"insertafterend:[ Panel shown]\">Hidden Panel</div>\n<button click=\"show:#panel\">Show Panel</button>",
+    "related_to": [
+      "show"
+    ]
+  },
+  "onsubmitted": {
+    "category": "event",
+    "description_short": "Triggered when a form is submitted.",
+    "related_to": [
+      "submit"
+    ]
+  },
+  "padding": {
+    "category": "style",
+    "description_short": "Sets padding inside the element.",
+    "example": "<div padding=\"1rem\">Content inside padded box</div>",
+    "see_also": [
+      "paddingtop",
+      "paddingbottom",
+      "paddingleft",
+      "paddingright"
+    ]
+  },
+  "paddingtop": {
+    "category": "style",
+    "description_short": "Sets top padding.",
+    "example": "<div bgcolor=\"lightgray\" paddingtop=\"1rem\">Top padding example</div>",
+    "see_also": [
+      "padding",
+      "paddingbottom",
+      "paddingleft",
+      "paddingright"
+    ]
+  },
+  "paddingbottom": {
+    "category": "style",
+    "description_short": "Sets bottom padding.",
+    "example": "<div bgcolor=\"lightgray\" paddingbottom=\"1rem\">Bottom padding example</div>",
+    "see_also": [
+      "padding",
+      "paddingtop",
+      "paddingleft",
+      "paddingright"
+    ]
+  },
+  "paddingleft": {
+    "category": "style",
+    "description_short": "Sets left padding.",
+    "example": "<div bgcolor=\"lightgray\" paddingleft=\"1rem\">Left padding example</div>",
+    "see_also": [
+      "padding",
+      "paddingtop",
+      "paddingbottom",
+      "paddingright"
+    ]
+  },
+  "paddingright": {
+    "category": "style",
+    "description_short": "Sets right padding.",
+    "example": "<span bgcolor=\"lightgray\" paddingright=\"5rem\">Right padding example</span>",
+    "see_also": [
+      "padding",
+      "paddingtop",
+      "paddingbottom",
+      "paddingleft"
+    ]
+  },
+  "radius": {
+    "category": "style",
+    "description_short": "Sets border radius.",
+    "example": "<span bgcolor=\"black02\" padding=\"1rem\" radius=\"1rem\">Rounded corners</span>"
+  },
+  "resize": {
+    "category": "style",
+    "description_short": "Sets resize behavior of the element.",
+    "example": "<textarea resize=\"both\" width=\"200px\" height=\"100px\">You can resize me</textarea>\n<textarea resize=\"none\" width=\"200px\" height=\"100px\">You cannot resize me</textarea>"
+  },
+  "resetvalue": {
+    "category": "value",
+    "description_short": "Resets the value of the element."
+  },
+  "runorder": {
+    "category": "behavior",
+    "description_short": "Runs attributes in the specified order inside the element.",
+    "example": "<span runorder=\"settext,uppercase\" settext=\"hello WORLD\" uppercase lowercase></span>"
+  },
+  "show": {
+    "category": "behavior",
+    "description_short": "Shows the element.",
+    "example": "<span show>This text is visible</span>",
+    "related_to": [
+      "onshow"
+    ],
+    "see_also": [
+      "hide"
+    ]
+  },
+  "setaction": {
+    "category": "content",
+    "description_short": "Sets or changes the action URL of a form.",
+    "example": "<form setaction=\"/?submit\" target=\"_blank\">\n  <input type=\"submit\" />\n</form>"
+  },
+  "setmax": {
+    "category": "content",
+    "description_short": "Sets the maximum value of a progress bar or input range element.",
+    "example": "<progress value=\"30\" setmax=\"100\" border=\"1px solid black\"></progress>"
+  },
+  "settext": {
+    "category": "content",
+    "description_short": "Sets the text content.",
+    "example": "<div settext=\"Hello World\"></div>",
+    "see_also": [
+      "sethtml"
+    ]
+  },
+  "sethtml": {
+    "category": "content",
+    "description_short": "Sets HTML content.",
+    "example": "<div sethtml=\"<b>Hello</b> World\"></div>",
+    "see_also": [
+      "settext"
+    ]
+  },
+  "setattr": {
+    "category": "content",
+    "description_short": "Sets an attribute on the element.",
+    "example": "<div setattr=\"title:Hello\">Hover me</div>"
+  },
+  "sethref": {
+    "category": "content",
+    "description_short": "Sets the href attribute of the element.",
+    "example": "<a sethref=\"https://example.com\">Visit Example</a>",
+    "see_also": [
+      "setqueryhref"
+    ]
+  },
+  "setqueryhref": {
+    "category": "content",
+    "description_short": "Updates the href attribute of the element with operation support.",
+    "example": "<a href=\"?page=1\" click=\"setqueryhref:[page:++]\">Next Page</a><br>\n<a href=\"?page=5\" click=\"setqueryhref:[page:--]\">Previous Page</a><br>\n<a href=\"?zoom=1\" click=\"setqueryhref:[zoom:*2]\">Zoom In</a><br>\n<a href=\"?zoom=4\" click=\"setqueryhref:[zoom:/2]\">Zoom Out</a><br>\n<a href=\"?score=10\" click=\"setqueryhref:[score:+5]\">Add 5 Points</a><br>\n<a href=\"?score=10\" click=\"setqueryhref:[score:-3]\">Subtract 3 Points</a>",
+    "see_also": [
+      "sethref"
+    ]
+  },
+  "setvalue": {
+    "category": "content",
+    "description_short": "Sets the value of the element.",
+    "example": "<input type=\"text\" setvalue=\"Hello World\">"
+  },
+  "setid": {
+    "category": "content",
+    "description_short": "Sets the id of the element.",
+    "example": "<div setid=\"id1\">This div has an id</div>",
+    "see_also": [
+      "setname"
+    ]
+  },
+  "setname": {
+    "category": "content",
+    "description_short": "Sets the name of the element.",
+    "example": "<div setname=\"name1\">This div has a name</div>",
+    "see_also": [
+      "setid"
+    ]
+  },
+  "setsrc": {
+    "category": "content",
+    "description_short": "Sets the source of the image.",
+    "example": "<img setsrc=\"https:\//placehold.co\/200x100\">"
+  },
+  "slice": {
+    "category": "content",
+    "description_short": "Extracts part of the content by index."
+  },
+  "start": {
+    "category": "behavior",
+    "see_also": [
+      "stop"
+    ]
+  },
+  "stop": {
+    "category": "behavior",
+    "see_also": [
+      "start"
+    ]
+  },
+  "split": {
+    "category": "content",
+    "description_short": "Splits content by delimiter and returns a part."
+  },
+  "togglevalue": {
+    "category": "value",
+    "description_short": "Toggles the value of the element."
+  },
+  "transform": {
+    "category": "style",
+    "description_short": "Applies a CSS transform."
+  },
+  "trim": {
+    "category": "content",
+    "description_short": "Removes whitespace from the start and end of content.",
+    "example": "<p trim>   Hello World!   </p>",
+    "see_also": [
+      "trimleft",
+      "trimright"
+    ]
+  },
+  "trimleft": {
+    "category": "content",
+    "description_short": "Removes characters from the start of content.",
+    "example": "<p trimleft=\"!\">!!!Hello World!</p>",
+    "see_also": [
+      "trim",
+      "trimright"
+    ]
+  },
+  "trimright": {
+    "category": "content",
+    "description_short": "Removes characters from the end of content.",
+    "example": "<p trimright=\"!\">Hello World!!!</p>",
+    "see_also": [
+      "trim",
+      "trimleft"
+    ]
+  },
+  "uppercase": {
+    "category": "content",
+    "description_short": "Converts content to uppercase.",
+    "example": "<p uppercase>This text will appear in uppercase letters</p>",
+    "see_also": [
+      "lowercase"
+    ]
+  },
+  "width": {
+    "category": "style",
+    "description_short": "Sets the width of the element.",
+    "example": "<div width=\"200px\" bgcolor=\"lightblue\">This div is 200px wide</div>\n<div width=\"50%\" bgcolor=\"lightgreen\">This div is 50% of its container's width</div>",
+    "see_also": [
+      "maxwidth",
+      "minwidth",
+      "maxheight",
+      "minheight"
+    ]
+  },
+  "wordbreak": {
+    "category": "style",
+    "description_short": "Sets how words break in text.",
+    "example": "<div wordbreak=\"normal\" border=\"1px solid black\" width=\"100px\">Thisisaverylongwordthatmayoverflow.</div>\n<div wordbreak=\"break-all\" border=\"1px solid black\" width=\"100px\">Thisisaverylongwordthatmayoverflow.</div>\n<div wordbreak=\"keep-all\" border=\"1px solid black\" width=\"100px\">This is a long sentence that will not break words in CJK text.</div>"
+  },
+  "whitespace": {
+    "category": "style",
+    "description_short": "Sets whitespace behavior.",
+    "example": "<div whitespace=\"normal\">This    text   has    normal    whitespace.</div>\n<div whitespace=\"pre\">This    text   preserves\nall    spaces\nand line breaks.</div>\n<div whitespace=\"nowrap\">This text will not wrap onto the next line, even if it overflows.</div>"
+  },
+  "zindex": {
+    "category": "style",
+    "description_short": "Sets the stacking order of the element.",
+    "example": "<div relative>\n  <span bgcolor=\"lightblue\" zindex=\"2\" absolute top=\"20\">On top</span>\n  <span bgcolor=\"lightgray\" zindex=\"1\" height=\"3rem\">Behind</span>\n</div>"
+  },
+  "zoom": {
+    "category": "style",
+    "description_short": "Sets zoom scale of the element.",
+    "example": "<div zoom=\"1.5\">This text is zoomed in by 150%</div>"
+  }
+}

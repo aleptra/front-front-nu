@@ -1,0 +1,147 @@
+<script src="https://cdn.front.nu/nightly/front.js"></script>
+<title globalize-get>Language</title>
+<template srcdoc="../../../index" src="../../../_templates/documentation"></template>
+<article color="silver">
+  <nav class="crumbs pointer pt05" zoom="0.9" margintop="-2rem" marginbottom="2rem" color="white">
+    <ol>
+      <li><a href="documentation" globalize-get>Documentation</a></li>
+      <li><a href="#" globalize-get>Concepts</a></li>
+      <li color="silver" bindglobal="title:title" settext="{title}" globalize-get></li>
+    </ol>
+  </nav>
+
+  <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get marginbottom="2rem"
+    runorder="bindglobal;settext;globalize-get"></h1>
+
+  <section margintop="2rem">
+    <p margintop="1rem">
+      FTML (Front Text Markup Language) is the primary language of Front. It extends standard HTML with a powerful
+      declarative layer that makes it possible to define structure, style, layout, interactivity, and behavior entirely
+      through attributes, eliminating the need for any language other than FTML.
+    </p>
+  </section>
+
+  <section margintop="3rem">
+    <h2 zoom="0.9" color="white">Fundamentals</h2>
+    <p margintop="1rem">
+      FTML is structured around a small set of fundamentals that define how interfaces are described and composed:
+      Attributes, Variables, Pages, Templates, Modules, and Plugins. These elements provide structure, state, reuse, and
+      extensibility directly in markup, forming a cohesive model for building declarative and reactive interfaces.
+    </p>
+  </section>
+
+  <section margintop="3rem">
+    <h2 zoom="0.9" margintop="2rem" color="white">Low-Code</h2>
+    <p margintop="1rem">
+      FTML embodies a Low-Code approach, allowing developers and designers to define structure, styling, behavior, and
+      interactivity directly through markup attributes. Loops, conditionals, computed values, event handling, and
+      reusable templates are all expressed declaratively, reducing boilerplate, accelerating prototyping, and promoting
+      rapid, maintainable, and consistent application development within a single markup language.
+    </p>
+  </section>
+
+  <!-- A DIFFERENT MENTAL MODEL -->
+  <section margintop="3rem">
+    <h2 zoom="0.9" color="white">The Mental Model</h2>
+    <p margintop="1rem">
+      Each attribute expresses a small unit of behavior. Together, they form a graph describing the interface.
+      Developers focus on <b>intent</b> rather than components or lifecycle, thinking in terms like:
+    </p>
+    <ul margintop="1rem" lineheight="1.8rem">
+      <li>"This should load data."</li>
+      <li>"This should react when a value changes."</li>
+      <li>"This should appear conditionally."</li>
+      <li>"This should map to a global value."</li>
+      <li>"This should repeat for each item."</li>
+    </ul>
+    <p margintop="1rem">
+      This mental model simplifies reasoning and makes interfaces self-describing, enabling a direct path from intent to
+      implementation.
+    </p>
+  </section>
+
+  <section margintop="3rem">
+    <h2 zoom="0.9" margintop="2rem" color="white">FTML vs Traditional Markup</h2>
+    <p margintop="1rem">
+      FTML simplifies interface development by overcoming limitations of traditional markup languages like HTML, XHTML,
+      and XML, which often lack dynamic capabilities and require external scripts.
+    </p>
+    <table width="100%" margintop="1rem">
+      <caption>
+        <small>Comparison of FTML with Traditional Markup:</small>
+      </caption>
+      <thead color="white">
+        <th>Feature</th>
+        <th>Traditional Markup</th>
+        <th>FTML</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Structure</td>
+          <td>❌ Static</td>
+          <td>✅ Static + dynamic</td>
+        </tr>
+        <tr>
+          <td>Interpretation</td>
+          <td>❌ Browser renders static markup</td>
+          <td>✅ Browser renders compiled output</td>
+        </tr>
+        <tr>
+          <td>Logic</td>
+          <td>❌ Requires external scripts</td>
+          <td>✅ Declarative logic in markup</td>
+        </tr>
+        <tr>
+          <td>Styling</td>
+          <td>❌ Separate CSS stylesheets</td>
+          <td>✅ Declarative styling in markup</td>
+        </tr>
+        <tr>
+          <td>Dynamic content</td>
+          <td>❌ Requires scripts and templating</td>
+          <td>✅ Bindings &amp; loops in markup</td>
+        </tr>
+        <tr>
+          <td>Interactivity</td>
+          <td>❌ JavaScript event handlers</td>
+          <td>✅ Declarative event handling</td>
+        </tr>
+        <tr>
+          <td>Components</td>
+          <td>⚠️ Manual reuse via includes or scripts</td>
+          <td>✅ Reusable components</td>
+        </tr>
+        <tr>
+          <td>Reactive updates</td>
+          <td>❌ Manual DOM manipulation</td>
+          <td>✅ Auto DOM sync</td>
+        </tr>
+        <tr>
+          <td>Templates</td>
+          <td>⚠️ Separate template engines</td>
+          <td>✅ Reusable templates in markup</td>
+        </tr>
+        <tr>
+          <td>Computed values</td>
+          <td>❌ Computed in scripts</td>
+          <td>✅ Computed in markup</td>
+        </tr>
+        <tr>
+          <td>Data-driven rendering</td>
+          <td>❌ Requires scripting</td>
+          <td>✅ Reactive rendering</td>
+        </tr>
+        <tr>
+          <td>Conditionals</td>
+          <td>❌ Scripted conditionals</td>
+          <td>✅ Conditional rendering in markup</td>
+        </tr>
+        <tr>
+          <td>Event handling</td>
+          <td>⚠️ Inline or external JavaScript</td>
+          <td>✅ Inline declarative events</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</article>

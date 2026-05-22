@@ -1,192 +1,76 @@
-<script src="https://cdn.front.nu/dist/front.js" template="index"></script>
-<title globalize="documentation"></title>
-<template>
-  <aside index="0">
-    <nav class="sidebar light w15 pt105 toggleable xl_dn" selective="true">
-
-      <details open>
-        <summary globalize="get_started"></summary>
-        <details>
-          <summary globalize="installation"></summary>
-          <a href="./documentation/index.html#automatic" globalize="automatic"></a>
-          <a href="./documentation/index.html#manual" globalize="manual"></a>
-        </details>
-        <details>
-          <summary globalize="fundamental"></summary>
-          <a href="./documentation/fundamental/page_start.html" globalize="start_page"></a>
-          <a href="./documentation/fundamental/page_navigation.html" globalize="navigation_page"></a>
-          <a href="./documentation/fundamental/page_template.html" globalize="template_page"></a>
-          <a href="./documentation/fundamental/library.html" globalize="library"></a>
-          <a href="./documentation/fundamental/plugin.html" globalize="plugin"></a>
-        </details>
-      </details>
-
-      <details>
-        <summary globalize="reference">Reference</summary>
-        <details>
-          <summary globalize="api"></summary>
-          <details>
-            <summary globalize="plugin"></summary>
-            <a href="./documentation/reference/api" globalize="overview"></a>
-            <a href="./documentation/reference/api/core.html" globalize="core">Core</a>
-            <a href="./documentation/reference/api/dom.html" globalize="dom">DOM</a>
-            <a href="./documentation/reference/api/string-handling.html" globalize="string_handling"></a>
-            <a href="./documentation/reference/api/storage.html" globalize="storage">Storage</a>
-          </details>
-        </details>
-        <details>
-          <summary globalize="cli">CLI</summary>
-          <a href="./documentation/reference/cli" globalize="overview"></a>
-          <a href="./documentation/reference/cli/app.html">make app</a>
-          <a href="./documentation/reference/cli/help.html">make help</a>
-        </details>
-        <details>
-          <summary globalize="ftml">FTML</summary>
-          <a href="./documentation/reference/ftml" globalize="overview"></a>
-          <a href="./documentation/reference/ftml/attributes.html" globalize="attributes"></a>
-          <a href="./documentation/reference/ftml/elements.html" globalize="elements"></a>
-          <a href="./documentation/reference/ftml/event-listeners.html" globalize="event_listeners"></a>
-          <a href="./documentation/reference/ftml/key-triggers.html" globalize="key_triggers"></a>
-          <a href="./documentation/reference/ftml/library" globalize="libraries"></a>
-          <a href="./documentation/reference/ftml/variables.html" globalize="variables"></a>
-        </details>
-      </details>
-
-      <details>
-        <summary globalize="development"></summary>
-        <details>
-          <summary globalize="markup"></summary>
-          <a href="./documentation/dev/markup/conditional-statements.html" globalize="conditional_statements"></a>
-          <a href="./documentation/dev/markup/iteration.html" globalize="iteration"></a>
-          <a href="./documentation/dev/markup/location-hash.html" globalize="location_hash"></a>
-          <a href="./documentation/dev/markup/string-handling.html" globalize="string_handling"></a>
-          <a href="./documentation/dev/markup/templating.html" globalize="templating">Templating</a>
-          <a href="./documentation/dev/markup/variables.html" globalize="variables"></a>
-        </details>
-        <details>
-          <summary globalize="plugin"></summary>
-        </details>
-        <details>
-          <summary globalize="widget"></summary>
-          <a href="./documentation/dev/widget/alerts.html" globalize="alerts">Alerts</a>
-          <a href="./documentation/dev/widget/buttons.html" globalize="buttons">Buttons</a>
-          <a href="./documentation/dev/widget/forms.html" globalize="forms">Forms</a>
-          <a href="./documentation/dev/widget/menus.html" globalize="menus">Menus</a>
-          <a href="./documentation/dev/widget/navigations.html" globalize="navigations">Navigations</a>
-          <a href="./documentation/dev/widget/views.html" globalize="views">Views</a>
-        </details>
-      </details>
-
-      <details>
-        <summary globalize="design"></summary>
-        <details>
-          <summary globalize="style"></summary>
-          <a href="./documentation/design/css/colors.html" globalize="colors"></a>
-          <a href="./documentation/design/css/headings-paragraphs.html" globalize="typography"></a>
-          <a href="./documentation/design/css/units.html" globalize="units"></a>
-        </details>
-        <details>
-          <summary globalize="layout"></summary>
-          <a href="./documentation/design/layout/breakpoints.html" globalize="breakpoints"></a>
-        </details>
-      </details>
-
-      <hr>
-    </nav>
-  </aside>
-  <aside index="1"></aside>
-</template>
-
-<article>
-  <h1 globalize="documentation"></h1>
-  <nav class="crumbs pointer pt05">
+<script src="http://localhost/front/front.js"></script>
+<title globalize-get>Introduction</title>
+<template srcdoc="../index" src="../_templates/documentation" bindvar="sidebar:sidebar"></template>
+<article color="silver">
+  <nav class="crumbs pointer pt05" zoom="0.9" margintop="-2rem" marginbottom="2rem" color="white">
     <ol>
-      <li><a href="#" globalize="documentation"></a></li>
-      <li globalize="get_started"></li>
+      <li><a href="documentation" settext="Documentation" globalize-get></a></li>
+      <li color="silver" bindglobal="title:title" settext="{title}" globalize-get></li>
     </ol>
   </nav>
-
-  <section id="automatic">
-    <h2 globalize="automatic_installation"></h2>
-    <p globalize="installation_automatic_description"></p>
-    <p class="mt2">
-      <b>1. Install Git on your machine.</b>
-      <ul class="list">
-        <li><a target="_blank" href="https://git-scm.com/download/mac">macOS</a></li>
-        <li><a target="_blank" href="https://git-scm.com/download/win">Windows</a></li>
-        <li><a target="_blank" href="https://git-scm.com/download/linux">Linux/Unix</a></li>
-      </ul>
+  <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get="{title}" marginbottom="2rem"
+    runorder="bindglobal;settext;globalize-get"></h1>
+  <section>
+    <p><b>Front</b> is a low-code frontend framework for building interactive, data-driven, and modular applications
+      using a
+      markup-first approach. It extends standard HTML with FTML (Front Text Markup Language) - a declarative layer that
+      allows you to define structure, style, layout, interactivity, and behavior directly through attributes, without
+      writing any JavaScript or CSS.
+      <br><br>
+      Unlike traditional frontend frameworks or libraries that rely heavily on complex logic, Front keeps development
+      simple, clean, and
+      maintainable. Everything can be expressed through markup, enabling developers and designers to work seamlessly
+      together while producing readable and scalable code.
     </p>
-    <b class="mt2">2. Clone project</b>
-    <code class="markup antiquewhite" formatify="colors:silver,cornsilk,navajowhite,slategray,green;true">
-      git clone https://github.com/aleptra/front.git
-    </code>
-    <b class="mt2">3. Create an application</b>
-    <code class="markup antiquewhite" formatify="colors:silver,cornsilk,navajowhite,slategray,green;true">
-      make app:create
-    </code>
   </section>
-  <hr class="bcblack mt3">
-  <section id="manual">
-    <h2 globalize="manual_installation"></h2>
-    <p globalize="installation_manual_description"></p>
+  <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0">Why Choose Front?</h3>
+  <section>
+    Front will help you:
+    <ul>
+      <li paddingtop="0.5rem">Spend less time on repetitive setup and boilerplate code.</li>
+      <li paddingtop="0.5rem">Write markup that is easy to read, maintain, and scale.</li>
+      <li paddingtop="0.5rem">Improve collaboration between designers and developers.</li>
+      <li paddingtop="0.5rem">Build prototypes quickly and iterate without complex logic or state management.</li>
+      <li paddingtop="0.5rem">Reduce bugs with simple, declarative syntax that avoids complexity.</li>
+    </ul>
   </section>
-
-  <section id="structure">
-    <h4 globalize="application_structure">Application structure</h4>
-    <b class="mt1">1. Create folders and files</b>
-    <code>
-      .<br>
-      ├── assets<br>
-      │&emsp; &nbsp;├── img<br>
-      home.html<br>
-      index.html<br>
-      page1.html
-    </code>
+  <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0">Use Cases</h3>
+  <section>
+    Front is perfect for:
+    <ul>
+      <li paddingtop="0.5rem">Rapid application prototypes.</li>
+      <li paddingtop="0.5rem">Interactive dashboards or data-driven interfaces.</li>
+      <li paddingtop="0.5rem">Small to medium-scale applications with minimal complexity.</li>
+      <li paddingtop="0.5rem">Projects where designers and developers need to collaborate efficiently.</li>
+    </ul>
   </section>
-
-  <section id="pages">
-    <h4 globalize="start_page"></h4>
-    <b class="mt1">2. Save FTML code as index.html</b>
-    <code class="markup antiquewhite" formatify="colors:silver,cornsilk,navajowhite,slategray,green;true">
-      &lt;!doctype html&gt;
-      &lt;html lang="en"&gt;
-      &lt;head&gt;
-      &lt;title&gt;My application&lt;/title&gt;
-      &lt;meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"&gt;
-      &lt;meta http-equiv="X-UA-Compatible" content="ie=edge;ie=10;chrome=1"&gt;
-      &lt;meta http-equiv="Content-Type" content="text/html;charset=UTF-8"&gt;
-      &lt;base env="local:/;prod:/"&gt;
-      &lt;link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet"&gt;
-      &lt;link type="text/css" href="https://cdn.front.nu/dist/design/front/theme/front.css" rel="stylesheet"&gt;
-      &lt;script src="https://cdn.front.nu/dist/front.js" lib="nav"&gt;&lt;/script&gt;
-      &lt;/head&gt;
-      &lt;body&gt;
-      &lt;header&gt;&lt;/header&gt;
-      &lt;nav&gt;&lt;/nav&gt;
-      &lt;aside&gt;&lt;/aside&gt;
-      &lt;main include="home.html"&gt;&lt;/main&gt;
-      &lt;aside&gt;&lt;/aside&gt;
-      &lt;footer&gt;&lt;/footer&gt;
-      &lt;/body&gt;
-      &lt;/html&gt;
-    </code>
-    <h4 class="mt2" globalize="template_page"></h4>
-    <b class="mt1">3. Save FTML code as home.html</b>
-    <code class="markup antiquewhite" formatify="colors:silver,cornsilk,navajowhite,slategray,green;true">
-      &lt;script src="https://cdn.front.nu/dist/front.js" template="index"&gt;&lt;/script&gt;
-      &lt;template&gt;
-      &lt;aside index="0"&gt;&lt;/aside&gt;
-      &lt;aside index="1"&gt;&lt;/aside&gt;
-      &lt;/template&gt;
-      &lt;p&gt;Content&lt;/p&gt;
-    </code>
-    <h4 class="mt2" globalize="navigation_page"></h4>
-    <b class="mt1">4. Save FTML code as page1.html</b>
-    <code class="markup antiquewhite" formatify="colors:silver,cornsilk,navajowhite,slategray,green;true">
-      &lt;script src="https://cdn.front.nu/dist/front.js" template="index"&gt;&lt;/script&gt;
-      &lt;title&gt;Page 1&lt;/title&gt;
-      &lt;p&gt;Content&lt;/p&gt;
-    </code>
+  <section color="silver" padding="2rem 0 2rem 0">
+    <h3 zoom="0.85" color="white" padding="0 0 1rem 0">Before You Start</h3>
+    <p>
+      We assume you are familiar with <b>HTML basics</b>.
+      If you are completely new to markup, consider reviewing introductory HTML tutorials, e.g., ↗️ <a
+        target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics">MDN Web Docs</a>.
+    </p>
+    <p>In particular, you should be familiar with:</p>
+    <ul>
+      <li paddingtop="0.5rem">Elements and tags (structure and nesting)</li>
+      <li paddingtop="0.5rem">Attributes (adding extra information to elements)</li>
+      <li paddingtop="0.5rem">Classes and IDs (selectors and identifiers)</li>
+      <li paddingtop="0.5rem">Forms and inputs (creating input fields and handling user data)</li>
+      <li paddingtop="0.5rem">Lists, tables, and containers (organizing page content)</li>
+    </ul>
+    <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
+      Note: Familiarity with CSS and JavaScript is helpful but <b>not required</b> - Front allows you to define
+      interactivity and styling directly through markup.
+    </div>
   </section>
+  <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0">Try It Now</h3>
+  <section>
+    Experiment with FTML in real time using our live <a href="playground.html">Playground</a>. Simply write markup and
+    see the results instantly in your browser - no setup required.
+  </section>
+  <hr bgcolor="white03" margin="3rem 0">
+  <a href="documentation/installation" minheight="2.7rem" radius="1rem" paddingleft="1.25rem" paddingright="1.25rem"
+    lineheight="2.7" class="button" bgcolor="white" color="black" insertbeforeend=" →" insertcontent="true">Goto
+    Installation</a>
 </article>

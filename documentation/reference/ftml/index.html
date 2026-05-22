@@ -1,34 +1,44 @@
-<script src="https://cdn.front.nu/dist/front.js" template="index;documentation/index"></script>
-
-<title globalize="ftml"></title>
-
-<template>
-  <aside index="0" inherit="true"></aside>
-  <aside index="1"></aside>
-</template>
-
-<article>
-  <h1 globalize="ftml"></h1>
-
-  <nav class="crumbs pointer pt05">
+<script src="https://cdn.front.nu/nightly/front.js"></script>
+<title globalize-get>FTML</title>
+<template srcdoc="../../../index" src="../../../_templates/documentation"></template>
+<article color="silver">
+  <nav class="crumbs pointer pt05" zoom="0.9" margintop="-2rem" marginbottom="2rem" color="white">
     <ol>
-      <li><a href="./documentation" globalize="documentation"></a></li>
-      <li><a globalize="reference"></a></li>
-      <li><a globalize="ftml"></a></li>
-      <li globalize="overview"></li>
+      <li><a href="documentation" globalize-get>Documentation</a></li>
+      <li><a href="#" globalize-get>Reference</a></li>
+      <li>FTML</li>
     </ol>
   </nav>
-
-  <p class="mt1">FTML (Front Text Markup Language) is the way to describe the functionality/behavior and appearance/presentation of the application.</p>
-
-  <section>
-    <h2>Attributes</h2>
-    <p>An FTML attribute provides additional information about an element.</p>
+  <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get marginbottom="2rem"
+    runorder="bindglobal;settext;globalize-get"></h1>
+  <section margintop="2rem">
+    <p>
+      Front Template Markup Language (FTML) extends HTML with declarative attributes and variables that control
+      behavior, data binding, and presentation.
+    </p>
   </section>
 
-  <section>
-    <h2>Elements</h2>
-    <p>.</p>
-  </section>
+  <section margintop="2rem">
+    <h3 color="white" marginbottom=".5rem">Explore</h3>
 
+    <ul>
+      <li>
+        <a href="documentation/reference/ftml/attributes" globalize-get>
+          Attributes
+        </a>
+        <div zoom=".9" color="gray">
+          Behavioral, content, style, and logic attributes available.
+        </div>
+      </li>
+
+      <li margintop="1rem">
+        <a href="documentation/reference/ftml/variables" globalize-get>
+          Variables
+        </a>
+        <div zoom=".9" color="gray">
+          Value resolution, bindings, and runtime data usage.
+        </div>
+      </li>
+    </ul>
+  </section>
 </article>

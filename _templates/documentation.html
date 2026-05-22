@@ -1,0 +1,15 @@
+<template>
+
+  <body inherit bgcolor="blue"></body>
+    <aside resize="horizontal" screen-xs="width:[100vw];minwidth:[100vw];fixed;zindex:[61];hide"
+      screen-sm="width:[100vw];minwidth:[100vw];fixed;zindex:[61];hide"
+      screen-md="width:[100vw];minwidth:[15rem];fixed;zindex:[61];hide"
+      screen-lg="width:[15rem];minwidth:[15rem];relative;show"
+      screen-xl="width:[15rem];minwidth:[15rem];maxwidth:[20rem];relative;show"
+      screen-xxl="width:[15rem];minwidth:[15rem];maxwidth:[20rem];relative;show"
+      screen-xxxl="width:[20rem];minwidth:[20rem];maxwidth:[25rem];relative;show">
+      <div width="100%" bindvar="sidebar" include="_includes/{sidebar:sidebar}.html"></div>
+    </aside>
+    <main include height screen-xs="padding:[1.5rem]" screen-sm="padding:[2rem]" screen-md="padding:[3rem]"
+      screen-lg="padding:[4rem]"></main>
+</template>

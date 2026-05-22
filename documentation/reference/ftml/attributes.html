@@ -1,36 +1,160 @@
-<script src="https://cdn.front.nu/dist/front.js" template="index;documentation/index"></script>
-
-<title globalize="core_attributes"></title>
-
-<template>
-  <aside index="0" inherit="true"></aside>
-  <aside index="1"></aside>
-</template>
-
-<article>
-  <h1 globalize="attributes"></h1>
-  <nav class="crumbs pointer pt05">
+<script src="http://localhost/front/front.js"></script>
+<title globalize-get>Attributes</title>
+<template srcdoc="../../../../index" src="../../../../_templates/documentation"></template>
+<article color="silver">
+  <nav class="crumbs pointer pt05" zoom="0.9" margintop="-2rem" marginbottom="2rem" color="white">
     <ol>
-      <li><a href="./documentation" globalize="documentation"></a></li>
-      <li><a globalize="reference"></a></li>
-      <li><a globalize="ftml"></a></li>
-      <li globalize="attributes"></li>
+      <li><a href="documentation" globalize-get>Documentation</a></li>
+      <li><a href="#" globalize-get>Reference</a></li>
+      <li><a href="#" globalize-get>FTML</a></li>
+      <li color="silver" bindglobal="title:title" settext="{title}" globalize-get></li>
     </ol>
   </nav>
-  <section>
-    <table class="mt1 w100p">
-      <thead>
-        <tr>
-          <th globalize="attribute">Attribute</th>
-          <th globalize="parameters">Parameters</th>
-          <th class="w50" globalize="description"></th>
+  <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get marginbottom="2rem"
+    runorder="bindglobal;settext;globalize-get"></h1>
+  <form>
+    <input id="filter" type="text" placeholder="Filter" onvaluechange="filtersearch--run:#attributeTable" width="15rem" padding="0.75rem 1rem" bgcolor="white01" radius="0.25rem" autocomplete="off" focus>
+    <!--<small margintop="2rem">Filter by type</small>
+    <fieldset><input type="checkbox" id="core" marginright=".5rem"><label for="core">Core</label></fieldset>
+    <fieldset><input type="checkbox" id="module" marginright=".5rem"><label for="module">Module</label></fieldset>-->
+  </form>
+  <section margintop="1rem">
+    <div id="attributeTableEmpty" hide>No FTML attributes found.</div>
+    <table color="white" class="mt1" width="100%" data-src="assets/json/data/references.json" data-ttl="0" id="attributeTable" filtersearch--onempty="#attributeTableEmpty">
+      <tr id="title5">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Interactive</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="attribute.interactive">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count5"
+          if="([{count5}]:[0])/hide:#title5?show:#title5">
+          <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute" title="{d}"></a>
+          </td>
+          <td data-get="description"></td>
         </tr>
-      </thead>
-      <tbody class="z09" json="true" iterate="ftml[0].attributes" datasource="./assets/json/references.json">
-        <tr>
-          <td jsonget="attribute"></td>
-          <td jsonget="parameters"></td>
-          <td jsonget="description"></td>
+      </tbody>
+      <tr id="titleContent">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Content</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="attribute.content">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="countContent"
+        if="([{countContent}]:[0])/hide:#titleContent?show:#titleContent">
+          <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute" title="{d}"></a>
+          </td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="title1">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Value</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="attribute.value">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count1"
+          if="([{count1}]:[0])/hide:#title1?show:#title1">
+          <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute" title="{d}"></a>
+          </td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="title2">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Style</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+     <tbody valign="top" class="z09" data-iterate="attribute.style">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count2" if="([{count2}]:[0])/hide:#title2?show:#title2">
+          <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute" title="{d}"></a>
+          </td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="title3">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Event</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="attribute.event">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count3" if="([{count3}]:[0])/hide:#title3?show:#title3">
+          <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute" title="{d}"></a>
+          </td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="title4">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Behavior</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="attribute.behavior">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count4"
+          if="([{count4}]:[0])/hide:#title4?show:#title4">
+          <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute" title="{d}"></a>
+          </td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="title8">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Binding</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="attribute.binding">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count8"
+          if="([{count8}]:[0])/hide:#title8?show:#title8">
+          <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute" title="{d}"></a>
+          </td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="title6">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Logic</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="attribute.logic">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count6" if="([{count6}]:[0])/hide:#title6?show:#title6">
+          <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute" title="{d}"></a>
+          </td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="title9">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Mapping</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="attribute.mapping">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count9"
+          if="([{count9}]:[0])/hide:#title9?show:#title9">
+          <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute" title="{d}"></a>
+          </td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="title7">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Configuration</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="attribute.configuration">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count7" if="([{count7}]:[0])/hide:#title7?show:#title7">
+          <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute" title="{d}"></a>
+          </td>
+          <td data-get="description"></td>
         </tr>
       </tbody>
     </table>

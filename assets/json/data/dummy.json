@@ -1,0 +1,19 @@
+{
+  "dynamic-data-rendering": {
+    "features": [
+      { "key": "data-get" },
+      { "key": "data-set" },
+      { "key": "data-bind" },
+      { "key": "data-iterate" },
+      { "key": "data-filteritem" },
+      { "key": "data-filterkey" },
+      { "key": "data-sort" },
+      { "key": "data-sortorder" },
+      { "key": "data-src" },
+      { "key": "data-srcjoin" },
+      { "key": "data-merge" },
+      { "key": "data-interval" },
+      { "key": "data-ttl" }
+    ]
+  }
+}

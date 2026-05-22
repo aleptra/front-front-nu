@@ -1,0 +1,588 @@
+{
+  "attribute": {
+    "style": [
+      {
+        "attribute": "bgcolor",
+        "description": "Sets the background color of the element."
+      },
+      {
+        "attribute": "bgimage",
+        "description": "Sets the background image of the element."
+      },
+      {
+        "attribute": "border",
+        "description": "Sets the border of the element."
+      },
+      {
+        "attribute": "bold",
+        "description": "Makes text bold."
+      },
+      {
+        "attribute": "boxshadow",
+        "description": "Applies a shadow effect to the element."
+      },
+      {
+        "attribute": "color",
+        "description": "Sets the text color."
+      },
+      {
+        "attribute": "cursor",
+        "description": "Sets the cursor when hovering over the element."
+      },
+      {
+        "attribute": "flex",
+        "description": "Sets flex properties for the element."
+      },
+      {
+        "attribute": "flexdirection",
+        "description": "Sets the flex direction."
+      },
+      {
+        "attribute": "flexitem",
+        "description": "Sets properties of a flex item."
+      },
+      {
+        "attribute": "font",
+        "description": "Sets font style and size."
+      },
+      {
+        "attribute": "fontsize",
+        "description": "Sets the size of the text."
+      },
+      {
+        "attribute": "height",
+        "description": "Sets the height of the element."
+      },
+      {
+        "attribute": "justifycontent",
+        "description": "Aligns flex items along the main axis."
+      },
+      {
+        "attribute": "letterspacing",
+        "description": "Sets the spacing between letters in text."
+      },
+      {
+        "attribute": "lineheight",
+        "description": "Sets the height of text lines."
+      },
+      {
+        "attribute": "margin",
+        "description": "Sets margin around the element."
+      },
+      {
+        "attribute": "margintop",
+        "description": "Sets top margin."
+      },
+      {
+        "attribute": "marginbottom",
+        "description": "Sets bottom margin."
+      },
+      {
+        "attribute": "marginleft",
+        "description": "Sets left margin."
+      },
+      {
+        "attribute": "marginright",
+        "description": "Sets right margin."
+      },
+      {
+        "attribute": "minheight",
+        "description": "Sets the minimum height."
+      },
+      {
+        "attribute": "minwidth",
+        "description": "Sets the minimum width."
+      },
+      {
+        "attribute": "maxwidth",
+        "description": "Sets the maximum width."
+      },
+      {
+        "attribute": "padding",
+        "description": "Sets padding inside the element."
+      },
+      {
+        "attribute": "paddingtop",
+        "description": "Sets top padding."
+      },
+      {
+        "attribute": "paddingbottom",
+        "description": "Sets bottom padding."
+      },
+      {
+        "attribute": "paddingleft",
+        "description": "Sets left padding."
+      },
+      {
+        "attribute": "paddingright",
+        "description": "Sets right padding."
+      },
+      {
+        "attribute": "radius",
+        "description": "Sets border radius."
+      },
+      {
+        "attribute": "resize",
+        "description": "Sets resize behavior."
+      },
+      {
+        "attribute": "transform",
+        "description": "Applies a CSS transform."
+      },
+      {
+        "attribute": "width",
+        "description": "Sets the width of the element."
+      },
+      {
+        "attribute": "wordbreak",
+        "description": "Sets how words break in text."
+      },
+      {
+        "attribute": "whitespace",
+        "description": "Sets whitespace behavior."
+      },
+      {
+        "attribute": "zindex",
+        "description": "Sets the stacking order of the element."
+      },
+      {
+        "attribute": "zoom",
+        "description": "Sets zoom scale of the element."
+      }
+    ],
+    "content": [
+      {
+        "attribute": "align",
+        "description": "Sets alignment of content within the element."
+      },
+      {
+        "attribute": "escape",
+        "description": "Escapes HTML or special characters to display as plain text."
+      },
+      {
+        "attribute": "include",
+        "description": "Includes another internal HTML file or page fragment into the element."
+      },
+      {
+        "attribute": "insertafterbegin",
+        "description": "Inserts new content just inside the element, before its first child."
+      },
+      {
+        "attribute": "insertafterend",
+        "description": "Inserts new content immediately after the element."
+      },
+      {
+        "attribute": "insertbeforebegin",
+        "description": "Inserts new content immediately before the element."
+      },
+      {
+        "attribute": "insertbeforeend",
+        "description": "Inserts new content just inside the element, after its last child."
+      },
+      {
+        "attribute": "trim",
+        "description": "Removes whitespace from the start and end of content."
+      },
+      {
+        "attribute": "trimleft",
+        "description": "Removes characters from the start of content."
+      },
+      {
+        "attribute": "trimright",
+        "description": "Removes characters from the end of content."
+      },
+      {
+        "attribute": "lowercase",
+        "description": "Converts content to lowercase."
+      },
+      {
+        "attribute": "uppercase",
+        "description": "Converts content to uppercase."
+      },
+      {
+        "attribute": "settext",
+        "description": "Sets the text content."
+      },
+      {
+        "attribute": "sethtml",
+        "description": "Sets HTML content."
+      },
+      {
+        "attribute": "slice",
+        "description": "Extracts part of the content by index."
+      },
+      {
+        "attribute": "split",
+        "description": "Splits content by delimiter and returns a part."
+      },
+      {
+        "attribute": "valign",
+        "description": "Sets the vertical alignment of content within the element."
+      }
+    ],
+    "binding": [
+      {
+        "attribute": "bindvar",
+        "description": "Binds a variable."
+      },
+      {
+        "attribute": "bindquery",
+        "description": "Binds data from a query."
+      },
+      {
+        "attribute": "bindasset",
+        "description": "Binds an asset."
+      },
+      {
+        "attribute": "bindglobal",
+        "description": "Binds a global variable."
+      },
+      {
+        "attribute": "bindfield",
+        "description": "Binds a specific field."
+      },
+      {
+        "module": "data",
+        "attribute": "data-src",
+        "description": "Specifies an external data source URL to bind data from."
+      },
+      {
+        "module": "data",
+        "attribute": "data-iterate",
+        "description": "Iterates over items from a bound data source."
+      },
+      {
+        "module": "data",
+        "attribute": "data-get",
+        "description": "Retrieves a value from the current bound data context."
+      },
+      {
+        "module": "data",
+        "attribute": "data-set",
+        "description": "Assigns a value to a variable or field within the bound data context."
+      },
+      {
+        "module": "data",
+        "attribute": "data-bind",
+        "description": "Binds an element directly to a data variable or expression."
+      },
+      {
+        "module": "data",
+        "attribute": "data-bindpayload",
+        "description": "Maps a value from a payload into a bound variable or field."
+      },
+      {
+        "module": "data",
+        "attribute": "data-srcjoin",
+        "description": "Fetches and merges an additional data source into the same binding context."
+      }
+    ],
+    "logic": [
+      {
+        "attribute": "if",
+        "description": "Evaluates a condition and runs actions if true or false."
+      }
+    ],
+    "value": [
+      {
+        "attribute": "setaction",
+        "description": "Sets or changes the action URL of a form."
+      },
+      {
+        "attribute": "setmax",
+        "description": "Sets a maximum value."
+      },
+      {
+        "attribute": "sethref",
+        "description": "Sets the href attribute."
+      },
+      {
+        "attribute": "setqueryhref",
+        "description": "Sets a query-based href."
+      },
+      {
+        "attribute": "setvalue",
+        "description": "Sets the value of the element."
+      },
+      {
+        "attribute": "setid",
+        "description": "Sets the element's id."
+      },
+      {
+        "attribute": "setname",
+        "description": "Sets the name of the element."
+      },
+      {
+        "attribute": "setsrc",
+        "description": "Sets the source of the image."
+      },
+      {
+        "attribute": "resetvalue",
+        "description": "Resets the value of the element."
+      },
+      {
+        "attribute": "togglevalue",
+        "description": "Toggles the value of the element."
+      }
+    ],
+    "mapping": [
+      {
+        "attribute": "mapclass",
+        "description": "Maps classes based on rules."
+      },
+      {
+        "attribute": "mapmargin",
+        "description": "Maps margin values."
+      },
+      {
+        "attribute": "mapbindvar",
+        "description": "Maps a bound variable."
+      }
+    ],
+    "event": [
+      {
+        "attribute": "onclicked",
+        "description": "Triggered when the element is clicked."
+      },
+      {
+        "attribute": "onenabled",
+        "description": "Triggered when the element or feature becomes enabled."
+      },
+      {
+        "attribute": "ondisabled",
+        "description": "Triggered when the element or feature becomes disabled."
+      },
+      {
+        "attribute": "onfocused",
+        "description": "Triggered when the element gains focus."
+      },
+      {
+        "attribute": "onblur",
+        "description": "Triggered when the element loses focus."
+      },
+      {
+        "attribute": "onhide",
+        "description": "Triggered when the element is hidden."
+      },
+      {
+        "attribute": "onsethtml",
+        "description": "Triggered when the element html is changed."
+      },
+      {
+        "attribute": "onshow",
+        "description": "Triggered when the element is shown."
+      },
+      {
+        "attribute": "onsubmitted",
+        "description": "Triggered when a form is submitted."
+      },
+      {
+        "attribute": "onconfirm",
+        "description": "Triggered when the user confirms an action in a confirmation dialog."
+      },
+      {
+        "attribute": "onconfirmvalue",
+        "description": "Triggered when a confirmation dialog is accepted; typically used to pass a value or trigger chained actions."
+      },
+      {
+        "attribute": "onvaluechange",
+        "description": "Triggered when value is changed inside an element."
+      }
+    ],
+    "behavior": [
+      {
+        "attribute": "blur",
+        "description": "Removes focus from the element."
+      },
+      {
+        "module": "data",
+        "attribute": "data-loader",
+        "description": "Specifies an element to show while data is loading."
+      },
+      {
+        "module": "data",
+        "attribute": "data-wait",
+        "description": "Defines the delay before executing the data request."
+      },
+      {
+        "attribute": "focus",
+        "description": "Gives focus to the element."
+      },
+      {
+        "attribute": "hide",
+        "description": "Hides the element."
+      },
+      {
+        "attribute": "ignorepayload",
+        "description": "Prevents sending the payload for POST, PUT, or PATCH requests when set."
+      },
+      {
+        "module": "screen",
+        "attribute": "screen-xs",
+        "description": "Trigger an element's action when the window width matches the 'xs' breakpoint."
+      },
+      {
+        "module": "screen",
+        "attribute": "screen-sm",
+        "description": "Trigger an element's action when the window width matches the 'sm' breakpoint."
+      },
+      {
+        "module": "screen",
+        "attribute": "screen-md",
+        "description": "Trigger an element's action when the window width matches the 'md' breakpoint."
+      },
+      {
+        "module": "screen",
+        "attribute": "screen-lg",
+        "description": "Trigger an element's action when the window width matches the 'lg' breakpoint."
+      },
+      {
+        "module": "screen",
+        "attribute": "screen-xl",
+        "description": "Trigger an element's action when the window width matches the 'xl' breakpoint."
+      },
+      {
+        "module": "screen",
+        "attribute": "screen-xxl",
+        "description": "Trigger an element's action when the window width matches the 'xxl' breakpoint."
+      },
+      {
+        "attribute": "show",
+        "description": "Shows the element."
+      },
+      {
+        "attribute": "runorder",
+        "description": "Runs attributes in the specified order inside the element."
+      }
+    ],
+    "interactive": [
+      {
+        "attribute": "alert",
+        "description": "Displays an alert dialog with a message to the user."
+      },
+      {
+        "attribute": "confirm",
+        "description": "Shows a confirmation dialog to the user."
+      },
+      {
+        "attribute": "click",
+        "description": "Executes an action or expression when the element is clicked."
+      },
+      {
+        "module": "keyboard",
+        "attribute": "keyboard-action",
+        "description": "Enables an element to respond to keyboard keys; works with keyboard-key, keyboard-word, and related attributes.",
+        "requires": [
+          "keyboard-key",
+          "keyboard-word"
+        ]
+      },
+      {
+        "module": "keyboard",
+        "attribute": "keyboard-finalizer",
+        "description": "Specifies a key required to finalize a word sequence action; used with keyboard-word and keyboard-action.",
+        "requires": [
+          "keyboard-action",
+          "keyboard-word"
+        ]
+      },
+      {
+        "module": "keyboard",
+        "attribute": "keyboard-key",
+        "description": "Specifies which keyboard key triggers the action on an element with the keyboard-action attribute.",
+        "requires": [
+          "keyboard-action"
+        ]
+      },
+      {
+        "module": "keyboard",
+        "attribute": "keyboard-translate",
+        "description": "Maps a key to a replacement character in an input or text element; used with keyboard-action.",
+        "requires": [
+          "keyboard-action"
+        ]
+      },
+      {
+        "module": "keyboard",
+        "attribute": "keyboard-untranslate",
+        "description": "Removes a previously translated character from an input or text element; used with keyboard-action.",
+        "requires": [
+          "keyboard-action"
+        ]
+      },
+      {
+        "module": "keyboard",
+        "attribute": "keyboard-word",
+        "description": "Specifies a word sequence that triggers an action on an element with the keyboard-action attribute.",
+        "requires": [
+          "keyboard-action"
+        ]
+      },
+      {
+        "attribute": "mouseover",
+        "description": "Triggered when the mouse pointer moves over the element."
+      },
+      {
+        "attribute": "mouseout",
+        "description": "Triggered when the mouse pointer moves out of the element."
+      },
+      {
+        "attribute": "navigate-go",
+        "description": "Triggers navigation as if clicked the link."
+      }
+    ],
+    "configuration": [
+      {
+        "module": "data",
+        "attribute": "data-ttl",
+        "description": "Sets cache lifetime (time-to-live) for the bound data source."
+      },
+      {
+        "module": "keyboard",
+        "attribute": "keyboard-scope",
+        "description": "Limits where the keyboard-key or keyboard-word action applies; optional and used with keyboard-action.",
+        "requires": [
+          "keyboard-action"
+        ]
+      },
+      {
+        "attribute": "hrefhost",
+        "description": "Sets the base URL based on host match."
+      }
+    ]
+  },
+  "variable": [
+    {
+      "name": "docMode",
+      "description": "Gets the document mode of the current browser."
+    },
+    {
+      "name": "href",
+      "description": "Gets the current URL of the current page."
+    },
+    {
+      "name": "isFrontpage",
+      "description": "Gets whether the current page is the Start Page."
+    },
+    {
+      "name": "language",
+      "description": "Gets the current language code of the page."
+    },
+    {
+      "name": "mainScrollHeight",
+      "description": "Gets the total scrollable height of the main container."
+    },
+    {
+      "name": "title",
+      "description": "Gets the title of the current page."
+    },
+    {
+      "name": "windowHeight",
+      "description": "Gets the height of the window in pixels."
+    },
+    {
+      "name": "windowWidth",
+      "description": "Gets the width of the window in pixels."
+    }
+  ]
+}

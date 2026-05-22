@@ -1,0 +1,317 @@
+<script src="https://cdn.front.nu/nightly/front.js"></script>
+<title>Framework</title>
+<template srcdoc="../../../index" src="../../../_templates/documentation"></template>
+<article color="silver">
+  <nav class="crumbs pointer pt05" zoom="0.9" margintop="-2rem" marginbottom="2rem" color="white">
+    <ol>
+      <li><a href="documentation" globalize-get>Documentation</a></li>
+      <li><a href="documentation/concepts" globalize-get>Concepts</a></li>
+      <li color="silver" bindglobal="title:title" settext="{title}" globalize-get
+        runorder="bindglobal;settext;globalize-get"></li>
+    </ol>
+  </nav>
+
+  <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get marginbottom="2rem"
+    runorder="bindglobal;settext;globalize-get"></h1>
+
+  <section>
+    <p><b>Front</b> is the low-code frontend framework for building interactive, data-driven, and modular applications
+      using a markup-first approach. Unlike traditional frontend frameworks or libraries that rely heavily on complex
+      logic, Front keeps development simple, clean, and maintainable. Everything can be expressed through markup,
+      enabling developers and designers to work seamlessly together while producing readable and scalable code.
+    </p>
+  </section>
+
+  <h2 zoom="0.9" color="white" padding="3rem 0 1rem 0">Essentials:</h2>
+  <section>
+    <ul lineheight="1.8rem">
+      <li><b>Markup-First Development:</b> Define all UI elements and behavior directly in markup.</li>
+      <li><b>Interactive and Dynamic:</b> Built-in attributes enable events, data-binding, and reactive behavior.</li>
+      <li><b>Modular Architecture:</b> Extend markup functionality with modules or plugins.</li>
+      <li><b>Template-Driven Layouts:</b> Reusable templates ensure consistency across application.</li>
+      <li><b>Instant Prototyping:</b> Runs natively in the browser-no compilers or build tools required.</li>
+      <li><b>Minimal Learning Curve:</b> HTML-like syntax makes it approachable for both designers and developers.</li>
+      <li><b>AI-Friendly:</b> Structured declarative markup makes AI code generation easier.</li>
+      <li><b>Deterministic Runtime:</b> Actions occur in a predictable order using <i>runorder</i>.</li>
+      <li><b>No Build Step:</b> Works immediately from a CDN or any static host.</li>
+      <li><b>Attribute DSL:</b> FTML maps attributes to actions, modules, and plugins.</li>
+    </ul>
+  </section>
+
+  <section margintop="3rem">
+    <h2 zoom="0.9" color="white">Runtime Pipeline</h2>
+    <ul margintop="1rem" lineheight="1.8rem">
+      <li>Load runtime → discover <i>module</i>/<i>plugin</i>/<i>var</i> from the script tag.</li>
+      <li>Fetch & initialize modules/plugins; read configuration from attributes (e.g., <i>*-conf</i>).</li>
+      <li>Scan DOM → map FTML attributes to actions; respect <i>runorder</i> and <i>stop</i>/<i>start</i>.</li>
+      <li>Execute actions directly on the DOM; preserve original state for reversibility.</li>
+      <li>Wire events (<i>click</i>, <i>input</i>, etc.); re-run scopes when needed (<i>rerun</i>).</li>
+    </ul>
+  </section>
+
+  <section margintop="3rem">
+    <h2 zoom="0.9" color="white">Document Object Model (DOM)</h2>
+    <p>
+      Front operates directly on the <b>real DOM</b> rather than using a virtual DOM abstraction. This approach provides
+      several advantages:
+    </p>
+    <ul margintop="1rem" lineheight="1.8rem">
+      <li><b>Performance:</b> Updates are applied immediately without diffing overhead.</li>
+      <li><b>Memory Efficiency:</b> No large virtual DOM copy is maintained in memory.</li>
+      <li><b>Reversibility:</b> Original DOM state is preserved, allowing deterministic updates and easy rollbacks.</li>
+      <li><b>Predictability:</b> Combined with the deterministic runtime, changes happen exactly as specified in markup
+        attributes.</li>
+    </ul>
+  </section>
+
+  <hgroup flexdirection="column">
+    <h2 zoom="0.9" color="white" margintop="3rem">Core features</h2>
+    <p color="silver">- The fundamental behavior built into the engine.</p>
+  </hgroup>
+
+  <section margintop="2rem">
+    <h6 color="white">Runtime Hybrid</h6>
+    <p>
+      Actions occur in a determined order when using the runorder attribute, ensuring consistent updates and reducing
+      side effects or race conditions, while the natural element order is respected when no explicit runorder is set.
+    </p>
+  </section>
+
+  <section margintop="2rem">
+    <h6 color="white">Action Chaining</h6>
+    <p>
+      Multiple actions can be chained on a single element through attribute values. Each attribute triggers an action,
+      and together they form a declarative execution chain processed by the runtime. This allows complex behavior to be
+      built by stacking small, reusable actions.</p>
+  </section>
+
+  <section margintop="2rem">
+    <h6 color="white">Event Action Handling</h6>
+    <p>
+      Events are triggered through markup attributes. Attributes that support events invoke corresponding actions,
+      allowing elements to respond immediately and update content, control modules, or modify other elements
+      declaratively.
+    </p>
+  </section>
+
+  <section margintop="2rem">
+    <h6 color="white">Dynamic Content</h6>
+    <p>
+      Update element content in real time as data or user actions change. Declarative attributes automatically sync
+      visibility, formatting, and lists, ensuring the interface stays current without the need for manual structural
+      changes.
+    </p>
+  </section>
+
+  <section margintop="2rem">
+    <h6 color="white">State Binding</h6>
+    <p>
+      Page elements stay in sync with application state. Variables, user inputs, query parameters, global values, and
+      API responses update automatically wherever they appear.</p>
+  </section>
+
+  <section margintop="2rem">
+    <h6 color="white">Conditional Execution</h6>
+    <p>
+      Allows actions or attributes to run only when specified conditions are met. Elements can evaluate values,
+      bindings, or expressions to control whether updates occur, enabling declarative logic within the page.
+    </p>
+  </section>
+
+  <section margintop="2rem">
+    <h6 color="white">Execution Control</h6>
+    <p>
+      Manage the lifecycle of your interface with total flexibility. Keep elements dormant to prevent initialization and
+      logic execution until they are required. Activating these sections dynamically on demand ensures resources are
+      utilized only when relevant, maximizing efficiency.
+    </p>
+  </section>
+
+  <section margintop="2rem">
+    <h6 color="white">Scope Management</h6>
+    <p>
+      Perform surgical UI updates by re-evaluating specific components or containers. This localized approach allows you
+      to refresh individual parts of your interface instantly without a full page reload, keeping your application fast
+      and memory-efficient.
+    </p>
+  </section>
+
+  <section margintop="2rem">
+    <h6 color="white">Recursive Component Composition</h6>
+    <p>
+      Build modular interfaces by stacking external files and internal fragments. Using a layered injection system, you
+      can override templates indefinitely-later fragments extend or replace earlier ones-allowing for deeply nested,
+      reusable UI components that remain fully scoped and reactive.
+    </p>
+  </section>
+
+  <section margintop="2rem">
+    <h6 color="white">Modular Includes</h6>
+    <p>
+      Seamlessly inject external HTML templates into your page using a single attribute. This allows you to manage
+      reusable components like headers, footers, or UI fragments in separate files, keeping your main markup clean and
+      easy to maintain.
+    </p>
+  </section>
+
+  <hgroup flexdirection="column">
+    <h2 zoom="0.9" color="white" margintop="5rem">Module features</h2>
+    <p color="white">- The extended behavior loaded into the engine.</p>
+  </hgroup>
+
+  <section margintop="2rem">
+    <h6 color="white">Single Page Application (SPA)</h6>
+    <p zoom="0.9" color="silver" margintop="0.3rem" marginbottom="1rem"><b>Module:</b> Navigate</p>
+    <p>
+      Intercept link clicks and dynamically loads content into a target container without a full page reload.
+      Navigation is controlled via attributes on links or elements, enabling seamlessupdates using AJAX, with links
+      pointing directly to separate <i>.html</i> files instead of a route table.
+    </p>
+  </section>
+
+  <section margintop="2rem">
+    <h6 color="white">Dynamic Data Rendering</h6>
+    <p zoom="0.9" color="silver" margintop="0.3rem" marginbottom="1rem"><b>Module:</b> Data</p>
+    <p>
+      Fetch, bind, and render dynamic data directly into pages. Content can be updated
+      automatically from external sources, with support for lists, filtering, sorting, merging, transforming, and
+      caching. Built-in lifecycle hooks and other features make it flexible for interactive, data-driven interfaces.
+    </p>
+  </section>
+
+  <section margintop="2rem">
+    <h6 color="white">Persistent State Binding</h6>
+    <p zoom="0.9" color="silver" margintop="0.3rem" marginbottom="1rem"><b>Module:</b> Storage</p>
+    <p>
+      Persistent state binding keeps values saved across page reloads and automatically updates all connected elements.
+      It supports structured data, enabling adding, updating, setting, or removing values, and allows stored data to be
+      injected directly into element content or attributes, keeping the interface synchronized and reactive.
+    </p>
+  </section>
+
+  <section margintop="2rem">
+    <h6 color="white">Globalization</h6>
+    <p zoom="0.9" color="silver" margintop="0.3rem" marginbottom="1rem"><b>Module:</b> Internationalize, Chronotize and
+      Localize</p>
+    <p>
+      Ensure that interfaces adapt seamlessly to users worldwide. Support multilingual,
+      regional formatting of dates, times, numbers, and other content, as well as proper handling of locale-specific
+      conventions. Combining translation, localization, and temporal adaptation allows the interface to respond
+      accurately and consistently across different languages and regions.
+    </p>
+  </section>
+
+  <section margintop="2rem">
+    <h6 color="white">Responsive Breakpoint Actions</h6>
+    <p zoom="0.9" color="silver" margintop="0.3rem" marginbottom="1rem"><b>Module:</b> Screen</p>
+    <p>
+      Track window size and automatically apply element-specific logic based on breakpoints.
+      Detect viewport changes and ensures that elements respond dynamically to different screen widths,
+      keeping the interface adaptable and consistent across devices.
+    </p>
+  </section>
+
+  <section margintop="2rem">
+    <h6 color="white">Keyboard Action Handling</h6>
+    <p zoom="0.9" color="silver" margintop="0.3rem" marginbottom="1rem"><b>Module:</b> Keyboard</p>
+    <p>
+      Listens for key presses and sequences, allowing elements to trigger actions when specific keys or words are typed.
+      Supports single-key and word sequences, scoped behavior, and custom finalizers, enabling fully declarative,
+      keyboard-driven interactions within the interface.
+    </p>
+  </section>
+
+  <section margintop="2rem">
+    <h6 color="white">Animate</h6>
+    <p zoom="0.9" color="silver" margintop="0.3rem" marginbottom="1rem"><b>Module:</b> Animate</p>
+    <p>
+      Enables declarative animations for elements with configurable keyframes, transforms, duration, easing, delay,
+      direction, and iteration. Animations can be controlled dynamically.
+    </p>
+  </section>
+
+  <section margintop="3rem">
+    <h3 zoom="0.8" color="white">Front vs Traditional Frameworks/Libraries</h3>
+    <table width="100%" border="1" bordercolor="white03" cellpadding="10" cellspacing="0" margintop="1rem">
+      <tr bgcolor="white03">
+        <th align="left">Aspect</th>
+        <th align="left">Front</th>
+        <th align="left">React</th>
+        <th align="left">Vue</th>
+        <th align="left">Angular</th>
+      </tr>
+      <tr>
+        <td><b>Routing</b></td>
+        <td>✅ Declarative attributes</td>
+        <td>Library (React Router)</td>
+        <td>Library (Vue Router)</td>
+        <td>Built-in Module</td>
+      </tr>
+      <tr>
+        <td><b>Persistence</b></td>
+        <td>✅ Native <i>persist</i></td>
+        <td>Manual logic</td>
+        <td>Manual / Plugins</td>
+        <td>Manual / Services</td>
+      </tr>
+      <tr>
+        <td><b>I18n</b></td>
+        <td>✅ Native <i>globalize</i></td>
+        <td>External Libraries</td>
+        <td>External Libraries</td>
+        <td>Built-in Framework</td>
+      </tr>
+      <tr>
+        <td><b>Validation</b></td>
+        <td>✅ Attribute-driven logic</td>
+        <td>Script-heavy (Formik)</td>
+        <td>Script-heavy (Vuelidate)</td>
+        <td>Reactive Forms</td>
+      </tr>
+      <tr>
+        <td><b>Setup</b></td>
+        <td>CDN, no build step</td>
+        <td>Typically bundler</td>
+        <td>CDN or bundler</td>
+        <td>CLI, TS config</td>
+      </tr>
+      <tr>
+        <td><b>Performance & Concurrency</b></td>
+        <td>
+          Deterministic runtime, explicit runorder, memory efficient, zero-build latency
+        </td>
+        <td>Virtual DOM diffing & reconciliation</td>
+        <td>Virtual DOM diffing & reconciliation</td>
+        <td>Change detection, digest cycles</td>
+      </tr>
+      <tr>
+        <td><b>Security & Reliability</b></td>
+        <td>Security-by-design, reduced XSS surface</td>
+        <td>Manual sanitization required</td>
+        <td>Manual sanitization required</td>
+        <td>Manual sanitization required</td>
+      </tr>
+      <tr>
+        <td><b>Maintenance</b></td>
+        <td>Readable markup, low dependency overhead</td>
+        <td>Frequent updates, dependency management</td>
+        <td>Frequent updates, dependency management</td>
+        <td>High learning curve, breaking changes</td>
+      </tr>
+      <tr>
+        <td><b>SEO / Indexing</b></td>
+        <td>Native HTML visible to crawlers</td>
+        <td>Requires SSR or hydration</td>
+        <td>Requires SSR or hydration</td>
+        <td>Requires SSR or prerendering</td>
+      </tr>
+      <tr>
+        <td><b>Development Cost</b></td>
+        <td>Fast prototyping, minimal setup</td>
+        <td>Setup-heavy, build pipelines</td>
+        <td>Setup-heavy, build pipelines</td>
+        <td>Setup-heavy, CLI and configs</td>
+      </tr>
+    </table>
+  </section>
+</article>

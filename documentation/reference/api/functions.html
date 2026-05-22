@@ -1,34 +1,30 @@
-<script src="https://cdn.front.nu/nightly/front.js"></script>
-<title globalize-get>Variables</title>
+<script src="http://localhost/front/front.js"></script>
+<title globalize-get>Functions</title>
 <template srcdoc="../../../../index" src="../../../../_templates/documentation"></template>
 <article color="silver">
   <nav class="crumbs pointer pt05" zoom="0.9" margintop="-2rem" marginbottom="2rem" color="white">
     <ol>
       <li><a href="documentation" globalize-get>Documentation</a></li>
       <li><a href="#" globalize-get>Reference</a></li>
-      <li><a href="#">FTML</a></li>
+      <li><a href="#" globalize-get>API</a></li>
       <li color="silver" bindglobal="title:title" settext="{title}" globalize-get></li>
     </ol>
   </nav>
   <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get marginbottom="2rem"
     runorder="bindglobal;settext;globalize-get"></h1>
-  <section id="automatic" margintop="2rem">
-    <table color="white" width="100%" data-src="assets/json/data/references.json" data-ttl="600000">
-      <thead>
-        <tr>
-          <th globalize-get>Variable</th>
-          <th globalize-get>Description</th>
-        </tr>
-      </thead>
+  <section margintop="2rem">
+    <table color="white" class="mt1" width="100%" data-src="assets/json/data/v1/functions.json" data-ttl="600000">
       <tr>
-        <td colspan="2">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Content</h4>
           <hr color="darkgray" margin="0.5rem 0">
         </td>
       </tr>
-      <tbody class="z09" data-iterate="variable">
+      <tbody class="z09" data-iterate="true">
         <tr>
-          <td data-get="name"></td>
-          <td data-get="description"></td>
+          <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:[*]" data-get="[*]"></a>
+          </td>
+          <td data-get="[*].description"></td>
         </tr>
       </tbody>
     </table>

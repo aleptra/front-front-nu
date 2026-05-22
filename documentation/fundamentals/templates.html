@@ -1,0 +1,89 @@
+<script src="https://cdn.front.nu/nightly/front.js"></script>
+<title globalize-get>Templates</title>
+<template srcdoc="../../../index" src="../../../_templates/documentation"></template>
+<article color="silver">
+  <nav class="crumbs pointer pt05" zoom="0.9" margintop="-2rem" marginbottom="2rem" color="white">
+    <ol>
+      <li><a href="documentation" globalize-get>Documentation</a></li>
+      <li><a href="documentation/fundamentals" globalize-get>Fundamentals</a></li>
+      <li color="silver" bindglobal="title:title" settext="{title}" globalize-get></li>
+    </ol>
+  </nav>
+  <section>
+    <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get="{title}" marginbottom="2rem"
+      runorder="bindglobal;settext;globalize-get"></h1>
+
+    <p>Templates define reusable content blocks that act as blueprints for your application. They allow replacing,
+      removing, or adding FTML attributes and content within the layout provided by the Start Page, separating layout
+      from content and enabling reuse across Standard Pages.</p>
+  </section>
+
+  <section paddingtop="3rem">
+    <h2 zoom="0.8" color="white" padding="0 0 1rem 0">Define Template File</h2>
+    <h3 zoom="0.8" color="white" padding="2rem 0 1rem 0">Best practice:</h3>
+    <ul>
+      <li paddingtop="0.5rem">Template should be wrapped inside a <span bgcolor="white02" color="white"
+          font="monospace">&lt;template&gt;</span> element.</li>
+      <li paddingtop="0.5rem">No other tags should be outside the <span bgcolor="white02" color="white"
+          font="monospace">&lt;template&gt;</span> element.
+      </li>
+      <li paddingtop="0.5rem">
+        Store template files inside a _templates folder at the root of your project.</li>
+    </ul>
+  </section>
+
+  <section>
+  <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
+  <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
+      bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem" style="flex: 1">FTML
+      (_templates/template1.html)</span><button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]" zoom="0.9"
+      padding="0.45rem 0.6rem" minheight="0" margin="0" click="clipboard--copy:*code[0]" onclicked="settext:[✓ Copied]"
+      onsettext="rundelay[2000]:reset">Copy</button></small>
+  <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
+    whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;!-- Defines a reusable layout --&gt;
+&lt;template&gt;
+  &lt;header&gt;&lt;/header&gt;
+  &lt;aside&gt;&lt;/aside&gt;
+  &lt;main include&gt;&lt;/main&gt;
+  &lt;aside&gt;&lt;/aside&gt;
+  &lt;footer&gt;&lt;/footer&gt;
+&lt;/template&gt;
+</code>
+    <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">Note:
+      If an FTML attribute is without a value, it will be removed from the final output.</div>
+  </section>
+
+  <section paddingtop="3rem">
+    <h2 zoom="0.8" color="white" padding="0 0 1rem 0">Load Template in a Standard Page</h2>
+    <p>Once you have defined a template file (e.g., template1.html), you can load it into a Standard Page using the
+      <span bgcolor="white02" color="white" font="monospace">&lt;template&gt;</span> element and src attribute:
+    </p>
+
+    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0">Important:</h3>
+    <ul>
+      <li>src attribute, which points to a layout template, requires a srcdoc attribute.</li>
+      <li>srcdoc attribute defines the base Start Page layout, and src attribute will override or inject content into
+        it.</li>
+    </ul>
+
+  <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
+  <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
+      bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem" style="flex: 1">FTML
+      (_templates/template1.html)</span><button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]"
+      zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0" click="clipboard--copy:*code[0]"
+      onclicked="settext:[✓ Copied]" onsettext="rundelay[2000]:reset">Copy</button></small>
+  <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
+    whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;!-- Loads two templates:
+1. Start Page (srcdoc="./index") - base layout
+2. Layout template (src="./_templates/template") - overrides base layout --&gt;
+&lt;template srcdoc="./index" src="./_templates/template1"&gt;&lt;/template&gt;</code>
+    <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">Note: Ensure template paths are correct and do
+      not include file extensions.
+    </div>
+  </section>
+  <hr bgcolor="white03" margin="3rem 0">
+  <a href="documentation/fundamentals/modules.html" minheight="2.7rem" radius="1rem" paddingleft="1.25rem"
+    paddingright="1.25rem" lineheight="2.7" class="button" bgcolor="white" color="black" globalize-get
+    insertbeforeend=" →" insertcontent="true">Goto Next
+    Step</a>
+</article>

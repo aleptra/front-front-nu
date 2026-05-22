@@ -1,0 +1,261 @@
+{
+  "extensions": [
+    {
+      "id": 1,
+      "key": "syntaxhighlighting",
+      "title": "Syntax highlighting",
+      "description": "Automatically detects the language of your code and applies clear, readable syntax highlighting. The plugin analyzes the content and highlights it without requiring manual configuration. It improves code readability by coloring tags, keywords, strings, comments, and attributes inline, making embedded code snippets easier to scan and understand.",
+      "version": "0.1.0",
+      "screenshot": "",
+      "icon": "./assets/img/plugin/syntaxhighlitning.svg",
+      "type": 0,
+      "author": "Front Labs",
+      "cost": "0",
+      "attributes": {
+        "markup": [
+          {
+            "attribute": "syntaxhighlighting--set",
+            "description": ""
+          }
+        ],
+        "config": [
+          {
+            "key": "",
+            "value": "",
+            "description": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "key": "clipboard",
+      "title": "Clipboard",
+      "description": "Easily copy, paste, and manage text directly from the application. The Clipboard plugin allows users to quickly copy content to the system clipboard and paste it with a single action, making it simple to reuse text across documents, forms, and external tools. It improves productivity by removing manual selection and streamlining common copy and paste workflows.",
+      "version": "0.1.0",
+      "screenshot": "",
+      "icon": "./assets/img/plugin/clipboard.svg",
+      "type": 0,
+      "author": "Front Labs",
+      "cost": "0",
+      "attributes": {
+        "markup": [
+          {
+            "attribute": "clipboard--copy",
+            "description": ""
+          }
+        ],
+        "config": [
+          {
+            "key": "",
+            "value": "",
+            "description": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "key": "scrollbar",
+      "title": "Scrollbar",
+      "description": "Adds a customizable scrollbar to your application, allowing you to control appearance, size, and behavior. The Scrollbar plugin improves navigation in scrollable content areas by providing smooth scrolling and consistent styling across different browsers and devices.",
+      "version": "0.1.0",
+      "screenshot": "",
+      "icon": "./assets/img/plugin/scrollbar.svg",
+      "type": 0,
+      "author": "Front Labs",
+      "cost": "0",
+      "attributes": {
+        "markup": [
+          {
+            "attribute": "scrollbar--set",
+            "description": ""
+          }
+        ],
+        "config": [
+          {
+            "key": "",
+            "value": "",
+            "description": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "key": "responsivevoice",
+      "title": "ResponsiveVoice",
+      "description": "Adds text-to-speech functionality using ResponsiveVoice service by responsivevoice.org, allowing your app to read text aloud in multiple languages and voices.",
+      "version": "0.1.0",
+      "screenshot": "",
+      "icon": "./assets/img/icon_plugin.svg",
+      "type": 0,
+      "author": "Josef Gabrielsson",
+      "cost": "0",
+      "attributes": {
+        "markup": [
+          {
+            "attribute": "responsivevoice--speak",
+            "description": ""
+          }
+        ],
+        "config": [
+          {
+            "key": "",
+            "value": "",
+            "description": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "key": "filtersearch",
+      "title": "Filter Search",
+      "description": "The Filter Search plugin lets users instantly narrow down lists or sections by typing a search term. It dynamically shows or hides matching elements and automatically updates counters per section, giving immediate visual feedback. This makes it ideal for large lists, menus, dictionaries, or categorized content where quick filtering and clarity are important.",
+      "version": "0.1.0",
+      "screenshot": "",
+      "icon": "./assets/img/plugin/filtersearch.svg",
+      "type": 0,
+      "author": "Josef Gabrielsson",
+      "cost": "0",
+      "attributes": {
+        "markup": [
+          {
+            "attribute": "filtersearch--select",
+            "description": "Marks an element as a filterable row. No value required."
+          },
+          {
+            "attribute": "filtersearch--count",
+            "description": "Groups the row under a named section counter. Value is the counter key, e.g. filtersearch--count=\"count1\"."
+          },
+          {
+            "attribute": "filtersearch--onempty",
+            "description": "Placed on the container. Shows the target element when no rows match, hides it otherwise, e.g. filtersearch--onempty=\"#emptyMessage\"."
+          }
+        ],
+        "config": [
+          {
+            "key": "",
+            "value": "",
+            "description": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "key": "particles",
+      "title": "Particles",
+      "description": "Bring your page to life with a dynamic particles. This plugin adds configurable and colorful particles that drift downward and subtly follow your mouse movements, creating a lively and interactive effect. You can enjoy a customizable, animated backdrop that makes your content feel more engaging and visually appealing.",
+      "version": "0.1.0",
+      "screenshot": "",
+      "icon": "./assets/img/plugin/particles.svg",
+      "type": 0,
+      "author": "Josef Gabrielsson",
+      "cost": "0",
+      "attributes": {
+        "markup": [
+          {
+            "attribute": "particles--load",
+            "description": "Loads particles inside of the element."
+          }
+        ],
+        "config": [
+          {
+            "key": "particles",
+            "value": "number",
+            "description": ""
+          },
+          {
+            "key": "size",
+            "value": "number",
+            "description": ""
+          },
+          {
+            "key": "mousemove",
+            "value": "boolean",
+            "description": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "key": "map",
+      "title": "Map",
+      "description": "Integrate Google Maps into your application, allowing you to display interactive maps, add markers, routes, and locations. This plugin makes it easy to enhance your app with geolocation features and visual map data.",
+      "version": "0.1.0",
+      "screenshot": "",
+      "icon": "./assets/img/plugin/map.svg",
+      "url": "#",
+      "url_target": 0,
+      "type": 2,
+      "author": "Josef Gabrielsson",
+      "cost": "0",
+      "attributes": {
+        "markup": [
+          {
+            "attribute": "map--lat",
+            "description": ""
+          },
+          {
+            "attribute": "map--lng",
+            "description": ""
+          }
+        ],
+        "config": [
+          {
+            "key": "",
+            "value": "",
+            "description": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "key": "readingtime",
+      "title": "Reading Time",
+      "description": "Calculates and displays the estimated reading time of a target article or text block based on word count and customizable Words Per Minute (WPM) settings.",
+      "version": "0.1.0",
+      "screenshot": "",
+      "icon": "./assets/img/icon_plugin.svg",
+      "url": "#",
+      "url_target": 0,
+      "type": 0,
+      "author": "Josef Gabrielsson",
+      "cost": "0",
+      "attributes": {
+        "markup": [
+          {
+            "attribute": "readingtime--set",
+            "description": "The CSS selector (e.g., '.article-body' or '#content') of the element containing the text to be analyzed for reading time."
+          }
+        ],
+        "config": [
+          {
+            "key": "wpm",
+            "value": "200",
+            "description": "Words Per Minute. The average reading speed used to calculate the estimated time."
+          },
+          {
+            "key": "lessThanMsg",
+            "value": "< 1 min read",
+            "description": "The text displayed when the estimated reading time is under one minute."
+          },
+          {
+            "key": "minuteMsg",
+            "value": "min read",
+            "description": "The text appended when the estimated reading time is exactly one minute (e.g., '1 min read')."
+          },
+          {
+            "key": "minutesMsg",
+            "value": "min to read",
+            "description": "The text appended when the estimated reading time is two or more minutes (e.g., '5 min to read')."
+          }
+        ]
+      }
+    }
+  ]
+}

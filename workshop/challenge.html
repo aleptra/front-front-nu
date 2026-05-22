@@ -1,0 +1,32 @@
+<script src="https://cdn.front.nu/nightly/front.js"></script>
+<title>Plugin</title>
+<template srcdoc="../../index" src="../../_templates/plugins"></template>
+<div id="error" class="red" hide>Plugin not found!</div>
+<div id="loader" class="loader"></div>
+<hr class="bcblack01">
+<section bindquery="k:k" data-src="./assets/json/data/workshop.json" data-filterkey="workshop"
+  data-filteritem="key:'{k}'" data-loader="#loader" data-set="title:workshop.0.title" data-onerror="show:#error"
+  data-onfinish="doctitle:[{title}];settext:#title:[{title}]">
+  <h3 id="title"></h3>
+  <hr color="darkgray" margin="0.5rem 0">
+  <div color="white" data-get="workshop.0.mission"></div>
+
+  <div>
+    <h4 margintop="2rem">Instructions</h4>
+    <hr color="darkgray" margin="0.5rem 0">
+    <ul data-iterate="workshop.0.instructions">
+      <li data-get="[*]"></li>
+    </ul>
+
+    <h4 margintop="2rem">Hints</h4>
+    <hr color="darkgray" margin="0.5rem 0">
+    <table color="white" width="100%">
+      <tbody valign="top" data-iterate="extensions.0.hints">
+        <tr>
+          <td data-get="[*]"></td>
+          <td data-get="value"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

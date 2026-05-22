@@ -1,0 +1,88 @@
+<article>
+  <section particles--load height="100%" width="100%" paddingbottom="2rem" minheight="600px" bgcolor="black">
+    <div screen-xs="width:[65%]" screen-sm="width:[65%]" screen-md="width:[70%]" screen-xl="width:[70rem]" screen-xxl="width:[80rem]"
+      margin="0 auto" flex flexdirection="column" height="100%" justifycontent="center" align="center">
+      <img align="center" height="auto" margin="0 auto" screen-xs="width:[60%]" screen-sm="width:[65%]" maxwidth="15rem"
+        class="pulsate" src="assets/img/icon_black.svg">
+      <h2 zoom="1.2" bold globalize-get="section1_title" lineheight="1.35"></h2>
+      <h4 zoom="0.9" globalize-get="section1_subtitle" lineheight="1.7" margintop="1rem" color="silver"></h4>
+      <div margintop="2.5rem">
+        <a href="./documentation" screen-xs="transform:[scale(1)]" screen-xl="transform:[scale(1.1)]" minwidth="9rem"
+          minheight="2.7rem" radius="1rem" paddingleft="1.25rem" paddingright="1.25rem" lineheight="2.7"
+          class="button bcwhite black" globalize-get>Get Started</a>
+        <small justifycontent="center" fontsize="80%" paddingtop="1rem" paddingbottom="2rem" color="gray"
+          bindglobal="ma:frontVersion.major;mi:frontVersion.minor;pa:frontVersion.patch">v{ma}.{mi}.{pa}</small>
+      </div>
+    </div>
+  </section>
+
+  <section bgcolor="rgba(255,255,255,0.9)" color="black" width="100%" screen-xs="align:[center]"
+    screen-md="align:[left]" height="auto" paddingbottom="7rem">
+
+    <div screen-xs="width:[85%]" screen-sm="width:[85%]" screen-md="width:[80%]" screen-xl="width:[70%]"
+      screen-xxl="width:[70rem]" screen-xxxl="width:[70rem]" screen-wide="width:[100rem]" margin="0 auto" flex flexdirection="column">
+
+      <div flex alignitems="center" screen-xs="flexdirection:[column];paddingtop:[7vh]" screen-lg="flexdirection:[initial];paddingtop:[5vh]">
+        <div>
+          <h2 globalize-get="section2_title" lineheight="2"></h2>
+          <h6 globalize-get="section2_subtitle" zoom="1.1" lineheight="1.6"></h6>
+        </div>
+        <img src="assets/img/paradigm.svg"
+          screen-xxs="paddingleft:[unset];paddingtop:[5%];width:[50%]" 
+          screen-xs="paddingleft:[unset];paddingtop:[5%];width:[55%]"
+          screen-md="paddingtop:[5%];width:[60%]"
+          screen-lg="paddingleft:[5%];paddingtop:[unset];width:[40%]">
+      </div>
+
+      <div flex alignitems="center" screen-xs="flexdirection:[column-reverse];paddingtop:[7vh]" screen-lg="flexdirection:[initial];paddingtop:[5vh]">
+        <img src="assets/img/crossplatform.svg"
+          screen-xxs="paddingright:[unset];paddingtop:[5%];width:[50%]"
+          screen-xs="paddingright:[unset];paddingtop:[5%];width:[55%]"
+          screen-md="paddingtop:[5%];width:[60%]"
+          screen-lg="paddingright:[5%];paddingtop:[unset];width:[40%]">
+        <div>
+          <h2 globalize-get="section5_title" lineheight="2"></h2>
+          <h6 globalize-get="section5_subtitle" zoom="1.1" lineheight="1.5"></h6>
+        </div>
+      </div>
+
+      <div flex alignitems="center" screen-xs="flexdirection:[column];paddingtop:[7vh]" screen-lg="flexdirection:[initial];paddingtop:[5vh]">
+        <div>
+          <h2 globalize-get="section3_title" lineheight="2"></h2>
+          <h6 globalize-get="section3_subtitle" zoom="1.1" lineheight="1.5"></h6>
+        </div>
+        <img src="assets/img/performance.svg"
+          screen-xxs="paddingleft:[unset];paddingtop:[5%];width:[40%]"
+          screen-xs="paddingleft:[unset];paddingtop:[5%];width:[45%]"
+          screen-md="paddingtop:[5%];width:[50%]"
+          screen-lg="paddingleft:[5%];paddingtop:[unset];width:[40%]">
+      </div>
+
+      <div flex alignitems="center" screen-xs="flexdirection:[column-reverse];paddingtop:[7vh]" screen-lg="flexdirection:[initial];paddingtop:[5vh]">
+        <img src="assets/img/opensource.svg"
+          screen-xxs="paddingright:[unset];paddingtop:[5%];width:[50%]"
+          screen-xs="paddingright:[unset];paddingtop:[5%];width:[55%]"
+          screen-md="paddingtop:[5%];width:[60%]"
+          screen-lg="paddingright:[5%];paddingtop:[unset];width:[40%]">
+        <div>
+          <h2 globalize-get="section4_title" lineheight="2"></h2>
+          <h6 globalize-get="section4_subtitle" zoom="1.1" lineheight="1.5"></h6>
+          <a href="https://github.com/aleptra/front" screen-xxs="transform:[scale(1)]" screen-xl="transform:[scale(1.1)]"
+            minwidth="9rem" minheight="2.0rem" radius="1rem" paddingleft="1.2rem" paddingright="1.2rem" lineheight="2.5"
+            class="button bcblack white" fontsize="90%" margintop="2rem" globalize-get target="_blank">Explore
+            repository</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer block align="center" padding="2rem">
+    Released under the <a href="https://opensource.org/license/MIT" target="_blank">MIT License</a>.<br screen-xxs="show" screen-xl="hide">
+    © <span chronotize-get="Y"></span> Josef Gabrielsson
+    <br>
+    <small block bindglobal="ma:frontVersion.major;mi:frontVersion.minor;pa:frontVersion.patch">
+      Front version: {ma}.{mi}.{pa}
+    </small>
+  </footer>
+</article>

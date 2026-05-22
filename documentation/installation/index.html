@@ -1,0 +1,107 @@
+<script src="http://localhost/front/front.js"></script>
+<title globalize-get>Installation</title>
+<template srcdoc="../../index" src="../../_templates/documentation"></template>
+<article color="silver">
+  <nav class="crumbs pointer pt05" zoom="0.9" margintop="-2rem" marginbottom="2rem" color="white">
+    <ol>
+      <li><a href="documentation" settext="Documentation" globalize-get></a></li>
+      <li color="silver" bindglobal="title:title" settext="{title}" globalize-get></li>
+    </ol>
+  </nav>
+  <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get marginbottom="2rem">
+    Installation</h1>
+  <p>Follow these step-by-step instructions to set up your development environment, install
+    dependencies, and create your first application using the Front CLI. These instructions work for macOS, Windows, and
+    Linux/Unix.</p>
+
+  <section id="automatic" paddingtop="3rem">
+    <h2 color="white" id="automatic" zoom="0.9" paddingbottom="1rem" globalize-get>Automatic Installation</h2>
+    <p>Set up development environment automatically using <b>GIT</b> and <b>Front CLI</b> tool to generate a
+      ready-to-use boilerplate application, complete with all necessary files and folder structure.</p>
+
+    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0" globalize-get><b zoom="1.3">➊</b> Install GIT on your system:
+    </h3>
+    <ul>
+      <li paddingtop="0.5rem"><a target="_blank" href="https://git-scm.com/download/mac">macOS</a></li>
+      <li paddingtop="0.5rem"><a target="_blank" href="https://git-scm.com/download/win">Windows</a></li>
+      <li paddingtop="0.5rem"><a target="_blank" href="https://git-scm.com/download/linux">Linux/Unix</a></li>
+    </ul>
+
+    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0" globalize-get><b zoom="1.3">➋</b> Clone the project:</h3>
+
+    <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" padding="1rem" minwidth="30vw"
+      font="monospace" syntaxhighlighting--set
+      syntaxhighlighting--bash>git clone https://github.com/aleptra/front.git</code>
+
+    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0" globalize-get><b zoom="1.3">➌</b> Create boilerplate
+      application</h3>
+    <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" padding="1rem" minwidth="30vw"
+      font="monospace" syntaxhighlighting--set syntaxhighlighting--bash>make app:create</code>
+    <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
+      Note: On Windows PowerShell, make is not available by default.
+      You can install it using <span bgcolor="white02" color="white" font="monospace">winget install
+        ezwinports.make</span>,
+      or run commands from Git Bash or Windows Subsystem for Linux (WSL).
+    </div>
+  </section>
+
+  <section id="manual" paddingtop="3rem">
+    <h2 zoom="0.9" color="white" paddingbottom="1rem">Manual Installation</h2>
+    <p>
+      Use the manual installation method to gain a deeper understanding of the project structure or to customize your
+      environment beyond the default setup. Follow these steps to create a fully configured, ready-to-use application
+      with all required files and folders.
+    </p>
+
+    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0" globalize-get><b zoom="1.3">➊</b> Create starter folders</h3>
+
+    <p>In the root directory of your project, create the following folders:</p>
+
+    <h4 zoom="0.7" color="white" padding="3rem 0 1rem 0">macOS / Linux / Unix:</h4>
+    <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" padding="1rem" font="monospace"
+      syntaxhighlighting--set syntaxhighlighting--bash>mkdir -p _templates _includes assets</code>
+
+    <h4 zoom="0.7" color="white" padding="3rem 0 1rem 0">Windows PowerShell:</h4>
+    <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" padding="1rem" font="monospace"
+      syntaxhighlighting--set
+      syntaxhighlighting--bash>New-Item -ItemType Directory -Force -Name _templates, _includes, assets</code>
+
+    <p paddingtop="2rem">This will create the essential directories:</p>
+
+    <ul>
+      <li paddingtop="0.5rem"><strong>_templates/</strong> – stores reusable templates.</li>
+      <li paddingtop="0.5rem"><strong>_includes/</strong> – contains shared components.</li>
+      <li paddingtop="0.5rem"><strong>assets/</strong> – holds static files.</li>
+    </ul>
+
+    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0" globalize-get><b zoom="1.3">➋</b> Create starter files</h3>
+
+    <p>Next, create your pages and template files to start building your project:</p>
+
+    <h4 zoom="0.7" color="white" padding="3rem 0 1rem 0">macOS / Linux / Unix:</h4>
+    <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" padding="1rem" font="monospace"
+      syntaxhighlighting--set syntaxhighlighting--bash>touch index.html page1.html _templates/template1.html</code>
+
+    <h4 zoom="0.7" color="white" padding="3rem 0 1rem 0">Windows PowerShell:</h4>
+    <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" padding="1rem" font="monospace"
+      syntaxhighlighting--set
+      syntaxhighlighting--bash>New-Item -ItemType File index.html, page1.html, _templates/template1.html</code>
+
+    <p paddingtop="2rem">This will create the essential files:</p>
+    <ul>
+      <li paddingtop="0.5rem"><strong>index.html</strong> – a page of type Start Page.</li>
+      <li paddingtop="0.5rem"><strong>page1.html</strong> – a page of type Standard page.</li>
+      <li paddingtop="0.5rem"><strong>_templates/template1.html</strong> – a reusable template.</li>
+    </ul>
+
+    <p paddingtop="2rem">
+      You can now open these files in your editor and start adding markup.
+      For examples of complete markup for the <span bgcolor="white02" color="white" font="monospace">Start Page</span>,
+      <span bgcolor="white02" color="white" font="monospace">Standard Page</span>, and
+      <span bgcolor="white02" color="white" font="monospace">Template</span>, see the Fundamentals section.
+    </p>
+  </section>
+  <hr bgcolor="white03" margin="3rem 0">
+  <a href="documentation/fundamentals/attributes.html" minheight="2.7rem" radius="1rem" paddingleft="1.25rem" paddingright="1.25rem"
+    lineheight="2.7" class="button" bgcolor="white" color="black" globalize-get insertbeforeend=" →" insertcontent="true">Goto Fundamentals</a>
+</article>

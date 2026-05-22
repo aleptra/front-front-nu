@@ -1,0 +1,98 @@
+<script src="http://localhost/front/front.js"></script>
+<title globalize-get>Attributes</title>
+<template srcdoc="../../../index" src="../../../_templates/documentation"></template>
+
+<article color="silver">
+  <nav class="crumbs pointer pt05" zoom="0.9" margintop="-2rem" marginbottom="2rem" color="white">
+    <ol>
+      <li><a href="documentation" globalize-get>Documentation</a></li>
+      <li><a href="documentation/fundamentals" globalize-get>Fundamentals</a></li>
+      <li color="silver" bindglobal="title:title" settext="{title}" globalize-get></li>
+    </ol>
+  </nav>
+
+  <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get marginbottom="2rem"
+    runorder="bindglobal;settext;globalize-get"></h1>
+
+  <section>
+    <p margintop="1rem">
+      Attributes are the foundation of FTML. They declaratively define an element's behavior, style, content,
+      interactivity, and logic directly in markup. Most attributes accept a value that controls their behavior, while
+      some are
+      presence-based and take effect simply by existing on an element. The order in which attributes appear can
+      influence the sequence
+      of their application and the resulting behavior.
+    </p>
+  </section>
+
+  <section margintop="1rem">
+    <h2 color="white" zoom="0.9" padding="2rem 0 1rem 0">Attribute Layers</h2>
+    <ul>
+      <li><b>Core Attributes:</b> Built-in attributes providing core functionality.</li>
+      <li><b>Module Attributes:</b> Optional attributes extending core functionality.</li>
+      <li><b>Plugin Attributes:</b> Optional attributes enabling external integrations or third-party features.</li>
+    </ul>
+  </section>
+
+  <section margintop="1rem">
+    <h2 color="white" zoom="0.9" padding="2rem 0 1rem 0">Attribute Values</h2>
+    <p>
+      Attributes can accept a wide range of values, including strings, numbers, booleans, expressions, or reactive data.
+      The value assigned determines the behavior of the attribute, giving you flexible and fully declarative control over
+      elements. Some attributes, however, are presence-based and do not require a value-their mere existence on an
+      element is enough to apply their effect.
+    </p>
+  </section>
+
+  <section margintop="1rem">
+    <h2 color="white" zoom="0.9" padding="2rem 0 1rem 0">Execution order</h2>
+    <p>
+      Execution order determines the sequence in which FTML attributes are applied to an element. Understanding and
+      controlling this order ensures predictable behavior, especially when multiple attributes affect the same property.
+    </p>
+
+    <h3 zoom="0.8" color="white" lineheight="2.5" margintop="2.5rem">Natural Order</h3>
+    <p>
+      By default, attributes run sequentially in the order they appear.
+      When multiple attributes affect the same property, the last one takes precedence.
+    </p>
+    <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
+      <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
+          bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+          style="flex: 1">FTML</span><button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]"
+          zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0" click="clipboard--copy:*code[0]"
+          onclicked="settext:[✓ Copied]" onsettext="rundelay[2000]:reset">Copy</button></small>
+      <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
+        whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;!-- Element displays "Second text" because the last settext wins --&gt;
+&lt;div settext="First text" settext="Second text"&gt;&lt;/div&gt;</code>
+      <h3 zoom="0.8" color="white" padding="2rem 0 0.5rem 0">Selective Order</h3>
+      <p>
+        The default sequence can be overriden with the <b>runorder</b> attribute to define the exact execution order for
+        attributes.
+      </p>
+      <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
+        <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
+            bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+            style="flex: 1">FTML</span><button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]"
+            zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0" click="clipboard--copy:*code[1]"
+            onclicked="settext:[✓ Copied]" onsettext="rundelay[2000]:reset">Copy</button></small>
+        <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
+          whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;!-- Attribute execution order: settext → uppercase → lowercase --&gt;
+&lt;div runorder="uppercase;lowercase" settext="hello world" lowercase uppercase&gt;&lt;/div&gt;</code>
+  </section>
+
+  <section margintop="1rem">
+    <h2 color="white" zoom="0.9" padding="2rem 0 1rem 0">Best Practices</h2>
+    <ul>
+      <li>Use attributes declaratively, not imperatively.</li>
+      <li>Group related attributes for clarity.</li>
+      <li>Don't use <b>runorder</b> unless necessary.</li>
+      <li>Keep logic simple; delegate complex behavior to modules or plugins.</li>
+    </ul>
+  </section>
+
+  <hr bgcolor="white03" margin="3rem 0">
+  <a href="documentation/fundamentals/variables.html" minheight="2.7rem" radius="1rem" paddingleft="1.25rem"
+    paddingright="1.25rem" lineheight="2.7" class="button" bgcolor="white" color="black" globalize-get
+    insertbeforeend=" →" insertcontent="true">Goto Next Step</a>
+</article>

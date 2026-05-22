@@ -1,0 +1,95 @@
+<script src="https://cdn.front.nu/nightly/front.js"></script>
+<title globalize-get>Plugins</title>
+<template srcdoc="../../../index" src="../../../_templates/documentation"></template>
+<article color="silver">
+  <nav class="crumbs pointer pt05" zoom="0.9" margintop="-2rem" marginbottom="2rem" color="white">
+    <ol>
+      <li><a href="documentation" globalize-get>Documentation</a></li>
+      <li><a href="documentation/fundamentals" globalize-get>Fundamentals</a></li>
+      <li color="silver" bindglobal="title:title" settext="{title}" globalize-get></li>
+    </ol>
+  </nav>
+
+  <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get="{title}" marginbottom="2rem"
+    runorder="bindglobal;settext;globalize-get"></h1>
+
+  <section>
+    <p>
+      Plugins are third-party components that extend the capabilities of your application by adding new features,
+      integrations, or custom behavior. They can modify or enhance modules without changing the core system, allowing
+      developers to easily add functionality and maintain a modular architecture.
+    </p>
+  </section>
+
+  <section>
+    <h2 color="white" id="include" zoom="0.9" padding="3rem 0 1rem 0">Loading Plugins</h2>
+    <p>
+      Plugins are loaded via the <span bgcolor="white02" color="white" font="monospace">plugins</span> attribute of the
+      <span bgcolor="white02" color="white" font="monospace">&lt;script&gt;</span> element. You can activate one or
+      multiple modules
+      in your application.
+    </p>
+
+    <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
+      <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
+          bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem" style="flex: 1">FTML
+          (index.html)</span><button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]" zoom="0.9"
+          padding="0.45rem 0.6rem" minheight="0" margin="0" click="clipboard--copy:*code[0]" onclicked="settext:[✓ Copied]"
+          onsettext="rundelay[2000]:reset">Copy</button></small>
+      <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
+        whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;!-- Load Front with multiple plugins (chat and analytics) --&gt;
+    &lt;script
+      src="https://cdn.front.nu/nightly/front.js"
+      plugin="chat;analytics"
+      conf="debug:true;"&gt;
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main&gt;
+      &lt;h1&gt;Plugins Example&lt;/h1&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code>
+    <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
+      Note: Separate multiple plugins using semicolons (<span bgcolor="white02" color="white"
+        font="monospace">;</span>).
+      Avoid using commas or spaces.
+    </div>
+  </section>
+
+  <section>
+    <h2 color="white" id="configure" zoom="0.9" padding="3rem 0 1rem 0">Configuring Plugins</h2>
+    <p>
+      Each plugin can define its own configuration parameters using the
+      <span bgcolor="white02" color="white" font="monospace">{plugin}-conf</span> attribute of the
+      <span bgcolor="white02" color="white" font="monospace">&lt;script&gt;</span> element.
+      You can pass settings such as enabling debug mode, API keys, theme options, or callback functions.
+    </p>
+
+    <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
+      <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
+          bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem" style="flex: 1">FTML
+          (index.html)</span><button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]" zoom="0.9"
+          padding="0.45rem 0.6rem" minheight="0" margin="0" click="clipboard--copy:*code[1]" onclicked="settext:[✓ Copied]"
+          onsettext="rundelay[2000]:reset">Copy</button></small>
+      <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
+        whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;script
+  src="https://cdn.front.nu/nightly/front.js"
+  plugin="chat;analytics"
+  chat-conf="theme:'dark',position:'bottom-right'"
+  analytics-conf="trackingId:'UA-123456',debug:true"&gt;
+&lt;/script&gt;</code>
+    <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
+      Note: Configuration attributes follow the pattern
+      <span bgcolor="white02" color="white" font="monospace">{plugin}-conf</span> and must be placed on the same
+      <span bgcolor="white02" color="white" font="monospace">&lt;script&gt;</span> element that loads Front.
+    </div>
+  </section>
+  <hr bgcolor="white03" margin="3rem 0">
+  <a href="documentation/reference/ftml/attributes.html" minheight="2.7rem" radius="1rem" paddingleft="1.25rem"
+    paddingright="1.25rem" lineheight="2.7" class="button" bgcolor="white" color="black" globalize-get
+    insertbeforeend=" →" insertcontent="true">Explore Reference</a>
+</article>

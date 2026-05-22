@@ -1,0 +1,98 @@
+<script src="https://cdn.front.nu/nightly/front.js"></script>
+<title globalize-get>Variables</title>
+<template srcdoc="../../../index" src="../../../_templates/documentation"></template>
+
+<article color="silver">
+  <nav class="crumbs pointer pt05" zoom="0.9" margintop="-2rem" marginbottom="2rem" color="white">
+    <ol>
+      <li><a href="documentation" globalize-get>Documentation</a></li>
+      <li><a href="documentation/fundamentals" globalize-get>Fundamentals</a></li>
+      <li color="silver" bindglobal="title:title" settext="{title}" globalize-get></li>
+    </ol>
+  </nav>
+
+  <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get marginbottom="2rem"
+    runorder="bindglobal;settext;globalize-get"></h1>
+
+  <section>
+    <p margintop="1rem">
+      Variables in FTML are reactive: any change automatically updates all elements bound to them, removing the need for
+      manual DOM manipulation.
+      They can store and manage dynamic data within your markup and exist in global scope, local element scope, or be
+      supplied by modules and plugins.
+    </p>
+
+    <section margintop="1rem">
+      <h2 color="white" zoom="0.9" padding="2rem 0 1rem 0">Variable Types</h2>
+      <ul>
+        <li><b>Global Variables:</b> Accessible from anywhere in your application using <b>bindglobal</b>.</li>
+        <li><b>Element Variables:</b> Scoped to a particular element or template using <b>bindvar</b>.</li>
+        <li><b>Mapped Variables:</b> Variables that can be dynamically computed or transformed via <b>mapbindvar</b>.</li>
+      </ul>
+    </section>
+
+  <!-- Section: Variable Binding -->
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Variable Binding</h2>
+    <p>
+      Bind variables to elements using attributes in FTML. Common binding attributes include:
+    </p>
+    <ul>
+      <li><b>bindvar:</b> Bind a local variable to an element's content or attributes.</li>
+      <li><b>bindglobal:</b> Bind a global variable to any element in your application.</li>
+      <li><b>bindasset:</b> Bind to structured data cached or loaded from external JSON or assets.</li>
+      <li><b>bindfield:</b> Bind variables to input fields, select boxes, or other form elements for dynamic updates.
+      </li>
+    </ul>
+    <p>
+      Variables support multiple bindings simultaneously and can interact with plugins or modules to create dynamic,
+      data-driven UIs.
+    </p>
+  </section>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Scope and Reactivity</h2>
+    <p>
+      Understanding scope is critical for variable management:
+    </p>
+    <ul>
+      <li><b>Global Scope:</b> Variables accessible everywhere. Ideal for application-wide settings, shared data, or
+        theme values.</li>
+      <li><b>Local Scope:</b> Variables restricted to a template or element. Useful for loops, forms, or reusable
+        components.</li>
+      <li><b>Dynamic Mapping:</b> Use <b>mapbindvar</b> to transform or compute variables on the fly based on
+        other variables or external data.</li>
+    </ul>
+    <p>
+      All bindings are reactive: changing a variable updates all associated elements automatically.
+    </p>
+  </section>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Best Practices</h2>
+    <ul>
+      <li>Name variables descriptively to indicate their purpose and scope.</li>
+      <li>Prefer <b>bindglobal</b> only for data that truly needs to be shared across templates.</li>
+      <li>Use <b>bindvar</b> for local or reusable templates to avoid global namespace collisions.</li>
+      <li>Keep dynamic mappings simple and readable; complex computations are easier to manage in plugin methods.</li>
+      <li>Always initialize variables before binding to prevent runtime errors.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Next Steps</h2>
+    <ul>
+      <li>See the <a href="documentation/reference/ftml/attributes.html" globalize-get>full list of attributes</a> for
+        binding examples.</li>
+      <li>Learn how <a href="documentation/reference/ftml/variables.html" globalize-get>variables work with modules and
+          plugins</a>.</li>
+      <li>Explore <a href="documentation/reference/api/functions.html" globalize-get>API functions</a> for advanced
+        programmatic control.</li>
+    </ul>
+  </section>
+
+  <hr bgcolor="white03" margin="3rem 0">
+  <a href="documentation/fundamentals/pages.html" minheight="2.7rem" radius="1rem" paddingleft="1.25rem"
+    paddingright="1.25rem" lineheight="2.7" class="button" bgcolor="white" color="black" globalize-get
+    insertbeforeend=" →" insertcontent="true">Goto Next Step</a>
+</article>

@@ -1,0 +1,112 @@
+{
+  "call": {
+    "category": "app",
+    "description": "Executes a command string and returns the result.",
+    "example": "app.call('toggle:[#myDiv]')"
+  },
+  "exec": {
+    "category": "app",
+    "description": "Executes a specific function reference with arguments.",
+    "example": "app.exec('dom.toggle', { exec: { element: el } })"
+  },
+  "wait": {
+    "category": "app",
+    "description": "Wait for a specified number of milliseconds before executing a callback.",
+    "example": "app.wait(500, function(){})"
+  },
+  "click": {
+    "category": "app",
+    "description": "Simulates a click or double-click event on a DOM element.",
+    "example": "app.click(document.querySelector('#myButton'))"
+  },
+  "parse.attribute": {
+    "category": "parser",
+    "description": "Parses a string into key-value pairs separated by ';' and ':'.",
+    "example": "app.parse.attribute('key:value;foo:bar')"
+  },
+  "parse.text": {
+    "category": "parser",
+    "description": "Parses HTML string into a DOM node.",
+    "example": "app.parse.text('<div>Hello</div>')"
+  },
+  "parse.json": {
+    "category": "parser",
+    "description": "Parses a JSON string safely, returning an object with value or error.",
+    "example": "app.parse.json('{\"key\": \"value\"}')"
+  },
+  "element.select": {
+    "category": "dom",
+    "description": "Selects an element by CSS selector. Returns single element or array.",
+    "example": "app.element.select('#myDiv')"
+  },
+  "element.find": {
+    "category": "dom",
+    "description": "Finds elements within a node using a selector.",
+    "example": "app.element.find(parentNode, 'div.child')"
+  },
+  "element.getTagLink": {
+    "category": "dom",
+    "description": "Finds the closest anchor, button, or label ancestor of an element.",
+    "example": "app.element.getTagLink(el)"
+  },
+  "element.resolveCall": {
+    "category": "dom",
+    "description": "Resolves the call context of an element.",
+    "example": "app.element.resolveCall(el)"
+  },
+  "element.getPropertyByPath": {
+    "category": "dom",
+    "description": "Retrieves a nested property from an object using dot-separated path.",
+    "example": "app.element.getPropertyByPath(obj, 'user.name')"
+  },
+  "element.extractBracketValues": {
+    "category": "dom",
+    "description": "Extracts values inside brackets from a string.",
+    "example": "app.element.extractBracketValues('toggle:[#myDiv]')"
+  },
+  "element.runOnEvent": {
+    "category": "dom",
+    "description": "Runs the appropriate action(s) for a parsed element event.",
+    "example": "app.element.runOnEvent({ exec: { element: el, func: 'click' } })"
+  },
+  "element.onchange": {
+    "category": "dom",
+    "description": "Handles onchange event for an element, running associated actions.",
+    "example": "app.element.onchange(inputEl, 'settext')"
+  },
+  "element.onload": {
+    "category": "dom",
+    "description": "Executes onload actions for an element or NodeList.",
+    "example": "app.element.onload(document.querySelector('#myDiv'), 'plugin-onload')"
+  },
+  "element.onsubmit": {
+    "category": "dom",
+    "description": "Handles onsubmit events for forms.",
+    "example": "app.element.onsubmit(event)"
+  },
+  "log.info": {
+    "category": "logging",
+    "description": "Logs information to console if debugging is enabled.",
+    "example": "app.log.info('Loaded!')()"
+  },
+  "log.error": {
+    "category": "logging",
+    "description": "Logs errors to console if debugging is enabled.",
+    "example": "app.log.error('Something went wrong')()"
+  },
+  "log.warn": {
+    "category": "logging",
+    "description": "Logs warnings to console if debugging is enabled.",
+    "example": "app.log.warn('Warning!')()"
+  },
+  "config.get": {
+    "category": "configuration",
+    "description": "Retrieves configuration settings from an element or standard object.",
+    "example": "app.config.get(false, { debug: true }, el)"
+  },
+  "config.set": {
+    "category": "configuration",
+    "description": "Applies configuration settings to the app object.",
+    "example": "app.config.set()"
+  }
+}

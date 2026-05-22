@@ -1,0 +1,23 @@
+<svg viewBox="35 35 130 130" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(100, 100)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-12; 0,0" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+      <path d="M-60 0 L0 35 L60 0 L0 -35 Z" fill="rgba(0,0,0,0.02)" stroke="#000" stroke-width="2.5" />
+      <path d="M-30 5 L0 22 L30 5" fill="none" stroke="#000" stroke-width="1" opacity="0.2" />
+      <circle cx="0" cy="22" r="3" fill="#000" />
+    </g>
+
+    <rect x="-1" y="-60" width="2" height="120" fill="#000" opacity="0.1" />
+    <rect x="-2" y="-30" width="4" height="20" fill="#000">
+      <animate attributeName="y" values="-60;60" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" />
+    </rect>
+
+    <circle cx="-40" cy="20" r="5" fill="#000" opacity="0.4">
+       <animate attributeName="opacity" values="0.1;0.6;0.1" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="40" cy="25" r="4" fill="#000" opacity="0.2">
+       <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>

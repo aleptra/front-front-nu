@@ -1,0 +1,56 @@
+<script src="https://cdn.front.nu/nightly/front.js"></script>
+<title globalize-get>Philosophy</title>
+<template srcdoc="../../../index" src="../../../_templates/documentation"></template>
+
+<article color="silver">
+
+  <nav class="crumbs pointer pt05" zoom="0.9" margintop="-2rem" marginbottom="2rem" color="white">
+    <ol>
+      <li><a href="documentation" globalize-get>Documentation</a></li>
+      <li><a href="documentation/concepts" globalize-get>Concepts</a></li>
+      <li>Philosophy</li>
+    </ol>
+  </nav>
+
+  <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get marginbottom="2rem"
+    runorder="bindglobal;settext;globalize-get">Philosophy</h1>
+
+  <!-- INTRODUCTION -->
+  <p margintop="2rem">
+    The project began in 2019 by Josef Gabrielsson to address the growing complexity of interface
+    development across platforms. From the beginning, the idea of expressing application behavior directly in markup was
+    met with skepticism. Many questioned whether markup could responsibly handle concerns traditionally reserved for
+    imperative code. To ensure the paradigm was sound, the project remained closed for several years while the
+    declarative model was explored, stress-tested, and refined before its public release.
+  </p>
+
+  <!-- THE CHALLENGE -->
+  <section margintop="3rem">
+    <h2 zoom="0.9" color="white">The Challenge</h2>
+    <p margintop="1rem">
+      Traditional approaches introduced mental overhead through layered abstractions and rigid structures. Logic,
+      styling, and data were separated across contexts, forcing developers to shift syntaxes to express a single idea. A
+      single interaction often had to be translated between multiple conceptual layers. This fragmentation obscured
+      intent and made interfaces harder to reason about.
+    </p>
+  </section>
+
+  <section margintop="3rem">
+    <h2 zoom="0.9" color="white">Design Values & Vision</h2>
+    <p margintop="1rem">
+      Front is guided by enduring values of simplicity, clarity, and predictability. The language reduces cognitive
+      overhead, enabling developers to focus on intent rather than translation across layers. Interfaces are designed
+      to be composable, consistent, and immediately understandable, and logic remains concise and close to the markup.
+    </p>
+    <p margintop="1rem">
+      At its core, Front embraces declarative thinking: expressing <i>what</i> should happen rather than <i>how</i>.
+      This philosophy ensures that interfaces remain predictable and coherent across platforms, and that developers can
+      reason easily about their structure and behavior.
+    </p>
+    <p margintop="1rem">
+      Looking forward, Front aspires to be a “thought language” for both humans and AI. By following the same principles
+      of composability, clarity, and predictability, AI agents can generate Front markup directly, aligning with the
+      mental model of human developers and unifying intent, reasoning, and execution seamlessly.
+    </p>
+  </section>
+</article>
