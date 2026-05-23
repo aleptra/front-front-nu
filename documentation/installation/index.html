@@ -10,16 +10,67 @@
   </nav>
   <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get marginbottom="2rem">
     Installation</h1>
-  <p>Follow these step-by-step instructions to set up your development environment, install
-    dependencies, and create your first application using the Front CLI. These instructions work for macOS, Windows, and
-    Linux/Unix.</p>
+
+  <section>
+    <p marginTop="1rem">
+      Select the setup option that best matches your workflow and project size:
+    </p>
+    <ul>
+      <li>
+        <strong>CDN (Quick Start)</strong> - Start instantly without installing anything. Ideal for
+        demos, learning, prototypes, and lightweight projects.
+      </li>
+
+      <li>
+        <strong>Automatic Installation (Recommended)</strong> - Set up a complete development environment with the Front
+        CLI for scalable applications.
+      </li>
+
+      <li>
+        <strong>Manual Installation</strong> - Configure dependencies and tooling manually for advanced customization
+        and fine-grained control.
+      </li>
+    </ul>
+  </section>
+
+  <section id="cdn" margintop="2rem">
+    <h2 color="white" zoom="0.9" padding="2rem 0 1rem 0">CDN (Quick Start)</h2>
+    <p>The fastest way to try Front. No build tools or installation required.</p>
+
+    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0"><b zoom="1.3">&#10102;</b> Create Standard Page:</h3>
+    <p>Create a new file named <i>index.html</i>, paste the example below, and open it in your browser.</p>
+
+    <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem">
+      <span bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+        style="flex: 1">FTML</span>
+      <button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]" zoom="0.9" padding="0.45rem 0.6rem"
+        minheight="0" margin="0" click="clipboard--copy:*code[1]" onclicked="settext:[✓ Copied]"
+        onsettext="rundelay[2000]:reset">Copy</button>
+    </small>
+    <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" padding="1rem" maxwidth="60rem"
+      minwidth="30vw" font="monospace" syntaxhighlighting--set syntaxhighlighting--html id="code1">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Front Test&lt;/title&gt;
+  &lt;!-- Front runtime --&gt;
+  &lt;script src="https://cdn.front.nu/nightly/front.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1 settext="Hello from Front via CDN!"&gt;&lt;/h1&gt;
+  &lt;p&gt;This page is using Front without any installation.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+  </section>
 
   <section id="automatic" paddingtop="3rem">
     <h2 color="white" id="automatic" zoom="0.9" paddingbottom="1rem" globalize-get>Automatic Installation</h2>
     <p>Set up development environment automatically using <b>GIT</b> and <b>Front CLI</b> tool to generate a
       ready-to-use boilerplate application, complete with all necessary files and folder structure.</p>
 
-    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0" globalize-get><b zoom="1.3">➊</b> Install GIT on your system:
+    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0" globalize-get><b zoom="1.3">&#10102;</b> Install GIT on your
+      system:
     </h3>
     <ul>
       <li paddingtop="0.5rem"><a target="_blank" href="https://git-scm.com/download/mac">macOS</a></li>
@@ -27,13 +78,14 @@
       <li paddingtop="0.5rem"><a target="_blank" href="https://git-scm.com/download/linux">Linux/Unix</a></li>
     </ul>
 
-    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0" globalize-get><b zoom="1.3">➋</b> Clone the project:</h3>
+    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0" globalize-get><b zoom="1.3">&#10103;</b> Clone the project:
+    </h3>
 
     <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" padding="1rem" minwidth="30vw"
       font="monospace" syntaxhighlighting--set
       syntaxhighlighting--bash>git clone https://github.com/aleptra/front.git</code>
 
-    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0" globalize-get><b zoom="1.3">➌</b> Create boilerplate
+    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0" globalize-get><b zoom="1.3">&#10104;</b> Create boilerplate
       application</h3>
     <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" padding="1rem" minwidth="30vw"
       font="monospace" syntaxhighlighting--set syntaxhighlighting--bash>make app:create</code>
@@ -53,7 +105,8 @@
       with all required files and folders.
     </p>
 
-    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0" globalize-get><b zoom="1.3">➊</b> Create starter folders</h3>
+    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0" globalize-get><b zoom="1.3">&#10102;</b> Create starter folders
+    </h3>
 
     <p>In the root directory of your project, create the following folders:</p>
 
@@ -69,12 +122,13 @@
     <p paddingtop="2rem">This will create the essential directories:</p>
 
     <ul>
-      <li paddingtop="0.5rem"><strong>_templates/</strong> – stores reusable templates.</li>
-      <li paddingtop="0.5rem"><strong>_includes/</strong> – contains shared components.</li>
-      <li paddingtop="0.5rem"><strong>assets/</strong> – holds static files.</li>
+      <li paddingtop="0.5rem"><strong>_templates/</strong> - stores reusable templates.</li>
+      <li paddingtop="0.5rem"><strong>_includes/</strong> - contains shared components.</li>
+      <li paddingtop="0.5rem"><strong>assets/</strong> - holds static files.</li>
     </ul>
 
-    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0" globalize-get><b zoom="1.3">➋</b> Create starter files</h3>
+    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0" globalize-get><b zoom="1.3">&#10103;</b> Create starter files
+    </h3>
 
     <p>Next, create your pages and template files to start building your project:</p>
 
@@ -89,9 +143,9 @@
 
     <p paddingtop="2rem">This will create the essential files:</p>
     <ul>
-      <li paddingtop="0.5rem"><strong>index.html</strong> – a page of type Start Page.</li>
-      <li paddingtop="0.5rem"><strong>page1.html</strong> – a page of type Standard page.</li>
-      <li paddingtop="0.5rem"><strong>_templates/template1.html</strong> – a reusable template.</li>
+      <li paddingtop="0.5rem"><strong>index.html</strong> - a page of type Start Page.</li>
+      <li paddingtop="0.5rem"><strong>page1.html</strong> - a page of type Standard page.</li>
+      <li paddingtop="0.5rem"><strong>_templates/template1.html</strong> - a reusable template.</li>
     </ul>
 
     <p paddingtop="2rem">
