@@ -11,13 +11,11 @@
   <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get marginbottom="2rem">
     Installation</h1>
 
-  <section>
-    <p marginTop="1rem">
-      Select the setup option that best matches your workflow and project size:
-    </p>
+  <section margintop="1rem">
+    <p>Select the setup option that best matches your workflow and project size:</p>
     <ul>
       <li>
-        <strong>CDN (Quick Start)</strong> - Start instantly without installing anything. Ideal for
+        <strong>CDN Installation</strong> - Start instantly without installing anything. Ideal for
         demos, learning, prototypes, and lightweight projects.
       </li>
 
@@ -34,17 +32,20 @@
   </section>
 
   <section id="cdn" margintop="2rem">
-    <h2 color="white" zoom="0.9" padding="2rem 0 1rem 0">CDN (Quick Start)</h2>
+    <h2 color="white" zoom="0.9" padding="2rem 0 1rem 0">CDN Installation</h2>
     <p>The fastest way to try Front. No build tools or installation required.</p>
 
     <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0"><b zoom="1.3">&#10102;</b> Create Standard Page:</h3>
-    <p>Create a new file named <i>index.html</i>, paste the example below, and open it in your browser.</p>
+    <p>Create a new file named <i>index.html</i>.</p>
+
+    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0"><b zoom="1.3">&#10103;</b> Copy Code:</h3>
+    <p>Copy the example below into that file.</p>
 
     <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem">
       <span bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
         style="flex: 1">FTML</span>
       <button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]" zoom="0.9" padding="0.45rem 0.6rem"
-        minheight="0" margin="0" click="clipboard--copy:*code[1]" onclicked="settext:[✓ Copied]"
+        minheight="0" margin="0" click="clipboard--copy:*code" onclicked="settext:[✓ Copied]"
         onsettext="rundelay[2000]:reset">Copy</button>
     </small>
     <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" padding="1rem" maxwidth="60rem"
@@ -62,9 +63,12 @@
   &lt;p&gt;This page is using Front without any installation.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code>
+
+    <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0"><b zoom="1.3">&#10104;</b> Open the File:</h3>
+    <p>Open <i>index.html</i> in your browser.</p>
   </section>
 
-  <section id="automatic" paddingtop="3rem">
+  <section id="automatic" paddingtop="4rem">
     <h2 color="white" id="automatic" zoom="0.9" paddingbottom="1rem" globalize-get>Automatic Installation</h2>
     <p>Set up development environment automatically using <b>GIT</b> and <b>Front CLI</b> tool to generate a
       ready-to-use boilerplate application, complete with all necessary files and folder structure.</p>
@@ -86,7 +90,7 @@
       syntaxhighlighting--bash>git clone https://github.com/aleptra/front.git</code>
 
     <h3 zoom="0.8" color="white" padding="3rem 0 1rem 0" globalize-get><b zoom="1.3">&#10104;</b> Create boilerplate
-      application</h3>
+      application:</h3>
     <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" padding="1rem" minwidth="30vw"
       font="monospace" syntaxhighlighting--set syntaxhighlighting--bash>make app:create</code>
     <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
@@ -97,7 +101,7 @@
     </div>
   </section>
 
-  <section id="manual" paddingtop="3rem">
+  <section id="manual" margintop="4rem">
     <h2 zoom="0.9" color="white" paddingbottom="1rem">Manual Installation</h2>
     <p>
       Use the manual installation method to gain a deeper understanding of the project structure or to customize your
