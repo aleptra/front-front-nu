@@ -275,6 +275,31 @@
         "module": "data",
         "attribute": "data-srcjoin",
         "description": "Fetches and merges an additional data source into the same binding context."
+      },
+      {
+        "module": "data",
+        "attribute": "data-header",
+        "description": "Sets custom HTTP headers for the data source request."
+      },
+      {
+        "module": "data",
+        "attribute": "data-onsuccess",
+        "description": "Defines actions to execute when the data source request completes successfully."
+      },
+      {
+        "module": "data",
+        "attribute": "data-onerror",
+        "description": "Defines actions to execute when the data source request fails."
+      },
+      {
+        "module": "data",
+        "attribute": "data-onempty",
+        "description": "Defines actions to execute when the data source returns an empty result."
+      },
+      {
+        "module": "data",
+        "attribute": "data-ongetload",
+        "description": "Defines actions to execute when a GET request finishes loading."
       }
     ],
     "logic": [
@@ -418,33 +443,63 @@
       },
       {
         "module": "screen",
+        "attribute": "screen-xxs",
+        "description": "Trigger action when window width is 'xxs'."
+      },
+      {
+        "module": "screen",
         "attribute": "screen-xs",
-        "description": "Trigger an element's action when the window width matches the 'xs' breakpoint."
+        "description": "Trigger action when window width is 'xs'."
       },
       {
         "module": "screen",
         "attribute": "screen-sm",
-        "description": "Trigger an element's action when the window width matches the 'sm' breakpoint."
+        "description": "Trigger action when window width is 'sm'."
       },
       {
         "module": "screen",
         "attribute": "screen-md",
-        "description": "Trigger an element's action when the window width matches the 'md' breakpoint."
+        "description": "Trigger action when window width is 'md'."
       },
       {
         "module": "screen",
         "attribute": "screen-lg",
-        "description": "Trigger an element's action when the window width matches the 'lg' breakpoint."
+        "description": "Trigger action when window width is 'lg'."
       },
       {
         "module": "screen",
         "attribute": "screen-xl",
-        "description": "Trigger an element's action when the window width matches the 'xl' breakpoint."
+        "description": "Trigger action when window width is 'xl'."
       },
       {
         "module": "screen",
         "attribute": "screen-xxl",
-        "description": "Trigger an element's action when the window width matches the 'xxl' breakpoint."
+        "description": "Trigger action when window width is 'xxl'."
+      },
+      {
+        "module": "screen",
+        "attribute": "screen-xxxl",
+        "description": "Trigger action when window width is 'xxxl'."
+      },
+      {
+        "module": "screen",
+        "attribute": "screen-wide",
+        "description": "Trigger action when window width is 'wide'."
+      },
+      {
+        "module": "screen",
+        "attribute": "screen-ultra",
+        "description": "Trigger action when window width is 'ultra'."
+      },
+      {
+        "module": "screen",
+        "attribute": "screen-cinema",
+        "description": "Trigger action when window width is 'cinema'."
+      },
+      {
+        "module": "screen",
+        "attribute": "screen-mega",
+        "description": "Trigger action when window width is 'mega'."
       },
       {
         "attribute": "show",
