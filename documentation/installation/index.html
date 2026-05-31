@@ -49,14 +49,15 @@
         onsettext="rundelay[2000]:reset">Copy</button>
     </small>
     <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" padding="1rem" maxwidth="60rem"
-      minwidth="30vw" font="monospace" syntaxhighlighting--set syntaxhighlighting--html id="code1">&lt;!doctype html&gt;
+      minwidth="30vw" bindglobal="ma:frontVersion.major;mi:frontVersion.minor;pa:frontVersion.patch" font="monospace"
+      syntaxhighlighting--set syntaxhighlighting--html id="code1">&lt;!doctype html&gt;
 &lt;html&gt;
 &lt;head&gt;
   &lt;meta charset="UTF-8"&gt;
   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
   &lt;title&gt;Front Test&lt;/title&gt;
-  &lt;!-- Front runtime --&gt;
-  &lt;script src="https://cdn.front.nu/nightly/front.js"&gt;&lt;/script&gt;
+  &lt;!-- Front runtime ({ma}.{mi}.{pa}) --&gt;
+  &lt;script src="https://cdn.front.nu/{ma}.{mi}.{pa}/front.js"&gt;&lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
   &lt;h1 settext="Hello from Front via CDN!"&gt;&lt;/h1&gt;
