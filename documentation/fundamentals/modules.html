@@ -29,19 +29,22 @@
       in your application.
     </p>
 
-<h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
-  <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
-      bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
-      style="flex: 1">FTML (index.html)</span><button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]"
-      zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0" click="clipboard--copy:*code[1]"
-      onclicked="settext:[✓ Copied]" onsettext="rundelay[2000]:reset">Copy</button></small>
-  <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
-    whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;!doctype html&gt;
+    <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
+      <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
+          bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+          style="flex: 1">FTML (index.html)</span><button bgcolor="unset" mouseover="color:[lightgray]"
+          mouseout="color:[unset]" zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0"
+          click="clipboard--copy:*code[1]" onclicked="settext:[✓ Copied]"
+          onsettext="rundelay[2000]:reset">Copy</button></small>
+      <code bgcolor="white01" color="white"
+        bindglobal="ma:frontVersion.major;mi:frontVersion.minor;pa:frontVersion.patch" spellcheck="false"
+        screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]" whitespace="pre" maxwidth="60rem" minwidth="30vw"
+        font="monospace" syntaxhighlighting--set>&lt;!doctype html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;!-- Load Front with multiple modules (navigate and animate) --&gt;
     &lt;script
-      src="https://cdn.front.nu/nightly/front.js"
+      src="https://cdn.front.nu/{ma}.{mi}.{pa}/front.js"
       module="navigate;animate"&gt;
     &lt;/script&gt;
   &lt;/head&gt;
@@ -51,10 +54,10 @@
     &lt;/main&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code>
-    <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
-      Note: Separate multiple modules using semicolons (<span bgcolor="white02" color="white"
-        font="monospace">;</span>). Avoid using commas or spaces.
-    </div>
+      <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
+        Note: Separate multiple modules using semicolons (<span bgcolor="white02" color="white"
+          font="monospace">;</span>). Avoid using commas or spaces.
+      </div>
   </section>
 
   <section>
@@ -70,21 +73,24 @@
     <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
       <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
           bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
-          style="flex: 1">FTML (index.html)</span><button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]"
-          zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0" click="clipboard--copy:*code[1]"
-          onclicked="settext:[✓ Copied]" onsettext="rundelay[2000]:reset">Copy</button></small>
-      <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
-        whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;script
-  src="https://cdn.front.nu/nightly/front.js"
+          style="flex: 1">FTML (index.html)</span><button bgcolor="unset" mouseover="color:[lightgray]"
+          mouseout="color:[unset]" zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0"
+          click="clipboard--copy:*code[1]" onclicked="settext:[✓ Copied]"
+          onsettext="rundelay[2000]:reset">Copy</button></small>
+      <code bgcolor="white01" color="white"
+        bindglobal="ma:frontVersion.major;mi:frontVersion.minor;pa:frontVersion.patch" spellcheck="false"
+        screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]" whitespace="pre" maxwidth="60rem" minwidth="30vw"
+        font="monospace" syntaxhighlighting--set>&lt;script
+  src="https://cdn.front.nu/{ma}.{mi}.{pa}/front.js"
   module="navigate;animate"
   navigate-conf="transition:'fade',speed:300"
   animate-conf="duration:500,easing:'ease-in-out'"&gt;
 &lt;/script&gt;</code>
-    <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
-      Note: Configuration attributes follow the pattern
-      <span bgcolor="white02" color="white" font="monospace">{module}-conf</span> and must be placed on the same
-      <span bgcolor="white02" color="white" font="monospace">&lt;script&gt;</span> element that loads Front.
-    </div>
+      <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
+        Note: Configuration attributes follow the pattern
+        <span bgcolor="white02" color="white" font="monospace">{module}-conf</span> and must be placed on the same
+        <span bgcolor="white02" color="white" font="monospace">&lt;script&gt;</span> element that loads Front.
+      </div>
   </section>
   <hr bgcolor="white03" margin="3rem 0">
   <a href="documentation/fundamentals/plugins.html" minheight="2.7rem" radius="1rem" paddingleft="1.25rem"

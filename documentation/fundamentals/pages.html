@@ -72,13 +72,16 @@
       </li>
     </ul>
     <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
-    <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
-        bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
-        style="flex: 1">FTML (index.html)</span><button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]" zoom="0.9"
-        padding="0.45rem 0.6rem" minheight="0" margin="0" click="clipboard--copy:*code[0]" onclicked="settext:[✓ Copied]"
-        onsettext="rundelay[2000]:reset">Copy</button></small>
-    <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]" whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace"
-      syntaxhighlighting--set>&lt;!doctype html&gt;
+      <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
+          bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+          style="flex: 1">FTML (index.html)</span><button bgcolor="unset" mouseover="color:[lightgray]"
+          mouseout="color:[unset]" zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0"
+          click="clipboard--copy:*code[0]" onclicked="settext:[✓ Copied]"
+          onsettext="rundelay[2000]:reset">Copy</button></small>
+      <code bgcolor="white01" color="white"
+        bindglobal="ma:frontVersion.major;mi:frontVersion.minor;pa:frontVersion.patch" spellcheck="false"
+        screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]" whitespace="pre" maxwidth="60rem" minwidth="30vw"
+        font="monospace" syntaxhighlighting--set>&lt;!doctype html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;!-- Set the base URL according to the host for relative links --&gt;
@@ -86,7 +89,7 @@
 
     &lt;!-- Load Front with the navigate module and debug enabled --&gt;
     &lt;script
-      src="https://cdn.front.nu/nightly/front.js"
+      src="https://cdn.front.nu/{ma}.{mi}.{pa}/front.js"
       module="navigate"
       conf="debug:true;"&gt;
     &lt;/script&gt;
@@ -104,9 +107,9 @@
   &lt;/body&gt;
 &lt;/html&gt;
 </code>
-    <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
-      Note: Set the base URL correctly to match your host.
-    </div>
+      <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
+        Note: Set the base URL correctly to match your host.
+      </div>
   </section>
 
   <section>
@@ -149,15 +152,18 @@
     </ul>
 
     <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
-<small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
-    bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
-    style="flex: 1">FTML (page1.html)</span><button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]" zoom="0.9"
-    padding="0.45rem 0.6rem" minheight="0" margin="0" click="clipboard--copy:*code[1]" onclicked="settext:[✓ Copied]"
-    onsettext="rundelay[2000]:reset">Copy</button></small>
-<code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
-  whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;html&gt;
+      <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
+          bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+          style="flex: 1">FTML (page1.html)</span><button bgcolor="unset" mouseover="color:[lightgray]"
+          mouseout="color:[unset]" zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0"
+          click="clipboard--copy:*code[1]" onclicked="settext:[✓ Copied]"
+          onsettext="rundelay[2000]:reset">Copy</button></small>
+      <code bgcolor="white01" color="white"
+        bindglobal="ma:frontVersion.major;mi:frontVersion.minor;pa:frontVersion.patch" spellcheck="false"
+        screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]" whitespace="pre" maxwidth="60rem" minwidth="30vw"
+        font="monospace" syntaxhighlighting--set>&lt;html&gt;
   &lt;head&gt;
-    &lt;script src="https://cdn.front.nu/nightly/front.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.front.nu/{ma}.{mi}.{pa}/front.js"&gt;&lt;/script&gt;
     &lt;!-- Loads two templates:
     1. Start Page (srcdoc="./index") - base layout
     2. Layout template (src="./_templates/template") - overrides base layout --&gt;
