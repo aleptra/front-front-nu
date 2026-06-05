@@ -46,17 +46,19 @@
   </section>
 
   <section>
-    <div id="relatedto" paddingtop="3rem">
-      <h6 zoom=".9" color="white" paddingbottom="1rem" globalize-get>Related to</h6>
-      <ul data-onkeyempty="hide:#relatedto" bindquery="a:a" data-iterate="{a}.related_to">
+    <div id="dependson" paddingtop="3rem">
+      <h6 zoom=".9" color="white" paddingbottom="0.5rem" globalize-get>Depends on</h6>
+      <ul data-onkeyempty="hide:#dependson" bindquery="a:a" data-iterate="{a}.depends_on">
         <li><a data-set="name:[*]" data-get="[*]" href="documentation/reference/ftml/attribute/?a={name}"></a></li>
       </ul>
+    </div>
 
-      <div id="seealso" paddingtop="1rem">
-        <h6 zoom=".9" color="white" paddingbottom="1rem" globalize-get>See also</h6>
-        <ul data-onkeyempty="hide:#seealso" bindquery="a:a" data-iterate="{a}.see_also">
-          <li><a data-set="name:[*]" data-get="[*]" href="documentation/reference/ftml/attribute/?a={name}"></a></li>
-        </ul>
-      </div>
+    <div id="seealso" paddingtop="3rem">
+      <h6 zoom=".9" color="white" paddingbottom="1rem" globalize-get>See also</h6>
+      <ul data-onkeyempty="hide:#seealso" bindquery="a:a" data-iterate="{a}.see_also">
+        <li><a data-set="name:[*]" data-get="[*]" href="documentation/reference/ftml/attribute/?a={name}"></a></li>
+      </ul>
+    </div>
+
   </section>
 </article>

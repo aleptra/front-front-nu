@@ -15,6 +15,9 @@
       "justify",
       "start",
       "end"
+    ],
+    "see_also": [
+      "valign"
     ]
   },
   "valign": {
@@ -42,7 +45,10 @@
   "bgimage": {
     "category": "style",
     "description_short": "Sets the background image of the element.",
-    "example": "<div bgimage=\"https://placehold.co/200x100\" height=\"200px\">Content with background image</div>"
+    "example": "<div bgimage=\"https://placehold.co/200x100\" height=\"200px\">Content with background image</div>",
+    "see_also": [
+      "bgcolor"
+    ]
   },
   "bindvar": {
     "category": "binding",
@@ -102,13 +108,18 @@
   "border": {
     "category": "style",
     "description_short": "Sets the border of the element.",
-    "example": "<div border=\"1px solid black\">This div has a black border</div>"
+    "example": "<div border=\"1px solid black\">This div has a black border</div>",
+    "see_also": [
+      "radius",
+      "boxshadow"
+    ]
   },
   "blur": {
     "category": "behavior",
     "description_short": "Removes focus from the element.",
     "example": "<input type=\"text\" value=\"Hello\" focus blur>",
     "see_also": [
+      "onblur",
       "focus"
     ]
   },
@@ -120,16 +131,18 @@
   "boxshadow": {
     "category": "style",
     "description_short": "Applies a shadow effect to the element.",
-    "example": "<div boxshadow=\"2px 2px 5px gray\">This div has a shadow</div>"
+    "example": "<div boxshadow=\"2px 2px 5px gray\">This div has a shadow</div>",
+    "see_also": [
+      "border",
+      "radius"
+    ]
   },
   "click": {
     "category": "interactive",
     "description_short": "Executes an action or expression when the element is clicked.",
     "example": "<button click=\"settext:[Button clicked!]\">Click me</button>",
-    "related_to": [
-      "onclicked"
-    ],
     "see_also": [
+      "onclicked",
       "mouseover",
       "mouseout"
     ]
@@ -188,7 +201,7 @@
     "category": "interactive",
     "description_short": "Shows a confirmation dialog to the user.",
     "example": "<button click=\"confirm:[Are you sure?]\">Delete</button>",
-    "related_to": [
+    "see_also": [
       "onconfirm"
     ]
   },
@@ -221,12 +234,15 @@
   "flexdirection": {
     "category": "style",
     "description_short": "Sets the flex direction.",
-    "example": "",
+    "example": "<div flex flexdirection=\"row\" gap=\"0.5rem\">\n  <span bgcolor=\"lightblue\" padding=\"0.5rem\">1</span>\n  <span bgcolor=\"lightgreen\" padding=\"0.5rem\">2</span>\n  <span bgcolor=\"lightyellow\" padding=\"0.5rem\">3</span>\n</div>\n<div flex flexdirection=\"column\" gap=\"0.5rem\" margintop=\"1rem\">\n  <span bgcolor=\"lightblue\" padding=\"0.5rem\">1</span>\n  <span bgcolor=\"lightgreen\" padding=\"0.5rem\">2</span>\n  <span bgcolor=\"lightyellow\" padding=\"0.5rem\">3</span>\n</div>",
     "values": [
       "row",
       "row-reverse",
       "column",
       "column-reverse"
+    ],
+    "depends_on": [
+      "flex"
     ],
     "see_also": [
       "flex"
@@ -236,18 +252,19 @@
     "category": "style",
     "description_short": "Sets properties of a flex item.",
     "example": "",
-    "see_also": [
+    "depends_on": [
       "flex"
+    ],
+    "see_also": [
+      "flexdirection"
     ]
   },
   "focus": {
     "category": "behavior",
     "description_short": "Gives focus to the element.",
     "example": "<input type=\"text\" value=\"Hello\" focus>",
-    "related_to": [
-      "onfocused"
-    ],
     "see_also": [
+      "onfocused",
       "blur"
     ]
   },
@@ -283,10 +300,8 @@
     "category": "behavior",
     "description_short": "Hides the element.",
     "example": "<span hide>This text is hidden</span>",
-    "related_to": [
-      "onhide"
-    ],
     "see_also": [
+      "onhide",
       "show"
     ]
   },
@@ -359,6 +374,9 @@
     "category": "style",
     "description_short": "Aligns flex items along the main axis.",
     "example": "",
+    "depends_on": [
+      "flex"
+    ],
     "values": [
       "flex-start",
       "flex-end",
@@ -550,7 +568,11 @@
   "lineheight": {
     "category": "style",
     "description_short": "Sets the height of text lines.",
-    "example": "<p lineheight=\"2\">This paragraph<br>has double<br>line height</p>"
+    "example": "<p lineheight=\"2\">This paragraph<br>has double<br>line height</p>",
+    "see_also": [
+      "font",
+      "fontsize"
+    ]
   },
   "lowercase": {
     "category": "content",
@@ -683,7 +705,7 @@
     "category": "event",
     "description_short": "Triggered when the user confirms an action in a confirmation dialog.",
     "example": "<button click=\"confirm:[Are you sure?]\" onconfirm=\"settext:[Confirmed!]\">Confirm Action</button>",
-    "related_to": [
+    "depends_on": [
       "confirm"
     ]
   },
@@ -691,7 +713,7 @@
     "category": "event",
     "description_short": "Triggered when a confirmation dialog is accepted; typically used to pass a value or trigger chained actions.",
     "example": "<button click=\"confirm:[Are you sure?]\" onconfirmvalue=\"true;settext:[Confirmed with yes]\">Delete Item</button>",
-    "related_to": [
+    "depends_on": [
       "confirm"
     ]
   },
@@ -699,25 +721,37 @@
     "category": "event",
     "description_short": "Triggered when the element is clicked.",
     "example": "<button click=\"sethtml:[Button clicked!]\" onclicked=\"insertbeforeend:[ Added after]\">Click me</button>",
-    "related_to": [
+    "depends_on": [
       "click"
     ]
   },
   "onenabled": {
     "category": "event",
     "description_short": "Triggered when the element or feature becomes enabled.",
-    "example": "<input type=\"checkbox\" click=\"enable\" onenabled=\"insertbeforebegin:[Enabled!]\"> Enable me"
+    "example": "<input type=\"checkbox\" click=\"enable\" onenabled=\"insertbeforebegin:[Enabled!]\"> Enable me",
+    "depends_on": [
+      "enable"
+    ],
+    "see_also": [
+      "ondisabled"
+    ]
   },
   "ondisabled": {
     "category": "event",
     "description_short": "Triggered when the element or feature becomes disabled.",
-    "example": "<input type=\"checkbox\" click=\"disable\" ondisabled=\"insertbeforebegin:[Disabled!]\"> Disable me"
+    "example": "<input type=\"checkbox\" click=\"disable\" ondisabled=\"insertbeforebegin:[Disabled!]\"> Disable me",
+    "depends_on": [
+      "disable"
+    ],
+    "see_also": [
+      "onenabled"
+    ]
   },
   "onfocused": {
     "category": "event",
     "description_short": "Triggered when the element gains focus.",
     "example": "<button click=\"focus:#field1\">Focus</button>\n<input type=\"text\" id=\"field1\" onfocused=\"setvalue:[onfocused]\">",
-    "related_to": [
+    "depends_on": [
       "focus"
     ]
   },
@@ -725,7 +759,7 @@
     "category": "event",
     "description_short": "Triggered when the element loses focus.",
     "example": "<button click=\"blur:#field1\">Blur</button>\n<input type=\"text\" id=\"field1\" focus onblur=\"setvalue:[onblur]\">",
-    "see_also": [
+    "depends_on": [
       "blur"
     ]
   },
@@ -733,7 +767,7 @@
     "category": "event",
     "description_short": "Triggered when the element is hidden.",
     "example": "<button click=\"hide\" onhide=\"insertafterend:[Element hidden]\">Hide me</button>",
-    "related_to": [
+    "depends_on": [
       "hide"
     ]
   },
@@ -741,14 +775,14 @@
     "category": "event",
     "description_short": "Triggered when the element is shown.",
     "example": "<div id=\"panel\" bgcolor=\"lightgreen\" hide onshow=\"insertafterend:[ Panel shown]\">Hidden Panel</div>\n<button click=\"show:#panel\">Show Panel</button>",
-    "related_to": [
+    "depends_on": [
       "show"
     ]
   },
   "onsubmitted": {
     "category": "event",
     "description_short": "Triggered when a form is submitted.",
-    "related_to": [
+    "depends_on": [
       "submit"
     ]
   },
@@ -810,7 +844,11 @@
   "radius": {
     "category": "style",
     "description_short": "Sets border radius.",
-    "example": "<span bgcolor=\"black02\" padding=\"1rem\" radius=\"1rem\">Rounded corners</span>"
+    "example": "<span bgcolor=\"black02\" padding=\"1rem\" radius=\"1rem\">Rounded corners</span>",
+    "see_also": [
+      "border",
+      "boxshadow"
+    ]
   },
   "resize": {
     "category": "style",
@@ -827,7 +865,11 @@
   },
   "resetvalue": {
     "category": "value",
-    "description_short": "Resets the value of the element."
+    "description_short": "Resets the value of the element.",
+    "see_also": [
+      "setvalue",
+      "togglevalue"
+    ]
   },
   "runorder": {
     "category": "behavior",
@@ -838,10 +880,8 @@
     "category": "behavior",
     "description_short": "Shows the element.",
     "example": "<span show>This text is visible</span>",
-    "related_to": [
-      "onshow"
-    ],
     "see_also": [
+      "onshow",
       "hide"
     ]
   },
@@ -874,7 +914,12 @@
   "setattr": {
     "category": "content",
     "description_short": "Sets an attribute on the element.",
-    "example": "<div setattr=\"title:Hello\">Hover me</div>"
+    "example": "<div setattr=\"title:Hello\">Hover me</div>",
+    "see_also": [
+      "settext",
+      "sethtml",
+      "setvalue"
+    ]
   },
   "sethref": {
     "category": "content",
@@ -895,7 +940,11 @@
   "setvalue": {
     "category": "content",
     "description_short": "Sets the value of the element.",
-    "example": "<input type=\"text\" setvalue=\"Hello World\">"
+    "example": "<input type=\"text\" setvalue=\"Hello World\">",
+    "see_also": [
+      "resetvalue",
+      "togglevalue"
+    ]
   },
   "setid": {
     "category": "content",
@@ -940,7 +989,11 @@
   },
   "togglevalue": {
     "category": "value",
-    "description_short": "Toggles the value of the element."
+    "description_short": "Toggles the value of the element.",
+    "see_also": [
+      "setvalue",
+      "resetvalue"
+    ]
   },
   "transform": {
     "category": "style",
