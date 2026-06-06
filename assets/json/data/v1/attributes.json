@@ -208,7 +208,7 @@
   "data-src": {
     "category": "binding",
     "description_short": "Specifies the source URL or endpoint for data to be fetched and bound to the element.",
-    "example": "<div data-src=\"https://dummyjson.com/products\" data-iterate=\"true\">Product info here</div>",
+    "example": "<div data-src=\"https://dummyjson.com/products\" data-iterate=\"products\">\n <b data-get=\"title\"></b>\n</div>",
     "see_also": [
       "data-iterate"
     ]
