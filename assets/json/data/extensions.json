@@ -256,6 +256,62 @@
           }
         ]
       }
+    },
+    {
+      "id": 13,
+      "key": "wave",
+      "title": "Wave",
+      "description": "Applies a dynamic, sliced horizontal wave animation effect to an image drawn over a responsive canvas wrapper.",
+      "version": "0.1.0",
+      "screenshot": "",
+      "icon": "./assets/img/icon_plugin.svg",
+      "url": "#",
+      "url_target": 0,
+      "type": 0,
+      "author": "Josef Gabrielsson",
+      "cost": "0",
+      "attributes": {
+        "markup": [
+          {
+            "attribute": "wave-src",
+            "description": "The URL path of the source image to draw and animate on the canvas."
+          },
+          {
+            "attribute": "wave-slices",
+            "description": "The total number of horizontal slice layers to split the image into for the wave calculation (Default: 40)."
+          },
+          {
+            "attribute": "wave-speed",
+            "description": "The incremental step rate added to the animation time delta on each frame loop (Default: 0.01)."
+          },
+          {
+            "attribute": "wave-amount",
+            "description": "The horizontal pixel intensity/amplitude multiplier of the Math.sin distortion effect (Default: 6)."
+          }
+        ],
+        "config": [
+          {
+            "key": "src",
+            "value": "",
+            "description": "Fallback global image URL path if wave-src isn't set explicitly on the targeted HTML element container."
+          },
+          {
+            "key": "slices",
+            "value": "40",
+            "description": "Fallback global slice segments count for slicing the target graphic layout horizontally."
+          },
+          {
+            "key": "speed",
+            "value": "0.01",
+            "description": "Fallback global rate variable used to speed up or slow down the sin wave calculation cycle."
+          },
+          {
+            "key": "amount",
+            "value": "6",
+            "description": "Fallback global distance modifier controlling how far left and right the image slices distort."
+          }
+        ]
+      }
     }
   ]
 }
