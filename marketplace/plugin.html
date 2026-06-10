@@ -5,7 +5,7 @@
 <div id="loader" class="loader"></div>
 <hr class="bcblack01">
 <section bindquery="k:k" data-src="./assets/json/data/extensions.json" data-filterkey="extensions"
-  data-filteritem="key:'{k}'" data-loader="#loader" data-set="title:extensions.0.title" data-onerror="show:#error"
+  data-filteritem="key:'{k}'" data-loader="#loader" data-set="title:title" data-onerror="show:#error"
   data-onfinish="doctitle:[{title}];settext:#title:[{title}]">
   <a class="button"
     bgcolor="white"
@@ -18,29 +18,29 @@
     lineheight="2.7"
     float="right"
     target="_blank"
-    data-set="key:extensions.0.key"
+    data-set="key:key"
     href="https://playground.front.nu/?slug={key}&id=0">Launch Demo</a>
   <div flex>
     <a paddingright="1rem">
       <figure class="p05" bgcolor="#212121" padding="1rem">
-        <img class="w5r m0a" data-get="extensions.0.icon">
+        <img class="w5r m0a" data-get="icon">
       </figure>
     </a>
     <div flexdirection="column">
       <h3 id="title"></h3>
-      <b data-get="extensions.0.author"></b>
+      <b data-get="author"></b>
     </div>
   </div>
 
   <h4 margintop="2rem">Description</h4>
   <hr color="darkgray" margin="0.5rem 0">
-  <div color="white" data-get="extensions.0.description"></div>
+  <div color="white" data-get="description"></div>
 
   <div>
     <h4 margintop="2rem">Attributes</h4>
     <hr color="darkgray" margin="0.5rem 0">
     <table color="white" width="100%">
-      <tbody valign="top" data-iterate="extensions.0.attributes.markup">
+      <tbody valign="top" data-iterate="attributes.markup">
         <tr>
           <td data-get="attribute"></td>
           <td data-get="description"></td>
@@ -51,7 +51,7 @@
     <h4 margintop="2rem">Config</h4>
     <hr color="darkgray" margin="0.5rem 0">
     <table color="white" width="100%">
-      <tbody valign="top" data-iterate="extensions.0.attributes.config">
+      <tbody valign="top" data-iterate="attributes.config">
         <tr>
           <td data-get="key"></td>
           <td data-get="value"></td>
