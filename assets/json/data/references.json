@@ -148,6 +148,142 @@
       {
         "attribute": "zoom",
         "description": "Sets zoom scale of the element."
+      },
+      {
+        "attribute": "absolute",
+        "description": "Sets the element to absolute positioning."
+      },
+      {
+        "attribute": "alignitems",
+        "description": "Aligns flex items along the cross axis."
+      },
+      {
+        "attribute": "alignself",
+        "description": "Overrides align-items for a specific flex item."
+      },
+      {
+        "attribute": "block",
+        "description": "Sets the element display to block."
+      },
+      {
+        "attribute": "borderbottom",
+        "description": "Sets the bottom border."
+      },
+      {
+        "attribute": "borderleft",
+        "description": "Sets the left border."
+      },
+      {
+        "attribute": "borderright",
+        "description": "Sets the right border."
+      },
+      {
+        "attribute": "bordertop",
+        "description": "Sets the top border."
+      },
+      {
+        "attribute": "fixed",
+        "description": "Sets the element to fixed positioning."
+      },
+      {
+        "attribute": "flexgrow",
+        "description": "Sets the flex grow factor."
+      },
+      {
+        "attribute": "float",
+        "description": "Sets the float direction."
+      },
+      {
+        "attribute": "gap",
+        "description": "Sets the gap between flex or grid items."
+      },
+      {
+        "attribute": "grid",
+        "description": "Sets the element display to grid."
+      },
+      {
+        "attribute": "gridarea",
+        "description": "Sets the grid area."
+      },
+      {
+        "attribute": "gridcolumn",
+        "description": "Sets the grid column position."
+      },
+      {
+        "attribute": "gridcolumns",
+        "description": "Defines grid column template."
+      },
+      {
+        "attribute": "gridrow",
+        "description": "Sets the grid row position."
+      },
+      {
+        "attribute": "gridrows",
+        "description": "Defines grid row template."
+      },
+      {
+        "attribute": "inherit",
+        "description": "Sets a property to inherit from parent."
+      },
+      {
+        "attribute": "initial",
+        "description": "Sets a property to its initial value."
+      },
+      {
+        "attribute": "inline",
+        "description": "Sets the element display to inline."
+      },
+      {
+        "attribute": "inlineblock",
+        "description": "Sets the element display to inline-block."
+      },
+      {
+        "attribute": "left",
+        "description": "Sets the left position."
+      },
+      {
+        "attribute": "maxheight",
+        "description": "Sets the maximum height."
+      },
+      {
+        "attribute": "overflow",
+        "description": "Sets overflow behavior."
+      },
+      {
+        "attribute": "overflowx",
+        "description": "Sets horizontal overflow behavior."
+      },
+      {
+        "attribute": "overflowy",
+        "description": "Sets vertical overflow behavior."
+      },
+      {
+        "attribute": "relative",
+        "description": "Sets the element to relative positioning."
+      },
+      {
+        "attribute": "right",
+        "description": "Sets the right position."
+      },
+      {
+        "attribute": "table",
+        "description": "Sets the element display to table."
+      },
+      {
+        "attribute": "textshadow",
+        "description": "Applies a shadow to text."
+      },
+      {
+        "attribute": "top",
+        "description": "Sets the top position."
+      },
+      {
+        "attribute": "underline",
+        "description": "Underlines text."
+      },
+      {
+        "attribute": "unset",
+        "description": "Resets a property to inherited or initial value."
       }
     ],
     "content": [
@@ -218,6 +354,18 @@
       {
         "attribute": "valign",
         "description": "Sets the vertical alignment of content within the element."
+      },
+      {
+        "attribute": "append",
+        "description": "Appends content to the element."
+      },
+      {
+        "attribute": "prependattr",
+        "description": "Prepends content to an attribute value."
+      },
+      {
+        "attribute": "setattr",
+        "description": "Sets an attribute on the element."
       }
     ],
     "binding": [
@@ -300,6 +448,10 @@
         "module": "data",
         "attribute": "data-ongetload",
         "description": "Defines actions to execute when a GET request finishes loading."
+      },
+      {
+        "attribute": "bindappend",
+        "description": "Binds and appends data from another element."
       }
     ],
     "logic": [
@@ -362,6 +514,14 @@
       {
         "attribute": "mapbindvar",
         "description": "Maps a bound variable."
+      },
+      {
+        "attribute": "maprun",
+        "description": "Maps and runs actions based on rules."
+      },
+      {
+        "attribute": "maptext",
+        "description": "Maps text values based on rules."
       }
     ],
     "event": [
@@ -412,6 +572,22 @@
       {
         "attribute": "onvaluechange",
         "description": "Triggered when value is changed inside an element."
+      },
+      {
+        "attribute": "onaftervaluechange",
+        "description": "Triggered after value changes."
+      },
+      {
+        "attribute": "onbeforevaluechange",
+        "description": "Triggered before value changes."
+      },
+      {
+        "attribute": "ontoggle",
+        "description": "Triggered when an element is toggled."
+      },
+      {
+        "attribute": "onselectchange",
+        "description": "Triggered when selection changes."
       }
     ],
     "behavior": [
@@ -508,6 +684,42 @@
       {
         "attribute": "runorder",
         "description": "Runs attributes in the specified order inside the element."
+      },
+      {
+        "attribute": "clone",
+        "description": "Clones an element's content into the current element."
+      },
+      {
+        "attribute": "disable",
+        "description": "Disables the element."
+      },
+      {
+        "attribute": "enable",
+        "description": "Enables the element."
+      },
+      {
+        "attribute": "move",
+        "description": "Moves an element into another element."
+      },
+      {
+        "attribute": "scroll",
+        "description": "Scrolls to an element or position."
+      },
+      {
+        "attribute": "start",
+        "description": "Starts an attribute or process."
+      },
+      {
+        "attribute": "stop",
+        "description": "Stops an attribute or process."
+      },
+      {
+        "attribute": "toggledisplay",
+        "description": "Toggles element visibility."
+      },
+      {
+        "attribute": "doctitle",
+        "description": "Sets the document title."
       }
     ],
     "interactive": [
@@ -584,6 +796,10 @@
       {
         "attribute": "navigate-go",
         "description": "Triggers navigation as if clicked the link."
+      },
+      {
+        "attribute": "submit",
+        "description": "Submits a form."
       }
     ],
     "configuration": [

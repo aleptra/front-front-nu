@@ -965,7 +965,7 @@
   "setsrc": {
     "category": "content",
     "description_short": "Sets the source of the image.",
-    "example": "<img setsrc=\"https:\//placehold.co\/200x100\">"
+    "example": "<img setsrc=\"https://placehold.co/200x100\">"
   },
   "slice": {
     "category": "content",
@@ -1078,5 +1078,471 @@
     "category": "style",
     "description_short": "Sets zoom scale of the element.",
     "example": "<div zoom=\"1.5\">This text is zoomed in by 150%</div>"
+  },
+  "absolute": {
+    "category": "style",
+    "description_short": "Sets the element to absolute positioning.",
+    "example": "<div relative height=\"100px\">\n  <span absolute top=\"10\" left=\"10\" bgcolor=\"lightblue\" padding=\"0.5rem\">Absolute</span>\n</div>",
+    "see_also": [
+      "relative",
+      "fixed"
+    ]
+  },
+  "alignitems": {
+    "category": "style",
+    "description_short": "Aligns flex items along the cross axis.",
+    "example": "",
+    "depends_on": [
+      "flex"
+    ],
+    "values": [
+      "flex-start",
+      "flex-end",
+      "center",
+      "baseline",
+      "stretch"
+    ],
+    "see_also": [
+      "justifycontent",
+      "flexdirection"
+    ]
+  },
+  "alignself": {
+    "category": "style",
+    "description_short": "Overrides the align-items value for a specific flex item.",
+    "example": "",
+    "depends_on": [
+      "flex"
+    ],
+    "values": [
+      "auto",
+      "flex-start",
+      "flex-end",
+      "center",
+      "baseline",
+      "stretch"
+    ]
+  },
+  "bindappend": {
+    "category": "binding",
+    "description_short": "Binds and appends data from another element.",
+    "example": "",
+    "see_also": [
+      "bindvar",
+      "bindfield"
+    ]
+  },
+  "block": {
+    "category": "style",
+    "description_short": "Sets the element display to block.",
+    "example": "<span block bgcolor=\"lightblue\">This span is now block-level</span>",
+    "see_also": [
+      "inline",
+      "inlineblock",
+      "flex"
+    ]
+  },
+  "borderbottom": {
+    "category": "style",
+    "description_short": "Sets the bottom border of the element.",
+    "example": "<div borderbottom=\"2px solid red\">Bottom border</div>",
+    "see_also": [
+      "border",
+      "bordertop",
+      "borderleft",
+      "borderright"
+    ]
+  },
+  "borderleft": {
+    "category": "style",
+    "description_short": "Sets the left border of the element.",
+    "example": "<div borderleft=\"2px solid blue\">Left border</div>",
+    "see_also": [
+      "border",
+      "bordertop",
+      "borderbottom",
+      "borderright"
+    ]
+  },
+  "borderright": {
+    "category": "style",
+    "description_short": "Sets the right border of the element.",
+    "example": "<div borderright=\"2px solid green\">Right border</div>",
+    "see_also": [
+      "border",
+      "bordertop",
+      "borderbottom",
+      "borderleft"
+    ]
+  },
+  "bordertop": {
+    "category": "style",
+    "description_short": "Sets the top border of the element.",
+    "example": "<div bordertop=\"2px solid purple\">Top border</div>",
+    "see_also": [
+      "border",
+      "borderbottom",
+      "borderleft",
+      "borderright"
+    ]
+  },
+  "clone": {
+    "category": "behavior",
+    "description_short": "Clones an element's content into the current element."
+  },
+  "disable": {
+    "category": "behavior",
+    "description_short": "Disables the element.",
+    "example": "<button disable>Disabled button</button>",
+    "see_also": [
+      "enable",
+      "ondisabled"
+    ]
+  },
+  "doctitle": {
+    "category": "behavior",
+    "description_short": "Sets the document title."
+  },
+  "enable": {
+    "category": "behavior",
+    "description_short": "Enables the element.",
+    "see_also": [
+      "disable",
+      "onenabled"
+    ]
+  },
+  "fixed": {
+    "category": "style",
+    "description_short": "Sets the element to fixed positioning.",
+    "example": "",
+    "see_also": [
+      "absolute",
+      "relative"
+    ]
+  },
+  "flexgrow": {
+    "category": "style",
+    "description_short": "Sets the flex grow factor of a flex item.",
+    "example": "",
+    "depends_on": [
+      "flex"
+    ],
+    "see_also": [
+      "flexitem",
+      "flexdirection"
+    ]
+  },
+  "float": {
+    "category": "style",
+    "description_short": "Sets the float direction of the element.",
+    "values": [
+      "left",
+      "right",
+      "none"
+    ]
+  },
+  "gap": {
+    "category": "style",
+    "description_short": "Sets the gap between flex or grid items.",
+    "example": "<div flex gap=\"1rem\">\n  <span bgcolor=\"lightblue\" padding=\"0.5rem\">1</span>\n  <span bgcolor=\"lightgreen\" padding=\"0.5rem\">2</span>\n  <span bgcolor=\"lightyellow\" padding=\"0.5rem\">3</span>\n</div>"
+  },
+  "gridarea": {
+    "category": "style",
+    "description_short": "Sets the grid area of an element.",
+    "depends_on": [
+      "grid"
+    ],
+    "see_also": [
+      "gridcolumn",
+      "gridrow"
+    ]
+  },
+  "gridcolumn": {
+    "category": "style",
+    "description_short": "Sets the grid column position of an element.",
+    "depends_on": [
+      "grid"
+    ],
+    "see_also": [
+      "gridrow",
+      "gridcolumns"
+    ]
+  },
+  "gridcolumns": {
+    "category": "style",
+    "description_short": "Defines the column template for a grid container.",
+    "depends_on": [
+      "grid"
+    ],
+    "see_also": [
+      "gridrows",
+      "gridcolumn"
+    ]
+  },
+  "gridrow": {
+    "category": "style",
+    "description_short": "Sets the grid row position of an element.",
+    "depends_on": [
+      "grid"
+    ],
+    "see_also": [
+      "gridcolumn",
+      "gridrows"
+    ]
+  },
+  "gridrows": {
+    "category": "style",
+    "description_short": "Defines the row template for a grid container.",
+    "depends_on": [
+      "grid"
+    ],
+    "see_also": [
+      "gridcolumns",
+      "gridrow"
+    ]
+  },
+  "inherit": {
+    "category": "style",
+    "description_short": "Sets a CSS property to inherit from its parent.",
+    "see_also": [
+      "initial",
+      "unset"
+    ]
+  },
+  "initial": {
+    "category": "style",
+    "description_short": "Sets a CSS property to its initial value.",
+    "see_also": [
+      "inherit",
+      "unset"
+    ]
+  },
+  "inline": {
+    "category": "style",
+    "description_short": "Sets the element display to inline.",
+    "example": "<div inline bgcolor=\"lightblue\">Inline div</div><div inline bgcolor=\"lightgreen\">Inline div</div>",
+    "see_also": [
+      "block",
+      "inlineblock"
+    ]
+  },
+  "inlineblock": {
+    "category": "style",
+    "description_short": "Sets the element display to inline-block.",
+    "example": "<div inlineblock bgcolor=\"lightblue\" width=\"100px\">Inline-block</div><div inlineblock bgcolor=\"lightgreen\" width=\"100px\">Inline-block</div>",
+    "see_also": [
+      "block",
+      "inline"
+    ]
+  },
+  "keyboard-action": {
+    "category": "interactive",
+    "module": "keyboard",
+    "description_short": "Enables an element to respond to keyboard keys. Works with keyboard-key and keyboard-word.",
+    "see_also": [
+      "keyboard-key"
+    ]
+  },
+  "left": {
+    "category": "style",
+    "description_short": "Sets the left position of a positioned element.",
+    "see_also": [
+      "right",
+      "top"
+    ]
+  },
+  "letterspacing": {
+    "category": "style",
+    "description_short": "Sets the spacing between letters in text.",
+    "example": "<p letterspacing=\"2px\">This text has extra letter spacing</p>"
+  },
+  "maprun": {
+    "category": "mapping",
+    "description_short": "Maps and runs actions based on rules.",
+    "example": ""
+  },
+  "maptext": {
+    "category": "mapping",
+    "description_short": "Maps text values based on rules.",
+    "example": ""
+  },
+  "maxheight": {
+    "category": "style",
+    "description_short": "Sets the maximum height.",
+    "example": "<div maxheight=\"100px\" overflow=\"auto\" bgcolor=\"lightblue\">This div cannot be taller than 100px</div>",
+    "see_also": [
+      "height",
+      "minheight"
+    ]
+  },
+  "move": {
+    "category": "behavior",
+    "description_short": "Moves an element into another element."
+  },
+  "onsethtml": {
+    "category": "event",
+    "description_short": "Triggered when the element's HTML content is changed.",
+    "depends_on": [
+      "sethtml"
+    ]
+  },
+  "onvaluechange": {
+    "category": "event",
+    "description_short": "Triggered when the value of an input element changes."
+  },
+  "onaftervaluechange": {
+    "category": "event",
+    "description_short": "Triggered after the value of an element has changed.",
+    "see_also": [
+      "onbeforevaluechange",
+      "onvaluechange"
+    ]
+  },
+  "onbeforevaluechange": {
+    "category": "event",
+    "description_short": "Triggered before the value of an element changes.",
+    "see_also": [
+      "onaftervaluechange",
+      "onvaluechange"
+    ]
+  },
+  "ontoggle": {
+    "category": "event",
+    "description_short": "Triggered when an element is toggled.",
+    "depends_on": [
+      "toggledisplay"
+    ]
+  },
+  "onselectchange": {
+    "category": "event",
+    "description_short": "Triggered when a selection changes."
+  },
+  "overflow": {
+    "category": "style",
+    "description_short": "Sets overflow behavior of the element.",
+    "example": "<div overflow=\"hidden\" height=\"50px\" bgcolor=\"lightblue\">This content is clipped when it overflows the container boundaries.</div>",
+    "values": [
+      "visible",
+      "hidden",
+      "scroll",
+      "auto",
+      "clip"
+    ],
+    "see_also": [
+      "overflowx",
+      "overflowy"
+    ]
+  },
+  "overflowx": {
+    "category": "style",
+    "description_short": "Sets horizontal overflow behavior.",
+    "values": [
+      "visible",
+      "hidden",
+      "scroll",
+      "auto",
+      "clip"
+    ],
+    "see_also": [
+      "overflow",
+      "overflowy"
+    ]
+  },
+  "overflowy": {
+    "category": "style",
+    "description_short": "Sets vertical overflow behavior.",
+    "values": [
+      "visible",
+      "hidden",
+      "scroll",
+      "auto",
+      "clip"
+    ],
+    "see_also": [
+      "overflow",
+      "overflowx"
+    ]
+  },
+  "prependattr": {
+    "category": "content",
+    "description_short": "Prepends content to an attribute value."
+  },
+  "relative": {
+    "category": "style",
+    "description_short": "Sets the element to relative positioning.",
+    "example": "<div relative>\n  <span absolute top=\"0\" left=\"0\">Positioned child</span>\n</div>",
+    "see_also": [
+      "absolute",
+      "fixed"
+    ]
+  },
+  "right": {
+    "category": "style",
+    "description_short": "Sets the right position of a positioned element.",
+    "see_also": [
+      "left",
+      "top"
+    ]
+  },
+  "scroll": {
+    "category": "behavior",
+    "description_short": "Scrolls to an element or position."
+  },
+  "submit": {
+    "category": "interactive",
+    "description_short": "Submits a form.",
+    "see_also": [
+      "onsubmitted"
+    ]
+  },
+  "table": {
+    "category": "style",
+    "description_short": "Sets the element display to table.",
+    "see_also": [
+      "block",
+      "flex",
+      "grid"
+    ]
+  },
+  "textshadow": {
+    "category": "style",
+    "description_short": "Applies a shadow to text.",
+    "example": "<p textshadow=\"2px 2px 4px gray\">Text with shadow</p>",
+    "see_also": [
+      "boxshadow"
+    ]
+  },
+  "toggledisplay": {
+    "category": "behavior",
+    "description_short": "Toggles the display of an element between visible and hidden.",
+    "example": "<button click=\"toggledisplay:#panel\">Toggle</button>\n<div id=\"panel\" bgcolor=\"lightblue\" padding=\"1rem\">Toggle me</div>",
+    "see_also": [
+      "hide",
+      "show"
+    ]
+  },
+  "top": {
+    "category": "style",
+    "description_short": "Sets the top position of a positioned element.",
+    "see_also": [
+      "left",
+      "right"
+    ]
+  },
+  "underline": {
+    "category": "style",
+    "description_short": "Underlines text.",
+    "example": "<span underline>This text is underlined</span>",
+    "see_also": [
+      "bold"
+    ]
+  },
+  "unset": {
+    "category": "style",
+    "description_short": "Resets a CSS property to its inherited or initial value.",
+    "see_also": [
+      "inherit",
+      "initial"
+    ]
   }
 }
