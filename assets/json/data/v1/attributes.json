@@ -1,5 +1,7 @@
 {
-  "append": {},
+  "append": {
+    "example": "<div id=\"list\">Item 1</div>\n<button click=\"append:#list:[ Item 2]\">Append</button>"
+  },
   "alert": {
     "description_short": "Displays an alert dialog with a message to the user.",
     "example": "<button click=\"alert:[Hello World!]\">Show Alert</button>"
@@ -53,7 +55,7 @@
   "bindvar": {
     "category": "binding",
     "description_short": "Binds a variable.",
-    "example": "",
+    "example": "<div bindvar=\"name:World\" settext=\"Hello {name}\"></div>",
     "see_also": [
       "bindasset",
       "bindfield",
@@ -64,7 +66,7 @@
   "bindquery": {
     "category": "binding",
     "description_short": "Binds data from a query.",
-    "example": "",
+    "example": "<a href=\"?user=Josef\">\n  <span bindquery=\"user:user\" settext=\"Hello {user}\"></span>\n</a>",
     "see_also": [
       "bindasset",
       "bindfield",
@@ -75,7 +77,7 @@
   "bindasset": {
     "category": "binding",
     "description_short": "Binds an asset.",
-    "example": "",
+    "example": "<img bindasset=\"src:logo\" setsrc=\"{src}\">",
     "see_also": [
       "bindfield",
       "bindglobal",
@@ -86,7 +88,7 @@
   "bindglobal": {
     "category": "binding",
     "description_short": "Binds a global variable.",
-    "example": "",
+    "example": "<span bindglobal=\"title:title\" settext=\"{title}\"></span>",
     "see_also": [
       "bindasset",
       "bindfield",
@@ -97,7 +99,7 @@
   "bindfield": {
     "category": "binding",
     "description_short": "Binds a specific field.",
-    "example": "",
+    "example": "<input type=\"text\" id=\"name\" setvalue=\"Josef\">\n<span bindfield=\"val:#name\" settext=\"Hello {val}\"></span>",
     "see_also": [
       "bindasset",
       "bindglobal",
@@ -229,7 +231,7 @@
   "flex": {
     "category": "style",
     "description_short": "Sets flex properties for the element.",
-    "example": ""
+    "example": "<div flex gap=\"0.5rem\">\n  <span bgcolor=\"lightblue\" padding=\"0.5rem\">1</span>\n  <span bgcolor=\"lightgreen\" padding=\"0.5rem\">2</span>\n  <span bgcolor=\"lightyellow\" padding=\"0.5rem\">3</span>\n</div>"
   },
   "flexdirection": {
     "category": "style",
@@ -251,7 +253,7 @@
   "flexitem": {
     "category": "style",
     "description_short": "Sets properties of a flex item.",
-    "example": "",
+    "example": "<div flex>\n  <span bgcolor=\"lightblue\" padding=\"0.5rem\" flexitem=\"1\">Flex 1</span>\n  <span bgcolor=\"lightgreen\" padding=\"0.5rem\" flexitem=\"2\">Flex 2</span>\n</div>",
     "depends_on": [
       "flex"
     ],
@@ -284,7 +286,9 @@
       "font"
     ]
   },
-  "grid": {},
+  "grid": {
+    "example": "<div grid gridcolumns=\"1fr 1fr\" gap=\"0.5rem\">\n  <span bgcolor=\"lightblue\" padding=\"0.5rem\">1</span>\n  <span bgcolor=\"lightgreen\" padding=\"0.5rem\">2</span>\n  <span bgcolor=\"lightyellow\" padding=\"0.5rem\">3</span>\n  <span bgcolor=\"lightcoral\" padding=\"0.5rem\">4</span>\n</div>"
+  },
   "height": {
     "category": "style",
     "description_short": "Sets the height of the element.",
@@ -373,7 +377,7 @@
   "justifycontent": {
     "category": "style",
     "description_short": "Aligns flex items along the main axis.",
-    "example": "",
+    "example": "<div flex justifycontent=\"space-between\" bgcolor=\"lightgray\" padding=\"0.5rem\">\n  <span bgcolor=\"lightblue\" padding=\"0.5rem\">1</span>\n  <span bgcolor=\"lightgreen\" padding=\"0.5rem\">2</span>\n  <span bgcolor=\"lightyellow\" padding=\"0.5rem\">3</span>\n</div>",
     "depends_on": [
       "flex"
     ],
@@ -585,17 +589,17 @@
   "mapbindvar": {
     "category": "mapping",
     "description_short": "Maps a bound variable.",
-    "example": ""
+    "example": "<div mapbindvar=\"key:value1;key2:value2\" settext=\"{key}\"></div>"
   },
   "mapclass": {
     "category": "mapping",
     "description_short": "Maps classes based on rules.",
-    "example": ""
+    "example": "<div mapclass=\"active:bg-blue;inactive:bg-gray\" bindvar=\"state:active\">Mapped</div>"
   },
   "mapmargin": {
     "category": "mapping",
     "description_short": "Maps margin values.",
-    "example": ""
+    "example": "<div mapmargin=\"sm:10px;md:20px;lg:40px\" bindvar=\"size:md\">Content</div>"
   },
   "margin": {
     "category": "style",
@@ -699,7 +703,8 @@
   "navigate-go": {
     "category": "interactive",
     "module": "navigate",
-    "description_short": "Programmatically triggers navigation as if a user clicked a link. Loads the target page via the Navigate module into the specified container without a full page reload."
+    "description_short": "Programmatically triggers navigation as if a user clicked a link. Loads the target page via the Navigate module into the specified container without a full page reload.",
+    "example": "<button click=\"navigate-go:[documentation]\">Go to Docs</button>"
   },
   "onconfirm": {
     "category": "event",
@@ -784,7 +789,8 @@
     "description_short": "Triggered when a form is submitted.",
     "depends_on": [
       "submit"
-    ]
+    ],
+    "example": "<form submit onsubmitted=\"settext:#msg:[Form submitted]\">\n  <input type=\"text\" value=\"test\">\n  <button type=\"submit\">Submit</button>\n</form>\n<span id=\"msg\"></span>"
   },
   "padding": {
     "category": "style",
@@ -869,7 +875,8 @@
     "see_also": [
       "setvalue",
       "togglevalue"
-    ]
+    ],
+    "example": "<input type=\"text\" id=\"field2\" setvalue=\"Hello\">\n<button click=\"resetvalue:#field2\">Reset</button>"
   },
   "runorder": {
     "category": "behavior",
@@ -969,23 +976,27 @@
   },
   "slice": {
     "category": "content",
-    "description_short": "Extracts part of the content by index."
+    "description_short": "Extracts part of the content by index.",
+    "example": "<p slice=\"0:5\">Hello World</p>"
   },
   "start": {
     "category": "behavior",
     "see_also": [
       "stop"
-    ]
+    ],
+    "example": "<div id=\"anim\" start>Running</div>"
   },
   "stop": {
     "category": "behavior",
     "see_also": [
       "start"
-    ]
+    ],
+    "example": "<div id=\"anim2\" stop>Stopped</div>"
   },
   "split": {
     "category": "content",
-    "description_short": "Splits content by delimiter and returns a part."
+    "description_short": "Splits content by delimiter and returns a part.",
+    "example": "<p split=\",|1\">one,two,three</p>"
   },
   "togglevalue": {
     "category": "value",
@@ -993,11 +1004,13 @@
     "see_also": [
       "setvalue",
       "resetvalue"
-    ]
+    ],
+    "example": "<input type=\"text\" id=\"tv1\" setvalue=\"ON\">\n<button click=\"togglevalue:#tv1:[ON|OFF]\">Toggle</button>"
   },
   "transform": {
     "category": "style",
-    "description_short": "Applies a CSS transform."
+    "description_short": "Applies a CSS transform.",
+    "example": "<div transform=\"rotate(5deg)\" bgcolor=\"lightblue\" padding=\"1rem\" width=\"150px\">Rotated 5 degrees</div>"
   },
   "trim": {
     "category": "content",
@@ -1091,7 +1104,7 @@
   "alignitems": {
     "category": "style",
     "description_short": "Aligns flex items along the cross axis.",
-    "example": "",
+    "example": "<div flex alignitems=\"center\" height=\"100px\" bgcolor=\"lightgray\">\n  <span bgcolor=\"lightblue\" padding=\"0.5rem\">Centered</span>\n</div>",
     "depends_on": [
       "flex"
     ],
@@ -1110,7 +1123,7 @@
   "alignself": {
     "category": "style",
     "description_short": "Overrides the align-items value for a specific flex item.",
-    "example": "",
+    "example": "<div flex height=\"100px\" bgcolor=\"lightgray\">\n  <span bgcolor=\"lightblue\" padding=\"0.5rem\">Normal</span>\n  <span bgcolor=\"lightgreen\" padding=\"0.5rem\" alignself=\"flex-end\">Self end</span>\n</div>",
     "depends_on": [
       "flex"
     ],
@@ -1126,7 +1139,7 @@
   "bindappend": {
     "category": "binding",
     "description_short": "Binds and appends data from another element.",
-    "example": "",
+    "example": "<div id=\"info\" settext=\"Hello\"></div>\n<span bindappend=\"info.textContent:extra\" settext=\"{extra}\"></span>",
     "see_also": [
       "bindvar",
       "bindfield"
@@ -1188,7 +1201,8 @@
   },
   "clone": {
     "category": "behavior",
-    "description_short": "Clones an element's content into the current element."
+    "description_short": "Clones an element's content into the current element.",
+    "example": "<div id=\"source\">Clone me</div>\n<div clone=\"#source\"></div>"
   },
   "disable": {
     "category": "behavior",
@@ -1201,7 +1215,8 @@
   },
   "doctitle": {
     "category": "behavior",
-    "description_short": "Sets the document title."
+    "description_short": "Sets the document title.",
+    "example": "<button click=\"doctitle:[New Title]\">Set Title</button>"
   },
   "enable": {
     "category": "behavior",
@@ -1209,12 +1224,13 @@
     "see_also": [
       "disable",
       "onenabled"
-    ]
+    ],
+    "example": "<button disable id=\"btn1\">Disabled</button>\n<button click=\"enable:#btn1\">Enable it</button>"
   },
   "fixed": {
     "category": "style",
     "description_short": "Sets the element to fixed positioning.",
-    "example": "",
+    "example": "<div fixed top=\"0\" left=\"0\" bgcolor=\"lightblue\" padding=\"1rem\" zindex=\"100\">Fixed header</div>",
     "see_also": [
       "absolute",
       "relative"
@@ -1223,7 +1239,7 @@
   "flexgrow": {
     "category": "style",
     "description_short": "Sets the flex grow factor of a flex item.",
-    "example": "",
+    "example": "<div flex>\n  <span bgcolor=\"lightblue\" padding=\"0.5rem\">Fixed</span>\n  <span bgcolor=\"lightgreen\" padding=\"0.5rem\" flexgrow=\"1\">Grows</span>\n</div>",
     "depends_on": [
       "flex"
     ],
@@ -1239,7 +1255,8 @@
       "left",
       "right",
       "none"
-    ]
+    ],
+    "example": "<div float=\"left\" bgcolor=\"lightblue\" padding=\"1rem\" marginright=\"1rem\">Float left</div>\n<p>Text wraps around the floated element.</p>"
   },
   "gap": {
     "category": "style",
@@ -1255,7 +1272,8 @@
     "see_also": [
       "gridcolumn",
       "gridrow"
-    ]
+    ],
+    "example": "<div grid gridcolumns=\"1fr 1fr\" gridrows=\"1fr 1fr\" gap=\"0.5rem\" height=\"150px\">\n  <span bgcolor=\"lightblue\" padding=\"0.5rem\" gridarea=\"1 / 1 / 3 / 2\">Spans 2 rows</span>\n  <span bgcolor=\"lightgreen\" padding=\"0.5rem\">2</span>\n  <span bgcolor=\"lightyellow\" padding=\"0.5rem\">3</span>\n</div>"
   },
   "gridcolumn": {
     "category": "style",
@@ -1266,7 +1284,8 @@
     "see_also": [
       "gridrow",
       "gridcolumns"
-    ]
+    ],
+    "example": "<div grid gridcolumns=\"1fr 1fr 1fr\" gap=\"0.5rem\">\n  <span bgcolor=\"lightblue\" padding=\"0.5rem\" gridcolumn=\"1 / 3\">Spans 2 columns</span>\n  <span bgcolor=\"lightgreen\" padding=\"0.5rem\">2</span>\n</div>"
   },
   "gridcolumns": {
     "category": "style",
@@ -1277,7 +1296,8 @@
     "see_also": [
       "gridrows",
       "gridcolumn"
-    ]
+    ],
+    "example": "<div grid gridcolumns=\"100px 1fr 2fr\" gap=\"0.5rem\">\n  <span bgcolor=\"lightblue\" padding=\"0.5rem\">100px</span>\n  <span bgcolor=\"lightgreen\" padding=\"0.5rem\">1fr</span>\n  <span bgcolor=\"lightyellow\" padding=\"0.5rem\">2fr</span>\n</div>"
   },
   "gridrow": {
     "category": "style",
@@ -1288,7 +1308,8 @@
     "see_also": [
       "gridcolumn",
       "gridrows"
-    ]
+    ],
+    "example": "<div grid gridcolumns=\"1fr 1fr\" gridrows=\"50px 50px\" gap=\"0.5rem\">\n  <span bgcolor=\"lightblue\" padding=\"0.5rem\" gridrow=\"1 / 3\">Spans 2 rows</span>\n  <span bgcolor=\"lightgreen\" padding=\"0.5rem\">2</span>\n  <span bgcolor=\"lightyellow\" padding=\"0.5rem\">3</span>\n</div>"
   },
   "gridrows": {
     "category": "style",
@@ -1299,7 +1320,8 @@
     "see_also": [
       "gridcolumns",
       "gridrow"
-    ]
+    ],
+    "example": "<div grid gridcolumns=\"1fr\" gridrows=\"50px 100px 50px\" gap=\"0.5rem\">\n  <span bgcolor=\"lightblue\" padding=\"0.5rem\">50px</span>\n  <span bgcolor=\"lightgreen\" padding=\"0.5rem\">100px</span>\n  <span bgcolor=\"lightyellow\" padding=\"0.5rem\">50px</span>\n</div>"
   },
   "inherit": {
     "category": "style",
@@ -1307,7 +1329,8 @@
     "see_also": [
       "initial",
       "unset"
-    ]
+    ],
+    "example": "<div color=\"red\">\n  <span inherit=\"color\">Inherits red</span>\n</div>"
   },
   "initial": {
     "category": "style",
@@ -1315,7 +1338,8 @@
     "see_also": [
       "inherit",
       "unset"
-    ]
+    ],
+    "example": "<div bold>\n  <span initial=\"fontWeight\">Back to normal weight</span>\n</div>"
   },
   "inline": {
     "category": "style",
@@ -1341,7 +1365,8 @@
     "description_short": "Enables an element to respond to keyboard keys. Works with keyboard-key and keyboard-word.",
     "see_also": [
       "keyboard-key"
-    ]
+    ],
+    "example": "<input type=\"text\" keyboard-key=\"Enter\" keyboard-action=\"alert:[Submitted!]\" placeholder=\"Press Enter\">"
   },
   "left": {
     "category": "style",
@@ -1349,7 +1374,8 @@
     "see_also": [
       "right",
       "top"
-    ]
+    ],
+    "example": "<div relative height=\"80px\">\n  <span absolute left=\"20px\" bgcolor=\"lightblue\" padding=\"0.5rem\">Left 20px</span>\n</div>"
   },
   "letterspacing": {
     "category": "style",
@@ -1359,12 +1385,12 @@
   "maprun": {
     "category": "mapping",
     "description_short": "Maps and runs actions based on rules.",
-    "example": ""
+    "example": "<div maprun=\"click:alert:[Clicked];mouseover:bgcolor:[yellow]\">Hover or click</div>"
   },
   "maptext": {
     "category": "mapping",
     "description_short": "Maps text values based on rules.",
-    "example": ""
+    "example": "<div maptext=\"1:One;2:Two;3:Three\" bindvar=\"num:2\" settext=\"{num}\"></div>"
   },
   "maxheight": {
     "category": "style",
@@ -1377,18 +1403,21 @@
   },
   "move": {
     "category": "behavior",
-    "description_short": "Moves an element into another element."
+    "description_short": "Moves an element into another element.",
+    "example": "<div id=\"target\" bgcolor=\"lightgray\" padding=\"1rem\">Target</div>\n<span id=\"item\">Move me</span>\n<button click=\"move:#item:#target\">Move</button>"
   },
   "onsethtml": {
     "category": "event",
     "description_short": "Triggered when the element's HTML content is changed.",
     "depends_on": [
       "sethtml"
-    ]
+    ],
+    "example": "<div id=\"target2\" onsethtml=\"insertafterend:[ Updated]\">Original</div>\n<button click=\"sethtml:#target2:[New HTML]\">Set HTML</button>"
   },
   "onvaluechange": {
     "category": "event",
-    "description_short": "Triggered when the value of an input element changes."
+    "description_short": "Triggered when the value of an input element changes.",
+    "example": "<input type=\"text\" onvaluechange=\"settext:#echo:{value}\" placeholder=\"Type here\">\n<span id=\"echo\"></span>"
   },
   "onaftervaluechange": {
     "category": "event",
@@ -1396,7 +1425,8 @@
     "see_also": [
       "onbeforevaluechange",
       "onvaluechange"
-    ]
+    ],
+    "example": "<input type=\"text\" onaftervaluechange=\"settext:#log:[Value changed]\" placeholder=\"Type here\">\n<span id=\"log\"></span>"
   },
   "onbeforevaluechange": {
     "category": "event",
@@ -1404,18 +1434,21 @@
     "see_also": [
       "onaftervaluechange",
       "onvaluechange"
-    ]
+    ],
+    "example": "<input type=\"text\" onbeforevaluechange=\"settext:#log:[About to change]\" placeholder=\"Type here\">\n<span id=\"log2\"></span>"
   },
   "ontoggle": {
     "category": "event",
     "description_short": "Triggered when an element is toggled.",
     "depends_on": [
       "toggledisplay"
-    ]
+    ],
+    "example": "<button click=\"toggledisplay:#toggled\" ontoggle=\"settext:#state:[Toggled]\">Toggle</button>\n<div id=\"toggled\" bgcolor=\"lightblue\" padding=\"1rem\">Content</div>\n<span id=\"state\"></span>"
   },
   "onselectchange": {
     "category": "event",
-    "description_short": "Triggered when a selection changes."
+    "description_short": "Triggered when a selection changes.",
+    "example": "<select onselectchange=\"settext:#selected:[Changed]\">\n  <option>Option 1</option>\n  <option>Option 2</option>\n</select>\n<span id=\"selected\"></span>"
   },
   "overflow": {
     "category": "style",
@@ -1446,7 +1479,8 @@
     "see_also": [
       "overflow",
       "overflowy"
-    ]
+    ],
+    "example": "<div overflowx=\"scroll\" width=\"150px\" bgcolor=\"lightgray\" whitespace=\"nowrap\">This text is too long to fit and will scroll horizontally.</div>"
   },
   "overflowy": {
     "category": "style",
@@ -1461,11 +1495,13 @@
     "see_also": [
       "overflow",
       "overflowx"
-    ]
+    ],
+    "example": "<div overflowy=\"scroll\" height=\"50px\" bgcolor=\"lightgray\">Line 1<br>Line 2<br>Line 3<br>Line 4<br>Line 5</div>"
   },
   "prependattr": {
     "category": "content",
-    "description_short": "Prepends content to an attribute value."
+    "description_short": "Prepends content to an attribute value.",
+    "example": "<a href=\"page.html\" prependattr=\"href:/docs/\">Link</a>"
   },
   "relative": {
     "category": "style",
@@ -1482,18 +1518,21 @@
     "see_also": [
       "left",
       "top"
-    ]
+    ],
+    "example": "<div relative height=\"80px\">\n  <span absolute right=\"20px\" bgcolor=\"lightblue\" padding=\"0.5rem\">Right 20px</span>\n</div>"
   },
   "scroll": {
     "category": "behavior",
-    "description_short": "Scrolls to an element or position."
+    "description_short": "Scrolls to an element or position.",
+    "example": "<button click=\"scroll:#bottom\">Scroll to bottom</button>\n<div height=\"200px\" overflow=\"auto\">\n  <p>Top content</p>\n  <div height=\"500px\"></div>\n  <p id=\"bottom\">Bottom</p>\n</div>"
   },
   "submit": {
     "category": "interactive",
     "description_short": "Submits a form.",
     "see_also": [
       "onsubmitted"
-    ]
+    ],
+    "example": "<form submit>\n  <input type=\"text\" value=\"data\">\n  <button type=\"submit\">Submit</button>\n</form>"
   },
   "table": {
     "category": "style",
@@ -1502,7 +1541,8 @@
       "block",
       "flex",
       "grid"
-    ]
+    ],
+    "example": "<div table width=\"100%\">\n  <div style=\"display:table-row\">\n    <span style=\"display:table-cell\" bgcolor=\"lightblue\" padding=\"0.5rem\">Cell 1</span>\n    <span style=\"display:table-cell\" bgcolor=\"lightgreen\" padding=\"0.5rem\">Cell 2</span>\n  </div>\n</div>"
   },
   "textshadow": {
     "category": "style",
@@ -1527,7 +1567,8 @@
     "see_also": [
       "left",
       "right"
-    ]
+    ],
+    "example": "<div relative height=\"80px\">\n  <span absolute top=\"20px\" bgcolor=\"lightblue\" padding=\"0.5rem\">Top 20px</span>\n</div>"
   },
   "underline": {
     "category": "style",
@@ -1543,6 +1584,7 @@
     "see_also": [
       "inherit",
       "initial"
-    ]
+    ],
+    "example": "<div bold>\n  <span unset=\"fontWeight\">Back to normal</span>\n</div>"
   }
 }
