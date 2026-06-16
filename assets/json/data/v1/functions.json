@@ -1,531 +1,488 @@
 {
-  "call": {
-    "category": "app",
-    "description": "Executes a command string and returns the result. Supports chaining multiple commands with semicolons.",
-    "example": "app.call('toggle:[#myDiv]')",
-    "parameters": {
-      "run": "Command string to execute (supports semicolon-separated commands)",
-      "options": "Object with srcElement or element references"
-    }
-  },
-  "exec": {
-    "category": "app",
-    "description": "Executes a specific function reference with arguments using dot-notation path resolution.",
-    "example": "app.exec('dom.toggle', { exec: { element: el } })",
-    "parameters": {
-      "run": "Dot-notation path to function (e.g. 'dom.toggle', 'app.module.name.func')",
-      "args": "Arguments object passed to the resolved function"
-    }
-  },
-  "wait": {
-    "category": "app",
-    "description": "Waits for a specified number of milliseconds using requestAnimationFrame before executing a callback.",
-    "example": "app.wait(500, function() { console.log('done') })",
-    "parameters": {
-      "duration": "Time to wait in milliseconds",
-      "callback": "Function to execute after the delay"
-    }
-  },
-  "click": {
-    "category": "app",
-    "description": "Simulates a click or double-click event on a DOM element by dispatching a CustomEvent.",
-    "example": "app.click(document.querySelector('#myButton'))",
-    "parameters": {
-      "el": "The DOM element to click",
-      "dbl": "If truthy, dispatches a dblclick event instead"
-    }
-  },
-  "load": {
-    "category": "app",
-    "description": "Initializes the Front framework. Disables page visibility, sets up the window load event listener, and marks the framework as loaded.",
-    "example": "app.load()"
-  },
-  "start": {
-    "category": "app",
-    "description": "Handles the full initialization of the application: reads script config, sets up event listeners (click, submit, keydown, mouseover, mouseout, input), and begins loading assets.",
-    "example": "app.start()"
-  },
-  "disable": {
-    "category": "app",
-    "description": "Controls document visibility. Used internally to hide the page during load and show it once ready.",
-    "example": "app.disable(true)",
-    "parameters": {
-      "bool": "If true, hides the document; if false, shows it"
-    }
-  },
-  "parse.callString": {
-    "category": "parser",
-    "description": "Parses a Front command string into a structured object with function name, element references, values, and delay settings.",
-    "example": "app.parse.callString('settext:#output:[Hello]', { srcElement: el })",
-    "parameters": {
-      "string": "The command string to parse",
-      "options": "Object with srcElement or element context"
-    }
-  },
-  "parse.attribute": {
-    "category": "parser",
-    "description": "Parses a string into key-value pairs separated by ';' and split at the first ':'.",
-    "example": "app.parse.attribute('key:value;foo:bar')",
-    "parameters": {
-      "string": "The string to parse"
-    },
-    "returns": "Object with key-value pairs"
-  },
-  "parse.text": {
-    "category": "parser",
-    "description": "Parses an HTML string into a DOM node (spot element). Extracts html attributes, body attributes, and doctype. Optionally excludes specified tags.",
-    "example": "app.parse.text('<div>Hello</div>', ['script'])",
-    "parameters": {
-      "string": "The HTML string to parse",
-      "exclude": "Optional array of tag names to strip from the output"
-    },
-    "returns": "A DOM element containing the parsed content with htmlAttr, bodyAttr, and doctype properties"
-  },
-  "parse.json": {
-    "category": "parser",
-    "description": "Parses a JSON string safely, returning an object with value or error information.",
-    "example": "app.parse.json('{\"key\": \"value\"}')",
-    "parameters": {
-      "string": "The JSON string to parse"
-    },
-    "returns": "Object with value property on success, or errorName and errorMessage on failure"
-  },
-  "element.select": {
-    "category": "dom",
-    "description": "Selects elements by CSS selector. Supports index notation with [n] suffix. Returns single element by default or array if list parameter is true.",
-    "example": "app.element.select('#myDiv')",
-    "parameters": {
-      "selector": "CSS selector string (supports [index] suffix like '#items[2]')",
-      "list": "If true, always returns a NodeList"
-    },
-    "returns": "Single element, NodeList, or empty string if not found"
-  },
-  "element.find": {
-    "category": "dom",
-    "description": "Finds elements within a specific node using a CSS selector.",
-    "example": "app.element.find(parentNode, 'div.child')",
-    "parameters": {
-      "node": "The parent DOM node to search within",
-      "selector": "CSS selector (use '*' prefix to always return NodeList)"
-    },
-    "returns": "Single element, NodeList, or empty NodeList"
-  },
-  "element.get": {
-    "category": "dom",
-    "description": "Gets the value or property of an element. Automatically resolves the correct property based on tag name (value for inputs, src for images, textContent for divs, etc.).",
-    "example": "app.element.get(inputEl)",
-    "parameters": {
-      "element": "The DOM element",
-      "attrValue": "Optional attribute name to get the value of",
-      "attrName": "If true, returns the property name instead of the value",
-      "customValue": "Custom value key (e.g. 'label' for select options)"
-    }
-  },
-  "element.set": {
-    "category": "dom",
-    "description": "Sets a value or attribute on an element. Handles different set operations like settext, sethtml, setattr, setvalue, sethref, setsrc, etc.",
-    "example": "app.element.set(el, 'Hello World', 'settext')",
-    "parameters": {
-      "element": "The DOM element",
-      "value": "The value to set",
-      "attr": "The attribute type (e.g. 'text', 'html', 'attr', 'value', 'href', 'src')"
-    }
-  },
-  "element.add.class": {
-    "category": "dom",
-    "description": "Adds one or more CSS classes to an element.",
-    "example": "app.element.add.class({ element: el, value: 'active highlight' })",
-    "parameters": {
-      "options": "Object with element and space-separated class names as value"
-    }
-  },
-  "element.toggle.class": {
-    "category": "dom",
-    "description": "Toggles one or more CSS classes on an element.",
-    "example": "app.element.toggle.class({ element: el, value: 'active' })",
-    "parameters": {
-      "options": "Object with element and value (space-separated class names)"
-    }
-  },
-  "element.operate": {
-    "category": "dom",
-    "description": "Applies arithmetic operations (+, -, *, /) to numeric values in attributes or query parameters.",
-    "example": "app.element.operate('+5', 'page', '?page=3')",
-    "parameters": {
-      "operation": "Operation string (e.g. '+1', '-5', '*2', '/2', '++', '--')",
-      "query": "Query parameter name to target, or falsy to apply to entire value",
-      "attr": "The attribute value string to operate on"
-    }
-  },
-  "element.getTagLink": {
-    "category": "dom",
-    "description": "Traverses up the DOM tree to find the closest anchor (<a>), button, or label ancestor.",
-    "example": "app.element.getTagLink(e.target)",
-    "parameters": {
-      "element": "The starting element"
-    },
-    "returns": "The found ancestor element or null"
-  },
-  "element.getClosestWithAttr": {
-    "category": "dom",
-    "description": "Traverses up the DOM tree to find the closest ancestor with a specific attribute.",
-    "example": "app.element.getClosestWithAttr(e.target, 'mouseover')",
-    "parameters": {
-      "element": "The starting element",
-      "attr": "The attribute name to search for"
-    },
-    "returns": "The found ancestor element or null"
-  },
-  "element.resolveCall": {
-    "category": "dom",
-    "description": "Resolves the call context of an element, parsing exec objects or value strings into a normalized call structure.",
-    "example": "app.element.resolveCall(element, value)",
-    "parameters": {
-      "element": "The element or exec object",
-      "value": "Optional value string to parse",
-      "format": "Optional format ('bracketArray' or 'commaSplit')"
-    },
-    "returns": "Element with call property attached"
-  },
-  "element.resolveBindingValue": {
-    "category": "dom",
-    "description": "Resolves a binding value for an element, checking for default values in {variable:default} syntax.",
-    "example": "app.element.resolveBindingValue(el, 'name', 'Josef')",
-    "parameters": {
-      "elem": "The target element",
-      "variableName": "The variable name to resolve",
-      "targetValue": "The target value (used if non-empty)"
-    },
-    "returns": "Resolved value string"
-  },
-  "element.getPropertyByPath": {
-    "category": "dom",
-    "description": "Retrieves a nested property from an object using a dot-separated path.",
-    "example": "app.element.getPropertyByPath(obj, 'user.name.first')",
-    "parameters": {
-      "object": "The root object to traverse",
-      "path": "Dot-separated property path"
-    },
-    "returns": "The resolved value or empty string if not found"
-  },
-  "element.extractBracketValues": {
-    "category": "dom",
-    "description": "Extracts values enclosed in square brackets from a string. Handles nested brackets correctly.",
-    "example": "app.element.extractBracketValues('toggle:[#myDiv]')",
-    "parameters": {
-      "str": "The string to extract bracket values from"
-    },
-    "returns": "Single string value, array of values, or empty string"
-  },
-  "element.saveOriginalValues": {
-    "category": "dom",
-    "description": "Saves the original state of an element (attributes, text, HTML, value, style) for later reset operations.",
-    "example": "app.element.saveOriginalValues(el)",
-    "parameters": {
-      "element": "The element to capture original values from"
-    }
-  },
-  "element.runOnEvent": {
-    "category": "dom",
-    "description": "Checks and runs event handlers (on[event]) for an element after an attribute or action executes.",
-    "example": "app.element.runOnEvent({ exec: { func: 'click', element: el } })",
-    "parameters": {
-      "parsedCall": "Object with exec property containing func and element"
-    }
-  },
-  "element.onchange": {
-    "category": "dom",
-    "description": "Handles onchange callbacks for an element by looking for 'on[attr]change' attributes.",
-    "example": "app.element.onchange(inputEl, 'settext')",
-    "parameters": {
-      "object": "The element",
-      "value": "The attribute name that changed",
-      "once": "If true, only fire once"
-    }
-  },
-  "element.onload": {
-    "category": "dom",
-    "description": "Executes onload actions for an element or NodeList. Supports module and plugin prefixed events.",
-    "example": "app.element.onload(document.querySelector('#myDiv'), 'plugin-onload')",
-    "parameters": {
-      "object": "HTMLElement or NodeList to process",
-      "value": "The attribute value identifying the load event"
-    }
-  },
-  "element.onsubmit": {
-    "category": "dom",
-    "description": "Handles form submit events, executing onformsubmit attribute actions.",
-    "example": "app.element.onsubmit(event)",
-    "parameters": {
-      "e": "The submit event object"
-    }
-  },
-  "log.info": {
-    "category": "logging",
-    "description": "Logs information to console if debugging is enabled. Returns a function that performs the actual logging.",
-    "example": "app.log.info()('Loaded!')",
-    "parameters": {
-      "v": "Optional value (truthy adds indent marker)"
-    }
-  },
-  "log.error": {
-    "category": "logging",
-    "description": "Logs errors to console if debugging is enabled. Supports predefined message codes.",
-    "example": "app.log.error(400)('Missing attribute')",
-    "parameters": {
-      "v": "Optional message code (100, 400) or custom prefix"
-    }
-  },
-  "log.warn": {
-    "category": "logging",
-    "description": "Logs warnings to console if debugging is enabled.",
-    "example": "app.log.warn(100)('Skipping attribute')",
-    "parameters": {
-      "v": "Optional message code or custom prefix"
-    }
-  },
-  "config.get": {
-    "category": "configuration",
-    "description": "Retrieves configuration from a DOM element's conf attribute, merging with standard defaults. Supports extension-prefixed configs.",
-    "example": "app.config.get('myplugin', { debug: false, theme: 'dark' }, el)",
-    "parameters": {
-      "extension": "Extension name prefix (or false for global config)",
-      "standard": "Object with default configuration values",
-      "element": "DOM element to read config attribute from"
-    },
-    "returns": "Merged configuration object"
-  },
-  "config.set": {
-    "category": "configuration",
-    "description": "Applies global configuration from the script element to the app object. Sets properties like debug, varsDir, storageKey, etc.",
-    "example": "app.config.set()",
-    "parameters": {
-      "scriptElement": "Optional script element (defaults to app.script.element)"
-    }
-  },
-  "globals.set": {
-    "category": "globals",
-    "description": "Sets a global variable accessible throughout the application.",
-    "example": "app.globals.set('theme', 'dark')",
-    "parameters": {
-      "name": "The global variable name",
-      "value": "The value to assign"
-    }
-  },
-  "globals.get": {
-    "category": "globals",
-    "description": "Gets the value of a global variable.",
-    "example": "app.globals.get('theme')",
-    "parameters": {
-      "name": "The global variable name"
-    },
-    "returns": "The stored value"
-  },
-  "globals.refresh": {
-    "category": "globals",
-    "description": "Refreshes global variables (href, title) and updates all live-bound elements registered via bindglobal.",
-    "example": "app.globals.refresh()"
-  },
-  "caches.get": {
-    "category": "caching",
-    "description": "Retrieves cached data from the specified storage mechanism (local, session, cookie, or window memory).",
-    "example": "app.caches.get('session', 'var', 'myData')",
-    "parameters": {
-      "mechanism": "Storage type: 'local', 'session', 'cookie', or 'window' (in-memory)",
-      "type": "Cache type key (e.g. 'var', 'module', 'page', 'template')",
-      "key": "The cache key name",
-      "options": "Optional object with fetchJson flag to auto-parse"
-    },
-    "returns": "Cached data object or null"
-  },
-  "caches.set": {
-    "category": "caching",
-    "description": "Stores data in the specified cache mechanism with optional format parsing and TTL.",
-    "example": "app.caches.set('session', 'var', 'myData', response, 'json')",
-    "parameters": {
-      "mechanism": "Storage type: 'local', 'session', 'cookie', or 'window'",
-      "type": "Cache type key",
-      "key": "The cache key name",
-      "response": "Response object with responseText or data property",
-      "format": "Optional format: 'json' or 'xml'",
-      "ttl": "Optional time-to-live in milliseconds"
-    }
-  },
-  "caches.validate": {
-    "category": "caching",
-    "description": "Validates a cached entry against its TTL. Returns the cached data if still valid, or removes expired entries.",
-    "example": "app.caches.validate({ ttl: 60000, keyType: 'module', storageKey: 'myKey' })",
-    "parameters": {
-      "options": "Object with ttl, keyType, and storageKey"
-    },
-    "returns": "Cached data if valid, or undefined if expired"
-  },
-  "caches.remove": {
-    "category": "caching",
-    "description": "Removes a cached entry from the specified storage mechanism.",
-    "example": "app.caches.remove('local', 'myKey')",
-    "parameters": {
-      "mechanism": "'local' or 'session'",
-      "key": "The cache key to remove"
-    }
-  },
-  "listeners.add": {
-    "category": "events",
-    "description": "Adds an event listener to an element, removing any existing identical listener first to prevent duplicates.",
-    "example": "app.listeners.add(el, 'click', handler)",
-    "parameters": {
-      "element": "The DOM element",
-      "eventType": "Event type string (e.g. 'click', 'keydown')",
-      "callback": "Event handler function"
-    }
-  },
-  "listeners.remove": {
-    "category": "events",
-    "description": "Removes an event listener from an element.",
-    "example": "app.listeners.remove(el, 'click', handler)",
-    "parameters": {
-      "element": "The DOM element",
-      "eventType": "Event type string",
-      "callback": "The handler function to remove"
-    }
-  },
-  "listeners.dispatch": {
-    "category": "events",
-    "description": "Dispatches a custom event on the window with optional detail data.",
-    "example": "app.listeners.dispatch('myEvent', { key: 'value' })",
-    "parameters": {
-      "name": "Custom event name",
-      "detail": "Optional detail object attached to the event"
-    }
-  },
-  "listeners.change": {
-    "category": "events",
-    "description": "Handles value change events for inputs, triggering onvaluechange, onvaluechangeif, onstatevaluechange, and onselectchange callbacks.",
-    "example": "app.listeners.change('input', inputEl, false)",
-    "parameters": {
-      "type": "Event type string",
-      "object": "The element that changed",
-      "test": "Optional test flag"
-    }
-  },
-  "variables.update.attributes": {
-    "category": "variables",
-    "description": "Replaces {variable} and {variable:default} patterns in element attributes with the provided value.",
-    "example": "app.variables.update.attributes(el, 'name', 'Josef')",
-    "parameters": {
-      "object": "The DOM element",
-      "replaceVariable": "Variable name to replace",
-      "replaceValue": "Value to substitute",
-      "options": "Optional object with reset, resetSoft, reloadContent, single, exclude flags"
-    }
-  },
-  "variables.update.content": {
-    "category": "variables",
-    "description": "Replaces {variable} and {variable:default} patterns in element text nodes (content) with the provided value.",
-    "example": "app.variables.update.content(el, 'name', 'Josef')",
-    "parameters": {
-      "object": "The DOM element",
-      "replaceVariable": "Variable name to replace",
-      "replaceValue": "Value to substitute"
-    }
-  },
-  "variables.reset.attributes": {
-    "category": "variables",
-    "description": "Resets all element attributes to their original values (captured by saveOriginalValues).",
-    "example": "app.variables.reset.attributes(el)",
-    "parameters": {
-      "object": "The DOM element"
-    }
-  },
-  "variables.reset.content": {
-    "category": "variables",
-    "description": "Resets element innerHTML to its original value.",
-    "example": "app.variables.reset.content(el)",
-    "parameters": {
-      "object": "The DOM element"
-    }
-  },
-  "querystrings.get": {
-    "category": "url",
-    "description": "Gets a query string parameter value from a URL or the current page URL.",
-    "example": "app.querystrings.get(false, 'page')",
-    "parameters": {
-      "url": "URL string to parse (or false/null to use current location)",
-      "param": "The query parameter name to retrieve"
-    },
-    "returns": "The parameter value or empty string"
-  },
-  "templates.render": {
-    "category": "templates",
-    "description": "Renders the loaded templates into the document, resolving srcDoc and src templates into header, aside, main, and footer sections.",
-    "example": "app.templates.render()"
-  },
-  "templates.resolveBase": {
-    "category": "templates",
-    "description": "Resolves relative src paths in HTML by prepending the base href.",
-    "example": "app.templates.resolveBase(htmlString)",
-    "parameters": {
-      "html": "HTML string with relative paths"
-    },
-    "returns": "HTML string with resolved absolute paths"
-  },
-  "attributes.run": {
-    "category": "attributes",
-    "description": "Runs FTML (Front Text Markup Language) attribute processing on elements matching the given selector. This is the core rendering engine.",
-    "example": "app.attributes.run('#container *')",
-    "parameters": {
-      "selector": "CSS selector string or array of elements",
-      "exclude": "Optional array of attribute names to skip",
-      "ignore": "If true, ignores stop attributes"
-    }
-  },
-  "attributes.runDeferred": {
-    "category": "attributes",
-    "description": "Executes deferred attributes (like clone) that depend on a fully processed DOM.",
-    "example": "app.attributes.runDeferred()"
-  },
-  "xhr.request": {
-    "category": "network",
-    "description": "Creates and sends an XHR request with full support for caching, DOM updates, loaders, callbacks, and JSON payload construction.",
-    "example": "app.xhr.request({ url: '/api/data', method: 'GET', cache: { mechanism: 'session', format: 'json', keyType: 'var', key: 'myData' } })",
-    "parameters": {
-      "options": "Configuration object with url, method, target, headers, cache, onload, success, error, loader, type, credentials, enctype, etc."
-    }
-  },
-  "xhr.finalize": {
-    "category": "network",
-    "description": "Checks if all assets (extensions, vars) are loaded and finalizes the app by running attributes and showing the page.",
-    "example": "app.xhr.finalize('var')",
-    "parameters": {
-      "type": "The asset type that just finished loading"
-    }
-  },
-  "assets.load": {
-    "category": "assets",
-    "description": "Initiates loading of all application assets. For frontpages: loads extensions and vars. For sub-pages: loads templates.",
-    "example": "app.assets.load()"
-  },
-  "assets.set": {
-    "category": "assets",
-    "description": "Parses script element attributes to determine which modules, plugins, and vars to load.",
-    "example": "app.assets.set(scriptElement.attributes)",
-    "parameters": {
-      "scriptAttr": "Attributes from the front.js script element"
-    }
-  },
-  "assets.get.vars": {
-    "category": "assets",
-    "description": "Loads variable JSON files from the configured varsDir. Checks session cache first before making XHR requests.",
-    "example": "app.assets.get.vars()"
-  },
-  "assets.get.extensions": {
-    "category": "assets",
-    "description": "Loads all modules and plugins by injecting script tags. Calls __autoload on each extension once loaded.",
-    "example": "app.assets.get.extensions()"
-  },
-  "assets.get.templates": {
-    "category": "assets",
-    "description": "Loads template HTML files via XHR for multi-page template rendering.",
-    "example": "app.assets.get.templates()"
+  "function": {
+    "core": [
+      {
+        "function": "app.call",
+        "description": "Executes a command string. Supports chaining multiple commands with semicolons."
+      },
+      {
+        "function": "app.click",
+        "description": "Simulates a click or double-click event on a DOM element."
+      },
+      {
+        "function": "app.disable",
+        "description": "Controls document visibility during loading."
+      },
+      {
+        "function": "app.exec",
+        "description": "Executes a function by dot-notation path with arguments."
+      },
+      {
+        "function": "app.load",
+        "description": "Initializes the Front framework and sets up the window load listener."
+      },
+      {
+        "function": "app.start",
+        "description": "Handles full app initialization: config, event listeners, and asset loading."
+      },
+      {
+        "function": "app.wait",
+        "description": "Waits for a specified duration in milliseconds before executing a callback."
+      }
+    ],
+    "action": [
+      {
+        "function": "dom.append",
+        "description": "Clones children from a source element and appends them to a target, rerunning FTML."
+      },
+      {
+        "function": "dom.blur",
+        "description": "Removes focus from an element."
+      },
+      {
+        "function": "dom.clear",
+        "description": "Clears the innerHTML of an element."
+      },
+      {
+        "function": "dom.clone",
+        "description": "Clones the content of a target element into the current element."
+      },
+      {
+        "function": "dom.disable",
+        "description": "Disables an element, blocking click and wheel events."
+      },
+      {
+        "function": "dom.enable",
+        "description": "Enables a previously disabled element."
+      },
+      {
+        "function": "dom.focus",
+        "description": "Sets focus on an element."
+      },
+      {
+        "function": "dom.hide",
+        "description": "Hides an element with display:none or visibility:hidden."
+      },
+      {
+        "function": "dom.loader",
+        "description": "Hides the source element and optionally shows a target. Used for loading state transitions."
+      },
+      {
+        "function": "dom.move",
+        "description": "Moves an element into a target parent element."
+      },
+      {
+        "function": "dom.prepend",
+        "description": "Prepends an element before the first child of a target."
+      },
+      {
+        "function": "dom.reload",
+        "description": "Reloads the content of an iframe element."
+      },
+      {
+        "function": "dom.remove",
+        "description": "Removes an element from the DOM."
+      },
+      {
+        "function": "dom.rerun",
+        "description": "Restores original HTML and re-runs all FTML attributes on the element and its children."
+      },
+      {
+        "function": "dom.runattr",
+        "description": "Re-runs a specific attribute on an element as if it were freshly parsed."
+      },
+      {
+        "function": "dom.rundelay",
+        "description": "Executes a command after a delay (default 1000ms)."
+      },
+      {
+        "function": "dom.runrepeat",
+        "description": "Executes a command repeatedly at an interval (default 1000ms)."
+      },
+      {
+        "function": "dom.scroll",
+        "description": "Scrolls an element to a position. Supports numeric values and 'bottom'."
+      },
+      {
+        "function": "dom.select",
+        "description": "Sets the text selection range on an input element."
+      },
+      {
+        "function": "dom.show",
+        "description": "Shows a previously hidden element by restoring its display value."
+      },
+      {
+        "function": "dom.start",
+        "description": "Resumes stopped attributes on an element's children and re-runs them."
+      },
+      {
+        "function": "dom.stop",
+        "description": "Stops attribute processing on an element's children by adding stop attributes."
+      },
+      {
+        "function": "dom.toggle",
+        "description": "Toggles element display state or checkbox value. Supports toggledisplay and class toggling."
+      }
+    ],
+    "content": [
+      {
+        "function": "dom.doctitle",
+        "description": "Sets the document title."
+      },
+      {
+        "function": "dom.escape",
+        "description": "Escapes the first character of element content to its HTML entity (&#code;)."
+      },
+      {
+        "function": "dom.format",
+        "description": "Formats element content by removing repeated operators (e.g. compute mode)."
+      },
+      {
+        "function": "dom.include",
+        "description": "Loads content from an external HTML file via XHR and inserts it into the element."
+      },
+      {
+        "function": "dom.insert",
+        "description": "Inserts content at specific positions: afterbegin, afterend, beforebegin, beforeend. Also handles prependattr."
+      },
+      {
+        "function": "dom.iterate",
+        "description": "Repeats element content over a numeric range, replacing a variable with the current index."
+      },
+      {
+        "function": "dom.lowercase",
+        "description": "Converts element content to lowercase."
+      },
+      {
+        "function": "dom.metadata",
+        "description": "Gets content from a meta tag by name and sets it as the element's innerHTML."
+      },
+      {
+        "function": "dom.replace",
+        "description": "Replaces content in an element (alias for insert)."
+      },
+      {
+        "function": "dom.reset",
+        "description": "Resets an element to its original value. Supports forms, buttons, and inputs."
+      },
+      {
+        "function": "dom.sanitize",
+        "description": "Removes characters matching a regex pattern from an element's value."
+      },
+      {
+        "function": "dom.set",
+        "description": "Sets the innerHTML of an element. Optionally strips HTML tags."
+      },
+      {
+        "function": "dom.set2",
+        "description": "Handles settext, sethtml, setvalue, sethref, setqueryhref, setsrc, setid, setname, setattr, setaction, and setmax operations."
+      },
+      {
+        "function": "dom.slice",
+        "description": "Slices element content by start and end indices."
+      },
+      {
+        "function": "dom.split",
+        "description": "Splits element content by a delimiter and returns a specific part by index."
+      },
+      {
+        "function": "dom.trim",
+        "description": "Trims characters from element content. Supports trimleft and trimright variants."
+      },
+      {
+        "function": "dom.uppercase",
+        "description": "Converts element content to uppercase. If value is 'true', only capitalizes the first character."
+      }
+    ],
+    "style": [
+      {
+        "function": "dom.apply",
+        "description": "Applies CSS style properties to an element. Handles margin, padding, width, height, flex, grid, color, font, position, display, border, radius, and more."
+      }
+    ],
+    "binding": [
+      {
+        "function": "dom.bind",
+        "description": "Binds data to elements. Supports bindvar, bindquery, bindasset, bindglobal, bindfield, and bindappend for variable substitution."
+      },
+      {
+        "function": "dom.map",
+        "description": "Maps values from cached enum data. Supports maptext, mapclass, mapmargin, mapbindvar, and maprun."
+      },
+      {
+        "function": "dom.var",
+        "description": "Declares a variable on an element (skips script elements)."
+      }
+    ],
+    "logic": [
+      {
+        "function": "dom.bindif",
+        "description": "Binds conditional logic to input elements that triggers actions based on value changes."
+      },
+      {
+        "function": "dom.if",
+        "description": "Evaluates conditions and executes actions. Supports operators: = (equal), ! (not), > (gt), < (lt), ~ (contains), !~ (not contains), & (AND), | (OR)."
+      }
+    ],
+    "interactive": [
+      {
+        "function": "dom.alert",
+        "description": "Displays a browser alert dialog with a message."
+      },
+      {
+        "function": "dom.confirm",
+        "description": "Shows a confirmation dialog. Supports onconfirmvalue for conditional actions based on response."
+      },
+      {
+        "function": "dom.submit",
+        "description": "Submits a form element programmatically."
+      }
+    ],
+    "element": [
+      {
+        "function": "app.element.add.class",
+        "description": "Adds one or more CSS classes to an element."
+      },
+      {
+        "function": "app.element.extractBracketValues",
+        "description": "Extracts values inside square brackets from a string. Handles nesting."
+      },
+      {
+        "function": "app.element.find",
+        "description": "Finds elements within a parent node by CSS selector."
+      },
+      {
+        "function": "app.element.get",
+        "description": "Gets the value/property of an element. Resolves correct property by tag (value, src, textContent, etc.)."
+      },
+      {
+        "function": "app.element.getClosestWithAttr",
+        "description": "Finds the closest ancestor with a specific attribute."
+      },
+      {
+        "function": "app.element.getPropertyByPath",
+        "description": "Retrieves a nested property from an object using dot-separated path."
+      },
+      {
+        "function": "app.element.getTagLink",
+        "description": "Finds the closest ancestor that is an anchor, button, or label."
+      },
+      {
+        "function": "app.element.onchange",
+        "description": "Handles onchange callbacks by looking for on[attr]change attributes."
+      },
+      {
+        "function": "app.element.onload",
+        "description": "Executes onload actions for an element or NodeList."
+      },
+      {
+        "function": "app.element.onsubmit",
+        "description": "Handles form submit events, executing onformsubmit attribute actions."
+      },
+      {
+        "function": "app.element.operate",
+        "description": "Applies arithmetic operations (+, -, *, /) to numeric values in attributes or query params."
+      },
+      {
+        "function": "app.element.resolveBindingValue",
+        "description": "Resolves a binding value, checking for defaults in {variable:default} syntax."
+      },
+      {
+        "function": "app.element.resolveCall",
+        "description": "Resolves the call context of an element into a normalized call structure."
+      },
+      {
+        "function": "app.element.runOnEvent",
+        "description": "Checks and runs on[event] handlers after an attribute or action executes."
+      },
+      {
+        "function": "app.element.saveOriginalValues",
+        "description": "Saves the original state of an element for later reset operations."
+      },
+      {
+        "function": "app.element.select",
+        "description": "Selects elements by CSS selector. Supports [index] suffix for specific matches."
+      },
+      {
+        "function": "app.element.set",
+        "description": "Sets a value or attribute on an element. Handles settext, sethtml, setattr, setvalue, sethref, setsrc."
+      },
+      {
+        "function": "app.element.toggle.class",
+        "description": "Toggles one or more CSS classes on an element."
+      }
+    ],
+    "parser": [
+      {
+        "function": "app.parse.attribute",
+        "description": "Parses a semicolon-separated string into key-value pairs split at the first colon."
+      },
+      {
+        "function": "app.parse.callString",
+        "description": "Parses a Front command string into a structured object with function name, elements, values, and delay settings."
+      },
+      {
+        "function": "app.parse.json",
+        "description": "Safely parses a JSON string. Returns object with value on success, or errorName/errorMessage on failure."
+      },
+      {
+        "function": "app.parse.text",
+        "description": "Parses an HTML string into a DOM node. Extracts html/body attributes and doctype."
+      }
+    ],
+    "variables": [
+      {
+        "function": "app.variables.reset.attributes",
+        "description": "Resets all element attributes to their original captured values."
+      },
+      {
+        "function": "app.variables.reset.content",
+        "description": "Resets element innerHTML to its original value."
+      },
+      {
+        "function": "app.variables.update.attributes",
+        "description": "Replaces {variable} and {variable:default} patterns in element attributes."
+      },
+      {
+        "function": "app.variables.update.content",
+        "description": "Replaces {variable} patterns in element text nodes."
+      }
+    ],
+    "events": [
+      {
+        "function": "app.listeners.add",
+        "description": "Adds an event listener, removing any existing duplicate first."
+      },
+      {
+        "function": "app.listeners.change",
+        "description": "Handles value change events, triggering onvaluechange, onstatevaluechange, and onselectchange callbacks."
+      },
+      {
+        "function": "app.listeners.dispatch",
+        "description": "Dispatches a custom event on the window with optional detail data."
+      },
+      {
+        "function": "app.listeners.remove",
+        "description": "Removes an event listener from an element."
+      }
+    ],
+    "state": [
+      {
+        "function": "app.caches.get",
+        "description": "Retrieves cached data from local, session, cookie, or window memory."
+      },
+      {
+        "function": "app.caches.remove",
+        "description": "Removes a cached entry from local or session storage."
+      },
+      {
+        "function": "app.caches.set",
+        "description": "Stores data in a cache mechanism with optional format parsing and TTL."
+      },
+      {
+        "function": "app.caches.validate",
+        "description": "Validates a cached entry against its TTL. Returns data if valid, removes if expired."
+      },
+      {
+        "function": "app.globals.get",
+        "description": "Gets the value of a global variable."
+      },
+      {
+        "function": "app.globals.refresh",
+        "description": "Refreshes global variables and updates all live-bound elements via bindglobal."
+      },
+      {
+        "function": "app.globals.set",
+        "description": "Sets a global variable accessible throughout the application."
+      }
+    ],
+    "rendering": [
+      {
+        "function": "app.attributes.run",
+        "description": "Runs FTML attribute processing on elements matching a selector. The core rendering engine."
+      },
+      {
+        "function": "app.attributes.runDeferred",
+        "description": "Executes deferred attributes (like clone) that depend on a fully processed DOM."
+      },
+      {
+        "function": "app.templates.render",
+        "description": "Renders loaded templates into the document structure (header, aside, main, footer)."
+      },
+      {
+        "function": "app.templates.resolveBase",
+        "description": "Resolves relative src paths in HTML by prepending the base href."
+      }
+    ],
+    "network": [
+      {
+        "function": "app.assets.get.extensions",
+        "description": "Loads all modules and plugins by injecting script tags."
+      },
+      {
+        "function": "app.assets.get.templates",
+        "description": "Loads template HTML files via XHR for multi-page rendering."
+      },
+      {
+        "function": "app.assets.get.vars",
+        "description": "Loads variable JSON files from the configured varsDir."
+      },
+      {
+        "function": "app.assets.load",
+        "description": "Initiates loading of all application assets (extensions, vars, or templates)."
+      },
+      {
+        "function": "app.assets.set",
+        "description": "Parses script element attributes to determine modules, plugins, and vars to load."
+      },
+      {
+        "function": "app.xhr.finalize",
+        "description": "Checks if all assets are loaded and finalizes the app by running attributes and showing the page."
+      },
+      {
+        "function": "app.xhr.request",
+        "description": "Creates and sends an XHR request with caching, DOM updates, loaders, and callbacks."
+      }
+    ],
+    "configuration": [
+      {
+        "function": "app.config.get",
+        "description": "Retrieves config from an element's conf attribute, merged with standard defaults."
+      },
+      {
+        "function": "app.config.set",
+        "description": "Applies global configuration from the script element to the app object."
+      },
+      {
+        "function": "dom.hrefhost",
+        "description": "Sets the base href based on host matching for multi-environment deployments."
+      }
+    ],
+    "utility": [
+      {
+        "function": "app.log.error",
+        "description": "Logs errors to console when debugging is enabled."
+      },
+      {
+        "function": "app.log.info",
+        "description": "Logs information to console when debugging is enabled."
+      },
+      {
+        "function": "app.log.warn",
+        "description": "Logs warnings to console when debugging is enabled."
+      },
+      {
+        "function": "app.querystrings.get",
+        "description": "Gets a query string parameter value from a URL or the current page."
+      },
+      {
+        "function": "dom.log",
+        "description": "Logs a value to the browser console."
+      },
+      {
+        "function": "dom.setUniqueId",
+        "description": "Generates and assigns a unique incremental ID to an element."
+      }
+    ]
   }
 }

@@ -12,19 +12,222 @@
   </nav>
   <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get marginbottom="2rem"
     runorder="bindglobal;settext;globalize-get"></h1>
-  <section margintop="2rem">
-    <table color="white" class="mt1" width="100%" data-src="assets/json/data/v1/functions.json" data-ttl="600000">
-      <tr>
+  <form>
+    <input id="filter" type="text" placeholder="Filter" onvaluechange="filtersearch--run:#functionTable" width="15rem"
+      padding="0.75rem 1rem" bgcolor="white01" radius="0.25rem" autocomplete="off" focus>
+  </form>
+  <section margintop="1rem">
+    <div id="functionTableEmpty" hide>No functions found.</div>
+    <table color="white" class="mt1" width="100%" data-src="assets/json/data/v1/functions.json" data-ttl="600000"
+      id="functionTable" filtersearch--onempty="#functionTableEmpty">
+      <tr id="titleCore">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Core</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="function.core">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
+          filtersearch--count="countCore" if="([{countCore}]:[0])/hide:#titleCore?show:#titleCore">
+          <td data-get="function"></td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="titleAction">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Action</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="function.action">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
+          filtersearch--count="countAction" if="([{countAction}]:[0])/hide:#titleAction?show:#titleAction">
+          <td data-get="function"></td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="titleContent">
         <td colspan="2" paddingtop="2rem">
           <h4>Content</h4>
           <hr color="darkgray" margin="0.5rem 0">
         </td>
       </tr>
-      <tbody class="z09" data-iterate="true">
-        <tr>
-          <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:[*]" data-get="[*]"></a>
-          </td>
-          <td data-get="[*].description"></td>
+      <tbody valign="top" class="z09" data-iterate="function.content">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
+          filtersearch--count="countContent" if="([{countContent}]:[0])/hide:#titleContent?show:#titleContent">
+          <td data-get="function"></td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="titleStyle">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Style</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="function.style">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
+          filtersearch--count="countStyle" if="([{countStyle}]:[0])/hide:#titleStyle?show:#titleStyle">
+          <td data-get="function"></td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="titleBinding">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Binding</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="function.binding">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
+          filtersearch--count="countBinding" if="([{countBinding}]:[0])/hide:#titleBinding?show:#titleBinding">
+          <td data-get="function"></td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="titleLogic">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Logic</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="function.logic">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
+          filtersearch--count="countLogic" if="([{countLogic}]:[0])/hide:#titleLogic?show:#titleLogic">
+          <td data-get="function"></td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="titleInteractive">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Interactive</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="function.interactive">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
+          filtersearch--count="countInteractive"
+          if="([{countInteractive}]:[0])/hide:#titleInteractive?show:#titleInteractive">
+          <td data-get="function"></td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="titleElement">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Element</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="function.element">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
+          filtersearch--count="countElement" if="([{countElement}]:[0])/hide:#titleElement?show:#titleElement">
+          <td data-get="function"></td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="titleParser">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Parser</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="function.parser">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
+          filtersearch--count="countParser" if="([{countParser}]:[0])/hide:#titleParser?show:#titleParser">
+          <td data-get="function"></td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="titleVariables">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Variables</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="function.variables">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
+          filtersearch--count="countVariables" if="([{countVariables}]:[0])/hide:#titleVariables?show:#titleVariables">
+          <td data-get="function"></td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="titleEvents">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Events</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="function.events">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
+          filtersearch--count="countEvents" if="([{countEvents}]:[0])/hide:#titleEvents?show:#titleEvents">
+          <td data-get="function"></td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="titleState">
+        <td colspan="2" paddingtop="2rem">
+          <h4>State</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="function.state">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
+          filtersearch--count="countState" if="([{countState}]:[0])/hide:#titleState?show:#titleState">
+          <td data-get="function"></td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="titleRendering">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Rendering</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="function.rendering">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
+          filtersearch--count="countRendering" if="([{countRendering}]:[0])/hide:#titleRendering?show:#titleRendering">
+          <td data-get="function"></td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="titleNetwork">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Network</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="function.network">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
+          filtersearch--count="countNetwork" if="([{countNetwork}]:[0])/hide:#titleNetwork?show:#titleNetwork">
+          <td data-get="function"></td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="titleConfiguration">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Configuration</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="function.configuration">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
+          filtersearch--count="countConfiguration"
+          if="([{countConfiguration}]:[0])/hide:#titleConfiguration?show:#titleConfiguration">
+          <td data-get="function"></td>
+          <td data-get="description"></td>
+        </tr>
+      </tbody>
+      <tr id="titleUtility">
+        <td colspan="2" paddingtop="2rem">
+          <h4>Utility</h4>
+          <hr color="darkgray" margin="0.5rem 0">
+        </td>
+      </tr>
+      <tbody valign="top" class="z09" data-iterate="function.utility">
+        <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
+          filtersearch--count="countUtility" if="([{countUtility}]:[0])/hide:#titleUtility?show:#titleUtility">
+          <td data-get="function"></td>
+          <td data-get="description"></td>
         </tr>
       </tbody>
     </table>
