@@ -30,221 +30,13 @@
         "description": "Waits for a specified duration in milliseconds before executing a callback."
       }
     ],
-    "action": [
-      {
-        "function": "dom.append",
-        "description": "Clones children from a source element and appends them to a target, rerunning FTML."
-      },
-      {
-        "function": "dom.blur",
-        "description": "Removes focus from an element."
-      },
-      {
-        "function": "dom.clear",
-        "description": "Clears the innerHTML of an element."
-      },
-      {
-        "function": "dom.clone",
-        "description": "Clones the content of a target element into the current element."
-      },
-      {
-        "function": "dom.disable",
-        "description": "Disables an element, blocking click and wheel events."
-      },
-      {
-        "function": "dom.enable",
-        "description": "Enables a previously disabled element."
-      },
-      {
-        "function": "dom.focus",
-        "description": "Sets focus on an element."
-      },
-      {
-        "function": "dom.hide",
-        "description": "Hides an element with display:none or visibility:hidden."
-      },
-      {
-        "function": "dom.loader",
-        "description": "Hides the source element and optionally shows a target. Used for loading state transitions."
-      },
-      {
-        "function": "dom.move",
-        "description": "Moves an element into a target parent element."
-      },
-      {
-        "function": "dom.prepend",
-        "description": "Prepends an element before the first child of a target."
-      },
-      {
-        "function": "dom.reload",
-        "description": "Reloads the content of an iframe element."
-      },
-      {
-        "function": "dom.remove",
-        "description": "Removes an element from the DOM."
-      },
-      {
-        "function": "dom.rerun",
-        "description": "Restores original HTML and re-runs all FTML attributes on the element and its children."
-      },
-      {
-        "function": "dom.runattr",
-        "description": "Re-runs a specific attribute on an element as if it were freshly parsed."
-      },
-      {
-        "function": "dom.rundelay",
-        "description": "Executes a command after a delay (default 1000ms)."
-      },
-      {
-        "function": "dom.runrepeat",
-        "description": "Executes a command repeatedly at an interval (default 1000ms)."
-      },
-      {
-        "function": "dom.scroll",
-        "description": "Scrolls an element to a position. Supports numeric values and 'bottom'."
-      },
-      {
-        "function": "dom.select",
-        "description": "Sets the text selection range on an input element."
-      },
-      {
-        "function": "dom.show",
-        "description": "Shows a previously hidden element by restoring its display value."
-      },
-      {
-        "function": "dom.start",
-        "description": "Resumes stopped attributes on an element's children and re-runs them."
-      },
-      {
-        "function": "dom.stop",
-        "description": "Stops attribute processing on an element's children by adding stop attributes."
-      },
-      {
-        "function": "dom.toggle",
-        "description": "Toggles element display state or checkbox value. Supports toggledisplay and class toggling."
-      }
-    ],
-    "content": [
-      {
-        "function": "dom.doctitle",
-        "description": "Sets the document title."
-      },
-      {
-        "function": "dom.escape",
-        "description": "Escapes the first character of element content to its HTML entity (&#code;)."
-      },
-      {
-        "function": "dom.format",
-        "description": "Formats element content by removing repeated operators (e.g. compute mode)."
-      },
-      {
-        "function": "dom.include",
-        "description": "Loads content from an external HTML file via XHR and inserts it into the element."
-      },
-      {
-        "function": "dom.insert",
-        "description": "Inserts content at specific positions: afterbegin, afterend, beforebegin, beforeend. Also handles prependattr."
-      },
-      {
-        "function": "dom.iterate",
-        "description": "Repeats element content over a numeric range, replacing a variable with the current index."
-      },
-      {
-        "function": "dom.lowercase",
-        "description": "Converts element content to lowercase."
-      },
-      {
-        "function": "dom.metadata",
-        "description": "Gets content from a meta tag by name and sets it as the element's innerHTML."
-      },
-      {
-        "function": "dom.replace",
-        "description": "Replaces content in an element (alias for insert)."
-      },
-      {
-        "function": "dom.reset",
-        "description": "Resets an element to its original value. Supports forms, buttons, and inputs."
-      },
-      {
-        "function": "dom.sanitize",
-        "description": "Removes characters matching a regex pattern from an element's value."
-      },
-      {
-        "function": "dom.set",
-        "description": "Sets the innerHTML of an element. Optionally strips HTML tags."
-      },
-      {
-        "function": "dom.set2",
-        "description": "Handles settext, sethtml, setvalue, sethref, setqueryhref, setsrc, setid, setname, setattr, setaction, and setmax operations."
-      },
-      {
-        "function": "dom.slice",
-        "description": "Slices element content by start and end indices."
-      },
-      {
-        "function": "dom.split",
-        "description": "Splits element content by a delimiter and returns a specific part by index."
-      },
-      {
-        "function": "dom.trim",
-        "description": "Trims characters from element content. Supports trimleft and trimright variants."
-      },
-      {
-        "function": "dom.uppercase",
-        "description": "Converts element content to uppercase. If value is 'true', only capitalizes the first character."
-      }
-    ],
-    "style": [
-      {
-        "function": "dom.apply",
-        "description": "Applies CSS style properties to an element. Handles margin, padding, width, height, flex, grid, color, font, position, display, border, radius, and more."
-      }
-    ],
-    "binding": [
-      {
-        "function": "dom.bind",
-        "description": "Binds data to elements. Supports bindvar, bindquery, bindasset, bindglobal, bindfield, and bindappend for variable substitution."
-      },
-      {
-        "function": "dom.map",
-        "description": "Maps values from cached enum data. Supports maptext, mapclass, mapmargin, mapbindvar, and maprun."
-      },
-      {
-        "function": "dom.var",
-        "description": "Declares a variable on an element (skips script elements)."
-      }
-    ],
-    "logic": [
-      {
-        "function": "dom.bindif",
-        "description": "Binds conditional logic to input elements that triggers actions based on value changes."
-      },
-      {
-        "function": "dom.if",
-        "description": "Evaluates conditions and executes actions. Supports operators: = (equal), ! (not), > (gt), < (lt), ~ (contains), !~ (not contains), & (AND), | (OR)."
-      }
-    ],
-    "interactive": [
-      {
-        "function": "dom.alert",
-        "description": "Displays a browser alert dialog with a message."
-      },
-      {
-        "function": "dom.confirm",
-        "description": "Shows a confirmation dialog. Supports onconfirmvalue for conditional actions based on response."
-      },
-      {
-        "function": "dom.submit",
-        "description": "Submits a form element programmatically."
-      }
-    ],
     "element": [
       {
         "function": "app.element.add.class",
         "description": "Adds one or more CSS classes to an element."
       },
       {
-        "function": "app.element.extractBracketValues",
+        "function": "app.element.extractbracketvalues",
         "description": "Extracts values inside square brackets from a string. Handles nesting."
       },
       {
@@ -256,15 +48,15 @@
         "description": "Gets the value/property of an element. Resolves correct property by tag (value, src, textContent, etc.)."
       },
       {
-        "function": "app.element.getClosestWithAttr",
+        "function": "app.element.getclosestwithattr",
         "description": "Finds the closest ancestor with a specific attribute."
       },
       {
-        "function": "app.element.getPropertyByPath",
+        "function": "app.element.getpropertybypath",
         "description": "Retrieves a nested property from an object using dot-separated path."
       },
       {
-        "function": "app.element.getTagLink",
+        "function": "app.element.gettaglink",
         "description": "Finds the closest ancestor that is an anchor, button, or label."
       },
       {
@@ -284,19 +76,19 @@
         "description": "Applies arithmetic operations (+, -, *, /) to numeric values in attributes or query params."
       },
       {
-        "function": "app.element.resolveBindingValue",
+        "function": "app.element.resolvebindingvalue",
         "description": "Resolves a binding value, checking for defaults in {variable:default} syntax."
       },
       {
-        "function": "app.element.resolveCall",
+        "function": "app.element.resolvecall",
         "description": "Resolves the call context of an element into a normalized call structure."
       },
       {
-        "function": "app.element.runOnEvent",
+        "function": "app.element.runonevent",
         "description": "Checks and runs on[event] handlers after an attribute or action executes."
       },
       {
-        "function": "app.element.saveOriginalValues",
+        "function": "app.element.saveoriginalvalues",
         "description": "Saves the original state of an element for later reset operations."
       },
       {
@@ -318,7 +110,7 @@
         "description": "Parses a semicolon-separated string into key-value pairs split at the first colon."
       },
       {
-        "function": "app.parse.callString",
+        "function": "app.parse.callstring",
         "description": "Parses a Front command string into a structured object with function name, elements, values, and delay settings."
       },
       {
@@ -402,7 +194,7 @@
         "description": "Runs FTML attribute processing on elements matching a selector. The core rendering engine."
       },
       {
-        "function": "app.attributes.runDeferred",
+        "function": "app.attributes.rundeferred",
         "description": "Executes deferred attributes (like clone) that depend on a fully processed DOM."
       },
       {
@@ -410,7 +202,7 @@
         "description": "Renders loaded templates into the document structure (header, aside, main, footer)."
       },
       {
-        "function": "app.templates.resolveBase",
+        "function": "app.templates.resolvebase",
         "description": "Resolves relative src paths in HTML by prepending the base href."
       }
     ],
@@ -452,10 +244,6 @@
       {
         "function": "app.config.set",
         "description": "Applies global configuration from the script element to the app object."
-      },
-      {
-        "function": "dom.hrefhost",
-        "description": "Sets the base href based on host matching for multi-environment deployments."
       }
     ],
     "utility": [
@@ -474,14 +262,6 @@
       {
         "function": "app.querystrings.get",
         "description": "Gets a query string parameter value from a URL or the current page."
-      },
-      {
-        "function": "dom.log",
-        "description": "Logs a value to the browser console."
-      },
-      {
-        "function": "dom.setUniqueId",
-        "description": "Generates and assigns a unique incremental ID to an element."
       }
     ]
   }
