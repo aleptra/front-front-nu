@@ -738,7 +738,7 @@
       {
         "module": "keyboard",
         "attribute": "keyboard-action",
-        "description": "Enables an element to respond to keyboard keys; works with keyboard-key, keyboard-word, and related attributes.",
+        "description": "Enables an element to respond to keyboard keys.",
         "requires": [
           "keyboard-key",
           "keyboard-word"
@@ -747,7 +747,7 @@
       {
         "module": "keyboard",
         "attribute": "keyboard-finalizer",
-        "description": "Specifies a key required to finalize a word sequence action; used with keyboard-word and keyboard-action.",
+        "description": "Specifies a key required to finalize a word sequence action.",
         "requires": [
           "keyboard-action",
           "keyboard-word"
@@ -756,7 +756,7 @@
       {
         "module": "keyboard",
         "attribute": "keyboard-key",
-        "description": "Specifies which keyboard key triggers the action on an element with the keyboard-action attribute.",
+        "description": "Specifies which keyboard key triggers the action.",
         "requires": [
           "keyboard-action"
         ]
@@ -764,7 +764,7 @@
       {
         "module": "keyboard",
         "attribute": "keyboard-translate",
-        "description": "Maps a key to a replacement character in an input or text element; used with keyboard-action.",
+        "description": "Maps a key to a replacement character in an input or text element.",
         "requires": [
           "keyboard-action"
         ]
@@ -772,7 +772,7 @@
       {
         "module": "keyboard",
         "attribute": "keyboard-untranslate",
-        "description": "Removes a previously translated character from an input or text element; used with keyboard-action.",
+        "description": "Removes a previously translated character from an input or text element.",
         "requires": [
           "keyboard-action"
         ]
@@ -780,7 +780,7 @@
       {
         "module": "keyboard",
         "attribute": "keyboard-word",
-        "description": "Specifies a word sequence that triggers an action on an element with the keyboard-action attribute.",
+        "description": "Specifies a word sequence that triggers an action.",
         "requires": [
           "keyboard-action"
         ]
@@ -811,7 +811,7 @@
       {
         "module": "keyboard",
         "attribute": "keyboard-scope",
-        "description": "Limits where the keyboard-key or keyboard-word action applies; optional and used with keyboard-action.",
+        "description": "Limits where the keyboard action applies.",
         "requires": [
           "keyboard-action"
         ]
