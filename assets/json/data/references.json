@@ -452,6 +452,61 @@
       {
         "attribute": "bindappend",
         "description": "Binds and appends data from another element."
+      },
+      {
+        "attribute": "storage-bind",
+        "description": "Binds an element to a storage key and re-renders on changes.",
+        "module": "storage"
+      },
+      {
+        "attribute": "storage-iterate",
+        "description": "Iterates over an array or object in the bound storage data.",
+        "module": "storage"
+      },
+      {
+        "attribute": "storage-get",
+        "description": "Gets a value from the current storage item and displays it.",
+        "module": "storage"
+      },
+      {
+        "attribute": "storage-set",
+        "description": "Sets a value from the current storage item into an element or attribute.",
+        "module": "storage"
+      },
+      {
+        "attribute": "storage-onempty",
+        "description": "Shows an element when the bound storage data is empty.",
+        "module": "storage"
+      },
+      {
+        "attribute": "storage-iterate-skip",
+        "description": "Excludes an element from being duplicated during iteration.",
+        "module": "storage"
+      },
+      {
+        "attribute": "storage-bindlocal",
+        "description": "Binds a localStorage value to a variable on the element.",
+        "module": "storage"
+      },
+      {
+        "attribute": "storage-bindsession",
+        "description": "Binds a sessionStorage value to a variable on the element.",
+        "module": "storage"
+      },
+      {
+        "attribute": "globalize-get",
+        "description": "Gets the localized translation for the element content or a specified key.",
+        "module": "globalize"
+      },
+      {
+        "attribute": "globalize-set",
+        "description": "Sets the active locale/language and reloads translations.",
+        "module": "globalize"
+      },
+      {
+        "attribute": "globalize-target",
+        "description": "Specifies which attribute to set the translated value into (defaults to sethtml).",
+        "module": "globalize"
       }
     ],
     "logic": [
@@ -588,6 +643,11 @@
       {
         "attribute": "onselectchange",
         "description": "Triggered when selection changes."
+      },
+      {
+        "attribute": "globalize-onsetload",
+        "description": "Triggered when the globalize set operation has loaded new translations.",
+        "module": "globalize"
       }
     ],
     "behavior": [
@@ -720,6 +780,16 @@
       {
         "attribute": "doctitle",
         "description": "Sets the document title."
+      },
+      {
+        "attribute": "form-invalid",
+        "description": "Specifies a target element and message to display on invalid form input.",
+        "module": "form"
+      },
+      {
+        "attribute": "form-throttle",
+        "description": "Throttles form submissions by a specified number of milliseconds.",
+        "module": "form"
       }
     ],
     "interactive": [
@@ -794,12 +864,53 @@
         "description": "Triggered when the mouse pointer moves out of the element."
       },
       {
+        "module": "navigate",
         "attribute": "navigate-go",
         "description": "Triggers navigation as if clicked the link."
       },
       {
         "attribute": "submit",
         "description": "Submits a form."
+      },
+      {
+        "attribute": "storage-localset",
+        "description": "Sets a value in localStorage.",
+        "module": "storage"
+      },
+      {
+        "attribute": "storage-localadd",
+        "description": "Adds a value to an array in localStorage.",
+        "module": "storage"
+      },
+      {
+        "attribute": "storage-localupdate",
+        "description": "Updates a value at a path in localStorage.",
+        "module": "storage"
+      },
+      {
+        "attribute": "storage-localremove",
+        "description": "Removes a value or key from localStorage.",
+        "module": "storage"
+      },
+      {
+        "attribute": "storage-sessionset",
+        "description": "Sets a value in sessionStorage.",
+        "module": "storage"
+      },
+      {
+        "attribute": "storage-sessionadd",
+        "description": "Adds a value to an array in sessionStorage.",
+        "module": "storage"
+      },
+      {
+        "attribute": "storage-sessionupdate",
+        "description": "Updates a value at a path in sessionStorage.",
+        "module": "storage"
+      },
+      {
+        "attribute": "storage-sessionremove",
+        "description": "Removes a value or key from sessionStorage.",
+        "module": "storage"
       }
     ],
     "configuration": [
@@ -819,6 +930,26 @@
       {
         "attribute": "hrefhost",
         "description": "Sets the base URL based on host match."
+      },
+      {
+        "attribute": "storage-cookie-days",
+        "description": "Sets the expiry in days for a cookie.",
+        "module": "storage"
+      },
+      {
+        "attribute": "storage-cookie-path",
+        "description": "Sets the path for a cookie.",
+        "module": "storage"
+      },
+      {
+        "attribute": "storage-cookie-secure",
+        "description": "Marks a cookie as secure (HTTPS only).",
+        "module": "storage"
+      },
+      {
+        "attribute": "storage-cookie-samesite",
+        "description": "Sets the SameSite policy for a cookie.",
+        "module": "storage"
       }
     ]
   },
