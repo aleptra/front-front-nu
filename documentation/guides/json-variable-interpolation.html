@@ -1,0 +1,117 @@
+<script src="https://cdn.front.nu/nightly/front.js"></script>
+<title globalize-get>JSON Variable Interpolation</title>
+<template srcdoc="../../../index" src="../../../_templates/documentation"></template>
+<article color="silver">
+
+  <nav class="crumbs pointer pt05" zoom="0.9" margintop="-2rem" marginbottom="2rem" color="white">
+    <ol>
+      <li><a href="documentation" globalize-get>Documentation</a></li>
+      <li><a href="documentation/guides" globalize-get>Guides</a></li>
+      <li color="silver" bindglobal="title:title" settext="{title}" globalize-get></li>
+    </ol>
+  </nav>
+
+  <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get marginbottom="2rem"
+    runorder="bindglobal;settext;globalize-get"></h1>
+
+  <p margintop="1rem">
+    This guide explains how to use <b>{key}</b> references inside JSON variable files to avoid
+    repeating values like base URLs across multiple entries.
+  </p>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Overview</h2>
+    <p margintop="1rem">
+      Variable files loaded via the <b>var</b> attribute support internal interpolation.
+      Top-level string values can be referenced anywhere in the same file using the <b>{key}</b> syntax.
+      References are resolved in a single pass at load time, before the data is cached.
+    </p>
+  </section>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Basic Usage</h2>
+    <p margintop="1rem">
+      Define shared values as top-level keys, then reference them with <b>{key}</b> in nested values:
+    </p>
+
+    <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem">
+      <span flex="1" lineheight="1.85rem" paddingleft="1rem" style="flex: 1">JSON (assets/json/vars/api.json)</span>
+    </small>
+    <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" screen-xs="padding:[1rem]"
+      screen-md="padding:[1.5rem]" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>{
+  "origin": "https://api.example.com",
+  "auth": {
+    "login": "{origin}/auth/login",
+    "logout": "{origin}/auth/logout"
+  }
+}</code>
+
+    <p margintop="1rem">
+      After loading, <b>{origin}</b> is replaced with the top-level value:
+    </p>
+
+    <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem">
+      <span flex="1" lineheight="1.85rem" paddingleft="1rem" style="flex: 1">Resolved Result</span>
+    </small>
+    <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" screen-xs="padding:[1rem]"
+      screen-md="padding:[1.5rem]" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>{
+  "origin": "https://api.example.com",
+  "auth": {
+    "login": "https://api.example.com/auth/login",
+    "logout": "https://api.example.com/auth/logout"
+  }
+}</code>
+  </section>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Advanced Example</h2>
+    <p margintop="1rem">
+      Multiple top-level keys can be used across the file. Placeholders without a matching
+      top-level key are preserved for runtime binding:
+    </p>
+
+    <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem">
+      <span flex="1" lineheight="1.85rem" paddingleft="1rem" style="flex: 1">JSON (assets/json/vars/config.json)</span>
+    </small>
+    <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" screen-xs="padding:[1rem]"
+      screen-md="padding:[1.5rem]" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>{
+  "api": "https://api.example.com/v2",
+  "cdn": "https://cdn.example.com",
+  "endpoints": {
+    "products": "{api}/products",
+    "search": "{api}/search?q=",
+    "profile": "{api}/users/{id}"
+  },
+  "images": {
+    "avatar": "{cdn}/img/avatars/",
+    "banner": "{cdn}/img/banners/"
+  }
+}</code>
+
+    <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
+      <b>Note:</b> <b>{id}</b> is not resolved because there is no top-level key called "id".
+      It remains available for runtime binding via <b>bindvar</b> or <b>bindasset</b>.
+    </div>
+  </section>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Rules</h2>
+    <ul>
+      <li>Only <b>top-level string</b> values are used as sources.</li>
+      <li>Nested objects or arrays cannot be referenced.</li>
+      <li>Resolved in a single pass - references cannot chain.</li>
+      <li>Unresolved placeholders are preserved for runtime binding.</li>
+      <li>The pattern matches word characters: <b>[a-zA-Z0-9_]</b>.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Best Practices</h2>
+    <ul>
+      <li>Define shared base values (origins, prefixes) as top-level strings.</li>
+      <li>Use short key names to keep URLs readable.</li>
+      <li>Switching environments only requires changing the top-level values.</li>
+    </ul>
+  </section>
+
+</article>
