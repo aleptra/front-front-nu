@@ -24,10 +24,9 @@
   <section>
     <h2 color="white" id="include" zoom="0.9" padding="3rem 0 1rem 0">Loading Plugins</h2>
     <p>
-      Plugins are loaded via the <span bgcolor="white02" color="white" font="monospace">plugins</span> attribute of the
+      Plugins are loaded via the <span bgcolor="white02" color="white" font="monospace">plugin</span> attribute of the
       <span bgcolor="white02" color="white" font="monospace">&lt;script&gt;</span> element. You can activate one or
-      multiple modules
-      in your application.
+      multiple plugins in your application.
     </p>
 
     <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
@@ -43,16 +42,20 @@
         font="monospace" syntaxhighlighting--set>&lt;!doctype html&gt;
 &lt;html&gt;
   &lt;head&gt;
-    &lt;!-- Load Front with multiple plugins (chat and analytics) --&gt;
+    &lt;!-- Load Front with syntaxhighlighting and scrollbar plugins --&gt;
     &lt;script
       src="https://cdn.front.nu/{ma}.{mi}.{pa}/front.js"
-      plugin="chat;analytics"
-      conf="debug:true;"&gt;
+      plugin="syntaxhighlighting;scrollbar"&gt;
     &lt;/script&gt;
   &lt;/head&gt;
   &lt;body&gt;
     &lt;main&gt;
-      &lt;h1&gt;Plugins Example&lt;/h1&gt;
+      &lt;code syntaxhighlighting--set whitespace="pre"&gt;
+        &amp;lt;h1&amp;gt;Hello&amp;lt;/h1&amp;gt;
+      &lt;/code&gt;
+      &lt;section scrollbar--set width="15rem" height="15rem"&gt;
+        Scrollable content here...
+      &lt;/section&gt;
     &lt;/main&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code>
@@ -67,9 +70,9 @@
     <h2 color="white" id="configure" zoom="0.9" padding="3rem 0 1rem 0">Configuring Plugins</h2>
     <p>
       Each plugin can define its own configuration parameters using the
-      <span bgcolor="white02" color="white" font="monospace">{plugin}-conf</span> attribute of the
+      <span bgcolor="white02" color="white" font="monospace">{plugin}--conf</span> attribute of the
       <span bgcolor="white02" color="white" font="monospace">&lt;script&gt;</span> element.
-      You can pass settings such as enabling debug mode, API keys, theme options, or callback functions.
+      You can pass settings such as colors, sizes, or behavior options.
     </p>
 
     <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
@@ -84,15 +87,26 @@
         screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]" whitespace="pre" maxwidth="60rem" minwidth="30vw"
         font="monospace" syntaxhighlighting--set>&lt;script
   src="https://cdn.front.nu/{ma}.{mi}.{pa}/front.js"
-  plugin="chat;analytics"
-  chat-conf="theme:'dark',position:'bottom-right'"
-  analytics-conf="trackingId:'UA-123456',debug:true"&gt;
+  plugin="syntaxhighlighting;scrollbar"
+  scrollbar--conf="width:auto;radius:3;thumb:orange;hover:black;track:black"&gt;
 &lt;/script&gt;</code>
       <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
-        Note: Configuration attributes follow the pattern
-        <span bgcolor="white02" color="white" font="monospace">{plugin}-conf</span> and must be placed on the same
-        <span bgcolor="white02" color="white" font="monospace">&lt;script&gt;</span> element that loads Front.
+        Note: The <span bgcolor="white02" color="white" font="monospace">{plugin}--conf</span> on the script tag sets
+        the default configuration. Individual elements can override it by passing options directly on the attribute.
       </div>
+
+      <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Overriding per element:</h3>
+        <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
+            bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+            style="flex: 1">FTML</span><button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]"
+            zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0" click="clipboard--copy:*code[2]"
+            onclicked="settext:[✓ Copied]" onsettext="rundelay[2000]:reset">Copy</button></small>
+        <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
+          whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;!-- Uses default config from script tag --&gt;
+&lt;section scrollbar--set&gt;...&lt;/section&gt;
+
+&lt;!-- Overrides specific options for this element --&gt;
+&lt;section scrollbar--set="thumb:black;track:whitesmoke;hover:gray"&gt;...&lt;/section&gt;</code>
   </section>
   <hr bgcolor="white03" margin="3rem 0">
   <a href="documentation/reference/ftml/attributes.html" minheight="2.7rem" radius="1rem" paddingleft="1.25rem"
