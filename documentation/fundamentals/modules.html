@@ -42,7 +42,7 @@
         font="monospace" syntaxhighlighting--set>&lt;!doctype html&gt;
 &lt;html&gt;
   &lt;head&gt;
-    &lt;!-- Load Front with multiple modules (navigate and animate) --&gt;
+    &lt;!-- Load Front with navigate and animate modules --&gt;
     &lt;script
       src="https://cdn.front.nu/{ma}.{mi}.{pa}/front.js"
       module="navigate;animate"&gt;
@@ -50,7 +50,7 @@
   &lt;/head&gt;
   &lt;body&gt;
     &lt;main&gt;
-      &lt;h1&gt;Modules Example&lt;/h1&gt;
+      &lt;a href="page1.html"&gt;Go to Page 1&lt;/a&gt;
     &lt;/main&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code>
@@ -63,11 +63,10 @@
   <section>
     <h2 color="white" id="configure" zoom="0.9" padding="3rem 0 1rem 0">Configuring Modules</h2>
     <p>
-      Each module can define its own configuration parameters using the
-      <span bgcolor="white02" color="white" font="monospace">{module}-conf</span> attribute of the
+      Modules that support configuration use the
+      <span bgcolor="white02" color="white" font="monospace">{module}-conf</span> attribute on the
       <span bgcolor="white02" color="white" font="monospace">&lt;script&gt;</span> element.
-      You can pass initialization settings such as enabling debug mode, defining routes, or adjusting animation
-      behavior.
+      This sets default options for the module across the application.
     </p>
 
     <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
@@ -82,15 +81,39 @@
         screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]" whitespace="pre" maxwidth="60rem" minwidth="30vw"
         font="monospace" syntaxhighlighting--set>&lt;script
   src="https://cdn.front.nu/{ma}.{mi}.{pa}/front.js"
-  module="navigate;animate"
-  navigate-conf="transition:'fade',speed:300"
-  animate-conf="duration:500,easing:'ease-in-out'"&gt;
+  module="navigate"
+  navigate-conf="target:main;preloader:#navloader;startpage:my-app"&gt;
 &lt;/script&gt;</code>
       <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
-        Note: Configuration attributes follow the pattern
-        <span bgcolor="white02" color="white" font="monospace">{module}-conf</span> and must be placed on the same
-        <span bgcolor="white02" color="white" font="monospace">&lt;script&gt;</span> element that loads Front.
+        Note: Not all modules require configuration. Some modules like <b>animate</b> are configured
+        entirely through per-element attributes.
       </div>
+  </section>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Using Module Attributes</h2>
+    <p>
+      Modules expose attributes following the pattern
+      <span bgcolor="white02" color="white" font="monospace">{module}-{action}</span>.
+      These are placed on individual elements to trigger module behavior.
+    </p>
+
+    <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
+      <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
+          bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+          style="flex: 1">FTML</span><button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]"
+          zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0" click="clipboard--copy:*code[2]"
+          onclicked="settext:[✓ Copied]" onsettext="rundelay[2000]:reset">Copy</button></small>
+      <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
+        whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;!-- Animate module: configure per element --&gt;
+&lt;div id="box" animate-start
+  animate-key="0;50;100"
+  animate-transform="scale(1);scale(1.5);scale(1)"
+  animate-duration="2s"
+  animate-easing="ease-in-out"
+  animate-iteration="infinite"&gt;
+  Animated box
+&lt;/div&gt;</code>
   </section>
   <hr bgcolor="white03" margin="3rem 0">
   <a href="documentation/fundamentals/plugins.html" minheight="2.7rem" radius="1rem" paddingleft="1.25rem"
