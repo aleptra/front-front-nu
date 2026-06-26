@@ -12,28 +12,35 @@
         "Add a body section inside it.",
         "Inside the body, add a heading that says Hello World."
       ],
-      "hints": [
-        "Every HTML or FTML document begins with a DOCTYPE declaration.",
-        "The Front runtime is loaded using a script tag.",
-        "The body element contains everything visible on the page.",
-        "Headings are created using the h1 element."
+      "checks": [
+        {
+          "id": "c1",
+          "label": "DOCTYPE",
+          "match": "<!DOCTYPE"
+        },
+        {
+          "id": "c2",
+          "label": "html",
+          "match": "<html"
+        },
+        {
+          "id": "c3",
+          "label": "script",
+          "match": "<script"
+        },
+        {
+          "id": "c4",
+          "label": "body",
+          "match": "<body"
+        },
+        {
+          "id": "c5",
+          "label": "h1 Hello World",
+          "match": "<h1"
+        }
       ],
-      "author": "Front Labs",
-      "attributes": {
-        "markup": [
-          {
-            "attribute": "syntaxhighlighting--set",
-            "description": ""
-          }
-        ],
-        "config": [
-          {
-            "key": "",
-            "value": "",
-            "description": ""
-          }
-        ]
-      }
+      "solution": "<!DOCTYPE html>\n<html>\n  <body>\n    <script src=\"https://cdn.front.nu/nightly/front.js\"><\/script>\n    <h1>Hello World<\/h1>\n  <\/body>\n<\/html>",
+      "author": "Front Labs"
     }
   ]
 }

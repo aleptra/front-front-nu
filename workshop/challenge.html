@@ -1,7 +1,7 @@
-<script src="https://cdn.front.nu/nightly/front.js"></script>
+<script src="https://cdn.front.nu/nightly/front.js" plugin="syntaxhighlighting"></script>
 <title>Challenge</title>
 <template srcdoc="../../index" src="../../_templates/plugins"></template>
-<div id="error" class="red" hide>Challange not found!</div>
+<div id="error" class="red" hide>Challenge not found!</div>
 <div id="loader" class="loader"></div>
 <hr class="bcblack01">
 <section bindquery="k:k" data-src="./assets/json/data/workshop.json" data-filterkey="workshop"
@@ -11,21 +11,74 @@
   <hr color="darkgray" margin="0.5rem 0">
   <div color="white" data-get="mission"></div>
 
-  <div>
-    <h4 margintop="2rem">Instructions</h4>
-    <hr color="darkgray" margin="0.5rem 0">
-    <ul data-iterate="instructions">
-      <li data-get="[*]"></li>
-    </ul>
+  <div flex gap="2rem" margintop="2rem" screen-xs="flexdirection:[column]" screen-md="flexdirection:[row]">
 
-    <h4 margintop="2rem">Hints</h4>
-    <hr color="darkgray" margin="0.5rem 0">
-    <table color="white" width="100%">
-      <tbody valign="top" data-iterate="hints">
-        <tr>
-          <td data-get="[*]"></td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- Editor -->
+    <div flexitem="2">
+      <nav flexdirection="column" maxwidth="60rem" minwidth="30vw">
+
+        <!-- Source tab -->
+        <div id="tab1" role="tabpanel" onshow="hide:#tab2;hide:#tab3">
+          <small bgcolor="white02" height="1.8rem">
+            <span bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+              style="flex: 1">FTML</span>
+            <button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]" zoom="0.9"
+              padding="0.45rem 0.6rem" minheight="0" margin="0"
+              click="if:([#editor]~[&lt;!DOCTYPE])/show:#c1ok&hide:#c1fail&hide:#c1idle?show:#c1fail&hide:#c1ok&hide:#c1idle;if:([#editor]~[&lt;html])/show:#c2ok&hide:#c2fail&hide:#c2idle?show:#c2fail&hide:#c2ok&hide:#c2idle;if:([#editor]~[&lt;script])/show:#c3ok&hide:#c3fail&hide:#c3idle?show:#c3fail&hide:#c3ok&hide:#c3idle;if:([#editor]~[&lt;body])/show:#c4ok&hide:#c4fail&hide:#c4idle?show:#c4fail&hide:#c4ok&hide:#c4idle;if:([#editor]~[&lt;h1]&[#editor]~[Hello World])/show:#c5ok&hide:#c5fail&hide:#c5idle?show:#c5fail&hide:#c5ok&hide:#c5idle">Check
+              ✓</button>
+          </small>
+          <code id="editor" contenteditable="true" bgcolor="white01" color="white" spellcheck="false"
+            screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]" whitespace="pre" font="monospace" minheight="20rem"
+            block overflow="auto" syntaxhighlighting--set>&lt;!-- Write your code here --&gt;</code>
+        </div>
+
+        <!-- Preview tab -->
+        <div id="tab2" role="tabpanel" hide onshow="hide:#tab1;hide:#tab3;sethtml:#preview:#editor">
+          <iframe id="preview" width="100%" minheight="20rem" bgcolor="white"></iframe>
+        </div>
+
+        <!-- Solution tab -->
+        <div id="tab3" role="tabpanel" hide onshow="hide:#tab1;hide:#tab2">
+          <small bgcolor="white02" height="1.8rem">
+            <span bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+              style="flex: 1">Solution</span>
+          </small>
+          <code id="solution" bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]"
+            screen-md="padding:[1.5rem]" whitespace="pre" font="monospace" minheight="20rem" block overflow="auto"
+            data-get="solution" escape runorder="data-get;escape;syntaxhighlighting--set"
+            syntaxhighlighting--set></code>
+        </div>
+
+        <!-- Tab Menu -->
+        <menu zoom="0.8" bgcolor="white01" bordertop="1px solid black" height="2rem" lineheight="2rem">
+          <a id="tab1link" click="show:#tab1"
+            onclicked="bgcolor:#tab2link:[initial];bgcolor:#tab3link:[initial];bgcolor:#tab1link:[black03]"
+            bgcolor="black03" padding="0 0.75rem" borderright="1px solid black"><b width="1.25rem">&#9781;</b>Source</a>
+          <a id="tab2link" click="show:#tab2"
+            onclicked="bgcolor:#tab1link:[initial];bgcolor:#tab3link:[initial];bgcolor:#tab2link:[black03]"
+            padding="0 0.75rem" borderright="1px solid black"><b width="1.25rem">&#9654;</b>Preview</a>
+          <a id="tab3link" click="show:#tab3"
+            onclicked="bgcolor:#tab1link:[initial];bgcolor:#tab2link:[initial];bgcolor:#tab3link:[black03]"
+            padding="0 0.75rem" borderright="1px solid black"><b width="1.25rem">&#9788;</b>Solution</a>
+        </menu>
+      </nav>
+    </div>
+
+    <!-- Instructions -->
+    <div flexitem="1">
+      <h4>Instructions</h4>
+      <hr color="darkgray" margin="0.5rem 0">
+      <ul data-iterate="instructions">
+        <li data-get="[*]"></li>
+      </ul>
+      <h4 margintop="2rem">Checklist</h4>
+      <hr color="darkgray" margin="0.5rem 0">
+      <div id="results" data-iterate="checks">
+        <div data-set="i:id" setid="{i}ok" hide color="green">✓ <span data-get="label"></span></div>
+        <div data-set="i:id" setid="{i}fail" hide color="red">✗ <span data-get="label"></span></div>
+        <div data-set="i:id" setid="{i}idle" color="silver">○ <span data-get="label"></span></div>
+      </div>
+    </div>
+
   </div>
 </section>
