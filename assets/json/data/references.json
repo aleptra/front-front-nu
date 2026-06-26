@@ -670,6 +670,14 @@
         "description": "Gives focus to the element."
       },
       {
+        "attribute": "placeholder",
+        "description": "Displays placeholder text when the element is empty."
+      },
+      {
+        "attribute": "placeholdercolor",
+        "description": "Sets the color of the placeholder text."
+      },
+      {
         "attribute": "hide",
         "description": "Hides the element."
       },

@@ -792,6 +792,22 @@
     ],
     "example": "<form submit onsubmitted=\"settext:#msg:[Form submitted]\">\n  <input type=\"text\" value=\"test\">\n  <button type=\"submit\">Submit</button>\n</form>\n<span id=\"msg\"></span>"
   },
+  "placeholder": {
+    "category": "behavior",
+    "description_short": "Displays placeholder text when the element is empty.",
+    "example": "<div contenteditable=\"true\" placeholder=\"Type something here...\"></div>",
+    "see_also": [
+      "placeholdercolor"
+    ]
+  },
+  "placeholdercolor": {
+    "category": "style",
+    "description_short": "Sets the color of the placeholder text.",
+    "example": "<input placeholder=\"Type something here...\" placeholdercolor=\"green\"></div>",
+    "depends_on": [
+      "placeholder"
+    ]
+  },
   "padding": {
     "category": "style",
     "description_short": "Sets padding inside the element.",
