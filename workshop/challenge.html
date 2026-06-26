@@ -29,7 +29,7 @@
           </small>
           <code id="editor" contenteditable="true" bgcolor="white01" color="white" spellcheck="false"
             screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]" whitespace="pre" font="monospace" minheight="20rem"
-            block overflow="auto" syntaxhighlighting--set>&lt;!-- Write your code here --&gt;</code>
+            block overflow="auto" placeholder="Write your code here..." syntaxhighlighting--set></code>
         </div>
 
         <!-- Preview tab -->
@@ -38,16 +38,16 @@
         </div>
 
         <!-- Solution tab -->
-        <div id="tab3" role="tabpanel" hide onshow="hide:#tab1;hide:#tab2">
+        <div id="tab3" role="tabpanel" hide onshow="hide:#tab1;hide:#tab2;sethtml:#solution:#solutionraw">
           <small bgcolor="white02" height="1.8rem">
             <span bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
               style="flex: 1">Solution</span>
           </small>
           <code id="solution" bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]"
             screen-md="padding:[1.5rem]" whitespace="pre" font="monospace" minheight="20rem" block overflow="auto"
-            data-get="solution" escape runorder="data-get;escape;syntaxhighlighting--set"
-            syntaxhighlighting--set></code>
+            onsethtml="syntaxhighlighting--set" syntaxhighlighting--set></code>
         </div>
+        <div id="solutionraw" hide data-get="solution"></div>
 
         <!-- Tab Menu -->
         <menu zoom="0.8" bgcolor="white01" bordertop="1px solid black" height="2rem" lineheight="2rem">

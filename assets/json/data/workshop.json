@@ -39,7 +39,7 @@
           "match": "<h1"
         }
       ],
-      "solution": "<!DOCTYPE html>\n<html>\n  <body>\n    <script src=\"https://cdn.front.nu/nightly/front.js\"><\/script>\n    <h1>Hello World<\/h1>\n  <\/body>\n<\/html>",
+      "solution": "&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n  &lt;body&gt;\n    &lt;script src=\"https://cdn.front.nu/nightly/front.js\"&gt;&lt;/script&gt;\n    &lt;h1&gt;Hello World&lt;/h1&gt;\n  &lt;/body&gt;\n&lt;/html&gt;",
       "author": "Front Labs"
     }
   ]
