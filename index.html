@@ -61,7 +61,8 @@
       <div class="pr f1" screen-xs="hide" screen-sm="hide" screen-md="hide" screen-lg="show">
         <div zindex="100" bindglobal="href:href" if="([{href}]~[/documentation])/show?hide">
           <form class="zi3" id="form" method="get" action="search.html" target="_top">
-            <input id="querysearch" onvaluechange="filtersearch--run:#searchTable;show:#searchTable" name="q"
+            <input id="querysearch" onvaluechange="filtersearch--run:#searchTable;show:#searchTable"
+              bindfield="q:#searchEmpty" name="q"
               type="text" height="2.75rem" radius="0.25rem" bgcolor="white01" width="100%" color="white" padding="1rem"
               class="zi3" globalize-get="input_search" globalize-target="placeholder" autocomplete="off"
               placeholder="Search for words...">
@@ -70,7 +71,7 @@
           <div id="searchTableEmpty" bgcolor="black" padding="1rem" class="box pa w100 ail- autocomplete"
             border="1px solid #333" hide>
             <figure>
-              <span bindfield="q:#querysearch">No results found for <b>{q}</b></span>
+              <span id="searchEmpty">No results found for <b>"{q}"</b></span>
             </figure>
           </div>
           <div id="searchTable" filtersearch--onempty="#searchTableEmpty" data-src="assets/json/data/doc.json"
