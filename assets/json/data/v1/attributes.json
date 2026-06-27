@@ -218,9 +218,22 @@
   "data-iterate": {
     "category": "binding",
     "description_short": "Indicates that the element should iterate over an array from the data source.",
-    "example": "<div data-src=\"/api/users\" data-iterate=\"true\">User info here</div>",
-    "see_also": [
+    "example": "<div data-src=\"https://dummyjson.com/products\" data-iterate=\"true\">User info here</div>",
+    "depends_on": [
       "data-src"
+    ]
+  },
+  "data-loader": {
+    "category": "behavior",
+    "description_short": "Specifies an element to show while data is loading and hide when complete.",
+    "example": "<div id=\"loader\" class=\"loader\" hide></div>\n<div data-src=\"https://dummyjson.com/products\" data-iterate=\"products\" data-loader=\"#loader\">\n  <span data-get=\"title\"></span>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-src",
+      "data-onempty",
+      "data-onerror"
     ]
   },
   "data-onempty": {
@@ -247,6 +260,258 @@
       "data-onempty",
       "data-src",
       "data-onsuccess"
+    ]
+  },
+  "data-get": {
+    "category": "binding",
+    "description_short": "Retrieves and displays a value from the current bound data context.",
+    "example": "<div data-src=\"https://dummyjson.com/products\" data-iterate=\"products\">\n  <b data-get=\"title\"></b>\n  <small data-get=\"price\"></small>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-set",
+      "data-iterate"
+    ]
+  },
+  "data-set": {
+    "category": "binding",
+    "description_short": "Assigns a value from the data context to a variable or target element.",
+    "example": "<div data-src=\"https://dummyjson.com/products\" data-iterate=\"products\">\n  <a data-set=\"id:id\" href=\"/product?id={id}\" data-get=\"title\"></a>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-get",
+      "data-iterate"
+    ]
+  },
+  "data-bind": {
+    "category": "binding",
+    "description_short": "Binds an element directly to a data variable or expression.",
+    "example": "<div data-src=\"/api/user\" data-bind=\"name:#username\">\n  <span id=\"username\"></span>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-get",
+      "data-set"
+    ]
+  },
+  "data-bindpayload": {
+    "category": "binding",
+    "description_short": "Maps a value from a form payload into a bound variable or field.",
+    "example": "<form data-reqpost=\"/api/login\" data-bindpayload=\"token:token\">\n  <input name=\"username\">\n  <button type=\"submit\">Login</button>\n</form>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-bind",
+      "data-set"
+    ]
+  },
+  "data-srcjoin": {
+    "category": "binding",
+    "description_short": "Fetches and merges an additional data source into the same binding context.",
+    "example": "<div data-src=\"/api/users\" data-srcjoin=\"/api/orders\" data-merge=\"orders\" data-iterate=\"users\">\n  <span data-get=\"name\"></span>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-src",
+      "data-merge"
+    ]
+  },
+  "data-header": {
+    "category": "configuration",
+    "description_short": "Sets custom HTTP headers for the data source request.",
+    "example": "<div data-src=\"/api/protected\" data-header=\"Authorization:Bearer token123\" data-iterate=\"true\">\n  <span data-get=\"name\"></span>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-src",
+      "data-credentials"
+    ]
+  },
+  "data-onsuccess": {
+    "category": "event",
+    "description_short": "Executes actions when the data source request completes successfully.",
+    "example": "<div data-src=\"/api/items\" data-iterate=\"items\" data-onsuccess=\"hide:#loader\">\n  <span data-get=\"name\"></span>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-onerror",
+      "data-onfinish"
+    ]
+  },
+  "data-onerror": {
+    "category": "event",
+    "description_short": "Executes actions when the data source request fails.",
+    "example": "<div id=\"error\" class=\"red\" hide>Something went wrong!</div>\n<div data-src=\"/api/items\" data-iterate=\"items\" data-onerror=\"show:#error\">\n  <span data-get=\"name\"></span>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-onsuccess",
+      "data-onempty"
+    ]
+  },
+  "data-onfinish": {
+    "category": "event",
+    "description_short": "Executes actions when data processing is complete, regardless of success or failure.",
+    "example": "<div data-src=\"/api/items\" data-iterate=\"items\" data-onfinish=\"hide:#loader\">\n  <span data-get=\"name\"></span>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-onsuccess",
+      "data-onerror"
+    ]
+  },
+  "data-ongetload": {
+    "category": "event",
+    "description_short": "Executes actions when a data-get value finishes loading.",
+    "example": "<code data-src=\"/api/snippet\" data-get=\"code\" data-ongetload=\"syntaxhighlighting--set\"></code>",
+    "depends_on": [
+      "data-get"
+    ],
+    "see_also": [
+      "data-get",
+      "data-onsuccess"
+    ]
+  },
+  "data-wait": {
+    "category": "behavior",
+    "description_short": "Defines the delay in milliseconds before executing the data request.",
+    "example": "<div data-src=\"/api/items\" data-iterate=\"items\" data-wait=\"500\">\n  <span data-get=\"name\"></span>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-src",
+      "data-loader"
+    ]
+  },
+  "data-ttl": {
+    "category": "configuration",
+    "description_short": "Sets cache lifetime (time-to-live) in milliseconds for the bound data source.",
+    "example": "<div data-src=\"/api/items\" data-iterate=\"items\" data-ttl=\"600000\">\n  <span data-get=\"name\"></span>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-src"
+    ]
+  },
+  "data-filteritem": {
+    "category": "binding",
+    "description_short": "Filters the data array by matching a key to a value.",
+    "example": "<div data-src=\"/api/items\" data-iterate=\"items\" data-filteritem=\"status:'active'\">\n  <span data-get=\"name\"></span>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-filterkey",
+      "data-sort"
+    ]
+  },
+  "data-filterkey": {
+    "category": "binding",
+    "description_short": "Specifies which key in the response object to apply the filter on.",
+    "example": "<div data-src=\"/api/data\" data-iterate=\"results\" data-filteritem=\"active:true\" data-filterkey=\"results\">\n  <span data-get=\"name\"></span>\n</div>",
+    "depends_on": [
+      "data-filteritem"
+    ],
+    "see_also": [
+      "data-filteritem",
+      "data-iterate"
+    ]
+  },
+  "data-sort": {
+    "category": "binding",
+    "description_short": "Sorts the data array by the specified key.",
+    "example": "<div data-src=\"/api/items\" data-iterate=\"items\" data-sort=\"name\">\n  <span data-get=\"name\"></span>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-sortorder",
+      "data-filteritem"
+    ]
+  },
+  "data-sortorder": {
+    "category": "binding",
+    "description_short": "Sets the sort direction: ascending (default) or descending.",
+    "example": "<div data-src=\"/api/items\" data-iterate=\"items\" data-sort=\"price\" data-sortorder=\"desc\">\n  <span data-get=\"title\"></span>\n</div>",
+    "values": [
+      "asc",
+      "desc"
+    ],
+    "depends_on": [
+      "data-sort"
+    ],
+    "see_also": [
+      "data-sort"
+    ]
+  },
+  "data-merge": {
+    "category": "binding",
+    "description_short": "Specifies keys to merge from a joined data source into the primary response.",
+    "example": "<div data-src=\"/api/users\" data-srcjoin=\"/api/orders\" data-merge=\"orders\" data-iterate=\"users\">\n  <span data-get=\"name\"></span>\n</div>",
+    "depends_on": [
+      "data-srcjoin"
+    ],
+    "see_also": [
+      "data-srcjoin",
+      "data-src"
+    ]
+  },
+  "data-status": {
+    "category": "behavior",
+    "description_short": "Shows an element when the response status does not match 200.",
+    "example": "<div id=\"statusError\" hide>Server returned an error status</div>\n<div data-src=\"/api/items\" data-iterate=\"items\" data-status=\"error;#statusError\">\n  <span data-get=\"name\"></span>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-onerror"
+    ]
+  },
+  "data-onkeyempty": {
+    "category": "event",
+    "description_short": "Executes actions when the resolved iterate key is missing or has no items.",
+    "example": "<div id=\"section\" hide>\n  <ul data-src=\"/api/data\" data-iterate=\"items\" data-onkeyempty=\"hide:#section\">\n    <li data-get=\"name\"></li>\n  </ul>\n</div>",
+    "depends_on": [
+      "data-iterate"
+    ],
+    "see_also": [
+      "data-onempty",
+      "data-iterate"
+    ]
+  },
+  "data-replace": {
+    "category": "binding",
+    "description_short": "Transforms values in the response data before rendering.",
+    "example": "<div data-src=\"/api/media\" data-iterate=\"results\" data-replace=\"true\">\n  <span data-get=\"media_type\"></span>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-filteritem"
+    ]
+  },
+  "data-credentials": {
+    "category": "configuration",
+    "description_short": "Sends cookies and authentication credentials with the data request.",
+    "example": "<div data-src=\"/api/protected\" data-credentials=\"true\" data-iterate=\"items\">\n  <span data-get=\"name\"></span>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-header",
+      "data-src"
     ]
   },
   "escape": {

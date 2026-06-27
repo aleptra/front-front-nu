@@ -432,12 +432,12 @@
       {
         "module": "data",
         "attribute": "data-onsuccess",
-        "description": "Defines actions to execute when the data source request completes successfully."
+        "description": "Executes actions when the data source request completes successfully."
       },
       {
         "module": "data",
         "attribute": "data-onerror",
-        "description": "Defines actions to execute when the data source request fails."
+        "description": "Executes actions when the data source request fails."
       },
       {
         "module": "data",
@@ -451,8 +451,58 @@
       },
       {
         "module": "data",
+        "attribute": "data-onfinish",
+        "description": "Executes actions when data processing is complete."
+      },
+      {
+        "module": "data",
+        "attribute": "data-onkeyempty",
+        "description": "Executes actions when the resolved iterate key is missing or has no items."
+      },
+      {
+        "module": "data",
         "attribute": "data-ongetload",
-        "description": "Defines actions to execute when a GET request finishes loading."
+        "description": "Executes actions when a data-get value finishes loading."
+      },
+      {
+        "module": "data",
+        "attribute": "data-filteritem",
+        "description": "Filters the data array by matching a key to a value."
+      },
+      {
+        "module": "data",
+        "attribute": "data-filterkey",
+        "description": "Specifies which key in the response to apply the filter on."
+      },
+      {
+        "module": "data",
+        "attribute": "data-sort",
+        "description": "Sorts the data array by the specified key."
+      },
+      {
+        "module": "data",
+        "attribute": "data-sortorder",
+        "description": "Sets the sort direction: ascending or descending."
+      },
+      {
+        "module": "data",
+        "attribute": "data-merge",
+        "description": "Specifies keys to merge from a joined data source."
+      },
+      {
+        "module": "data",
+        "attribute": "data-replace",
+        "description": "Transforms values in the response data before rendering."
+      },
+      {
+        "module": "data",
+        "attribute": "data-status",
+        "description": "Shows an element when the response status does not match 200."
+      },
+      {
+        "module": "data",
+        "attribute": "data-credentials",
+        "description": "Sends cookies and authentication credentials with the request."
       },
       {
         "attribute": "bindappend",

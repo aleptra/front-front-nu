@@ -15,14 +15,38 @@
         "markup": [
           {
             "attribute": "syntaxhighlighting--set",
-            "description": ""
+            "description": "Applies syntax highlighting to the element's content. Automatically detects HTML, JavaScript, or shell language."
+          },
+          {
+            "attribute": "syntaxhighlighting--format",
+            "description": "Formats and indents the element's content, then applies syntax highlighting."
           }
         ],
         "config": [
           {
-            "key": "",
-            "value": "",
-            "description": ""
+            "key": "colors",
+            "value": "slategray,silver,cornsilk,navajowhite,green",
+            "description": "Comma-separated colors for HTML highlighting: brackets, tags, attributes, values, comments."
+          },
+          {
+            "key": "javascriptColors",
+            "value": "cornflowerblue,burlywood,green,mediumpurple,gray",
+            "description": "Comma-separated colors for JavaScript highlighting: keywords, strings, comments, functions, other."
+          },
+          {
+            "key": "shellColors",
+            "value": "slategray,silver,cornsilk,navajowhite,green",
+            "description": "Comma-separated colors for shell script highlighting."
+          },
+          {
+            "key": "errorColor",
+            "value": "red",
+            "description": "Background color used to highlight syntax errors in editable mode."
+          },
+          {
+            "key": "indent",
+            "value": "  ",
+            "description": "Indentation string used when formatting code (default: two spaces)."
           }
         ]
       }
@@ -42,14 +66,22 @@
         "markup": [
           {
             "attribute": "clipboard--copy",
-            "description": ""
+            "description": "Copies the text content of the element to the system clipboard. Accepts a selector to copy from a different element."
+          },
+          {
+            "attribute": "clipboard--paste",
+            "description": "Pastes text from the system clipboard into the element. Accepts a selector to paste into a different element."
+          },
+          {
+            "attribute": "clipboard--range",
+            "description": "When set to 'true', copies only the currently selected text range instead of the full element content."
           }
         ],
         "config": [
           {
-            "key": "",
-            "value": "",
-            "description": ""
+            "key": "range",
+            "value": "false",
+            "description": "Global default for range mode. When 'true', clipboard--copy will use the active text selection if available."
           }
         ]
       }
@@ -69,14 +101,34 @@
         "markup": [
           {
             "attribute": "scrollbar--set",
-            "description": ""
+            "description": "Applies custom scrollbar styles to the element. Accepts inline config as semicolon-separated key:value pairs (e.g. thumb:red;track:black;width:thin)."
           }
         ],
         "config": [
           {
-            "key": "",
-            "value": "",
-            "description": ""
+            "key": "width",
+            "value": "thin",
+            "description": "Scrollbar width. Values: 'thin', 'auto', 'none', or a pixel number."
+          },
+          {
+            "key": "radius",
+            "value": "4",
+            "description": "Border radius in pixels for the scrollbar thumb."
+          },
+          {
+            "key": "thumb",
+            "value": "rgba(255,255,255,.25)",
+            "description": "Color of the scrollbar thumb."
+          },
+          {
+            "key": "track",
+            "value": "transparent",
+            "description": "Color of the scrollbar track."
+          },
+          {
+            "key": "hover",
+            "value": "rgba(255,255,255,.45)",
+            "description": "Color of the scrollbar thumb on hover."
           }
         ]
       }
@@ -96,16 +148,10 @@
         "markup": [
           {
             "attribute": "responsivevoice--speak",
-            "description": ""
+            "description": "Speaks the given text aloud using the ResponsiveVoice text-to-speech engine. Value is the text to speak."
           }
         ],
-        "config": [
-          {
-            "key": "",
-            "value": "",
-            "description": ""
-          }
-        ]
+        "config": []
       }
     },
     {
@@ -131,16 +177,26 @@
           },
           {
             "attribute": "filtersearch--onempty",
-            "description": "Placed on the container. Shows the target element when no rows match, hides it otherwise, e.g. filtersearch--onempty=\"#emptyMessage\"."
+            "description": "Placed on the container. Shows the target element when no rows match, hides it otherwise. Value is a selector, e.g. filtersearch--onempty=\"#emptyMessage\"."
+          },
+          {
+            "attribute": "filtersearch--run",
+            "description": "Triggers the filter search. Typically used with onvaluechange on an input. Value is an optional container selector to scope the search."
+          },
+          {
+            "attribute": "filtersearch--input",
+            "description": "Marks an input as the filter source when using a scoped container. No value required."
+          },
+          {
+            "attribute": "filtersearch--group",
+            "description": "Placed on a checkbox input. Groups filter rows by category. Checked checkboxes activate filtering by the group value."
+          },
+          {
+            "attribute": "filtersearch--marker",
+            "description": "Marks a child element inside a row as the value indicator for group-based filtering."
           }
         ],
-        "config": [
-          {
-            "key": "",
-            "value": "",
-            "description": ""
-          }
-        ]
+        "config": []
       }
     },
     {
@@ -158,24 +214,34 @@
         "markup": [
           {
             "attribute": "particles--load",
-            "description": "Loads particles inside of the element."
+            "description": "Loads and starts the particle animation inside the element."
           }
         ],
         "config": [
           {
             "key": "particles",
-            "value": "number",
-            "description": ""
+            "value": "50",
+            "description": "Total number of particles to render (max 500)."
+          },
+          {
+            "key": "maxSpeed",
+            "value": "1",
+            "description": "Maximum vertical speed of particles."
           },
           {
             "key": "size",
-            "value": "number",
-            "description": ""
+            "value": "2",
+            "description": "Size in pixels of each particle (max 50)."
+          },
+          {
+            "key": "colors",
+            "value": "#fff,#ff0,#0ff,#f0f",
+            "description": "Comma-separated list of colors for particles."
           },
           {
             "key": "mousemove",
-            "value": "boolean",
-            "description": ""
+            "value": "true",
+            "description": "Enable or disable mouse tracking. Particles drift toward cursor when true."
           }
         ]
       }
@@ -197,18 +263,27 @@
         "markup": [
           {
             "attribute": "map--lat",
-            "description": ""
+            "description": "Sets the latitude coordinate for the map center and marker."
           },
           {
             "attribute": "map--lng",
-            "description": ""
+            "description": "Sets the longitude coordinate for the map center and marker."
+          },
+          {
+            "attribute": "map--run",
+            "description": "Initializes and renders the map on the target element."
           }
         ],
         "config": [
           {
-            "key": "",
+            "key": "googleKey",
             "value": "",
-            "description": ""
+            "description": "Google Maps API key for authentication."
+          },
+          {
+            "key": "googleTarget",
+            "value": "",
+            "description": "Default target element selector for Google Maps rendering."
           }
         ]
       }

@@ -48,15 +48,16 @@
       </tbody>
     </table>
 
-    <h4 margintop="2rem">Config</h4>
-    <hr color="darkgray" margin="0.5rem 0">
-    <table color="white" width="100%">
-      <tbody valign="top" data-iterate="attributes.config">
-        <tr>
-          <td data-get="key"></td>
-          <td data-get="value"></td>
-        </tr>
-      </tbody>
-    </table>
+      <h4 margintop="2rem">Config</h4>
+      <hr color="darkgray" margin="0.5rem 0">
+      <table id="config" color="white" width="100%">
+        <tbody valign="top" data-iterate="attributes.config" data-onkeyempty="hide:#config;show:#emptyConfig">
+          <tr>
+            <td data-get="key"></td>
+            <td data-get="value"></td>
+          </tr>
+        </tbody>
+      </table>
+      <span id="emptyConfig" color="silver" hide>No configuration available</span>
   </div>
 </section>
