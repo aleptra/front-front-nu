@@ -5,7 +5,7 @@
   <section bgcolor="white01" padding="2rem">
     <form alignitems="center" style="align-items:center">
       <h1 zoom="0.8" bindglobal="title:title" settext="{title}" globalize-get="{title}"></h1>
-      <input id="filter" type="text" placeholder="Filter" onvaluechange="filtersearch--run" margintop="0.5rem"
+      <input id="filter" type="text" placeholder="Filter" onvaluechange="filtersearch--run:#items" margintop="0.5rem"
         width="15rem" padding="0.75rem 1rem" bgcolor="white01" radius="0.25rem" autocomplete="off" focus>
     </form>
   </section>
@@ -26,9 +26,17 @@
     <div id="loader" class="loader" flex></div>
     <div id="error" class="red mb2" hide>Something went wrong!</div>
     <div id="empty" class="mb2 fwb" hide>Not found!</div>
-    <div bindquery="page:page" data-src="./assets/json/data/extensions.json"
+    <div id="filterEmpty" class="mb2" hide>
+      <b>No extensions match your filter.</b>
+      <br>
+      <a screen-xxs="transform:[scale(1)]" screen-xl="transform:[scale(1.1)]"
+        minheight="2.0rem" radius="1rem" paddingleft="1.3rem" paddingright="1.3rem"
+        lineheight="2.5" bgcolor="white" color="black" fontsize="90%" margintop="2rem"
+        click="resetvalue:#filter;filtersearch--run:#items">Clear filter</a>
+    </div>
+    <div id="items" bindquery="page:page" data-src="./assets/json/data/extensions.json"
       data-set="page:#page;total_pages:#pages;total_results:#results" data-iterate="extensions" data-loader="#loader"
-      data-onerror="show:#error" data-onempty="show:#empty" class="cards gut5-" width="inherit">
+      data-onerror="show:#error" data-onempty="show:#empty" filtersearch--onempty="#filterEmpty" class="cards gut5-" width="inherit">
       <a href="marketplace/plugin.html?k={k}" data-set="k:key" class="br05-" bgcolor="#212121" filtersearch--select>
         <figure screen-xxs="flexdirection:[row]" screen-lg="flexdirection:[column]" width="100%" class="bw1 p1">
           <img radius="1rem" width="4rem" screen-xxs="marginbottom:[0]" screen-lg="marginbottom:[1rem]"

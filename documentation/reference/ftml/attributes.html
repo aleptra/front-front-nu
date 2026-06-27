@@ -16,7 +16,7 @@
     runorder="bindglobal;settext;globalize-get"></h1>
 
   <form>
-    <input type="text" placeholder="Filter" filtersearch--input onvaluechange="filtersearch--run:#attributeTable"
+    <input id="filter" type="text" placeholder="Filter" filtersearch--input onvaluechange="filtersearch--run:#attributeTable"
       width="15rem" padding="0.75rem 1rem" bgcolor="white01" radius="0.25rem" autocomplete="off" focus>
 
     <small margintop="1rem" block>Filter by type</small>
@@ -35,7 +35,15 @@
   </form>
 
   <section margintop="1rem">
-    <div id="attributeTableEmpty" hide>No FTML attributes found.</div>
+    <div id="attributeTableEmpty" hide>
+      <hr bgcolor="white" margintop="3rem">
+      <b>No FTML attributes match your filter.</b>
+      <br>
+      <a screen-xxs="transform:[scale(1)]" screen-xl="transform:[scale(1.1)]"
+        minheight="2.0rem" radius="1rem" paddingleft="1.3rem" paddingright="1.3rem"
+        lineheight="2.5" bgcolor="white" color="black" fontsize="90%" margintop="2rem"
+        click="resetvalue:#filter;filtersearch--run:#attributeTable">Clear filter</a>
+    </div>
     <table color="white" class="mt1" width="100%" data-src="assets/json/data/references.json" data-ttl="0"
       id="attributeTable" filtersearch--onempty="#attributeTableEmpty">
 
