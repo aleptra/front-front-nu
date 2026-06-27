@@ -442,7 +442,12 @@
       {
         "module": "data",
         "attribute": "data-onempty",
-        "description": "Defines actions to execute when the data source returns an empty result."
+        "description": "Executes actions when the fetched data is empty."
+      },
+      {
+        "module": "data",
+        "attribute": "data-onnotempty",
+        "description": "Executes actions when the fetched data is not empty."
       },
       {
         "module": "data",

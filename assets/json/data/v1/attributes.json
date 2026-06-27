@@ -223,6 +223,32 @@
       "data-src"
     ]
   },
+  "data-onempty": {
+    "category": "event",
+    "description_short": "Executes actions when the fetched data is empty. Accepts any action expression supported by app.call.",
+    "example": "<div id=\"empty\" hide>No results found</div>\n<div data-src=\"/api/items\" data-iterate=\"items\" data-onempty=\"show:#empty\">\n  <span data-get=\"name\"></span>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-onnotempty",
+      "data-src",
+      "data-onerror"
+    ]
+  },
+  "data-onnotempty": {
+    "category": "event",
+    "description_short": "Executes actions when the fetched data is not empty. Accepts any action expression supported by app.call.",
+    "example": "<div color=\"red\" id=\"notempty\" hide>Not empty!</div>\n<div data-src=\"https://dummyjson.com/products\" data-iterate=\"products\" data-onnotempty=\"show:#notempty\">\n  <span data-get=\"title\"></span>\n</div>",
+    "depends_on": [
+      "data-src"
+    ],
+    "see_also": [
+      "data-onempty",
+      "data-src",
+      "data-onsuccess"
+    ]
+  },
   "escape": {
     "category": "content",
     "description_short": "Escapes HTML or special characters to display as plain text.",
