@@ -85,18 +85,18 @@
         </div>
       </div>
       <div flex screen-sm="hide;zoom:[0.7];gap:[0rem]" screen-lg="show;zoom:[0.9];gap:[2rem]"
-        screen-xxl="gap:[3rem];zoom:[1]" flex="auto" clone="#navlinks">
+        screen-xxl="gap:[3rem];zoom:[1]" flex="auto" id="navlinks">
+        <a href="documentation" globalize-get bindglobal="href:href"
+          if="([{href}]~[/documentation])/underline">Documentation</a>
+        <a href="workshop" globalize-get bindglobal="href:href" if="([{href}]~[/workshop])/underline">Workshop</a>
+        <a href="marketplace" globalize-get bindglobal="href:href"
+          if="([{href}]~[/marketplace])/underline">Marketplace</a>
+        <a href="playground.html" globalize-get bindglobal="href:href"
+          if="([{href}]~[/playground])/underline">Playground</a>
       </div>
     </div>
-    <div flex gap="1.5rem" marginleft="auto" fontsize="80%" screen-xxs="show" screen-xs="show" screen-sm="show" screen-md="hide" clone="#navlinks"></div>
   </header>
   <nav></nav>
-  <div id="navlinks" hide>
-    <a href="documentation">Documentation</a>
-    <a href="workshop">Workshop</a>
-    <a href="marketplace">Marketplace</a>
-    <a href="playground.html">Playground</a>
-  </div>
   <aside height="100%" screen-xs="hide;fixed" screen-lg="flex;relative" scrollbar--set="width:thin;thumb:white" top="0"
     zindex="20"></aside>
   <main height="100%" include="_includes/home.html" scrollbar--set></main>
