@@ -98,7 +98,7 @@
       <li><b>Loading indicators:</b> <i>data-loader</i></li>
       <li><b>Delayed requests:</b> <i>data-wait</i></li>
       <li><b>Handling empty responses:</b> <i>data-onempty</i>, <i>data-onnotempty</i></li>
-      <li><b>Handling response status:</b> <i>data-status</i></li>
+      <li><b>Handling response status:</b> <i>data-onstatus</i></li>
       <li><b>Lifecycle hooks:</b> <i>data-onsuccess</i>, <i>data-onerror</i>, <i>data-onfinish</i></li>
       <li><b>Periodic refreshing:</b> <i>data-interval</i></li>
       <li><b>Caching responses:</b> <i>data-ttl</i></li>
@@ -118,14 +118,14 @@
         onsettext="rundelay[2000]:reset">Copy</button>
     </small>
     <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
-      whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;div data-src="/api/users" data-srcjoin="/api/orders" data-merge="users;orders" data-filteritem="status:'active'" data-sort="name"&gt;&lt;/div&gt;
-&lt;ul data-iterate="users"&gt;
-  &lt;li&gt;
-    &lt;span data-get="name"&gt;&lt;/span&gt; -
-    &lt;span data-get="orderCount"&gt;&lt;/span&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-    </code>
+      whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;div data-src="/api/users" data-srcjoin="/api/orders" data-merge="users;orders" data-filteritem="status:'active'" data-sort="name"&gt;
+  &lt;ul data-iterate="users"&gt;
+    &lt;li&gt;
+      &lt;span data-get="name"&gt;&lt;/span&gt; -
+      &lt;span data-get="orderCount"&gt;&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code>
   </section>
 
   <section>

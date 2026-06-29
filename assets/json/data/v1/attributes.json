@@ -468,10 +468,10 @@
       "data-src"
     ]
   },
-  "data-status": {
+  "data-onstatus": {
     "category": "behavior",
     "description_short": "Shows an element when the response status does not match 200.",
-    "example": "<div id=\"statusError\" hide>Server returned an error status</div>\n<div data-src=\"/api/items\" data-iterate=\"items\" data-status=\"error;#statusError\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div id=\"error404\" hide>Server returned an error status</div>\n<div data-src=\"/api/items\" data-iterate=\"items\" data-onstatus=\"(404)/show:#error404\">\n  <span data-get=\"name\"></span>\n</div>",
     "depends_on": [
       "data-src"
     ],

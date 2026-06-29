@@ -496,7 +496,7 @@
       },
       {
         "module": "data",
-        "attribute": "data-status",
+        "attribute": "data-onstatus",
         "description": "Shows an element when the response status does not match 200."
       },
       {

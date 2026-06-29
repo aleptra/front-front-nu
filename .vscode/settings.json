@@ -14,7 +14,7 @@
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "git.openDiffOnClick": false,
-  "liveServer.settings.port": 5502,
+  "liveServer.settings.port": 5556,
   "search.exclude": {
     "**/*.log": true,
     "**/*.min.js": true,
