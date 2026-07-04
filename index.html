@@ -52,8 +52,8 @@
     screen-lg="padding:[0px 3.5rem 0rem 3.5rem];height:[4.5rem]" color="white" zindex="60">
     <button click="toggledisplay:*aside[0]" bgcolor="black" color="white" bindglobal="href:href"
       if="([{href}]!~[/documentation])/hide" screen-xxs="show;runattr:[if]" screen-lg="hide;runattr:[if]"
-      padding="0 0.5rem 0 0.5rem" marginright="1rem"><i class="icon32">≡</i>
-    </button>
+      marginright="1rem" padding="0.5rem" radius="0.3rem" border="1px solid rgba(255,255,255,0.3)" height="2rem"
+      width="2rem" fontsize="24px">≡</button>
     <figure margin="0">
       <a href="./" key="0" marginright="2rem"><img height="85%" maxwidth="unset" src="assets/img/logo.png"></a>
     </figure>
@@ -62,10 +62,9 @@
         <div zindex="100" bindglobal="href:href" if="([{href}]~[/documentation])/show?hide">
           <form class="zi3" id="form" method="get" action="search.html" target="_top">
             <input id="querysearch" onvaluechange="filtersearch--run:#searchTable;show:#searchTable"
-              bindfield="q:#searchEmpty" name="q"
-              type="text" height="2.75rem" radius="0.25rem" bgcolor="white01" width="100%" color="white" padding="1rem"
-              class="zi3" globalize-get="input_search" globalize-target="placeholder" autocomplete="off"
-              placeholder="Search for words...">
+              bindfield="q:#searchEmpty" name="q" type="text" height="2.75rem" radius="0.25rem" bgcolor="white01"
+              width="100%" color="white" padding="1rem" class="zi3" globalize-get="input_search"
+              globalize-target="placeholder" autocomplete="off" placeholder="Search for words...">
             <input type="submit" padding="1rem" height="4rem" class="bos0 bc0 white w4 icon icon16 pa r0" value="🔍">
           </form>
           <div id="searchTableEmpty" bgcolor="black" padding="1rem" class="box pa w100 ail- autocomplete"
