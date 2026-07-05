@@ -387,6 +387,166 @@
           }
         ]
       }
+    },
+    {
+      "id": 14,
+      "key": "confetti",
+      "title": "Confetti",
+      "description": "Adds a customizable confetti animation to any container element. Renders colorful shapes or images that fall, rise, or drift across the screen with configurable speed, direction, wobble, rotation, and fade effects. Ideal for celebrations, notifications, or playful visual accents.",
+      "version": "0.1.0",
+      "screenshot": "",
+      "icon": "./assets/img/icon_plugin.svg",
+      "type": 0,
+      "author": "Josef Gabrielsson",
+      "cost": "0",
+      "attributes": {
+        "markup": [
+          {
+            "attribute": "confetti--load",
+            "description": "Initializes and starts the confetti animation inside the element."
+          }
+        ],
+        "config": [
+          {
+            "key": "count",
+            "value": "30",
+            "description": "Total number of confetti pieces to render (max 200)."
+          },
+          {
+            "key": "src",
+            "value": "",
+            "description": "Semicolon-separated image URLs to use as confetti pieces. If empty, colored shapes are used."
+          },
+          {
+            "key": "colors",
+            "value": "#ff0;#f0f;#0ff;#f00;#0f0;#00f",
+            "description": "Semicolon-separated list of colors for confetti shapes."
+          },
+          {
+            "key": "size",
+            "value": "10",
+            "description": "Size in pixels of each confetti piece (max 100)."
+          },
+          {
+            "key": "speed",
+            "value": "1.5",
+            "description": "Base speed of confetti movement."
+          },
+          {
+            "key": "direction",
+            "value": "down",
+            "description": "Direction of movement: down, up, left, or right."
+          },
+          {
+            "key": "wobble",
+            "value": "true",
+            "description": "Enable or disable sideways wobble during movement."
+          },
+          {
+            "key": "rotate",
+            "value": "true",
+            "description": "Enable or disable rotation of confetti pieces."
+          },
+          {
+            "key": "fade",
+            "value": "false",
+            "description": "Enable or disable opacity fading based on position."
+          },
+          {
+            "key": "fadein",
+            "value": "true",
+            "description": "Fade in confetti at the start of travel (requires fade: true)."
+          },
+          {
+            "key": "fadeout",
+            "value": "true",
+            "description": "Fade out confetti at the end of travel (requires fade: true)."
+          }
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "key": "progressbar",
+      "title": "Progress Bar",
+      "description": "Enhances native HTML progress elements with custom styling for border radius, fill color, and track color using CSS pseudo-elements. Works cross-browser with WebKit and Firefox prefixes.",
+      "version": "0.1.0",
+      "screenshot": "",
+      "icon": "./assets/img/icon_plugin.svg",
+      "type": 0,
+      "author": "Front Labs",
+      "cost": "0",
+      "attributes": {
+        "markup": [
+          {
+            "attribute": "progressbar--set",
+            "description": "Applies custom progress bar styling to a <progress> element. Reads radius, color, and bgcolor attributes from the element."
+          }
+        ],
+        "config": []
+      }
+    },
+    {
+      "id": 16,
+      "key": "seold",
+      "title": "SEO LD",
+      "description": "Automatically generates and injects JSON-LD structured data (Schema.org DefinedTerm) into the page head. Collects name, description, and URL values from elements and outputs a valid linked data script for search engine optimization.",
+      "version": "0.1.0",
+      "screenshot": "",
+      "icon": "./assets/img/icon_plugin.svg",
+      "type": 0,
+      "author": "Josef Gabrielsson",
+      "cost": "0",
+      "attributes": {
+        "markup": [
+          {
+            "attribute": "seold--name",
+            "description": "Sets the name field for the JSON-LD DefinedTerm. Value is read from the element text."
+          },
+          {
+            "attribute": "seold--desc",
+            "description": "Sets the description field for the JSON-LD DefinedTerm. Value is read from the element text."
+          },
+          {
+            "attribute": "seold--url",
+            "description": "Sets the URL field for the JSON-LD DefinedTerm. Value is read from the element href."
+          }
+        ],
+        "config": []
+      }
+    },
+    {
+      "id": 17,
+      "key": "share",
+      "title": "Share",
+      "description": "Enables sharing the current page to social platforms like Facebook, Twitter, WhatsApp, and LinkedIn. Opens a new window with a pre-filled share URL using the page title and URL or custom values.",
+      "version": "0.1.0",
+      "screenshot": "",
+      "icon": "./assets/img/icon_plugin.svg",
+      "type": 0,
+      "author": "Josef Gabrielsson",
+      "cost": "0",
+      "attributes": {
+        "markup": [
+          {
+            "attribute": "share--open",
+            "description": "Triggers the share action. Reads platform, title, and URL from sibling attributes."
+          },
+          {
+            "attribute": "share--platform",
+            "description": "The social platform to share to: facebook, twitter, whatsapp, or linkedin."
+          },
+          {
+            "attribute": "share--title",
+            "description": "Custom title for the share. Defaults to document.title if not set."
+          },
+          {
+            "attribute": "share--url",
+            "description": "Custom URL to share. Defaults to the current page URL if not set."
+          }
+        ],
+        "config": []
+      }
     }
   ]
 }

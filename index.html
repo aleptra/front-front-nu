@@ -43,17 +43,19 @@
   <title>Front</title>
 </head>
 
-<body bgcolor="black" color="white">
+<body bgcolor="black" color="white" navigate-onloaded="hide:#mobileMenu">
   <div id="navloader" class="navloader pa t0 bcwhite05" width="100%" height="2" hide>
     <div bgcolor="black" height="2"></div>
   </div>
   <header class="topbar" maxheight="unset" screen-xxs="padding:[0px 1rem 0px 1rem];height:[3.5rem]"
     screen-sm="padding:[0px 1.5rem 0px 1.5rem];height:[3.5rem]" screen-md="padding:[0 3rem 0 2.5rem];height:[4.5rem]"
     screen-lg="padding:[0px 3.5rem 0rem 3.5rem];height:[4.5rem]" color="white" zindex="60">
-    <button click="toggledisplay:*aside[0]" bgcolor="black" color="white" bindglobal="href:href"
-      if="([{href}]!~[/documentation])/hide" screen-xxs="show;runattr:[if]" screen-lg="hide;runattr:[if]"
+    <button click="toggledisplay:#mobileMenu"
+      bgcolor="black" color="white"
+      screen-xxs="show;runattr:[if]" screen-md="hide;runattr:[if]"
       marginright="1rem" padding="0.5rem" radius="0.3rem" border="1px solid rgba(255,255,255,0.3)" height="2rem"
-      width="2rem" fontsize="24px">≡</button>
+      width="2rem" fontsize="24px" class="bc0" bindglobal="href:isFrontpage" onbindglobalchange="rerun:if"
+      if="([{href}]~[true])/hide">≡</button>
     <figure margin="0">
       <a href="./" key="0" marginright="2rem"><img height="85%" maxwidth="unset" src="assets/img/logo.png"></a>
     </figure>
@@ -101,6 +103,11 @@
   <main height="100%" include="_includes/home.html" scrollbar--set></main>
   <aside></aside>
   <footer></footer>
+
+  <!-- Fullscreen mobile menu content -->
+  <div id="mobileMenu" bgcolor="black" padding="0" zindex="9999" fixed top="0" left="0" width="100%" height="100%" overflow="auto" hide>
+    <div include="_includes/sidebar.html"></div>
+  </div>
 </body>
 
 </html>
