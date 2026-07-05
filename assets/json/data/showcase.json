@@ -1,0 +1,18 @@
+{
+  "showcase": [
+    {
+      "key": "calculator",
+      "title": "Calculator",
+      "description": "A simple calculator built with Front using statevalue and click actions.",
+      "url": "showcase/calculator",
+      "author": "Front Labs"
+    },
+    {
+      "key": "weather",
+      "title": "Weather App",
+      "description": "Real-time weather data using data-src and data-iterate.",
+      "url": "showcase/weather",
+      "author": "Front Labs"
+    }
+  ]
+}

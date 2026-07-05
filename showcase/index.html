@@ -1,0 +1,19 @@
+<script src="https://cdn.front.nu/nightly/front.js"></script>
+
+<title globalize-get>Showcase</title>
+<template srcdoc="../index" src="../_templates/playground"></template>
+
+<article>
+  <section padding="2rem">
+    <h1 zoom="0.9" marginbottom="2rem" globalize-get>Showcase</h1>
+    <p color="silver" marginbottom="3rem">Applications built with Front.</p>
+
+    <div grid screen-xs="gridcolumns:[1fr]" screen-md="gridcolumns:[1fr 1fr]" screen-lg="gridcolumns:[1fr 1fr 1fr]" gap="1.5rem" data-src="assets/json/data/showcase.json" data-iterate="showcase">
+      <a flex flexdirection="column" target="_blank" data-set="url:url" href="{url}" class="br05-" bgcolor="#212121" padding="1.5rem" radius="0.5rem">
+        <h4 marginbottom="0.5rem" data-get="title"></h4>
+        <small color="silver" data-get="description"></small>
+        <small block margintop="0.5rem" color="gray" fontsize="70%" data-get="author"></small>
+      </a>
+    </div>
+  </section>
+</article>

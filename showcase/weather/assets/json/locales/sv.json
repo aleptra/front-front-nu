@@ -1,0 +1,22 @@
+{
+  "name": "Svenska",
+  "code": "swe",
+  "iso639": {
+    "1": "sv",
+    "2": "swe",
+    "3": "swe"
+  },
+  "direction": "ltr",
+  "translations": {
+    "Weather": "Väder",
+    "Change language": "Byt språk",
+    "Monday": "Måndag",
+    "Tuesday": "Tisdag",
+    "Wednesday": "Onsdag",
+    "Thursday": "Torsdag",
+    "Friday": "Fredag",
+    "Saturday": "Lördag",
+    "Sunday": "Söndag",
+    "input_search": "Sök efter plats..."
+  }
+}

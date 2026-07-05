@@ -3,11 +3,13 @@
   <!-- End Backdrop -->
   <div padding="2%" screen-xs="flex;fontsize:[70%]" screen-md="fontsize:[90%]" screen-lg="hide" align="center"
     style="border-right: 1px solid #202020">
-    <a href="documentation" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href"
+    <a href="documentation" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href" onbindglobalchange="rerun:if"
         if="([{href}]~[/documentation])/color:[white]?color:[#303030]">●</i>Documentation</a>
-    <a href="marketplace" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href"
+    <a href="showcase" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href" onbindglobalchange="rerun:if"
+        if="([{href}]~[/showcase])/color:[white]?color:[#303030]">●</i>Showcase</a>
+    <a href="marketplace" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href" onbindglobalchange="rerun:if"
         if="([{href}]~[/marketplace])/color:[white]?color:[#303030]">●</i>Marketplace</a>
-    <a href="playground.html" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href"
+    <a href="playground.html" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href" onbindglobalchange="rerun:if"
         if="([{href}]~[/playground])/color:[white]?color:[#303030]">●</i>Playground</a>
   </div>
   <form width="inherit" screen-xs="padding:[0]" screen-sm="padding:[0]" screen-md="padding:[0 2.5rem 0 2.5rem]"
