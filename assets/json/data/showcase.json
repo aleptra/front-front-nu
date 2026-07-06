@@ -3,7 +3,7 @@
     {
       "key": "calculator",
       "title": "Calculator",
-      "description": "A simple calculator built with Front using statevalue and click actions.",
+      "description": "A simple calculator using statevalue and click actions.",
       "url": "showcase/calculator",
       "author": "Front Labs"
     },
