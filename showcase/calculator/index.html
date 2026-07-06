@@ -15,11 +15,11 @@
 </head>
 
 <body flex flexdirection="column" align="center" alignitems="center" margin="0" height="100vh" width="100vw" bgcolor="whitesmoke" font="monospace">
-  <main flex flexdirection="column" alignitems="center" justifycontent="center" height="inherit" width="inherit" padding="1rem">
+  <main flex flexdirection="column" alignitems="center" justifycontent="center" height="100%" width="100%">
     <input
       type="text"
       id="result"
-      fontsize="200%"
+      fontsize="300%"
       value="0"
       border="0"
       width="100%"
@@ -37,29 +37,29 @@
       readonly
     >
     <div grid gridcolumns="repeat(4, 1fr)" gap=".5vw" fontsize="200%" justifycontent="center" width="inherit" height="inherit" padding="inherit" paddingbottom="0">
-      <button id="reset" flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="c" keyboard-action="click" click="resetvalue" clicktargetfield="#result" bold>AC</button>
-      <button flex alignitems="center" fontsize="inherit" justifycontent="inherit" type="button" keyboard-key="-" keyboard-action="click" click="insertafterbegin:[-]" clicktargetfield="#result">+/-</button>
-      <button flex alignitems="center" fontsize="inherit" justifycontent="inherit" type="button" keyboard-key="%" keyboard-action="click" click="insertbeforeend:[%]" clicktargetfield="#result">%</button>
-      <button flex alignitems="center" border="0" fontsize="inherit" justifycontent="inherit" bgcolor="gold" type="button" keyboard-key="/" keyboard-action="click" click="insertbeforeend:[/]" clicktargetfield="#result">÷</button>
+      <button border="1px solid silver" id="reset" flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="c" keyboard-action="click" click="resetvalue" clicktargetfield="#result" bold>AC</button>
+      <button border="1px solid silver" flex alignitems="center" fontsize="inherit" justifycontent="inherit" type="button" keyboard-key="-" keyboard-action="click" click="insertafterbegin:[-]" clicktargetfield="#result">+/-</button>
+      <button border="1px solid silver" flex alignitems="center" fontsize="inherit" justifycontent="inherit" type="button" keyboard-key="%" keyboard-action="click" click="insertbeforeend:[%]" clicktargetfield="#result">%</button>
+      <button border="1px solid orange" flex alignitems="center" fontsize="inherit" justifycontent="inherit" bgcolor="gold" type="button" keyboard-key="/" keyboard-action="click" click="insertbeforeend:[/]" clicktargetfield="#result">÷</button>
 
-      <button flex alignitems="center" fontsize="inherit" justifycontent="inherit" type="button" keyboard-key="7" keyboard-action="click" click="insertbeforeend:[7]" clicktargetfield="#result">7</button>
-      <button flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="8" keyboard-action="click" click="insertbeforeend:[8]" clicktargetfield="#result">8</button>
-      <button flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="9" keyboard-action="click" click="insertbeforeend:[9]" clicktargetfield="#result">9</button>
-      <button flex alignitems="center" border="0" fontsize="inherit" justifycontent="center" bgcolor="gold" type="button" keyboard-key="*" keyboard-action="click" click="insertbeforeend:[*]" clicktargetfield="#result">*</button>
+      <button border="1px solid silver" flex alignitems="center" fontsize="inherit" justifycontent="inherit" type="button" keyboard-key="7" keyboard-action="click" click="insertbeforeend:[7]" clicktargetfield="#result">7</button>
+      <button border="1px solid silver" flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="8" keyboard-action="click" click="insertbeforeend:[8]" clicktargetfield="#result">8</button>
+      <button border="1px solid silver" flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="9" keyboard-action="click" click="insertbeforeend:[9]" clicktargetfield="#result">9</button>
+      <button border="1px solid orange" flex alignitems="center" fontsize="inherit" justifycontent="center" bgcolor="gold" type="button" keyboard-key="*" keyboard-action="click" click="insertbeforeend:[*]" clicktargetfield="#result">*</button>
 
-      <button flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="4" keyboard-action="click" click="insertbeforeend:[4]" clicktargetfield="#result">4</button>
-      <button flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="5" keyboard-action="click" click="insertbeforeend:[5]" clicktargetfield="#result">5</button>
-      <button flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="6" keyboard-action="click" click="insertbeforeend:[6]" clicktargetfield="#result">6</button>
-      <button flex alignitems="center" border="0" fontsize="inherit" justifycontent="center" bgcolor="gold" type="button" keyboard-key="-" keyboard-action="click" click="insertbeforeend:[-]" clicktargetfield="#result">-</button>
+      <button border="1px solid silver" flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="4" keyboard-action="click" click="insertbeforeend:[4]" clicktargetfield="#result">4</button>
+      <button border="1px solid silver" flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="5" keyboard-action="click" click="insertbeforeend:[5]" clicktargetfield="#result">5</button>
+      <button border="1px solid silver" flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="6" keyboard-action="click" click="insertbeforeend:[6]" clicktargetfield="#result">6</button>
+      <button border="1px solid orange" flex alignitems="center" fontsize="inherit" justifycontent="center" bgcolor="gold" type="button" keyboard-key="-" keyboard-action="click" click="insertbeforeend:[-]" clicktargetfield="#result">-</button>
 
-      <button flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="1" keyboard-action="click" click="insertbeforeend:[1]" clicktargetfield="#result">1</button>
-      <button flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="2" keyboard-action="click" click="insertbeforeend:[2]" clicktargetfield="#result">2</button>
-      <button flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="3" keyboard-action="click" click="insertbeforeend:[3]" clicktargetfield="#result">3</button>
-      <button flex alignitems="center" border="0" fontsize="inherit" justifycontent="center" bgcolor="gold" type="button" keyboard-key="+" keyboard-action="click" click="insertbeforeend:[+]" clicktargetfield="#result">+</button>
+      <button border="1px solid silver" flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="1" keyboard-action="click" click="insertbeforeend:[1]" clicktargetfield="#result">1</button>
+      <button border="1px solid silver" flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="2" keyboard-action="click" click="insertbeforeend:[2]" clicktargetfield="#result">2</button>
+      <button border="1px solid silver" flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="3" keyboard-action="click" click="insertbeforeend:[3]" clicktargetfield="#result">3</button>
+      <button border="1px solid orange" flex alignitems="center" fontsize="inherit" justifycontent="center" bgcolor="gold" type="button" keyboard-key="+" keyboard-action="click" click="insertbeforeend:[+]" clicktargetfield="#result">+</button>
 
-      <button flex alignitems="center" fontsize="inherit" justifycontent="center" gridcolumn="span 2" type="button" keyboard-key="0" keyboard-action="click" click="insertbeforeend:[0]" clicktargetfield="#result">0</button>
-      <button flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="," keyboard-action="click" click="insertbeforeend:[,]" clicktargetfield="#result">,</button>
-      <button flex alignitems="center" border="0" fontsize="inherit" justifycontent="center" bgcolor="gold" type="button" keyboard-key="Enter" keyboard-action="click" click="math-compute:#result:#result.statevalue">=</button>
+      <button border="1px solid silver" flex alignitems="center" fontsize="inherit" justifycontent="center" gridcolumn="span 2" type="button" keyboard-key="0" keyboard-action="click" click="insertbeforeend:[0]" clicktargetfield="#result">0</button>
+      <button border="1px solid silver" flex alignitems="center" fontsize="inherit" justifycontent="center" type="button" keyboard-key="," keyboard-action="click" click="insertbeforeend:[,]" clicktargetfield="#result">,</button>
+      <button border="1px solid orange" flex alignitems="center" fontsize="inherit" justifycontent="center" bgcolor="gold" type="button" keyboard-key="Enter" keyboard-action="click" click="math-compute:#result:#result.statevalue">=</button>
     </div>
   </main>
 </body>
