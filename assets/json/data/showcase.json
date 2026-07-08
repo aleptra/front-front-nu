@@ -3,16 +3,56 @@
     {
       "key": "calculator",
       "title": "Calculator",
-      "description": "A simple calculator using statevalue and click actions.",
-      "url": "showcase/calculator",
-      "author": "Front Labs"
+      "description": "A simple calculator demonstrating state values, user input, and click actions.",
+      "url": "showcase/calculator"
+    },
+    {
+      "key": "chat",
+      "title": "Chat App",
+      "description": "A real-time chat interface demonstrating dynamic content updates and event handling.",
+      "url": "showcase/chat"
+    },
+    {
+      "key": "charmap",
+      "title": "Character Map",
+      "description": "A character explorer showcasing searchable data, lists, and interactive selection.",
+      "url": "showcase/charmap"
+    },
+    {
+      "key": "code",
+      "title": "Code Editor",
+      "description": "An interactive code editor demonstrating text handling, syntax display, and live updates.",
+      "url": "showcase/code"
+    },
+    {
+      "key": "dictionary",
+      "title": "Dictionary",
+      "description": "A dictionary application demonstrating data loading, searching, and structured content rendering.",
+      "url": "showcase/dictionary"
+    },
+    {
+      "key": "map",
+      "title": "Map",
+      "description": "An interactive map showcase demonstrating location data and dynamic components.",
+      "url": "showcase/map"
+    },
+    {
+      "key": "note",
+      "title": "Notes",
+      "description": "A notes application demonstrating state management, input handling, and persistent data.",
+      "url": "showcase/note"
+    },
+    {
+      "key": "stream",
+      "title": "Stream",
+      "description": "A media streaming interface demonstrating lists, dynamic content, and user interaction.",
+      "url": "showcase/stream"
     },
     {
       "key": "weather",
       "title": "Weather App",
-      "description": "Real-time weather data using data-src and data-iterate.",
-      "url": "showcase/weather",
-      "author": "Front Labs"
+      "description": "A weather application using data sources and iteration to display live weather information.",
+      "url": "showcase/weather"
     }
   ]
 }

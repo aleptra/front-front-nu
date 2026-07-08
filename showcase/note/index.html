@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="version" content="1.0.0">
+  <script
+    src="https://cdn.front.nu/nightly/front.js"
+    module="globalize;data;navigate;keyboard"
+    var="api"
+    conf="debug:false;debugLocalhost:true;varsDir:assets/json/vars;storageKey:note"
+    globalize-conf="folder:assets/json/locales"
+    navigate-conf="startpage:experimental/app/note;startpageLocal:app/note">
+  </script>
+  <link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="icon" href="data:,">
+  <style>
+    [hide] {
+      display: none
+    }
+
+    .h100p{
+      height: 100%
+    }
+
+    .zi50 {
+      z-index: 50
+    }
+
+    .jcc {
+      justify-content: center
+    }
+
+    .box *, .cards{
+      box-sizing: border-box;
+      width: 100%
+    }
+  </style>
+  <title>Note</title>
+</head>
+
+<body class="light">
+  <div id="navloader" class="navloader pa t0 w100 bcblack03 h2px" hide><div class="bcblack08"></div></div>
+  <header class="topbar h4 pr1 bcindigo white- white shade1" paddingleft="1rem" bold>Note</header>
+  <main>
+    <div id="loader" class="loader"></div>
+    <textarea
+      class="f1 p1 bc0_h h100p w100p"
+      name="note"
+      bindasset="apikey:api.api_key;url:api.notes.url"
+      bindvar="id:1"
+      onvaluechange="data-reqpatch"
+      data-src="{url}?id=eq.{id}"
+      data-header="apikey:{apikey}"
+      data-loader="#loader"
+      data-reqpatch="{url}?id=eq.{id}&limit=1&order=id"
+      data-enctype="application/json"
+      data-get="0.note"
+    >
+    </textarea>
+  </main>
+  <aside></aside>
+  <footer></footer>
+</body>
+
+</html>

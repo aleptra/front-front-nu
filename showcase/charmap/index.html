@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="version" content="1.0.0">
+  <script
+    src="https://cdn.front.nu/nightly/front.js"
+    module="globalize;data;navigate;keyboard"
+    var="api"
+    conf="debug:false;debugLocalhost:true;varsDir:assets/json/vars;storageKey:charmap"
+    globalize-conf="folder:assets/json/locales"
+    navigate-conf="startpage:experimental/app/charmap;startpageLocal:app/charmap">
+  </script>
+  <link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet">
+  <link rel="icon" href="data:,">
+  <style>
+    [hide] {
+      display: none
+    }
+
+    .h100p{
+      height: 100%
+    }
+
+    .zi50 {
+      z-index: 50
+    }
+
+    .jcc {
+      justify-content: center
+    }
+
+  </style>
+  <title>Character Map</title>
+</head>
+
+<body class="light">
+  <div id="navloader" class="navloader pa t0 w100 bcblack03 h2px" hide><div class="bcblack08"></div></div>
+  <header class="topbar h4 gap2- pr2 shade1">
+    <button click="toggle" clicktargetfield="aside[0]" class="md_du light p1"><i class="icon32">≡</i></button>
+    <figure class="mh30p pl2 sel">
+      <a class="fwb pr025" href="./" globalize-get>Character Map</a>
+    </figure>
+    <div class="pr f1">
+      <input
+        id="query"
+        type="text"
+        class="bs1 p1 h3 br05 dark white w100 md_dn"
+        globalize-get="input_search"
+        globalize-target="placeholder"
+        autocomplete="off"
+        bindfield="search:#charmap-catalog"
+        focus>
+    </div>
+  </header>
+
+  <aside ontoggle="toggle.class[pf t0 h100p zi50]" class="dark xl_dn" resize="horizontal"></aside>
+  <main class="pauto">
+    <div
+      bindvar="name:title;link:char;endpoint:trending;endpoint2:all"
+      include="includes/catalog.html">
+    </div>
+  </main>
+  <aside></aside>
+  <footer></footer>
+</body>
+
+</html>

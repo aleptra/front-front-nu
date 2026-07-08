@@ -1,0 +1,68 @@
+<template>
+  <header class="topbar h4_5 pr1 shade1">
+    <figure class="sel p075">
+      <a href="./" class="icon icon32">&#8962;</a>
+    </figure>
+    <div class="ml0 pr f1">
+      <form class="zi3" id="form" method="get" action="search.html" target="_top">
+        <input id="query2" name="q" type="text" class="bs1 p1 h3 br05 dark white w100 zi3" globalize-get="input_search"
+          globalize-target="placeholder" autocomplete="off" bindfield="q:#dict-search;q:#dict-empty">
+        <input type="submit" class="bos0 bc0 white p1 h5 w4 icon icon16 pa r0" value="&#128269;">
+      </form>
+      <div id="dict-search" stop="data-src" bindglobal="l:globalize.code"
+        bindasset="apikey:api.api_key;endpoint:api.words.endpoint"
+        data-src="{endpoint}&column=id,meaning_id,word&where=word.ilike({q}*),lang_code.eq({l})&limit=30"
+        data-header="apikey:{apikey};Prefer:count=exact" data-iterate="true" data-loader="false"
+        class="box br05 bcwhite- black- pa w100 ail- zi2 autocomplete" data-onempty="#dict-empty" hide>
+        <figure>
+          <a data-set="id:id" data-get="word" href="word.html?i={id}" class="p1"></a>
+        </figure>
+      </div>
+      <div id="dict-empty" class="pa w100 bcwhite zi2" hide>
+        <p class="m1">No results found for <b>{q}</b></p>
+      </div>
+    </div>
+    <button click="toggle" clicktargetfield="aside[1]" class="md_du light pl1"><i class="icon32">≡</i></button>
+    <div class="gap1- fs07 pl1 pr05 md_dn">
+      <a href="browse.html"><i class="icon pr025">≡</i><span globalize-get>Browse</span></a>
+      <details class="md_dn">
+        <summary globalize="it_products"><i class="icon pr025">🌐</i><span globalize-get>Language</span></summary>
+        <ul class="pa r1 bcwhite p05 fdc bs5 p025- fdc" margintop="0.5rem" width="7rem">
+          <li><a click="globalize-set:[sv]" class="fs09">Svenska</a></li>
+          <li><a click="globalize-set:[en]" class="fs09">English</a></li>
+        </ul>
+      </details>
+    </div>
+  </header>
+  <aside></aside>
+  <main class="pauto"></main>
+  <aside>
+    <nav class="sidebar pt05 white- shade2" width="70vw">
+      <form>
+        <div>
+          <a click="toggle" marginbottom="0.5rem" clicktargetfield="aside[1]" keyboard-key="m" keyboard-action="click"
+            keyboard-scope="body" class="button pl1"><i class="icon32">«</i></a>
+          <hr class="bcblack">
+          <div class="tac w100" margintop="0.5rem">
+            <img class="br50 w3r mb05 bos8 red bw3 shade2 hue-rotate m0a"
+              src="https://www.aramean.institute/favicon.ico">
+            <h6 class="bold" globalize-get="title" marginbottom="1rem"></h6>
+            <select name="language" class="p1 m0a fs08 tac shade2 light" onvaluechange="globalize-set">
+              <option selected disabled globalize-get>Change language</option>
+              <option value="sv">Svenska</option>
+              <option value="en">English (US)</option>
+            </select>
+          </div>
+        </div>
+        <a href="browse.html" globalize-get>Browse</a>
+        <a click="data-reqget" bindasset="apikey:api.api_key;endpoint:api.words.endpoint"
+          data-header="Accept:application/json+single" data-reqget="{endpoint}&order=random()&limit=1"
+          data-onbeforesuccess="data-set:[word:id]" data-onaftersuccess="sethref:[word.html?i={word}]"
+          onhrefchange="navigate-go" globalize-get>Randomize word</a>
+        <a href="word-of-the-day.html" globalize-get>Word of the Day</a>
+        <a href="phonetics.html" globalize-get>Phonetics</a>
+      </form>
+    </nav>
+  </aside>
+  <footer></footer>
+</template>

@@ -1,0 +1,9 @@
+{
+  "name": "English",
+  "code": "eng",
+  "direction": "ltr",
+  "translations": {
+    "chat": "Chat",
+    "type a message": "Type a message"
+  }
+}
