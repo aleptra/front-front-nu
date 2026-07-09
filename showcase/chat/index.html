@@ -4,58 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="version" content="1.0.0">
-  <script
-    src="https://cdn.front.nu/nightly/front.js"
-    module="globalize;data;navigate;keyboard;chronotize"
-    var="api"
-    conf="debug:false;debugLocalhost:true;varsDir:assets/json/vars;storageKey:chat"
-    globalize-conf="folder:assets/json/locales"
-    navigate-conf="startpage:experimental/app/chat;startpageLocal:app/chat">
-  </script>
+  <script src="https://cdn.front.nu/nightly/front.js" module="data;keyboard;chronotize"
+    conf="debug:false;debugLocalhost:true;resetStyle:true;varsDir:assets/json/vars;storageKey:chat">
+    </script>
   <link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/app.css">
   <link rel="icon" href="data:,">
-  <style>
-    [hide] {
-      display: none
-    }
-
-    .h100p{
-      height: 100%
-    }
-
-    .zi50 {
-      z-index: 50
-    }
-
-    .jcc {
-      justify-content: center
-    }
-
-    .box *, .cards{
-      box-sizing: border-box;
-      width: 100%
-    }
-  </style>
-  <title globalize-get>Chat</title>
+  <title>Chat</title>
 </head>
 
-<body class="light">
-  <div id="navloader" class="navloader pa t0 w100 bcblack03 h2px" hide><div class="bcblack08"></div></div>
-  <header class="topbar h4 pr1 bcmediumblue white- white shade1">
-    <button click="toggle" clicktargetfield="aside[0]" class="ml1 dark p05 br50 hover-"><i class="icon24">≡</i></button>
-    <a class="ml1 mr1" href="./" globalize-get="chat" uppercase bold>Chat</a>
-   <!--<input class="fr mr05" type="checkbox" id="autosave" onvaluechange="alert:hej">
-    <label for="autosave">AutoSave</label>-->
+<body>
+  <header height="4rem" paddingleft="1rem" color="white" bgcolor="mediumblue" alignitems="center" uppercase bold>Chat
   </header>
-  <aside ontoggle="toggle.class[pf t0 h100p zi50]" class="dark xl_dn" hide>About Chat</aside>
-  <main
-    bindasset="url:api.posts.url"
-    bindvar="src:{url}"
-    include="includes/posts.html">
+  <main bindasset="url:api.posts.url" bindvar="src:{url}" include="includes/posts.html">
   </main>
-  <aside></aside>
   <footer include="includes/form.html"></footer>
 </body>
 
