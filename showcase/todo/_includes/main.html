@@ -1,0 +1,87 @@
+<form
+  bindvar="src"
+  bindasset="apikey:api.api_key"
+  method="post"
+  action="{src}"
+  data-header="apikey:{apikey}"
+  data-onsuccess="rerun:#list"
+  data-onerror="show:#formerror"
+  onformsubmit="reset"
+>
+  <input type="text" name="task" padding="0.5rem" flex flexgrow width="100%" placeholder="Add task" autocomplete="off" focus required>
+</form>
+<div id="formerror" color="red" hide>Error!</div>
+<h2 id="empty" alignitems="center" hide>List is empty. Add a task.</h2>
+<div id="loader" class="loader"></div>
+<div
+  id="list"
+  flex
+  flexdirection="column"
+  bgcolor="white"
+  bindvar="src"
+  bindasset="apikey:api.api_key"
+  data-src="{src}?order=id.desc"
+  data-header="apikey:{apikey}"
+  data-loader="#loader"
+  data-onempty="#empty"
+  data-iterate="true">
+  <div flex margintop="0.75rem" fontsize="100%" data-set="id:id" id="p{id}">
+    <input
+      type="checkbox"
+      name="done"
+      value="true"
+      bindvar="src"
+      data-set="id:id"
+      data-get="done"
+      data-reqpatch="{src}?id=eq.{id}&limit=1&order=id"
+      data-header="#list"
+      click="togglevalue"
+      onvaluechange="data-reqpatch"
+      width="32"
+      height="32"
+      margin="0 0.25rem 0 0"
+    >
+    <input
+      type="text"
+      name="task"
+      id="t{id}"
+      bindvar="src"
+      data-set="id:id"
+      data-get="task"
+      data-reqpatch="{src}?id=eq.{id}&limit=1&order=id"
+      data-onsuccess="blur"
+      data-onerror="show:#josef{id}"
+      datas-loader="#josef"
+      data-header="#list"
+      keyboard-key="Enter"
+      keyboard-action="data-reqpatch"
+      keyboard-scope
+      wordbreak="break-all"
+      whitespace="pre-wrap"
+      autocomplete="off"
+      height="32"
+      width="32"
+      flex
+      padding="0 0.5rem"
+      flexgrow="2"
+    >
+    <small data-set="id:id" id="josef{id}" hide color="red" click="#t{id}">Error. <a click="rerun:#t{id}">Try again</a></small>
+    <a
+      bindvar="src"
+      data-set="id:id"
+      data-reqdelete="{src}?id=eq.{id}"
+      data-header="#list"
+      data-onsuccess="remove:#p{id}"
+      click="confirm:[Are you sure?]"
+      onconfirmvalue="true;data-reqdelete"
+      cursor="pointer"
+      marginleft="0.5rem"
+      fontsize="32"
+      padding="0"
+      flex
+      alignitems="center"
+    >
+    &#128465;
+    </a>
+  </span>
+</div>

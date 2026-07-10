@@ -49,8 +49,14 @@
       "url": "showcase/stream"
     },
     {
+      "key": "todo",
+      "title": "Todo",
+      "description": "A todo list application using data sources and iteration to display.",
+      "url": "showcase/todo"
+    },
+    {
       "key": "weather",
-      "title": "Weather App",
+      "title": "Weather",
       "description": "A weather application using data sources and iteration to display live weather information.",
       "url": "showcase/weather"
     }
