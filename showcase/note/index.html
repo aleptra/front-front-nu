@@ -4,51 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="version" content="1.0.0">
   <script
     src="https://cdn.front.nu/nightly/front.js"
-    module="globalize;data;navigate;keyboard"
+    module="data;screen;keyboard"
     var="api"
-    conf="debug:false;debugLocalhost:true;varsDir:assets/json/vars;storageKey:note"
-    globalize-conf="folder:assets/json/locales"
-    navigate-conf="startpage:experimental/app/note;startpageLocal:app/note">
+    conf="debug:false;debugLocalhost:true;resetStyle:true;varsDir:assets/json/vars;storageKey:note">
   </script>
-  <link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/app.css">
-  <link rel="icon" href="data:,">
-  <style>
-    [hide] {
-      display: none
-    }
-
-    .h100p{
-      height: 100%
-    }
-
-    .zi50 {
-      z-index: 50
-    }
-
-    .jcc {
-      justify-content: center
-    }
-
-    .box *, .cards{
-      box-sizing: border-box;
-      width: 100%
-    }
-  </style>
   <title>Note</title>
 </head>
 
-<body class="light">
-  <div id="navloader" class="navloader pa t0 w100 bcblack03 h2px" hide><div class="bcblack08"></div></div>
-  <header class="topbar h4 pr1 bcindigo white- white shade1" paddingleft="1rem" bold>Note</header>
-  <main>
-    <div id="loader" class="loader"></div>
+<body screen-layout="simple" font="arial">
+ <header flex height="4rem" fontsize="120%" paddingleft="1rem" color="white" bgcolor="black" alignitems="center"
+    uppercase bold bindglobal="title:title" sethtml="{title}" align="center" justifycontent="center"></header>
+  <main flex>
+    <div id="loader" class="loader" hide></div>
     <textarea
-      class="f1 p1 bc0_h h100p w100p"
+      width="100%"
+      height="100%"
       name="note"
+      padding="1rem"
       bindasset="apikey:api.api_key;url:api.notes.url"
       bindvar="id:1"
       onvaluechange="data-reqpatch"
@@ -61,8 +35,6 @@
     >
     </textarea>
   </main>
-  <aside></aside>
-  <footer></footer>
 </body>
 
 </html>
