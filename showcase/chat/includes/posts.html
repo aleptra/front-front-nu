@@ -2,7 +2,6 @@
 <div id="empty" hide>Empty =(</div>
 <div
   id="test"
-  class="box cards shade1 list bcwhite-"
   bindvar="src"
   bindasset="apikey:api.api_key"
   data-src="{src}?order=id.asc"
@@ -10,11 +9,11 @@
   data-loader="#loader"
   data-onempty="#empty"
   data-onsuccess="scroll:*main:[bottom]"
-  data-iterate="true">
-  <figure data-set="id:id" id="{id}" padding="1rem">
-    <div>
-      <small color="gray" fontsize="80%" data-get="timestamp" chronotize-get="d/m H:i"></small>
-      <p class="f2 di wa bcblack01 black07 p025 pr05 pl05 mt1" radius="1rem" data-get="post"></p>
-    </div>
-  </figure>
+  data-iterate="true"
+  padding="1rem"
+>
+  <div flex flexdirection="column" alignitems="start" margintop="1rem">
+    <small color="gray" fontsize="80%" data-get="timestamp" chronotize-get="d/m H:i"></small>
+    <p bgcolor="lightgray" inline color="black" padding="0.5rem" width="auto" radius="1rem" data-get="post"></p>
+  </div>
 </div>

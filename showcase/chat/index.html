@@ -4,15 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script src="https://cdn.front.nu/nightly/front.js" module="data;keyboard;chronotize"
+  <script src="https://cdn.front.nu/nightly/front.js" module="data;screen;keyboard;chronotize"
     conf="debug:false;debugLocalhost:true;resetStyle:true;varsDir:assets/json/vars;storageKey:chat" var="api">
     </script>
-  <link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet">
-  <link rel="icon" href="data:,">
   <title>Chat</title>
 </head>
 
-<body font="arial">
+<body screen-layout="navbar" font="arial">
   <header flex height="4rem" fontsize="120%" paddingleft="1rem" color="white" bgcolor="black" alignitems="center"
     uppercase bold bindglobal="title:title" sethtml="{title}" align="center" justifycontent="center"></header>
   <main bindasset="url:api.posts.url" bindvar="src:{url}" include="includes/posts.html">
