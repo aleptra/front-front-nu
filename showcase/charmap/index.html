@@ -4,46 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="version" content="1.0.0">
-  <script
-    src="https://cdn.front.nu/nightly/front.js"
-    module="globalize;data;navigate;keyboard"
-    var="api"
-    conf="debug:false;debugLocalhost:true;varsDir:assets/json/vars;storageKey:charmap"
+  <script src="https://cdn.front.nu/nightly/front.js" module="globalize;data;screen;navigate;keyboard" var="api"
+    conf="debug:false;debugLocalhost:true;resetStyle:true;varsDir:assets/json/vars;storageKey:charmap"
     globalize-conf="folder:assets/json/locales"
     navigate-conf="startpage:experimental/app/charmap;startpageLocal:app/charmap">
-  </script>
-  <link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet">
-  <link rel="icon" href="data:,">
+    </script>
   <title>Character Map</title>
 </head>
 
-<body>
-  <div id="navloader" class="navloader pa t0 w100 bcblack03 h2px" hide><div class="bcblack08"></div></div>
-  <header height="4rem" class="gap2- pr2 shade1" alignitems="center">
-    <figure class="mh30p pl2 sel" bold>Character Map</figure>
-    <div class="pr f1">
-      <input
-        id="query"
-        type="text"
-        class="bs1 p1 h3 br05 dark white w100 md_dn"
-        globalize-get="input_search"
-        autocomplete="off"
-        bindfield="search:#charmap-catalog"
-        placeholder="Search for character ..."
-        placeholdercolor=""
-        focus>
-    </div>
+<body screen-layout="ultimate" font="arial">
+  <div id="navloader" class="navloader pa t0 w100 bcblack03 h2px" hide>
+    <div class="bcblack08"></div>
+  </div>
+  <header flex flexdirection="row" height="3.5rem" color="white" bgcolor="black" alignitems="center" align="center"
+    justifycontent="center" padding="0.5rem">
+    <span bold bindglobal="title:title" fontsize="100%" lineheight="normal" sethtml="{title}" uppercase></span>
+    <input id="query" type="text" padding="0 .5rem" height="100%" width="100%" globalize-get="input_search"
+      placeholdercolor="silver" color="black" autocomplete="off" bindfield="search:#charmap-catalog"
+      placeholder="Search for character ..." focus>
   </header>
-
-  <main class="pauto">
-    <div
-      bindvar="name:title;link:char;endpoint:trending;endpoint2:all"
-      include="includes/catalog.html">
-    </div>
+  <main padding="1rem" bindvar="name:title;link:char;endpoint:trending;endpoint2:all" include="_includes/catalog.html">
   </main>
-  <aside></aside>
-  <footer></footer>
 </body>
 
 </html>
