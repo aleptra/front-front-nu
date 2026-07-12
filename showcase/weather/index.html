@@ -4,47 +4,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="version" content="1.0.0">
-  <script src="https://cdn.front.nu/nightly/front.js" module="chronotize;globalize;geolocalize;data;keyboard;math" var="api"
-    conf="debug:false;varsDir:assets/json/vars;storageKey:weather"
+  <script src="https://cdn.front.nu/nightly/front.js" module="chronotize;globalize;geolocalize;data;keyboard;screen;math" var="api"
+    conf="debug:false;resetStyle:true;varsDir:assets/json/vars;storageKey:weather"
     globalize-conf="folder:../weather/assets/json/locales">
     </script>
-  <link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet">
-  <link rel="icon" href="data:,">
   <title>Weather</title>
 </head>
 
-<body class="dark">
-  <div id="navloader" class="navloader pa t0 w100 bcblack03 h2px" hide>
-    <div class="bcblack08"></div>
-  </div>
-  <header class="topbar h4_5 gap2- pr2 shade1">
-    <figure class="mh30p pl2 sel">
-      <a class="b0 fwb white" href="./" globalize-get>Weather</a>
-    </figure>
-    <div class="pr f1">
-      <input
-        id="query"
-        type="text"
-        class="bs1 p1 h3 br05 bcblack w100"
-        globalize-get="input_search"
-        globalize-target="placeholder"
-        keyboard-key="Enter"
-        keyboard-action
-        keyboard-scope
-        bindfieldif="lastPressedKey:Enter"
-        autocomplete="off"
-        onsubmit="reset"
-        bindfield="q:#weather-current;q:#weather-forecast"
-        focus>
-    </div>
+<body screen-layout="ultimate" font="arial">
+    <header flex height="3.5rem" fontsize="120%" color="white" bgcolor="black" alignitems="center"
+    uppercase bold bindglobal="title:title" sethtml="{title}" align="center" justifycontent="center">
   </header>
-  <main class="pauto">
-    <div id="loader" class="m0a loader" hide></div>
-    <div id="error" class="m0a" hide>Current error!</div>
-    <div
+  <nav>
+    <input
+      id="query"
+      type="text"
+      width="100%"
+      placeholdercolor="silver"
+      outlinecolor="black"
+      border="1px solid black"
+      padding="0.5rem"
+      globalize-get="input_search"
+      globalize-target="placeholder"
+      keyboard-key="Enter"
+      keyboard-action
+      keyboard-scope
+      bindfieldif="lastPressedKey:Enter"
+      autocomplete="off"
+      onsubmit="reset"
+      bindfield="q:#weather-current;q:#weather-forecast"
+      focus
+    >
+</nav>
+
+  <main flex flexdirection="column" padding="3rem">
+    <div id="loader" flex alignitems="center" justifycontent="center" height="100%" hide>Loading...</div>
+    <div id="error" hide>Current error!</div>
+    <div flex flexdirection="column" alignitems="center"
       id="weather-current"
-      class="tac"
       bindasset="url:api.weather.api_url;key:api.weather.api_key;city:api.weather.city"
       bindquery="q:q"
       bindglobal="lang:globalize.iso639.1"
@@ -53,17 +50,21 @@
       data-onerror="#error"
       data-wait="500"
       globalize-onsetload="rerun">
-      <h5 data-get="location.name"></h5>
-      <img class="m0a" data-get="current.condition.icon" height="72">
-      <h6 class="fs09" data-get="current.condition.text" globalize-get></h6>
-      <h1 class="mt05 fwb fl" data-get="current.temp_c" math-round insertbeforeend="°"></h1>
+      <h2 data-get="location.name"></h5>
+      <img data-get="current.condition.icon" height="72">
+      <h5 data-get="current.condition.text" globalize-get></h6>
+      <h1 data-get="current.temp_c" math-round insertbeforeend="°"></h1>
     </div>
 
-    <div id="error2" class="m0a" hide>Forecast error!</div>
-    <div id="loader2" class="m0a loader" hide></div>
+    <div id="error2" hide>Forecast error!</div>
+    <div id="loader2" flex alignitems="center" justifycontent="center" height="100%" hide>Loading...</div>
     <div
+      flex
+      flexdirection="row"
+      justifycontent="center"
+      gap="20"
       id="weather-forecast"
-      class="tac mt2 m0a bcblack03 br05 p2 shade2"
+      margintop="2rem"
       bindasset="url:api.weather.api_url;key:api.weather.api_key;city:api.weather.city"
       bindquery="q:q"
       bindglobal="l:globalize.code"
@@ -73,18 +74,19 @@
       data-onerror="#error2"
       data-wait="500"
       globalize-onsetload="rerun">
-      <div class="df w15 aic">
-        <p class="f3 tal" data-get="date" chronotize-get="W" globalize-get></p>
+      <div flex flexdirection="column" alignitems="center">
+        <p data-get="date" chronotize-get="W" globalize-get bold></p>
         <span>
-          <small class="ml05" data-get="day.mintemp_c" math-round insertbeforeend="°"></small>
-          <small class="ml05" data-get="day.maxtemp_c" math-round insertbeforeend="°"></small>
+          <small data-get="day.mintemp_c" math-round insertbeforeend="°"></small>
+          <small data-get="day.maxtemp_c" math-round insertbeforeend="°"></small>
         </span>
-        <img class="ml05 h1" data-get="day.condition.icon">
+        <img data-get="day.condition.icon">
       </div>
     </div>
-    <hr>
-    <div class="m0a">
-      <select name="language" class="h1 fs08 dark" onvaluechange="globalize-set">
+  </main>
+
+  <footer flex alignitems="center" justifycontent="center" padding="0.5rem">
+      <select name="language" onvaluechange="globalize-set" padding="0.25rem">
         <option selected disabled globalize-get>Change language</option>
         <option value="sv">Svenska</option>
         <option value="en">English</option>
@@ -92,8 +94,7 @@
         <option value="syc">ܐܪܡܝܐ</option>
         <option value="am">አማርኛ</option>
       </select>
-    </div>
-  </main>
+    </footer>
 </body>
 
 </html>
