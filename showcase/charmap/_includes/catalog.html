@@ -5,15 +5,15 @@
   bindvar=";search:"
   bindasset="api:api.characters.endpoint;apikey:api.api_key"
   bindquery="page:page"
-  data-src="{api}&where=name.ilike(*{search}*)&order=id.asc()"
+  data-src="{api}&where=name.ilike(*{search}*)&order=random()"
   data-header="apikey:{apikey};Prefer:count=exact"
   data-iterate="true"
   data-loader="#loader"
   data-onempty="show:#empty"
   screen-layout="masonry"
 >
-  <a flex gap="5" flexdirection="column" bindvar="link" data-get="id:id" href="{link:{link}}.html?i={id}" height="6rem" border="1px solid black" alignitems="center" justifycontent="center">
-    <h1 data-get="char"></h1>
-    <small data-get="name"></small>
+  <a flex gap="2" flexdirection="column" bindvar="link" data-get="id:id" href="{link:{link}}.html?i={id}" height="6rem" padding="0 2rem" border="1px solid black" alignitems="center" justifycontent="center">
+    <h1 flex data-get="char"></h1>
+    <small align="center" overflow="hidden" flex data-get="name"></small>
   </a>
 </div>
