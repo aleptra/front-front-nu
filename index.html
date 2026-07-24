@@ -35,14 +35,10 @@
   <div id="navloader" class="navloader bcwhite05" absolute top="0" width="100%" height="2" hide>
     <div bgcolor="black" height="2"></div>
   </div>
-  <header class="topbar" alignitems="center" maxheight="unset" color="white" screen-xxs="padding:[0px 1rem 0px 1rem];height:[3.5rem]"
-    screen-sm="padding:[0px 1.5rem 0px 1.5rem];height:[3.5rem]" screen-md="padding:[0 3rem 0 2.5rem];height:[4.5rem]"
-    screen-lg="padding:[0px 3.5rem 0rem 3.5rem];height:[4.5rem]" color="white" zindex="60">
-    <button click="toggledisplay:#mobileMenu"
-      bgcolor="black" color="white"
-      screen-xxs="show" screen-lg="hide"
-      marginright="1rem" padding="0.5rem" radius="0.3rem" border="1px solid rgba(255,255,255,0.3)" height="2rem"
-      width="2rem" fontsize="24px">≡</button>
+  <header class="topbar" alignitems="center" maxheight="unset" color="white"
+    screen-xxs="padding:[0px 1.25rem 0px 1.25rem];height:[3.5rem]" screen-sm="padding:[0px 1.5rem 0px 1.5rem];height:[3.5rem]"
+    screen-md="padding:[0 3rem 0 2.5rem];height:[4.5rem]" screen-lg="padding:[0px 3.5rem 0rem 3.5rem];height:[4.5rem]"
+    color="white" zindex="60">
     <figure margin="0">
       <a href="./" key="0" marginright="2rem"><img height="85%" maxwidth="unset" src="assets/img/logo.png"></a>
     </figure>
@@ -84,6 +80,9 @@
           if="([{href}]~[/playground])/underline">Playground</a>
       </div>
     </div>
+    <button click="toggledisplay:#mobileMenu" bgcolor="black" color="white" screen-xxs="show" screen-lg="hide"
+      marginleft="auto" padding="0.5rem" radius="0.3rem" border="1px solid rgba(255,255,255,0.3)" height="2rem"
+      width="2rem" fontsize="24px">≡</button>
   </header>
   <nav></nav>
   <aside height="100%" screen-xs="hide;fixed" screen-lg="flex;relative" scrollbar--set="width:thin;thumb:white" top="0"
@@ -93,7 +92,8 @@
   <footer></footer>
 
   <!-- Fullscreen mobile menu content -->
-  <div id="mobileMenu" bgcolor="black" padding="0" zindex="9999" fixed top="0" left="0" width="100vw" height="100vh" overflow="auto" hide>
+  <div id="mobileMenu" bgcolor="black" padding="0" zindex="9999" fixed top="0" left="0" width="100vw" height="100vh"
+    overflow="auto" hide>
     <div include="_includes/sidebar.html"></div>
   </div>
 </body>
