@@ -1711,7 +1711,7 @@
   "move": {
     "category": "behavior",
     "description_short": "Moves an element into another element.",
-    "example": "<div id=\"target\" bgcolor=\"lightgray\" padding=\"1rem\">Target</div>\n<span id=\"item\">Move me</span>\n<button click=\"move:#item:#target\">Move</button>"
+    "example": "<div id=\"target\" bgcolor=\"lightgray\" padding=\"1rem\">Target</div>\n<span id=\"item\">Move me</span>\n<button click=\"move:#item:#target\">Move</button>\n\n<div id=\"target2\" bgcolor=\"lightgray\" padding=\"1rem\"></div><span move=\"#target2\">Auto moved</span>"
   },
   "onsethtml": {
     "category": "event",
