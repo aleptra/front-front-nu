@@ -1,5 +1,7 @@
 {
   "append": {
+    "category": "content",
+    "description_short": "Appends content to the element.",
     "example": "<div id=\"list\">Item 1</div>\n<button click=\"append:#list:[ Item 2]\">Append</button>"
   },
   "alert": {
@@ -578,7 +580,14 @@
     ]
   },
   "grid": {
-    "example": "<div grid gridcolumns=\"1fr 1fr\" gap=\"0.5rem\">\n  <span bgcolor=\"lightblue\" padding=\"0.5rem\">1</span>\n  <span bgcolor=\"lightgreen\" padding=\"0.5rem\">2</span>\n  <span bgcolor=\"lightyellow\" padding=\"0.5rem\">3</span>\n  <span bgcolor=\"lightcoral\" padding=\"0.5rem\">4</span>\n</div>"
+    "category": "style",
+    "description_short": "Sets the element display to grid.",
+    "example": "<div grid gridcolumns=\"1fr 1fr\" gap=\"0.5rem\">\n  <span bgcolor=\"lightblue\" padding=\"0.5rem\">1</span>\n  <span bgcolor=\"lightgreen\" padding=\"0.5rem\">2</span>\n  <span bgcolor=\"lightyellow\" padding=\"0.5rem\">3</span>\n  <span bgcolor=\"lightcoral\" padding=\"0.5rem\">4</span>\n</div>",
+    "see_also": [
+      "gridcolumns",
+      "gridrows",
+      "gap"
+    ]
   },
   "height": {
     "category": "style",
@@ -1288,6 +1297,7 @@
   },
   "start": {
     "category": "behavior",
+    "description_short": "Starts an attribute or process on the element.",
     "see_also": [
       "stop"
     ],
@@ -1295,6 +1305,7 @@
   },
   "stop": {
     "category": "behavior",
+    "description_short": "Stops an attribute or process on the element.",
     "see_also": [
       "start"
     ],
@@ -1893,5 +1904,319 @@
       "initial"
     ],
     "example": "<div bold>\n  <span unset=\"fontWeight\">Back to normal</span>\n</div>"
+  },
+  "outline": {
+    "category": "style",
+    "description_short": "Sets the outline of the element.",
+    "example": "<div outline=\"2px solid blue\" padding=\"1rem\">Outlined element</div>",
+    "see_also": [
+      "outlinecolor",
+      "outlinestyle",
+      "outlinewidth",
+      "outlineoffset"
+    ]
+  },
+  "outlinecolor": {
+    "category": "style",
+    "description_short": "Sets the outline color.",
+    "example": "<div outline=\"2px solid\" outlinecolor=\"red\" padding=\"1rem\">Red outline</div>",
+    "depends_on": [
+      "outline"
+    ],
+    "see_also": [
+      "outlinestyle",
+      "outlinewidth",
+      "outlineoffset"
+    ]
+  },
+  "outlineoffset": {
+    "category": "style",
+    "description_short": "Sets the offset of the outline from the element edge.",
+    "example": "<div outline=\"2px solid blue\" outlineoffset=\"5px\" padding=\"1rem\">Offset outline</div>",
+    "depends_on": [
+      "outline"
+    ],
+    "see_also": [
+      "outlinecolor",
+      "outlinestyle",
+      "outlinewidth"
+    ]
+  },
+  "outlinestyle": {
+    "category": "style",
+    "description_short": "Sets the style of the outline.",
+    "example": "<div outline=\"2px\" outlinestyle=\"dashed\" outlinecolor=\"green\" padding=\"1rem\">Dashed outline</div>",
+    "values": [
+      "none",
+      "solid",
+      "dashed",
+      "dotted",
+      "double",
+      "groove",
+      "ridge",
+      "inset",
+      "outset"
+    ],
+    "depends_on": [
+      "outline"
+    ],
+    "see_also": [
+      "outlinecolor",
+      "outlinewidth",
+      "outlineoffset"
+    ]
+  },
+  "outlinewidth": {
+    "category": "style",
+    "description_short": "Sets the width of the outline.",
+    "example": "<div outline=\"solid blue\" outlinewidth=\"4px\" padding=\"1rem\">Thick outline</div>",
+    "depends_on": [
+      "outline"
+    ],
+    "see_also": [
+      "outlinecolor",
+      "outlinestyle",
+      "outlineoffset"
+    ]
+  },
+  "movebefore": {
+    "category": "behavior",
+    "description_short": "Moves an element before a target element.",
+    "example": "<div id=\"target\">Target</div>\n<span id=\"item\">Move me</span>\n<button click=\"movebefore:#item:#target\">Move Before</button>",
+    "see_also": [
+      "moveafter",
+      "move"
+    ]
+  },
+  "moveafter": {
+    "category": "behavior",
+    "description_short": "Moves an element after a target element.",
+    "example": "<div id=\"target2\">Target</div>\n<span id=\"item2\">Move me</span>\n<button click=\"moveafter:#item2:#target2\">Move After</button>",
+    "see_also": [
+      "movebefore",
+      "move"
+    ]
+  },
+  "movebeforebegin": {
+    "category": "behavior",
+    "description_short": "Moves an element to before the beginning of a target element.",
+    "example": "<div id=\"container\"><p>Content</p></div>\n<span id=\"mover\">Moved</span>\n<button click=\"movebeforebegin:#mover:#container\">Move</button>",
+    "see_also": [
+      "moveafterbegin",
+      "movebeforeend",
+      "moveafterend",
+      "move"
+    ]
+  },
+  "moveafterbegin": {
+    "category": "behavior",
+    "description_short": "Moves an element to after the beginning of a target element (first child).",
+    "example": "<div id=\"container2\"><p>Content</p></div>\n<span id=\"mover2\">Moved</span>\n<button click=\"moveafterbegin:#mover2:#container2\">Move</button>",
+    "see_also": [
+      "movebeforebegin",
+      "movebeforeend",
+      "moveafterend",
+      "move"
+    ]
+  },
+  "movebeforeend": {
+    "category": "behavior",
+    "description_short": "Moves an element to before the end of a target element (last child).",
+    "example": "<div id=\"container3\"><p>Content</p></div>\n<span id=\"mover3\">Moved</span>\n<button click=\"movebeforeend:#mover3:#container3\">Move</button>",
+    "see_also": [
+      "moveafterend",
+      "movebeforebegin",
+      "moveafterbegin",
+      "move"
+    ]
+  },
+  "moveafterend": {
+    "category": "behavior",
+    "description_short": "Moves an element to after the end of a target element.",
+    "example": "<div id=\"container4\"><p>Content</p></div>\n<span id=\"mover4\">Moved</span>\n<button click=\"moveafterend:#mover4:#container4\">Move</button>",
+    "see_also": [
+      "movebeforeend",
+      "movebeforebegin",
+      "moveafterbegin",
+      "move"
+    ]
+  },
+  "rundelay": {
+    "category": "behavior",
+    "description_short": "Delays execution of an action by a specified number of milliseconds.",
+    "example": "<button click=\"settext:[Clicked]\" onclicked=\"rundelay[2000]:reset\">Click me</button>",
+    "see_also": [
+      "runrepeat",
+      "runattr",
+      "runorder"
+    ]
+  },
+  "runrepeat": {
+    "category": "behavior",
+    "description_short": "Repeats execution of an action at a specified interval in milliseconds.",
+    "example": "<div runrepeat=\"1000\" settext=\"Tick\"></div>",
+    "see_also": [
+      "rundelay",
+      "runattr",
+      "runorder"
+    ]
+  },
+  "runattr": {
+    "category": "behavior",
+    "description_short": "Runs a specific attribute on the element programmatically.",
+    "example": "<div id=\"box\" bgcolor=\"red\" padding=\"1rem\">Box</div>\n<button click=\"runattr:#box:bgcolor:[blue]\">Change Color</button>",
+    "see_also": [
+      "rundelay",
+      "runrepeat",
+      "runorder"
+    ]
+  },
+  "loader": {
+    "category": "behavior",
+    "description_short": "Shows a loader element while content is loading and hides it when complete.",
+    "example": "<div id=\"myloader\" hide>Loading...</div>\n<div include=\"page.html\" loader=\"#myloader\"></div>",
+    "see_also": [
+      "include",
+      "data-loader"
+    ]
+  },
+  "metadata": {
+    "category": "configuration",
+    "description_short": "Sets metadata (e.g. meta tags) on the document head.",
+    "example": "<div metadata=\"description:My page description\"></div>"
+  },
+  "insertcontent": {
+    "category": "content",
+    "description_short": "Inserts content from the element's original content into modified output.",
+    "example": "<a href=\"page.html\" insertbeforeend=\" →\" insertcontent=\"true\">Next Page</a>",
+    "see_also": [
+      "insertbeforeend",
+      "insertafterbegin",
+      "insertbeforebegin",
+      "insertafterend"
+    ]
+  },
+  "inheritattributes": {
+    "category": "behavior",
+    "description_short": "Inherits attributes from a parent or source element.",
+    "example": "<div color=\"red\" font=\"monospace\">\n  <span inheritattributes>Inherits parent attributes</span>\n</div>",
+    "see_also": [
+      "inheritcontent",
+      "inherit"
+    ]
+  },
+  "inheritcontent": {
+    "category": "behavior",
+    "description_short": "Inherits content from a parent or source element.",
+    "example": "<div id=\"source\">Source content</div>\n<div inheritcontent=\"#source\"></div>",
+    "see_also": [
+      "inheritattributes",
+      "clone"
+    ]
+  },
+  "bindfieldreloadcontent": {
+    "category": "binding",
+    "description_short": "Reloads the element content when a bound field value changes.",
+    "example": "<input type=\"text\" id=\"search\" setvalue=\"query\">\n<div bindfield=\"val:#search\" bindfieldreloadcontent settext=\"Results for {val}\"></div>",
+    "see_also": [
+      "bindfield",
+      "bindvar"
+    ]
+  },
+  "rightclick": {
+    "category": "interactive",
+    "description_short": "Executes an action when the element is right-clicked.",
+    "example": "<div rightclick=\"alert:[Right clicked!]\" padding=\"1rem\" bgcolor=\"lightgray\">Right-click me</div>",
+    "see_also": [
+      "click",
+      "mouseover"
+    ]
+  },
+  "onsettext": {
+    "category": "event",
+    "description_short": "Triggered when the element's text content is changed via settext.",
+    "example": "<div id=\"output\" onsettext=\"rundelay[2000]:reset\">Original</div>\n<button click=\"settext:#output:[Updated]\">Update</button>",
+    "depends_on": [
+      "settext"
+    ],
+    "see_also": [
+      "onsethtml"
+    ]
+  },
+  "onformsubmit": {
+    "category": "event",
+    "description_short": "Triggered when a form submit event occurs on the element.",
+    "example": "<form onformsubmit=\"settext:#msg:[Submitted]\">\n  <input type=\"text\" value=\"test\">\n  <button type=\"submit\">Submit</button>\n</form>\n<span id=\"msg\"></span>",
+    "depends_on": [
+      "submit"
+    ],
+    "see_also": [
+      "onsubmitted"
+    ]
+  },
+  "onreset": {
+    "category": "event",
+    "description_short": "Triggered when an element is reset to its original state.",
+    "example": "<div onreset=\"settext:#status:[Reset done]\">Content</div>\n<button click=\"reset:#content\">Reset</button>\n<span id=\"status\"></span>",
+    "see_also": [
+      "resetvalue"
+    ]
+  },
+  "onbindglobalchange": {
+    "category": "event",
+    "description_short": "Triggered when a bound global variable changes.",
+    "example": "<span bindglobal=\"title:title\" settext=\"{title}\" onbindglobalchange=\"uppercase\"></span>",
+    "depends_on": [
+      "bindglobal"
+    ],
+    "see_also": [
+      "bindglobal"
+    ]
+  },
+  "onmouseoverif": {
+    "category": "event",
+    "description_short": "Conditionally triggers an action when the mouse enters the element.",
+    "example": "<div onmouseoverif=\"([#toggle]:[1])/bgcolor:[yellow]\" padding=\"1rem\">Hover me</div>\n<input type=\"checkbox\" id=\"toggle\" setvalue=\"1\">",
+    "see_also": [
+      "mouseover",
+      "onmouseoutif"
+    ]
+  },
+  "onmouseoutif": {
+    "category": "event",
+    "description_short": "Conditionally triggers an action when the mouse leaves the element.",
+    "example": "<div onmouseoutif=\"([#toggle]:[1])/bgcolor:[white]\" padding=\"1rem\" bgcolor=\"yellow\">Move out</div>\n<input type=\"checkbox\" id=\"toggle2\" setvalue=\"1\">",
+    "see_also": [
+      "mouseout",
+      "onmouseoverif"
+    ]
+  },
+  "onunselected": {
+    "category": "event",
+    "description_short": "Triggered when an element becomes unselected.",
+    "example": "<select>\n  <option onunselected=\"settext:#log:[Option unselected]\">Option 1</option>\n  <option>Option 2</option>\n</select>\n<span id=\"log\"></span>",
+    "see_also": [
+      "onselectchange"
+    ]
+  },
+  "iterate": {
+    "category": "behavior",
+    "description_short": "Repeats the element's content a specified number of times or iterates over matched elements, extracting their attributes and content into template variables.",
+    "example": "<ul>\n  <li iterate=\"1;5;i\">Item {i}</li>\n</ul>\n\n<!-- Selector-based iteration -->\n<nav id=\"menuitems\">\n  <a href=\"#home\" alt=\"Home page\">Home</a>\n  <a href=\"#about\" alt=\"About us\">About</a>\n  <a href=\"#contact\" alt=\"Get in touch\">Contact</a>\n</nav>\n<div iterate=\"#menuitems a;index;name;href;alt\">\n  <a href=\"{href}\">\n    <b>{index}</b>\n    <b color=\"red\">{name}</b>\n    <p>{alt}</p>\n  </a>\n</div>",
+    "see_also": [
+      "iterate-skip",
+      "data-iterate"
+    ]
+  },
+  "iterate-skip": {
+    "category": "behavior",
+    "description_short": "Excludes an element from being duplicated during iteration.",
+    "example": "<ul>\n  <li iterate=\"1;5;i\">Item {i}</li>\n  <li iterate-skip>This stays as-is</li>\n</ul>",
+    "depends_on": [
+      "iterate"
+    ],
+    "see_also": [
+      "iterate"
+    ]
   }
 }

@@ -50,14 +50,14 @@
               globalize-target="placeholder" autocomplete="off" placeholder="Search for words...">
             <input type="submit" padding="1rem" height="4rem" class="bos0 bc0 white w4 icon icon16 pa r0" value="🔍">
           </form>
-          <div id="searchTableEmpty" bgcolor="black" padding="1rem" class="box pa w100 ail- autocomplete"
+          <div id="searchTableEmpty" bgcolor="black" padding="1rem" width="100%" absolute class="box ail- autocomplete"
             border="1px solid #333" hide>
             <figure>
               <span id="searchEmpty">No results found for <b>"{q}"</b></span>
             </figure>
           </div>
           <div id="searchTable" filtersearch--onempty="#searchTableEmpty" data-src="assets/json/data/doc.json"
-            data-iterate="true" bgcolor="black" class="box pa w100 ail- autocomplete" border="1px solid #333"
+            data-iterate="true" bgcolor="black" width="100%" class="box pa ail- autocomplete" border="1px solid #333"
             data-onempty="show:#empty2" hide>
             <figure stop>
               <a style="align-items: normal;" bindglobal="l:globalize.code" data-set="link:link" data-get="title"

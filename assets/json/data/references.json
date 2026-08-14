@@ -284,6 +284,26 @@
       {
         "attribute": "unset",
         "description": "Resets a property to inherited or initial value."
+      },
+      {
+        "attribute": "outline",
+        "description": "Sets the outline of the element."
+      },
+      {
+        "attribute": "outlinecolor",
+        "description": "Sets the outline color."
+      },
+      {
+        "attribute": "outlineoffset",
+        "description": "Sets the offset of the outline."
+      },
+      {
+        "attribute": "outlinestyle",
+        "description": "Sets the style of the outline."
+      },
+      {
+        "attribute": "outlinewidth",
+        "description": "Sets the width of the outline."
       }
     ],
     "content": [
@@ -366,6 +386,10 @@
       {
         "attribute": "setattr",
         "description": "Sets an attribute on the element."
+      },
+      {
+        "attribute": "insertcontent",
+        "description": "Inserts content from the element's original content into modified output."
       }
     ],
     "binding": [
@@ -562,6 +586,50 @@
         "attribute": "globalize-target",
         "description": "Specifies which attribute to set the translated value into (defaults to sethtml).",
         "module": "globalize"
+      },
+      {
+        "attribute": "bindfieldreloadcontent",
+        "description": "Reloads the element content when a bound field value changes."
+      },
+      {
+        "attribute": "math-bind",
+        "description": "Binds a mathematical expression result to a variable.",
+        "module": "math"
+      },
+      {
+        "attribute": "math-compute",
+        "description": "Computes a mathematical expression and sets the result.",
+        "module": "math"
+      },
+      {
+        "attribute": "math-round",
+        "description": "Rounds a numeric value to a specified number of decimals.",
+        "module": "math"
+      },
+      {
+        "attribute": "chronotize-get",
+        "description": "Gets a relative time or age value from a date.",
+        "module": "chronotize"
+      },
+      {
+        "attribute": "geolocalize-get",
+        "description": "Gets the user's geolocation coordinates.",
+        "module": "geolocalize"
+      },
+      {
+        "attribute": "overlay-bind",
+        "description": "Binds overlay content to a data source or element.",
+        "module": "overlay"
+      },
+      {
+        "attribute": "data-bindheader",
+        "description": "Binds a response header value to a variable.",
+        "module": "data"
+      },
+      {
+        "attribute": "storage-cookieget",
+        "description": "Gets a value from a browser cookie.",
+        "module": "storage"
       }
     ],
     "logic": [
@@ -703,6 +771,34 @@
         "attribute": "globalize-onsetload",
         "description": "Triggered when the globalize set operation has loaded new translations.",
         "module": "globalize"
+      },
+      {
+        "attribute": "onsettext",
+        "description": "Triggered when the element's text content is changed via settext."
+      },
+      {
+        "attribute": "onformsubmit",
+        "description": "Triggered when a form submit event occurs on the element."
+      },
+      {
+        "attribute": "onreset",
+        "description": "Triggered when an element is reset to its original state."
+      },
+      {
+        "attribute": "onbindglobalchange",
+        "description": "Triggered when a bound global variable changes."
+      },
+      {
+        "attribute": "onmouseoverif",
+        "description": "Conditionally triggered when the mouse enters the element."
+      },
+      {
+        "attribute": "onmouseoutif",
+        "description": "Conditionally triggered when the mouse leaves the element."
+      },
+      {
+        "attribute": "onunselected",
+        "description": "Triggered when an element becomes unselected."
       }
     ],
     "behavior": [
@@ -853,6 +949,161 @@
         "attribute": "form-throttle",
         "description": "Throttles form submissions by a specified number of milliseconds.",
         "module": "form"
+      },
+      {
+        "attribute": "movebefore",
+        "description": "Moves an element before a target element."
+      },
+      {
+        "attribute": "moveafter",
+        "description": "Moves an element after a target element."
+      },
+      {
+        "attribute": "movebeforebegin",
+        "description": "Moves an element to before the beginning of a target element."
+      },
+      {
+        "attribute": "moveafterbegin",
+        "description": "Moves an element to after the beginning of a target element."
+      },
+      {
+        "attribute": "movebeforeend",
+        "description": "Moves an element to before the end of a target element."
+      },
+      {
+        "attribute": "moveafterend",
+        "description": "Moves an element to after the end of a target element."
+      },
+      {
+        "attribute": "rundelay",
+        "description": "Delays execution of an action by a specified number of milliseconds."
+      },
+      {
+        "attribute": "runrepeat",
+        "description": "Repeats execution of an action at a specified interval."
+      },
+      {
+        "attribute": "runattr",
+        "description": "Runs a specific attribute on the element programmatically."
+      },
+      {
+        "attribute": "loader",
+        "description": "Shows a loader element while content is loading."
+      },
+      {
+        "attribute": "metadata",
+        "description": "Sets metadata (e.g. meta tags) on the document."
+      },
+      {
+        "attribute": "inheritattributes",
+        "description": "Inherits attributes from a parent or source element."
+      },
+      {
+        "attribute": "inheritcontent",
+        "description": "Inherits content from a parent or source element."
+      },
+      {
+        "attribute": "animate-start",
+        "description": "Starts a CSS keyframe animation on the element.",
+        "module": "animate"
+      },
+      {
+        "attribute": "animate-stop",
+        "description": "Stops a running CSS keyframe animation on the element.",
+        "module": "animate"
+      },
+      {
+        "attribute": "animate-key",
+        "description": "Defines keyframe percentages for the animation (semicolon-separated).",
+        "module": "animate"
+      },
+      {
+        "attribute": "animate-transform",
+        "description": "Defines transform values for each keyframe (semicolon-separated).",
+        "module": "animate"
+      },
+      {
+        "attribute": "animate-easing",
+        "description": "Sets the easing function for the animation.",
+        "module": "animate"
+      },
+      {
+        "attribute": "animate-duration",
+        "description": "Sets the duration of the animation.",
+        "module": "animate"
+      },
+      {
+        "attribute": "animate-delay",
+        "description": "Sets the delay before the animation starts.",
+        "module": "animate"
+      },
+      {
+        "attribute": "animate-direction",
+        "description": "Sets the direction of the animation playback.",
+        "module": "animate"
+      },
+      {
+        "attribute": "animate-iteration",
+        "description": "Sets the number of times the animation repeats.",
+        "module": "animate"
+      },
+      {
+        "attribute": "audio-play",
+        "description": "Plays an audio file.",
+        "module": "audio"
+      },
+      {
+        "attribute": "sound-play",
+        "description": "Plays a sound effect.",
+        "module": "sound"
+      },
+      {
+        "attribute": "canvas-clear",
+        "description": "Clears the canvas element.",
+        "module": "canvas"
+      },
+      {
+        "attribute": "canvas-grad",
+        "description": "Applies a gradient to the canvas element.",
+        "module": "canvas"
+      },
+      {
+        "attribute": "overlay-dialog",
+        "description": "Opens an overlay dialog with specified content.",
+        "module": "overlay"
+      },
+      {
+        "attribute": "overlay-close",
+        "description": "Closes the currently open overlay.",
+        "module": "overlay"
+      },
+      {
+        "attribute": "auth-protect",
+        "description": "Protects an element or page requiring authentication.",
+        "module": "auth"
+      },
+      {
+        "attribute": "navigate-onloaded",
+        "description": "Executes actions when a navigated page has finished loading.",
+        "module": "navigate"
+      },
+      {
+        "attribute": "navigate-pushstate",
+        "description": "Pushes a new URL state to the browser history.",
+        "module": "navigate"
+      },
+      {
+        "attribute": "screen-layout",
+        "description": "Sets a layout mode based on the current screen size.",
+        "module": "screen"
+      },
+      {
+        "attribute": "iterate",
+        "description": "Repeats the element's content over a numeric range or matched elements, extracting attributes into template variables."
+      },
+      {
+        "attribute": "iterate-skip",
+        "description": "Excludes an element from being duplicated during iteration."
       }
     ],
     "interactive": [
@@ -974,6 +1225,10 @@
         "attribute": "storage-sessionremove",
         "description": "Removes a value or key from sessionStorage.",
         "module": "storage"
+      },
+      {
+        "attribute": "rightclick",
+        "description": "Executes an action when the element is right-clicked."
       }
     ],
     "configuration": [
