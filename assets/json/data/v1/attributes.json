@@ -2218,5 +2218,612 @@
     "see_also": [
       "iterate"
     ]
+  },
+  "animate-start": {
+    "category": "behavior",
+    "module": "animate",
+    "description_short": "Starts a CSS keyframe animation on the element.",
+    "example": "<div id=\"box\" animate-start\n  animate-key=\"0;50;100\"\n  animate-transform=\"scale(1);scale(1.5);scale(1)\"\n  animate-duration=\"2s\"\n  animate-easing=\"ease-in-out\"\n  animate-iteration=\"infinite\">\n  Animated box\n</div>",
+    "see_also": [
+      "animate-stop",
+      "animate-key",
+      "animate-transform"
+    ]
+  },
+  "animate-stop": {
+    "category": "behavior",
+    "module": "animate",
+    "description_short": "Stops a running CSS keyframe animation on the element.",
+    "example": "<button click=\"animate-stop:#box\">Stop Animation</button>",
+    "see_also": [
+      "animate-start"
+    ]
+  },
+  "animate-key": {
+    "category": "configuration",
+    "module": "animate",
+    "description_short": "Defines keyframe percentages for the animation (semicolon-separated).",
+    "example": "<div id=\"anim1\" animate-start animate-key=\"0;50;100\" animate-transform=\"translateX(0);translateX(50px);translateX(0)\" animate-duration=\"1s\">Moving</div>",
+    "depends_on": [
+      "animate-start"
+    ],
+    "see_also": [
+      "animate-transform"
+    ]
+  },
+  "animate-transform": {
+    "category": "configuration",
+    "module": "animate",
+    "description_short": "Defines transform values for each keyframe (semicolon-separated).",
+    "example": "<div id=\"anim2\" animate-start animate-key=\"0;100\" animate-transform=\"rotate(0deg);rotate(360deg)\" animate-duration=\"2s\" animate-iteration=\"infinite\">Spinning</div>",
+    "depends_on": [
+      "animate-start"
+    ],
+    "see_also": [
+      "animate-key"
+    ]
+  },
+  "animate-easing": {
+    "category": "configuration",
+    "module": "animate",
+    "description_short": "Sets the easing function for the animation.",
+    "example": "<div animate-start animate-key=\"0;100\" animate-transform=\"translateY(0);translateY(50px)\" animate-easing=\"ease-in-out\" animate-duration=\"1s\">Eased</div>",
+    "values": [
+      "linear",
+      "ease",
+      "ease-in",
+      "ease-out",
+      "ease-in-out"
+    ],
+    "depends_on": [
+      "animate-start"
+    ]
+  },
+  "animate-duration": {
+    "category": "configuration",
+    "module": "animate",
+    "description_short": "Sets the duration of the animation.",
+    "example": "<div animate-start animate-key=\"0;100\" animate-transform=\"scale(1);scale(2)\" animate-duration=\"3s\">Slow scale</div>",
+    "depends_on": [
+      "animate-start"
+    ]
+  },
+  "animate-delay": {
+    "category": "configuration",
+    "module": "animate",
+    "description_short": "Sets the delay before the animation starts.",
+    "example": "<div animate-start animate-key=\"0;100\" animate-transform=\"translateX(0);translateX(100px)\" animate-duration=\"1s\" animate-delay=\"500ms\">Delayed</div>",
+    "depends_on": [
+      "animate-start"
+    ]
+  },
+  "animate-direction": {
+    "category": "configuration",
+    "module": "animate",
+    "description_short": "Sets the direction of the animation playback.",
+    "example": "<div animate-start animate-key=\"0;100\" animate-transform=\"translateX(0);translateX(100px)\" animate-duration=\"1s\" animate-direction=\"alternate\" animate-iteration=\"infinite\">Ping pong</div>",
+    "values": [
+      "normal",
+      "reverse",
+      "alternate",
+      "alternate-reverse"
+    ],
+    "depends_on": [
+      "animate-start"
+    ]
+  },
+  "animate-iteration": {
+    "category": "configuration",
+    "module": "animate",
+    "description_short": "Sets the number of times the animation repeats.",
+    "example": "<div animate-start animate-key=\"0;100\" animate-transform=\"rotate(0deg);rotate(360deg)\" animate-duration=\"1s\" animate-iteration=\"3\">Spins 3 times</div>",
+    "depends_on": [
+      "animate-start"
+    ]
+  },
+  "audio-play": {
+    "category": "interactive",
+    "module": "audio",
+    "description_short": "Plays an audio file.",
+    "example": "<button click=\"audio-play:[song.mp3]\">Play Audio</button>"
+  },
+  "sound-play": {
+    "category": "interactive",
+    "module": "sound",
+    "description_short": "Plays a sound effect.",
+    "example": "<button click=\"sound-play:[click.mp3]\">Play Sound</button>"
+  },
+  "canvas-clear": {
+    "category": "behavior",
+    "module": "canvas",
+    "description_short": "Clears the canvas element.",
+    "example": "<canvas id=\"mycanvas\" width=\"200\" height=\"200\"></canvas>\n<button click=\"canvas-clear:#mycanvas\">Clear Canvas</button>"
+  },
+  "canvas-grad": {
+    "category": "style",
+    "module": "canvas",
+    "description_short": "Applies a gradient to the canvas element.",
+    "example": "<canvas id=\"gradcanvas\" width=\"200\" height=\"200\" canvas-grad=\"linear:0,0,200,0:red,blue\"></canvas>"
+  },
+  "overlay-dialog": {
+    "category": "behavior",
+    "module": "overlay",
+    "description_short": "Opens an overlay dialog with specified content.",
+    "example": "<button click=\"overlay-dialog:#dialogContent\">Open Dialog</button>\n<div id=\"dialogContent\" hide>\n  <h2>Dialog Title</h2>\n  <p>Dialog content here.</p>\n</div>"
+  },
+  "overlay-close": {
+    "category": "behavior",
+    "module": "overlay",
+    "description_short": "Closes the currently open overlay.",
+    "example": "<button click=\"overlay-close\">Close</button>"
+  },
+  "overlay-bind": {
+    "category": "binding",
+    "module": "overlay",
+    "description_short": "Binds overlay content to a data source or element.",
+    "example": "<div overlay-bind=\"#source\">Overlay content</div>"
+  },
+  "auth-protect": {
+    "category": "behavior",
+    "module": "auth",
+    "description_short": "Protects an element or page requiring authentication.",
+    "example": "<div auth-protect>Protected content only visible when authenticated</div>"
+  },
+  "navigate-go": {
+    "category": "interactive",
+    "module": "navigate",
+    "description_short": "Programmatically triggers navigation as if a user clicked a link.",
+    "example": "<button click=\"navigate-go:[documentation]\">Go to Docs</button>"
+  },
+  "navigate-onloaded": {
+    "category": "event",
+    "module": "navigate",
+    "description_short": "Executes actions when a navigated page has finished loading.",
+    "example": "<main navigate-onloaded=\"scroll:top\">Page content</main>"
+  },
+  "navigate-pushstate": {
+    "category": "behavior",
+    "module": "navigate",
+    "description_short": "Pushes a new URL state to the browser history without full navigation.",
+    "example": "<button click=\"navigate-pushstate:[/new-page]\">Change URL</button>"
+  },
+  "screen-layout": {
+    "category": "behavior",
+    "module": "screen",
+    "description_short": "Sets a layout mode based on the current screen size.",
+    "example": "<div screen-layout=\"mobile:column;desktop:row\">Responsive layout</div>"
+  },
+  "screen-xxs": {
+    "category": "behavior",
+    "module": "screen",
+    "description_short": "Triggers an action when window width matches the 'xxs' breakpoint.",
+    "example": "<div screen-xxs=\"hide\" screen-xl=\"show\">Hidden on extra-extra-small screens</div>",
+    "see_also": [
+      "screen-xs",
+      "screen-sm"
+    ]
+  },
+  "screen-xs": {
+    "category": "behavior",
+    "module": "screen",
+    "description_short": "Triggers an action when window width matches the 'xs' breakpoint.",
+    "example": "<div screen-xs=\"padding:[0.5rem]\" screen-md=\"padding:[1.5rem]\">Responsive padding</div>",
+    "see_also": [
+      "screen-xxs",
+      "screen-sm"
+    ]
+  },
+  "screen-sm": {
+    "category": "behavior",
+    "module": "screen",
+    "description_short": "Triggers an action when window width matches the 'sm' breakpoint.",
+    "example": "<div screen-sm=\"gridcolumns:[1fr]\" screen-lg=\"gridcolumns:[1fr 1fr]\">Responsive grid</div>",
+    "see_also": [
+      "screen-xs",
+      "screen-md"
+    ]
+  },
+  "screen-md": {
+    "category": "behavior",
+    "module": "screen",
+    "description_short": "Triggers an action when window width matches the 'md' breakpoint.",
+    "example": "<div screen-md=\"padding:[1.5rem]\">Medium screen padding</div>",
+    "see_also": [
+      "screen-sm",
+      "screen-lg"
+    ]
+  },
+  "screen-lg": {
+    "category": "behavior",
+    "module": "screen",
+    "description_short": "Triggers an action when window width matches the 'lg' breakpoint.",
+    "example": "<div screen-lg=\"fontsize:[1.2rem]\">Larger font on large screens</div>",
+    "see_also": [
+      "screen-md",
+      "screen-xl"
+    ]
+  },
+  "screen-xl": {
+    "category": "behavior",
+    "module": "screen",
+    "description_short": "Triggers an action when window width matches the 'xl' breakpoint.",
+    "example": "<nav screen-xxs=\"hide\" screen-xl=\"show\">Desktop navigation</nav>",
+    "see_also": [
+      "screen-lg",
+      "screen-xxl"
+    ]
+  },
+  "screen-xxl": {
+    "category": "behavior",
+    "module": "screen",
+    "description_short": "Triggers an action when window width matches the 'xxl' breakpoint.",
+    "example": "<div screen-xxl=\"maxwidth:[1400px]\">Constrained on very large screens</div>",
+    "see_also": [
+      "screen-xl",
+      "screen-xxxl"
+    ]
+  },
+  "screen-xxxl": {
+    "category": "behavior",
+    "module": "screen",
+    "description_short": "Triggers an action when window width matches the 'xxxl' breakpoint.",
+    "example": "<div screen-xxxl=\"maxwidth:[1800px]\">Extra-large screen constraint</div>",
+    "see_also": [
+      "screen-xxl",
+      "screen-wide"
+    ]
+  },
+  "screen-wide": {
+    "category": "behavior",
+    "module": "screen",
+    "description_short": "Triggers an action when window width matches the 'wide' breakpoint.",
+    "example": "<div screen-wide=\"padding:[3rem]\">Wide screen padding</div>",
+    "see_also": [
+      "screen-xxxl",
+      "screen-ultra"
+    ]
+  },
+  "screen-ultra": {
+    "category": "behavior",
+    "module": "screen",
+    "description_short": "Triggers an action when window width matches the 'ultra' breakpoint.",
+    "example": "<div screen-ultra=\"fontsize:[1.5rem]\">Ultra-wide font</div>",
+    "see_also": [
+      "screen-wide",
+      "screen-cinema"
+    ]
+  },
+  "screen-cinema": {
+    "category": "behavior",
+    "module": "screen",
+    "description_short": "Triggers an action when window width matches the 'cinema' breakpoint.",
+    "example": "<div screen-cinema=\"maxwidth:[2200px]\">Cinema display constraint</div>",
+    "see_also": [
+      "screen-ultra",
+      "screen-mega"
+    ]
+  },
+  "screen-mega": {
+    "category": "behavior",
+    "module": "screen",
+    "description_short": "Triggers an action when window width matches the 'mega' breakpoint.",
+    "example": "<div screen-mega=\"zoom:[0.8]\">Scaled down on mega displays</div>",
+    "see_also": [
+      "screen-cinema"
+    ]
+  },
+  "globalize-get": {
+    "category": "binding",
+    "module": "globalize",
+    "description_short": "Gets the localized translation for the element content or a specified key.",
+    "example": "<h1 globalize-get>Welcome</h1>\n<span globalize-get=\"greeting\"></span>"
+  },
+  "globalize-set": {
+    "category": "interactive",
+    "module": "globalize",
+    "description_short": "Sets the active locale/language and reloads translations.",
+    "example": "<button click=\"globalize-set:[sv]\">Svenska</button>\n<button click=\"globalize-set:[en]\">English</button>"
+  },
+  "globalize-target": {
+    "category": "configuration",
+    "module": "globalize",
+    "description_short": "Specifies which attribute to set the translated value into (defaults to sethtml).",
+    "example": "<input globalize-get=\"search_placeholder\" globalize-target=\"placeholder\">"
+  },
+  "globalize-onsetload": {
+    "category": "event",
+    "module": "globalize",
+    "description_short": "Triggered when the globalize set operation has loaded new translations.",
+    "example": "<div globalize-onsetload=\"alert:[Language updated!]\">Content</div>"
+  },
+  "keyboard-action": {
+    "category": "interactive",
+    "module": "keyboard",
+    "description_short": "Enables an element to respond to keyboard keys. Works with keyboard-key and keyboard-word.",
+    "example": "<input type=\"text\" keyboard-key=\"Enter\" keyboard-action=\"alert:[Submitted!]\" placeholder=\"Press Enter\">",
+    "see_also": [
+      "keyboard-key",
+      "keyboard-word"
+    ]
+  },
+  "keyboard-key": {
+    "category": "interactive",
+    "module": "keyboard",
+    "description_short": "Specifies which keyboard key triggers the action.",
+    "example": "<input type=\"text\" keyboard-key=\"Escape\" keyboard-action=\"blur\" placeholder=\"Press Escape to unfocus\">",
+    "depends_on": [
+      "keyboard-action"
+    ]
+  },
+  "keyboard-word": {
+    "category": "interactive",
+    "module": "keyboard",
+    "description_short": "Specifies a word sequence that triggers an action when typed.",
+    "example": "<input keyboard-word=\"hello\" keyboard-action=\"alert:[You typed hello!]\" placeholder=\"Type hello\">",
+    "depends_on": [
+      "keyboard-action"
+    ],
+    "see_also": [
+      "keyboard-finalizer"
+    ]
+  },
+  "keyboard-finalizer": {
+    "category": "configuration",
+    "module": "keyboard",
+    "description_short": "Specifies a key required to finalize a word sequence action.",
+    "example": "<input keyboard-word=\"go\" keyboard-finalizer=\"Enter\" keyboard-action=\"navigate-go:[home]\" placeholder=\"Type go + Enter\">",
+    "depends_on": [
+      "keyboard-action",
+      "keyboard-word"
+    ]
+  },
+  "keyboard-scope": {
+    "category": "configuration",
+    "module": "keyboard",
+    "description_short": "Limits where the keyboard action applies (e.g. to a specific element).",
+    "example": "<div keyboard-key=\"Enter\" keyboard-action=\"alert:[Enter pressed]\" keyboard-scope=\"#myform\">Scoped</div>",
+    "depends_on": [
+      "keyboard-action"
+    ]
+  },
+  "keyboard-translate": {
+    "category": "interactive",
+    "module": "keyboard",
+    "description_short": "Maps a key to a replacement character in an input or text element.",
+    "example": "<input keyboard-key=\"Digit1\" keyboard-action=\"keyboard-translate\" keyboard-translate=\"!\" placeholder=\"Shift+1 = !\">",
+    "depends_on": [
+      "keyboard-action"
+    ],
+    "see_also": [
+      "keyboard-untranslate"
+    ]
+  },
+  "keyboard-untranslate": {
+    "category": "interactive",
+    "module": "keyboard",
+    "description_short": "Removes a previously translated character from an input or text element.",
+    "example": "<input keyboard-key=\"Backspace\" keyboard-action=\"keyboard-untranslate\" keyboard-untranslate=\"!\" placeholder=\"Remove !\">",
+    "depends_on": [
+      "keyboard-action"
+    ],
+    "see_also": [
+      "keyboard-translate"
+    ]
+  },
+  "math-bind": {
+    "category": "binding",
+    "module": "math",
+    "description_short": "Binds a mathematical expression result to a variable.",
+    "example": "<div math-bind=\"total:price*quantity\" bindvar=\"price:10;quantity:3\" settext=\"Total: {total}\"></div>"
+  },
+  "math-compute": {
+    "category": "binding",
+    "module": "math",
+    "description_short": "Computes a mathematical expression and sets the result.",
+    "example": "<input id=\"a\" type=\"number\" setvalue=\"5\">\n<input id=\"b\" type=\"number\" setvalue=\"3\">\n<span math-compute=\"[#a]+[#b]\"></span>"
+  },
+  "math-round": {
+    "category": "binding",
+    "module": "math",
+    "description_short": "Rounds a numeric value to a specified number of decimals.",
+    "example": "<span math-round=\"2\" settext=\"3.14159\"></span>"
+  },
+  "chronotize-get": {
+    "category": "binding",
+    "module": "chronotize",
+    "description_short": "Gets a relative time or age value from a date.",
+    "example": "<span chronotize-get=\"2024-01-15\"></span>"
+  },
+  "geolocalize-get": {
+    "category": "binding",
+    "module": "geolocalize",
+    "description_short": "Gets the user's geolocation coordinates.",
+    "example": "<div geolocalize-get=\"lat:latitude;lng:longitude\" settext=\"Lat: {lat}, Lng: {lng}\"></div>"
+  },
+  "data-bindheader": {
+    "category": "binding",
+    "module": "data",
+    "description_short": "Binds a response header value to a variable.",
+    "example": "<div data-src=\"/api/items\" data-bindheader=\"total:X-Total-Count\" settext=\"Total: {total}\"></div>",
+    "depends_on": [
+      "data-src"
+    ]
+  },
+  "form-invalid": {
+    "category": "behavior",
+    "module": "form",
+    "description_short": "Specifies a target element and message to display on invalid form input.",
+    "example": "<form>\n  <input type=\"email\" required form-invalid=\"#errMsg:[Please enter a valid email]\">\n  <span id=\"errMsg\" hide></span>\n  <button type=\"submit\">Submit</button>\n</form>"
+  },
+  "form-throttle": {
+    "category": "behavior",
+    "module": "form",
+    "description_short": "Throttles form submissions by a specified number of milliseconds.",
+    "example": "<form form-throttle=\"2000\">\n  <button type=\"submit\">Submit (throttled)</button>\n</form>"
+  },
+  "ignorepayload": {
+    "category": "behavior",
+    "description_short": "Prevents sending the payload for POST, PUT, or PATCH requests when set.",
+    "example": "<form data-reqpost=\"/api/action\" ignorepayload>\n  <button type=\"submit\">Execute without payload</button>\n</form>"
+  },
+  "storage-bind": {
+    "category": "binding",
+    "module": "storage",
+    "description_short": "Binds an element to a storage key and re-renders on changes.",
+    "example": "<div storage-bind=\"session:cart\" storage-iterate=\"items\">\n  <span storage-get=\"name\"></span>\n</div>",
+    "see_also": [
+      "storage-iterate",
+      "storage-get"
+    ]
+  },
+  "storage-iterate": {
+    "category": "binding",
+    "module": "storage",
+    "description_short": "Iterates over an array or object in the bound storage data.",
+    "example": "<ul storage-bind=\"local:todos\" storage-iterate=\"items\">\n  <li storage-get=\"text\"></li>\n</ul>",
+    "depends_on": [
+      "storage-bind"
+    ],
+    "see_also": [
+      "storage-get",
+      "storage-set"
+    ]
+  },
+  "storage-iterate-skip": {
+    "category": "binding",
+    "module": "storage",
+    "description_short": "Excludes an element from being duplicated during storage iteration.",
+    "example": "<ul storage-bind=\"local:todos\" storage-iterate=\"items\">\n  <li storage-get=\"text\"></li>\n  <li storage-iterate-skip>Add new item above</li>\n</ul>",
+    "depends_on": [
+      "storage-iterate"
+    ]
+  },
+  "storage-get": {
+    "category": "binding",
+    "module": "storage",
+    "description_short": "Gets a value from the current storage item and displays it.",
+    "example": "<div storage-bind=\"session:user\">\n  <span storage-get=\"name\"></span>\n  <span storage-get=\"email\"></span>\n</div>",
+    "depends_on": [
+      "storage-bind"
+    ],
+    "see_also": [
+      "storage-set"
+    ]
+  },
+  "storage-set": {
+    "category": "binding",
+    "module": "storage",
+    "description_short": "Sets a value from the current storage item into an element attribute or variable.",
+    "example": "<div storage-bind=\"session:user\">\n  <a storage-set=\"href:profileUrl\" storage-get=\"name\"></a>\n</div>",
+    "depends_on": [
+      "storage-bind"
+    ],
+    "see_also": [
+      "storage-get"
+    ]
+  },
+  "storage-onempty": {
+    "category": "event",
+    "module": "storage",
+    "description_short": "Shows an element when the bound storage data is empty.",
+    "example": "<div id=\"emptyMsg\" hide>No items yet</div>\n<ul storage-bind=\"local:todos\" storage-iterate=\"items\" storage-onempty=\"#emptyMsg\">\n  <li storage-get=\"text\"></li>\n</ul>",
+    "depends_on": [
+      "storage-bind"
+    ]
+  },
+  "storage-bindlocal": {
+    "category": "binding",
+    "module": "storage",
+    "description_short": "Binds a localStorage value to a variable on the element.",
+    "example": "<div storage-bindlocal=\"username:user\" settext=\"Hello {user}\"></div>"
+  },
+  "storage-bindsession": {
+    "category": "binding",
+    "module": "storage",
+    "description_short": "Binds a sessionStorage value to a variable on the element.",
+    "example": "<div storage-bindsession=\"token:authToken\" settext=\"Token: {authToken}\"></div>"
+  },
+  "storage-localset": {
+    "category": "interactive",
+    "module": "storage",
+    "description_short": "Sets a value in localStorage.",
+    "example": "<button click=\"storage-localset:[settings:theme[dark]]\">Set Dark Theme</button>"
+  },
+  "storage-localadd": {
+    "category": "interactive",
+    "module": "storage",
+    "description_short": "Adds a value to an array in localStorage.",
+    "example": "<button click=\"storage-localadd:[todos:items:[Buy milk]]\">Add Todo</button>"
+  },
+  "storage-localupdate": {
+    "category": "interactive",
+    "module": "storage",
+    "description_short": "Updates a value at a path in localStorage.",
+    "example": "<button click=\"storage-localupdate:[settings:theme:light]\">Switch to Light</button>"
+  },
+  "storage-localremove": {
+    "category": "interactive",
+    "module": "storage",
+    "description_short": "Removes a value or key from localStorage.",
+    "example": "<button click=\"storage-localremove:[todos:items:0]\">Remove First Todo</button>"
+  },
+  "storage-sessionset": {
+    "category": "interactive",
+    "module": "storage",
+    "description_short": "Sets a value in sessionStorage.",
+    "example": "<button click=\"storage-sessionset:[cart:item[Shoes]]\">Add to Cart</button>"
+  },
+  "storage-sessionadd": {
+    "category": "interactive",
+    "module": "storage",
+    "description_short": "Adds a value to an array in sessionStorage.",
+    "example": "<button click=\"storage-sessionadd:[cart:items:[Blue Shirt]]\">Add Item</button>"
+  },
+  "storage-sessionupdate": {
+    "category": "interactive",
+    "module": "storage",
+    "description_short": "Updates a value at a path in sessionStorage.",
+    "example": "<button click=\"storage-sessionupdate:[cart:quantity:2]\">Update Quantity</button>"
+  },
+  "storage-sessionremove": {
+    "category": "interactive",
+    "module": "storage",
+    "description_short": "Removes a value or key from sessionStorage.",
+    "example": "<button click=\"storage-sessionremove:[cart:items:0]\">Remove First Item</button>"
+  },
+  "storage-cookieget": {
+    "category": "binding",
+    "module": "storage",
+    "description_short": "Gets a value from a browser cookie.",
+    "example": "<span storage-cookieget=\"username\"></span>"
+  },
+  "storage-cookie-days": {
+    "category": "configuration",
+    "module": "storage",
+    "description_short": "Sets the expiry in days for a cookie.",
+    "example": "<button click=\"storage-localset:[pref:lang[en]]\" storage-cookie-days=\"30\">Save Preference</button>"
+  },
+  "storage-cookie-path": {
+    "category": "configuration",
+    "module": "storage",
+    "description_short": "Sets the path for a cookie.",
+    "example": "<button click=\"storage-localset:[token:abc123]\" storage-cookie-path=\"/app\">Set Cookie</button>"
+  },
+  "storage-cookie-secure": {
+    "category": "configuration",
+    "module": "storage",
+    "description_short": "Marks a cookie as secure (HTTPS only).",
+    "example": "<button click=\"storage-localset:[session:xyz]\" storage-cookie-secure=\"true\">Secure Cookie</button>"
+  },
+  "storage-cookie-samesite": {
+    "category": "configuration",
+    "module": "storage",
+    "description_short": "Sets the SameSite policy for a cookie.",
+    "example": "<button click=\"storage-localset:[pref:theme[dark]]\" storage-cookie-samesite=\"Strict\">Strict Cookie</button>",
+    "values": [
+      "Strict",
+      "Lax",
+      "None"
+    ]
   }
 }
