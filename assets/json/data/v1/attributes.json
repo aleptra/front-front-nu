@@ -2369,12 +2369,6 @@
     "description_short": "Protects an element or page requiring authentication.",
     "example": "<div auth-protect>Protected content only visible when authenticated</div>"
   },
-  "navigate-go": {
-    "category": "interactive",
-    "module": "navigate",
-    "description_short": "Programmatically triggers navigation as if a user clicked a link.",
-    "example": "<button click=\"navigate-go:[documentation]\">Go to Docs</button>"
-  },
   "navigate-onloaded": {
     "category": "event",
     "module": "navigate",
@@ -2535,25 +2529,6 @@
     "module": "globalize",
     "description_short": "Triggered when the globalize set operation has loaded new translations.",
     "example": "<div globalize-onsetload=\"alert:[Language updated!]\">Content</div>"
-  },
-  "keyboard-action": {
-    "category": "interactive",
-    "module": "keyboard",
-    "description_short": "Enables an element to respond to keyboard keys. Works with keyboard-key and keyboard-word.",
-    "example": "<input type=\"text\" keyboard-key=\"Enter\" keyboard-action=\"alert:[Submitted!]\" placeholder=\"Press Enter\">",
-    "see_also": [
-      "keyboard-key",
-      "keyboard-word"
-    ]
-  },
-  "keyboard-key": {
-    "category": "interactive",
-    "module": "keyboard",
-    "description_short": "Specifies which keyboard key triggers the action.",
-    "example": "<input type=\"text\" keyboard-key=\"Escape\" keyboard-action=\"blur\" placeholder=\"Press Escape to unfocus\">",
-    "depends_on": [
-      "keyboard-action"
-    ]
   },
   "keyboard-word": {
     "category": "interactive",

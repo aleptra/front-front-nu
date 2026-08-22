@@ -4,12 +4,33 @@
 <h2 bindglobal="title:title" settext="{title}" globalize-get="{title}"></h2>
 <hr class="bcblack01">
 <div id="loader" class="loader" flex></div>
-<div bindquery="page:page" data-src="https://api.tvmaze.com/people?page={page:1}" data-iterate="true"
-  data-loader="#loader">
+<div id="paging" bindquery="page:page" data-src="https://api.tvmaze.com/people?page={page:1}" data-iterate="true"
+  data-loader="#loader" data-pagesize="250">
   <a class="p025" data-get="id:id" href="person.html?id={id}">
     <figure class="pr">
       <img class="br50" width="110px" height="110px" data-get="image.medium">
       <figcaption class="z1 pa md_dn b0 fs08 white ts05 bcblack02 w100" data-get="title || name"></figcaption>
     </figure>
   </a>
+</div>
+<div flex width="100%" paddingtop="2rem" justifycontent="space-between">
+  <button
+    flex="1"
+    click="data-previous:#paging"
+    onclicked="scroll:*main:[top]"
+    ondata-firstpage="disabled"
+    ondata-notfirstpage="enabled"
+    padding="1rem 2rem">
+    Previous
+  </button>
+
+  <button
+    flex="1"
+    click="data-next:#paging"
+    onclicked="scroll:*main:[top]"
+    ondata-lastpage="disabled"
+    ondata-notlastpage="enabled"
+    padding="1rem 2rem">
+    Next
+  </button>
 </div>

@@ -1,0 +1,162 @@
+<script src="https://cdn.front.nu/nightly/front.js"></script>
+<title globalize-get>Client-Side Paging</title>
+<template srcdoc="../../../index" src="../../../_templates/documentation"></template>
+<article color="silver">
+  <nav class="pointer" zoom="0.9" padding="0" margintop="-1.2rem" marginbottom="2.2rem" color="white" screen-xxs="hide" screen-xl="show">
+    <ol padding="0">
+      <li><a href="documentation" globalize-get>Documentation</a></li>
+      <li><a href="documentation/guides" globalize-get>Guides</a></li>
+      <li color="silver" bindglobal="title:title" settext="{title}" globalize-get></li>
+    </ol>
+  </nav>
+
+  <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get marginbottom="2rem"
+    runorder="bindglobal;settext;globalize-get"></h1>
+
+  <p margintop="1rem">
+    This guide explains how to paginate a complete data collection in the browser using Front's Data module.
+    Client-side paging fetches the collection once, then displays a smaller slice of the data for each page.
+  </p>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">How It Works</h2>
+    <p margintop="1rem">
+      Add paging attributes to the element that contains <b>data-src</b> and <b>data-iterate</b>:
+    </p>
+    <ul margintop="1rem">
+      <li><b>data-page</b> — The current page number. Pages start at 1.</li>
+      <li><b>data-pagesize</b> — The number of items displayed per page. The default is 10.</li>
+      <li><b>data-limit</b> — Optional. Limits the collection before paging is applied.</li>
+    </ul>
+    <p margintop="1rem">
+      The Data module sorts and filters the collection first, then applies the page size and current page.
+      The complete response remains cached by the module while the user changes pages.
+    </p>
+  </section>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Basic Example</h2>
+    <p>
+      Fetch the complete feature collection and display five items at a time. Use the Preview tab to run this example:
+    </p>
+
+    <nav flexdirection="column" margintop="1.5rem" maxwidth="60rem" minwidth="30vw">
+      <div id="paging-source" role="tabpanel" onshow="hide:#paging-preview">
+        <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" height="1.8rem"><span
+            bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+            style="flex: 1">FTML</span><button bgcolor="unset" mouseover="color:[lightgray]"
+            mouseout="color:[unset]" zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0"
+            click="clipboard--copy:#paging-code" onclicked="settext:[✓ Copied]"
+            onsettext="rundelay[2000]:reset">Copy</button></small>
+        <code id="paging-code" bgcolor="white01" color="white" spellcheck="false"
+          screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]" whitespace="pre" maxwidth="60rem"
+          minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;div id="paging-features"
+  data-src="https://www.front.nu/assets/json/data/dummy.json"
+  data-iterate="dynamic-data-rendering.features"
+  data-page="1"
+  data-pagesize="5"&gt;
+  &lt;div padding="0.5rem" borderbottom="1px solid white03"&gt;
+    &lt;b data-get="key"&gt;&lt;/b&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div flex gap="2rem" margintop="1rem"&gt;
+  &lt;button click="data-previous:#paging-features"
+    ondata-firstpage="disable"
+    ondata-notfirstpage="enable"
+    disable&gt;Previous&lt;/button&gt;
+  &lt;button click="data-next:#paging-features"
+    ondata-lastpage="disable"
+    ondata-notlastpage="enable"&gt;Next&lt;/button&gt;
+&lt;/div&gt;
+</code>
+      </div>
+
+      <div id="paging-preview" role="tabpanel" hide onshow="hide:#paging-source;sethtml:#paging-preview:#paging-code"
+        padding="1rem" minheight="12rem" bgcolor="white" color="black" overflow="auto"
+        onsethtml="start:#paging-preview"></div>
+
+      <menu zoom="0.8" bgcolor="white01" bordertop="1px solid black" height="2rem" lineheight="2rem">
+        <a id="paging-source-link" click="show:#paging-source"
+          onclicked="bgcolor:#paging-preview-link:[initial];bgcolor:#paging-source-link:[black03]"
+          bgcolor="black03" padding="0 0.75rem" borderright="1px solid black">Source</a>
+        <a id="paging-preview-link" click="show:#paging-preview"
+          onclicked="bgcolor:#paging-source-link:[initial];bgcolor:#paging-preview-link:[black03]"
+          padding="0 0.75rem" borderright="1px solid black">Preview</a>
+      </menu>
+    </nav>
+  </section>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Paging Controls</h2>
+    <h3 zoom="0.8" color="white" padding="2rem 0 1rem 0">Previous and Next</h3>
+    <p>
+      Use <b>data-previous</b> and <b>data-next</b> actions with the selector of the paged element:
+    </p>
+
+    <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem">
+      <span bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+        style="flex: 1">FTML</span>
+      <button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]" zoom="0.9"
+        padding="0.45rem 0.6rem" minheight="0" margin="0" click="clipboard--copy:*code[1]"
+        onclicked="settext:[✓ Copied]" onsettext="rundelay[2000]:reset">Copy</button>
+    </small>
+    <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
+      whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace"
+      syntaxhighlighting--set>&lt;button click="data-previous:#products"&gt;Previous&lt;/button&gt;
+&lt;button click="data-next:#products"&gt;Next&lt;/button&gt;</code>
+
+    <h3 zoom="0.8" color="white" padding="2rem 0 1rem 0">Go To a Page</h3>
+    <p>
+      Use <b>data-goto</b> to jump to a specific page. The page number is clamped to the available range.
+    </p>
+
+    <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem">
+      <span bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+        style="flex: 1">FTML</span>
+      <button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]" zoom="0.9"
+        padding="0.45rem 0.6rem" minheight="0" margin="0" click="clipboard--copy:*code[2]"
+        onclicked="settext:[✓ Copied]" onsettext="rundelay[2000]:reset">Copy</button>
+    </small>
+    <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
+      whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace"
+      syntaxhighlighting--set>&lt;button click="data-goto:#products:[1]"&gt;Page 1&lt;/button&gt;
+&lt;button click="data-goto:#products:[2]"&gt;Page 2&lt;/button&gt;
+&lt;button click="data-goto:#products:[3]"&gt;Page 3&lt;/button&gt;</code>
+
+  </section>
+
+  <section>
+    <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Boundary Events</h2>
+    <p margintop="1rem">
+      The Data module updates paging controls when the first or last page is reached.
+      Use these events to disable buttons at the boundaries:
+    </p>
+    <ul margintop="1rem">
+      <li><b>ondata-firstpage</b> — Triggered when arriving at the first page.</li>
+      <li><b>ondata-notfirstpage</b> — Triggered when leaving the first page.</li>
+      <li><b>ondata-lastpage</b> — Triggered when arriving at the last page.</li>
+      <li><b>ondata-notlastpage</b> — Triggered when leaving the last page.</li>
+    </ul>
+
+    <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem">
+      <span bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+        style="flex: 1">FTML</span>
+      <button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]" zoom="0.9"
+        padding="0.45rem 0.6rem" minheight="0" margin="0" click="clipboard--copy:*code[3]"
+        onclicked="settext:[✓ Copied]" onsettext="rundelay[2000]:reset">Copy</button>
+    </small>
+    <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
+      whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace"
+      syntaxhighlighting--set>&lt;button
+  click="data-previous:#products"
+  ondata-firstpage="disable"
+  ondata-notfirstpage="enable"
+  disable&gt;Previous&lt;/button&gt;
+
+&lt;button
+  click="data-next:#products"
+  ondata-lastpage="disable"
+  ondata-notlastpage="enable"&gt;Next&lt;/button&gt;</code>
+  </section>
+</article>
