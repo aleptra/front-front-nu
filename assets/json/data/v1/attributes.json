@@ -43,7 +43,8 @@
     "description_short": "Sets the background color of the element.",
     "example": "<div bgcolor=\"lightblue\">This div has a light blue background</div>",
     "see_also": [
-      "color"
+      "color",
+      "bgimage"
     ]
   },
   "bgimage": {
@@ -115,7 +116,11 @@
     "example": "<div border=\"1px solid black\">This div has a black border</div>",
     "see_also": [
       "radius",
-      "boxshadow"
+      "boxshadow",
+      "borderbottom",
+      "borderleft",
+      "borderright",
+      "bordertop"
     ]
   },
   "blur": {
@@ -273,7 +278,8 @@
     ],
     "see_also": [
       "data-set",
-      "data-iterate"
+      "data-iterate",
+      "data-ongetload"
     ]
   },
   "data-set": {
@@ -568,7 +574,8 @@
     "description_short": "Sets font style and size.",
     "example": "<p font=\"Comic Sans MS\">This text uses a custom font</p>",
     "see_also": [
-      "fontsize"
+      "fontsize",
+      "lineheight"
     ]
   },
   "fontsize": {
@@ -576,7 +583,8 @@
     "description_short": "Sets font size.",
     "example": "<p fontsize=\"25px\">This text uses fontsize</p>",
     "see_also": [
-      "font"
+      "font",
+      "lineheight"
     ]
   },
   "grid": {
@@ -595,9 +603,7 @@
     "example": "<div height=\"100px\" bgcolor=\"lightblue\">100px tall div</div>",
     "see_also": [
       "maxheight",
-      "minheight",
-      "maxwidth",
-      "minwidth"
+      "minheight"
     ]
   },
   "hide": {
@@ -1371,9 +1377,7 @@
     "example": "<div width=\"200px\" bgcolor=\"lightblue\">This div is 200px wide</div>\n<div width=\"50%\" bgcolor=\"lightgreen\">This div is 50% of its container's width</div>",
     "see_also": [
       "maxwidth",
-      "minwidth",
-      "maxheight",
-      "minheight"
+      "minwidth"
     ]
   },
   "wordbreak": {
@@ -1682,7 +1686,8 @@
     "module": "keyboard",
     "description_short": "Enables an element to respond to keyboard keys. Works with keyboard-key and keyboard-word.",
     "see_also": [
-      "keyboard-key"
+      "keyboard-key",
+      "keyboard-word"
     ],
     "example": "<input type=\"text\" keyboard-key=\"Enter\" keyboard-action=\"alert:[Submitted!]\" placeholder=\"Press Enter\">"
   },
