@@ -212,7 +212,7 @@
   "data-src": {
     "category": "binding",
     "description_short": "Specifies the source URL or endpoint for data to be fetched and bound to the element.",
-    "example": "<div data-src=\"https://dummyjson.com/products\" data-iterate=\"products\">\n <b data-get=\"title\"></b>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\">\n <b data-get=\"title\"></b>\n</div>",
     "see_also": [
       "data-iterate"
     ]
@@ -220,7 +220,7 @@
   "data-iterate": {
     "category": "binding",
     "description_short": "Indicates that the element should iterate over an array from the data source.",
-    "example": "<div data-src=\"https://dummyjson.com/products\" data-iterate=\"true\">User info here</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\">User info here</div>",
     "depends_on": [
       "data-src"
     ]
@@ -228,7 +228,7 @@
   "data-loader": {
     "category": "behavior",
     "description_short": "Specifies an element to show while data is loading and hide when complete.",
-    "example": "<div id=\"loader\" class=\"loader\" hide></div>\n<div data-src=\"https://dummyjson.com/products\" data-iterate=\"products\" data-loader=\"#loader\">\n  <span data-get=\"title\"></span>\n</div>",
+    "example": "<div id=\"loader\" class=\"loader\" hide></div>\n<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\" data-loader=\"#loader\">\n  <span data-get=\"title\"></span>\n</div>",
     "depends_on": [
       "data-src"
     ],
@@ -254,7 +254,7 @@
   "data-onnotempty": {
     "category": "event",
     "description_short": "Executes actions when the fetched data is not empty. Accepts any action expression supported by app.call.",
-    "example": "<div color=\"red\" id=\"notempty\" hide>Not empty!</div>\n<div data-src=\"https://dummyjson.com/products\" data-iterate=\"products\" data-onnotempty=\"show:#notempty\">\n  <span data-get=\"title\"></span>\n</div>",
+    "example": "<div color=\"red\" id=\"notempty\" hide>Not empty!</div>\n<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\" data-onnotempty=\"show:#notempty\">\n  <span data-get=\"title\"></span>\n</div>",
     "depends_on": [
       "data-src"
     ],
@@ -267,7 +267,7 @@
   "data-get": {
     "category": "binding",
     "description_short": "Retrieves and displays a value from the current bound data context.",
-    "example": "<div data-src=\"https://dummyjson.com/products\" data-iterate=\"products\">\n  <b data-get=\"title\"></b>\n  <small data-get=\"price\"></small>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\">\n  <b data-get=\"title\"></b>\n  <small data-get=\"population\"></small>\n</div>",
     "depends_on": [
       "data-src"
     ],
@@ -279,7 +279,7 @@
   "data-set": {
     "category": "binding",
     "description_short": "Assigns a value from the data context to a variable or target element.",
-    "example": "<div data-src=\"https://dummyjson.com/products\" data-iterate=\"products\">\n  <a data-set=\"id:id\" href=\"/product?id={id}\" data-get=\"title\"></a>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\">\n  <a data-set=\"id:id\" href=\"/product?id={id}\" data-get=\"title\"></a>\n</div>",
     "depends_on": [
       "data-src"
     ],
@@ -327,7 +327,7 @@
   "data-header": {
     "category": "configuration",
     "description_short": "Sets custom HTTP headers for the data source request.",
-    "example": "<div data-src=\"/api/protected\" data-header=\"Authorization:Bearer token123\" data-iterate=\"true\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div data-iterate=\"true\">\n  <span data-get=\"name\"></span>\n</div>",
     "depends_on": [
       "data-src"
     ],
@@ -410,7 +410,7 @@
   "data-filteritem": {
     "category": "binding",
     "description_short": "Filters the data array by matching a key to a value.",
-    "example": "<div data-src=\"/api/items\" data-iterate=\"items\" data-filteritem=\"status:'active'\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\" data-filteritem=\"active:true\" data-filterkey=\"results\">\n  <span data-get=\"name\"></span>\n</div>",
     "depends_on": [
       "data-src"
     ],
@@ -422,7 +422,7 @@
   "data-filterkey": {
     "category": "binding",
     "description_short": "Specifies which key in the response object to apply the filter on.",
-    "example": "<div data-src=\"/api/data\" data-iterate=\"results\" data-filteritem=\"active:true\" data-filterkey=\"results\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\" data-filteritem=\"active:true\" data-filterkey=\"results\">\n  <span data-get=\"name\"></span>\n</div>",
     "depends_on": [
       "data-filteritem"
     ],
@@ -434,7 +434,7 @@
   "data-sort": {
     "category": "binding",
     "description_short": "Sorts the data array by the specified key.",
-    "example": "<div data-src=\"/api/items\" data-iterate=\"items\" data-sort=\"name\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\" data-sort=\"name\">\n  <span data-get=\"name\"></span>\n</div>",
     "depends_on": [
       "data-src"
     ],
@@ -446,7 +446,7 @@
   "data-sortorder": {
     "category": "binding",
     "description_short": "Sets the sort direction: ascending (default) or descending.",
-    "example": "<div data-src=\"/api/items\" data-iterate=\"items\" data-sort=\"price\" data-sortorder=\"desc\">\n  <span data-get=\"title\"></span>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\" data-sort=\"population\" data-sortorder=\"desc\">\n  <span data-get=\"title\"></span>\n</div>",
     "values": [
       "asc",
       "desc"

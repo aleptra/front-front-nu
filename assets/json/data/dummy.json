@@ -1,19 +1,314 @@
 {
-  "dynamic-data-rendering": {
-    "features": [
-      { "key": "data-get" },
-      { "key": "data-set" },
-      { "key": "data-bind" },
-      { "key": "data-iterate" },
-      { "key": "data-filteritem" },
-      { "key": "data-filterkey" },
-      { "key": "data-sort" },
-      { "key": "data-sortorder" },
-      { "key": "data-src" },
-      { "key": "data-srcjoin" },
-      { "key": "data-merge" },
-      { "key": "data-interval" },
-      { "key": "data-ttl" }
-    ]
-  }
+  "results": [
+    {
+      "id": 1,
+      "name": "Sweden",
+      "title": "Sweden",
+      "countryCode": "SE",
+      "capital": "Stockholm",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "active": true,
+      "population": 10500000,
+      "media_type": "country",
+      "frontAttribute": "data-filterkey",
+      "details": {
+        "currency": "SEK",
+        "languages": ["Swedish"],
+        "coordinates": { "lat": 60.1282, "lng": 18.6435 }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Norway",
+      "title": "Norway",
+      "countryCode": "NO",
+      "capital": "Oslo",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "active": true,
+      "population": 5500000,
+      "media_type": "country",
+      "frontAttribute": "data-filteritem",
+      "details": {
+        "currency": "NOK",
+        "languages": ["Norwegian"],
+        "coordinates": { "lat": 60.472, "lng": 8.4689 }
+      }
+    },
+    {
+      "id": 3,
+      "name": "Japan",
+      "title": "Japan",
+      "countryCode": "JP",
+      "capital": "Tokyo",
+      "continent": "Asia",
+      "region": "Eastern Asia",
+      "active": true,
+      "population": 124500000,
+      "media_type": "country",
+      "frontAttribute": "data-sort",
+      "details": {
+        "currency": "JPY",
+        "languages": ["Japanese"],
+        "coordinates": { "lat": 36.2048, "lng": 138.2529 }
+      }
+    },
+    {
+      "id": 4,
+      "name": "Canada",
+      "title": "Canada",
+      "countryCode": "CA",
+      "capital": "Ottawa",
+      "continent": "North America",
+      "region": "Northern America",
+      "active": true,
+      "population": 40000000,
+      "media_type": "country",
+      "frontAttribute": "data-sortorder",
+      "details": {
+        "currency": "CAD",
+        "languages": ["English", "French"],
+        "coordinates": { "lat": 56.1304, "lng": -106.3468 }
+      }
+    },
+    {
+      "id": 5,
+      "name": "Brazil",
+      "title": "Brazil",
+      "countryCode": "BR",
+      "capital": "Brasilia",
+      "continent": "South America",
+      "region": "South America",
+      "active": false,
+      "population": 216000000,
+      "media_type": "country",
+      "frontAttribute": "data-onempty",
+      "details": {
+        "currency": "BRL",
+        "languages": ["Portuguese"],
+        "coordinates": { "lat": -14.235, "lng": -51.9253 }
+      }
+    },
+    {
+      "id": 6,
+      "name": "Kenya",
+      "title": "Kenya",
+      "countryCode": "KE",
+      "capital": "Nairobi",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "active": true,
+      "population": 55000000,
+      "media_type": "country",
+      "frontAttribute": "data-get",
+      "details": {
+        "currency": "KES",
+        "languages": ["English", "Swahili"],
+        "coordinates": { "lat": -0.0236, "lng": 37.9062 }
+      }
+    },
+    {
+      "id": 7,
+      "name": "Australia",
+      "title": "Australia",
+      "countryCode": "AU",
+      "capital": "Canberra",
+      "continent": "Oceania",
+      "region": "Australia and New Zealand",
+      "active": true,
+      "population": 26800000,
+      "media_type": "country",
+      "frontAttribute": "data-set",
+      "details": {
+        "currency": "AUD",
+        "languages": ["English"],
+        "coordinates": { "lat": -25.2744, "lng": 133.7751 }
+      }
+    },
+    {
+      "id": 8,
+      "name": "Portugal",
+      "title": "Portugal",
+      "countryCode": "PT",
+      "capital": "Lisbon",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "active": false,
+      "population": 10300000,
+      "media_type": "country",
+      "frontAttribute": "data-bind",
+      "details": {
+        "currency": "EUR",
+        "languages": ["Portuguese"],
+        "coordinates": { "lat": 39.3999, "lng": -8.2245 }
+      }
+    },
+    {
+      "id": 9,
+      "name": "Chile",
+      "title": "Chile",
+      "countryCode": "CL",
+      "capital": "Santiago",
+      "continent": "South America",
+      "region": "South America",
+      "active": true,
+      "population": 19600000,
+      "media_type": "country",
+      "frontAttribute": "data-iterate",
+      "details": {
+        "currency": "CLP",
+        "languages": ["Spanish"],
+        "coordinates": { "lat": -35.6751, "lng": -71.543 }
+      }
+    },
+    {
+      "id": 10,
+      "name": "New Zealand",
+      "title": "New Zealand",
+      "countryCode": "NZ",
+      "capital": "Wellington",
+      "continent": "Oceania",
+      "region": "Australia and New Zealand",
+      "active": true,
+      "population": 5200000,
+      "media_type": "country",
+      "frontAttribute": "data-src",
+      "details": {
+        "currency": "NZD",
+        "languages": ["English", "Maori"],
+        "coordinates": { "lat": -40.9006, "lng": 174.886 }
+      }
+    },
+    {
+      "id": 11,
+      "name": "India",
+      "title": "India",
+      "countryCode": "IN",
+      "capital": "New Delhi",
+      "continent": "Asia",
+      "region": "Southern Asia",
+      "active": true,
+      "population": 1430000000,
+      "media_type": "country",
+      "frontAttribute": "data-srcjoin",
+      "details": {
+        "currency": "INR",
+        "languages": ["Hindi", "English"],
+        "coordinates": { "lat": 20.5937, "lng": 78.9629 }
+      }
+    },
+    {
+      "id": 12,
+      "name": "Morocco",
+      "title": "Morocco",
+      "countryCode": "MA",
+      "capital": "Rabat",
+      "continent": "Africa",
+      "region": "Northern Africa",
+      "active": false,
+      "population": 38000000,
+      "media_type": "country",
+      "frontAttribute": "data-replace",
+      "details": {
+        "currency": "MAD",
+        "languages": ["Arabic", "Berber"],
+        "coordinates": { "lat": 31.7917, "lng": -7.0926 }
+      }
+    },
+    {
+      "id": 13,
+      "name": "Iceland",
+      "title": "Iceland",
+      "countryCode": "IS",
+      "capital": "Reykjavik",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "active": true,
+      "population": 390000,
+      "media_type": "country",
+      "frontAttribute": "data-loader",
+      "details": {
+        "currency": "ISK",
+        "languages": ["Icelandic"],
+        "coordinates": { "lat": 64.9631, "lng": -19.0208 }
+      }
+    },
+    {
+      "id": 14,
+      "name": "Mexico",
+      "title": "Mexico",
+      "countryCode": "MX",
+      "capital": "Mexico City",
+      "continent": "North America",
+      "region": "Central America",
+      "active": true,
+      "population": 130000000,
+      "media_type": "country",
+      "frontAttribute": "data-wait",
+      "details": {
+        "currency": "MXN",
+        "languages": ["Spanish"],
+        "coordinates": { "lat": 23.6345, "lng": -102.5528 }
+      }
+    },
+    {
+      "id": 15,
+      "name": "Singapore",
+      "title": "Singapore",
+      "countryCode": "SG",
+      "capital": "Singapore",
+      "continent": "Asia",
+      "region": "South-eastern Asia",
+      "active": true,
+      "population": 5900000,
+      "media_type": "country",
+      "frontAttribute": "data-ttl",
+      "details": {
+        "currency": "SGD",
+        "languages": ["English", "Malay", "Mandarin", "Tamil"],
+        "coordinates": { "lat": 1.3521, "lng": 103.8198 }
+      }
+    }
+  ],
+  "regions": [
+    {
+      "name": "Europe",
+      "countries": [
+        {
+          "name": "Sweden",
+          "details": {
+            "capital": { "name": "Stockholm", "timezone": "Europe/Stockholm" },
+            "neighbors": ["Norway", "Finland"]
+          }
+        },
+        {
+          "name": "Portugal",
+          "details": {
+            "capital": { "name": "Lisbon", "timezone": "Europe/Lisbon" },
+            "neighbors": ["Spain"]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Asia",
+      "countries": [
+        {
+          "name": "Japan",
+          "details": {
+            "capital": { "name": "Tokyo", "timezone": "Asia/Tokyo" },
+            "neighbors": []
+          }
+        },
+        {
+          "name": "India",
+          "details": {
+            "capital": { "name": "New Delhi", "timezone": "Asia/Kolkata" },
+            "neighbors": ["Pakistan", "Nepal", "Bangladesh"]
+          }
+        }
+      ]
+    }
+  ]
 }

@@ -37,7 +37,7 @@
   <section>
     <h2 color="white" zoom="0.9" padding="3rem 0 1rem 0">Basic Example</h2>
     <p>
-      Fetch the complete feature collection and display five items at a time. Use the Preview tab to run this example:
+      Fetch the complete country collection and display five countries at a time. Use the Preview tab to run this example:
     </p>
 
     <nav flexdirection="column" margintop="1.5rem" maxwidth="60rem" minwidth="30vw">
@@ -51,12 +51,12 @@
         <code id="paging-code" bgcolor="white01" color="white" spellcheck="false"
           screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]" whitespace="pre" maxwidth="60rem"
           minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;div id="paging-features"
-  data-src="https://www.front.nu/assets/json/data/dummy.json"
-  data-iterate="dynamic-data-rendering.features"
+  data-src="/assets/json/data/dummy.json"
+  data-iterate="results"
   data-page="1"
   data-pagesize="5"&gt;
   &lt;div padding="0.5rem" borderbottom="1px solid white03"&gt;
-    &lt;b data-get="key"&gt;&lt;/b&gt;
+    &lt;b data-get="name"&gt;&lt;/b&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
