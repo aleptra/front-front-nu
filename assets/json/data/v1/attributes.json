@@ -241,7 +241,7 @@
   "data-onempty": {
     "category": "event",
     "description_short": "Executes actions when the fetched data is empty. Accepts any action expression supported by app.call.",
-    "example": "<div id=\"empty\" hide>No results found</div>\n<div data-src=\"/api/items\" data-iterate=\"items\" data-onempty=\"show:#empty\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div id=\"empty\" hide>No results found</div>\n<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"emptyResults\" data-onempty=\"show:#empty\">\n  <span data-get=\"name\"></span>\n</div>",
     "depends_on": [
       "data-src"
     ],
@@ -291,7 +291,7 @@
   "data-bind": {
     "category": "binding",
     "description_short": "Binds an element directly to a data variable or expression.",
-    "example": "<div data-src=\"/api/user\" data-bind=\"name:#username\">\n  <span id=\"username\"></span>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-bind=\"name:#username\">\n  <span id=\"username\"></span>\n</div>",
     "depends_on": [
       "data-src"
     ],
@@ -315,7 +315,7 @@
   "data-srcjoin": {
     "category": "binding",
     "description_short": "Fetches and merges an additional data source into the same binding context.",
-    "example": "<div data-src=\"/api/users\" data-srcjoin=\"/api/orders\" data-merge=\"orders\" data-iterate=\"users\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-srcjoin=\"/assets/json/data/dummy.json\" data-merge=\"orders\" data-iterate=\"users\">\n  <span data-get=\"name\"></span>\n</div>",
     "depends_on": [
       "data-src"
     ],
@@ -327,7 +327,7 @@
   "data-header": {
     "category": "configuration",
     "description_short": "Sets custom HTTP headers for the data source request.",
-    "example": "<div data-iterate=\"true\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-header=\"X-Demo:attribute-reference\" data-iterate=\"results\">\n  <span data-get=\"name\"></span>\n</div>",
     "depends_on": [
       "data-src"
     ],
@@ -339,7 +339,7 @@
   "data-onsuccess": {
     "category": "event",
     "description_short": "Executes actions when the data source request completes successfully.",
-    "example": "<div data-src=\"/api/items\" data-iterate=\"items\" data-onsuccess=\"hide:#loader\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\" data-onsuccess=\"hide:#loader\">\n  <span data-get=\"name\"></span>\n</div>",
     "depends_on": [
       "data-src"
     ],
@@ -351,7 +351,7 @@
   "data-onerror": {
     "category": "event",
     "description_short": "Executes actions when the data source request fails.",
-    "example": "<div id=\"error\" class=\"red\" hide>Something went wrong!</div>\n<div data-src=\"/api/items\" data-iterate=\"items\" data-onerror=\"show:#error\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div id=\"error\" class=\"red\" hide>Something went wrong!</div>\n<div data-src=\"/assets/json/data/missing.json\" data-onerror=\"show:#error\"></div>",
     "depends_on": [
       "data-src"
     ],
@@ -363,7 +363,7 @@
   "data-onfinish": {
     "category": "event",
     "description_short": "Executes actions when data processing is complete, regardless of success or failure.",
-    "example": "<div data-src=\"/api/items\" data-iterate=\"items\" data-onfinish=\"hide:#loader\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\" data-onfinish=\"hide:#loader\">\n  <span data-get=\"name\"></span>\n</div>",
     "depends_on": [
       "data-src"
     ],
@@ -375,7 +375,7 @@
   "data-ongetload": {
     "category": "event",
     "description_short": "Executes actions when a data-get value finishes loading.",
-    "example": "<code data-src=\"/api/snippet\" data-get=\"code\" data-ongetload=\"syntaxhighlighting--set\"></code>",
+    "example": "<code data-src=\"/assets/json/data/dummy.json\" data-get=\"code\" data-ongetload=\"syntaxhighlighting--set\"></code>",
     "depends_on": [
       "data-get"
     ],
@@ -387,7 +387,7 @@
   "data-wait": {
     "category": "behavior",
     "description_short": "Defines the delay in milliseconds before executing the data request.",
-    "example": "<div data-src=\"/api/items\" data-iterate=\"items\" data-wait=\"500\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\" data-wait=\"500\">\n  <span data-get=\"name\"></span>\n</div>",
     "depends_on": [
       "data-src"
     ],
@@ -399,7 +399,7 @@
   "data-ttl": {
     "category": "configuration",
     "description_short": "Sets cache lifetime (time-to-live) in milliseconds for the bound data source.",
-    "example": "<div data-src=\"/api/items\" data-iterate=\"items\" data-ttl=\"600000\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\" data-ttl=\"600000\">\n  <span data-get=\"name\"></span>\n</div>",
     "depends_on": [
       "data-src"
     ],
@@ -410,7 +410,7 @@
   "data-filteritem": {
     "category": "binding",
     "description_short": "Filters the data array by matching a key to a value.",
-    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\" data-filteritem=\"active:true\" data-filterkey=\"results\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\" data-filteritem=\"active:true\">\n  <span data-get=\"name\"></span>\n</div>",
     "depends_on": [
       "data-src"
     ],
@@ -422,7 +422,7 @@
   "data-filterkey": {
     "category": "binding",
     "description_short": "Specifies which key in the response object to apply the filter on.",
-    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\" data-filteritem=\"active:true\" data-filterkey=\"results\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-filterkey=\"results\" data-filteritem=\"active:true\">\n  <span data-get=\"name\"></span>\n</div>",
     "depends_on": [
       "data-filteritem"
     ],
@@ -461,7 +461,7 @@
   "data-merge": {
     "category": "binding",
     "description_short": "Specifies keys to merge from a joined data source into the primary response.",
-    "example": "<div data-src=\"/api/users\" data-srcjoin=\"/api/orders\" data-merge=\"orders\" data-iterate=\"users\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-srcjoin=\"/assets/json/data/dummy.json\" data-merge=\"orders\" data-iterate=\"users\">\n  <span data-get=\"name\"></span>\n</div>",
     "depends_on": [
       "data-srcjoin"
     ],
@@ -473,7 +473,7 @@
   "data-onstatus": {
     "category": "behavior",
     "description_short": "Shows an element when the response status does not match 200.",
-    "example": "<div id=\"error404\" hide>Server returned an error status</div>\n<div data-src=\"/api/items\" data-iterate=\"items\" data-onstatus=\"(404)/show:#error404\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div id=\"error404\" hide>Server returned an error status</div>\n<div data-src=\"/assets/json/data/missing.json\" data-onstatus=\"(404)/show:#error404\"></div>",
     "depends_on": [
       "data-src"
     ],
@@ -484,7 +484,7 @@
   "data-onkeyempty": {
     "category": "event",
     "description_short": "Executes actions when the resolved iterate key is missing or has no items.",
-    "example": "<div id=\"section\" hide>\n  <ul data-src=\"/api/data\" data-iterate=\"items\" data-onkeyempty=\"hide:#section\">\n    <li data-get=\"name\"></li>\n  </ul>\n</div>",
+    "example": "<div id=\"section\">\n  <ul data-src=\"/assets/json/data/dummy.json\" data-iterate=\"missingItems\" data-onkeyempty=\"hide:#section\">\n    <li data-get=\"name\"></li>\n  </ul>\n</div>",
     "depends_on": [
       "data-iterate"
     ],
@@ -496,7 +496,7 @@
   "data-replace": {
     "category": "binding",
     "description_short": "Transforms values in the response data before rendering.",
-    "example": "<div data-src=\"/api/media\" data-iterate=\"results\" data-replace=\"true\">\n  <span data-get=\"media_type\"></span>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\" data-replace=\"true\">\n  <span data-get=\"media_type\"></span>\n</div>",
     "depends_on": [
       "data-src"
     ],
@@ -507,7 +507,7 @@
   "data-credentials": {
     "category": "configuration",
     "description_short": "Sends cookies and authentication credentials with the data request.",
-    "example": "<div data-src=\"/api/protected\" data-credentials=\"true\" data-iterate=\"items\">\n  <span data-get=\"name\"></span>\n</div>",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-credentials=\"true\" data-iterate=\"results\">\n  <span data-get=\"name\"></span>\n</div>",
     "depends_on": [
       "data-src"
     ],

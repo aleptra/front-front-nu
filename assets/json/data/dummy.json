@@ -1,4 +1,15 @@
 {
+  "name": "Front Demo User",
+  "code": "<span>Front demo snippet</span>",
+  "emptyResults": [],
+  "users": [
+    { "id": 1, "name": "Mina Patel", "role": "editor" },
+    { "id": 2, "name": "Jon Bell", "role": "viewer" }
+  ],
+  "orders": [
+    { "id": 301, "userId": 1, "total": 89.5, "status": "paid" },
+    { "id": 302, "userId": 2, "total": 34.75, "status": "pending" }
+  ],
   "results": [
     {
       "id": 1,
