@@ -2,7 +2,8 @@
 <title globalize-get>Modules</title>
 <template srcdoc="../../../index" src="../../../_templates/documentation"></template>
 <article color="silver">
-  <nav class="pointer" zoom="0.9" padding="0" margintop="-1.2rem" marginbottom="2.2rem" color="white" screen-xxs="hide" screen-xl="show">
+  <nav class="pointer" zoom="0.9" padding="0" margintop="-1.2rem" marginbottom="2.2rem" color="white" screen-xxs="hide"
+    screen-xl="show">
     <ol padding="0">
       <li><a href="documentation" globalize-get>Documentation</a></li>
       <li><a href="documentation/fundamentals" globalize-get>Fundamentals</a></li>
@@ -29,17 +30,16 @@
       in your application.
     </p>
 
-    <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
-      <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
-          bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
-          style="flex: 1">FTML (index.html)</span><button bgcolor="unset" mouseover="color:[lightgray]"
-          mouseout="color:[unset]" zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0"
-          click="clipboard--copy:*code[1]" onclicked="settext:[✓ Copied]"
-          onsettext="rundelay[2000]:reset">Copy</button></small>
-      <code bgcolor="white01" color="white"
-        bindglobal="ma:frontVersion.major;mi:frontVersion.minor;pa:frontVersion.patch" spellcheck="false"
-        screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]" whitespace="pre" maxwidth="60rem" minwidth="30vw"
-        font="monospace" syntaxhighlighting--set>&lt;!doctype html&gt;
+    <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h5>
+    <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
+        bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+        style="flex: 1">FTML (index.html)</span><button bgcolor="unset" mouseover="color:[lightgray]"
+        mouseout="color:[unset]" zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0"
+        click="clipboard--copy:*code[1]" onclicked="settext:[✓ Copied]"
+        onsettext="rundelay[2000]:reset">Copy</button></small>
+    <code bgcolor="white01" color="white" bindglobal="ma:frontVersion.major;mi:frontVersion.minor;pa:frontVersion.patch"
+      spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]" whitespace="pre" maxwidth="60rem"
+      minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;!doctype html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;!-- Load Front with navigate and animate modules --&gt;
@@ -54,10 +54,10 @@
     &lt;/main&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code>
-      <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
-        Note: Separate multiple modules using semicolons (<span bgcolor="white02" color="white"
-          font="monospace">;</span>). Avoid using commas or spaces.
-      </div>
+    <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
+      Note: Separate multiple modules using semicolons (<span bgcolor="white02" color="white"
+        font="monospace">;</span>). Avoid using commas or spaces.
+    </div>
   </section>
 
   <section>
@@ -69,25 +69,24 @@
       This sets default options for the module across the application.
     </p>
 
-    <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
-      <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
-          bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
-          style="flex: 1">FTML (index.html)</span><button bgcolor="unset" mouseover="color:[lightgray]"
-          mouseout="color:[unset]" zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0"
-          click="clipboard--copy:*code[1]" onclicked="settext:[✓ Copied]"
-          onsettext="rundelay[2000]:reset">Copy</button></small>
-      <code bgcolor="white01" color="white"
-        bindglobal="ma:frontVersion.major;mi:frontVersion.minor;pa:frontVersion.patch" spellcheck="false"
-        screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]" whitespace="pre" maxwidth="60rem" minwidth="30vw"
-        font="monospace" syntaxhighlighting--set>&lt;script
+    <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h5>
+    <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
+        bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+        style="flex: 1">FTML (index.html)</span><button bgcolor="unset" mouseover="color:[lightgray]"
+        mouseout="color:[unset]" zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0"
+        click="clipboard--copy:*code[1]" onclicked="settext:[✓ Copied]"
+        onsettext="rundelay[2000]:reset">Copy</button></small>
+    <code bgcolor="white01" color="white" bindglobal="ma:frontVersion.major;mi:frontVersion.minor;pa:frontVersion.patch"
+      spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]" whitespace="pre" maxwidth="60rem"
+      minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;script
   src="https://cdn.front.nu/{ma}.{mi}.{pa}/front.js"
   module="navigate"
   navigate-conf="target:main;preloader:#navloader;startpage:my-app"&gt;
 &lt;/script&gt;</code>
-      <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
-        Note: Not all modules require configuration. Some modules like <b>animate</b> are configured
-        entirely through per-element attributes.
-      </div>
+    <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
+      Note: Not all modules require configuration. Some modules like <b>animate</b> are configured
+      entirely through per-element attributes.
+    </div>
   </section>
 
   <section>
@@ -98,14 +97,14 @@
       These are placed on individual elements to trigger module behavior.
     </p>
 
-    <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h3>
-      <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
-          bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
-          style="flex: 1">FTML</span><button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]"
-          zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0" click="clipboard--copy:*code[2]"
-          onclicked="settext:[✓ Copied]" onsettext="rundelay[2000]:reset">Copy</button></small>
-      <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
-        whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;!-- Animate module: configure per element --&gt;
+    <h5 zoom="0.8" color="white" padding="3rem 0 1rem 0">Example:</h5>
+    <small bgcolor="white02" maxwidth="60rem" minwidth="30vw" margintop="1.5rem" height="1.8rem"><span
+        bgimage="favicon.ico 16px no-repeat 10px" flex="1" lineheight="1.85rem" paddingleft="2.2rem"
+        style="flex: 1">FTML</span><button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]"
+        zoom="0.9" padding="0.45rem 0.6rem" minheight="0" margin="0" click="clipboard--copy:*code[2]"
+        onclicked="settext:[✓ Copied]" onsettext="rundelay[2000]:reset">Copy</button></small>
+    <code bgcolor="white01" color="white" spellcheck="false" screen-xs="padding:[1rem]" screen-md="padding:[1.5rem]"
+      whitespace="pre" maxwidth="60rem" minwidth="30vw" font="monospace" syntaxhighlighting--set>&lt;!-- Animate module: configure per element --&gt;
 &lt;div id="box" animate-start
   animate-key="0;50;100"
   animate-transform="scale(1);scale(1.5);scale(1)"

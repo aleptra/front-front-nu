@@ -3,7 +3,8 @@
 <template srcdoc="../../../../index" src="../../../../_templates/documentation"></template>
 
 <article color="silver">
-  <nav class="pointer" zoom="0.9" padding="0" margintop="-1.2rem" marginbottom="2.2rem" color="white" screen-xxs="hide" screen-xl="show">
+  <nav class="pointer" zoom="0.9" padding="0" margintop="-1.2rem" marginbottom="2.2rem" color="white" screen-xxs="hide"
+    screen-xl="show">
     <ol padding="0">
       <li><a href="documentation" globalize-get>Documentation</a></li>
       <li><a href="#" globalize-get>Reference</a></li>
@@ -16,8 +17,9 @@
     runorder="bindglobal;settext;globalize-get"></h1>
 
   <form id="filterForm">
-    <input id="filter" type="text" placeholder="Filter" filtersearch--input onvaluechange="filtersearch--run:#attributeTable"
-      width="15rem" padding="0.75rem 1rem" bgcolor="white01" radius="0.25rem" autocomplete="off" focus>
+    <input id="filter" type="text" placeholder="Filter" filtersearch--input
+      onvaluechange="filtersearch--run:#attributeTable" width="15rem" padding="0.75rem 1rem" bgcolor="white01"
+      radius="0.25rem" autocomplete="off" focus>
 
     <small margintop="1rem" block>Filter by type</small>
     <div flex gap="1rem" margintop="0.5rem">
@@ -39,12 +41,12 @@
       <hr bgcolor="white" margintop="3rem">
       <b>No FTML attributes match your filter.</b>
       <br>
-      <a screen-xxs="transform:[scale(1)]" screen-xl="transform:[scale(1.1)]"
-        minheight="2.0rem" radius="1rem" paddingleft="1.3rem" paddingright="1.3rem"
-        lineheight="2.5" bgcolor="white" color="black" fontsize="90%" margintop="2rem"
-        click="reset:#filterForm;filtersearch--run:#attributeTable" onclicked="focus:#filter">Clear filter</a>
+      <a screen-xxs="transform:[scale(1)]" screen-xl="transform:[scale(1.1)]" minheight="2.0rem" radius="1rem"
+        paddingleft="1.3rem" paddingright="1.3rem" lineheight="2.5" bgcolor="white" color="black" fontsize="90%"
+        margintop="2rem" click="reset:#filterForm;filtersearch--run:#attributeTable" onclicked="focus:#filter">Clear
+        filter</a>
     </div>
-    <table color="white" class="mt1" width="100%" data-src="assets/json/data/references.json" data-ttl="0"
+    <table color="white" class="mt1" width="100%" data-src="/assets/json/data/references.json" data-ttl="0"
       id="attributeTable" filtersearch--onempty="#attributeTableEmpty">
 
       <tr id="title5">
