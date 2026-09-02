@@ -123,6 +123,11 @@
       "bordertop"
     ]
   },
+  "bottom": {
+    "category": "style",
+    "description_short": "Sets the bottom position of the element.",
+    "example": "<div relative><span absolute bottom=\"0\">Bottom aligned</span></div>"
+  },
   "blur": {
     "category": "behavior",
     "description_short": "Removes focus from the element.",
@@ -228,6 +233,15 @@
     "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\">User info here</div>",
     "depends_on": [
       "data-src"
+    ]
+  },
+  "data-page": {
+    "category": "binding",
+    "description_short": "Sets the current page number for client-side paging. Pages start at 1.",
+    "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\" data-page=\"1\" data-pagesize=\"5\"></div>",
+    "depends_on": [
+      "data-src",
+      "data-iterate"
     ]
   },
   "data-loader": {
@@ -1308,6 +1322,11 @@
       "stop"
     ],
     "example": "<div id=\"anim\" start>Running</div>"
+  },
+  "sticky": {
+    "category": "style",
+    "description_short": "Sets the element to sticky positioning.",
+    "example": "<div sticky top=\"0\">Sticky content</div>"
   },
   "stop": {
     "category": "behavior",

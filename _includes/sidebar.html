@@ -1,8 +1,8 @@
-<nav class="sidebar white-" bgcolor="black" zindex="0" flexdirection="row" wordbreak="normal">
+<nav class="sidebar white-" bgcolor="black" zindex="0" flexdirection="row" wordbreak="normal" storage-bindlocal="front:version" bindquery="a:a">
   <!-- Backdrop -->
   <!-- End Backdrop -->
   <div padding="2%" screen-xs="flex;fontsize:[70%]" screen-md="fontsize:[90%]" screen-lg="hide" align="center">
-    <a href="documentation" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href" onbindglobalchange="rerun:if"
+    <a href="documentation?version={version:1.1.0}" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href" onbindglobalchange="rerun:if"
         if="([{href}]~[/documentation])/color:[white]?color:[#303030]">●</i>Documentation</a>
     <a href="showcase" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href" onbindglobalchange="rerun:if"
         if="([{href}]~[/showcase])/color:[white]?color:[#303030]">●</i>Showcase</a>
@@ -11,7 +11,7 @@
     <a href="playground.html" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href" onbindglobalchange="rerun:if"
         if="([{href}]~[/playground])/color:[white]?color:[#303030]">●</i>Playground</a>
   </div>
-  <form width="inherit" screen-xs="padding:[0]" screen-sm="padding:[0]" screen-md="padding:[0 2.5rem 0 2.5rem]"
+  <form id="docVersionForm" target="_top" width="inherit" screen-xs="padding:[0]" screen-sm="padding:[0]" screen-md="padding:[0 2.5rem 0 2.5rem]"
     screen-lg="padding:[0px 2rem 0rem 2rem]" borderleft="1px solid rgb(32, 32, 32)" form-filter="true">
     <div screen-xs="show" screen-lg="hide">
       <div flex flexdirection="row" alignitems="center" height="4rem" width="100%">
@@ -22,9 +22,21 @@
       <input id="query2" bgcolor="white01" width="100%" height="3rem" margintop="1rem" padding="1rem" bindvar=":" type="text"
         placeholder="Search in documentation ..." autocomplete="off">
     </div>
-    <details open paddingtop="2rem" lineheight="2">
+    <hr color="gray" margin="1.5rem 0 0 0">
+    <div flex flexdirection="row" alignitems="center" padding="0rem 1.5rem 0rem 1.5rem">
+      <b color="white" width="unset">V</b>
+      <select id="docVersion" name="version" width="100%" height="unset" padding=".6rem .5rem"
+        bgcolor="black" color="white" border="0" state="docVersion" radius="0">
+        <option value="1001000" selected>1.1.0</option>
+        <option value="1000000">1.0.0</option>
+      </select>
+      <input type="hidden" name="a" bindquery="a:a" setvalue="{a}" runorder="bindquery;setvalue">
+    </div>
+
+    <hr color="gray">
+    <details open lineheight="2">
       <summary globalize-get bold>Getting Started</summary>
-      <a margintop="1rem" href="documentation" globalize-get bindglobal="title:title"
+      <a href="documentation" globalize-get bindglobal="title:title"
         if="([{title}]:[Introduction])/bold">Introduction</a>
       <a href="documentation/installation" globalize-get bindglobal="href:href"
         if="([{href}]~[/documentation/installation])/bold">Installation</a>

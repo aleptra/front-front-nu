@@ -3,265 +3,341 @@
     "core": [
       {
         "function": "app.call",
-        "description": "Executes a command string. Supports chaining multiple commands with semicolons."
+        "description": "Executes a command string. Supports chaining multiple commands with semicolons.",
+        "since": "1000000"
       },
       {
         "function": "app.click",
-        "description": "Simulates a click or double-click event on a DOM element."
+        "description": "Simulates a click or double-click event on a DOM element.",
+        "since": "1000000"
       },
       {
         "function": "app.disable",
-        "description": "Controls document visibility during loading."
+        "description": "Controls document visibility during loading.",
+        "since": "1000000"
       },
       {
         "function": "app.exec",
-        "description": "Executes a function by dot-notation path with arguments."
+        "description": "Executes a function by dot-notation path with arguments.",
+        "since": "1000000"
       },
       {
         "function": "app.load",
-        "description": "Initializes the Front framework and sets up the window load listener."
+        "description": "Initializes the Front framework and sets up the window load listener.",
+        "since": "1000000"
       },
       {
         "function": "app.start",
-        "description": "Handles full app initialization: config, event listeners, and asset loading."
+        "description": "Handles full app initialization: config, event listeners, and asset loading.",
+        "since": "1000000"
+      },
+      {
+        "function": "app.resetStyles",
+        "description": "Injects a global CSS reset when resetStyle is enabled.",
+        "since": "1001000"
       },
       {
         "function": "app.wait",
-        "description": "Waits for a specified duration in milliseconds before executing a callback."
+        "description": "Waits for a specified duration in milliseconds before executing a callback.",
+        "since": "1000000"
       }
     ],
     "element": [
       {
         "function": "app.element.add.class",
-        "description": "Adds one or more CSS classes to an element."
+        "description": "Adds one or more CSS classes to an element.",
+        "since": "1000000"
       },
       {
         "function": "app.element.extractbracketvalues",
-        "description": "Extracts values inside square brackets from a string. Handles nesting."
+        "description": "Extracts values inside square brackets from a string. Handles nesting.",
+        "since": "1000000"
       },
       {
         "function": "app.element.find",
-        "description": "Finds elements within a parent node by CSS selector."
+        "description": "Finds elements within a parent node by CSS selector.",
+        "since": "1000000"
       },
       {
         "function": "app.element.get",
-        "description": "Gets the value/property of an element. Resolves correct property by tag (value, src, textContent, etc.)."
+        "description": "Gets the value/property of an element. Resolves correct property by tag (value, src, textContent, etc.).",
+        "since": "1000000"
       },
       {
         "function": "app.element.getclosestwithattr",
-        "description": "Finds the closest ancestor with a specific attribute."
+        "description": "Finds the closest ancestor with a specific attribute.",
+        "since": "1000000"
       },
       {
         "function": "app.element.getpropertybypath",
-        "description": "Retrieves a nested property from an object using dot-separated path."
+        "description": "Retrieves a nested property from an object using dot-separated path.",
+        "since": "1000000"
+      },
+      {
+        "function": "app.element.getrelativepath",
+        "description": "Removes a parent path prefix from a nested property path.",
+        "since": "1001000"
       },
       {
         "function": "app.element.gettaglink",
-        "description": "Finds the closest ancestor that is an anchor, button, or label."
+        "description": "Finds the closest ancestor that is an anchor, button, or label.",
+        "since": "1000000"
       },
       {
         "function": "app.element.onchange",
-        "description": "Handles onchange callbacks by looking for on[attr]change attributes."
+        "description": "Handles onchange callbacks by looking for on[attr]change attributes.",
+        "since": "1000000"
       },
       {
         "function": "app.element.onload",
-        "description": "Executes onload actions for an element or NodeList."
+        "description": "Executes onload actions for an element or NodeList.",
+        "since": "1000000"
       },
       {
         "function": "app.element.onsubmit",
-        "description": "Handles form submit events, executing onformsubmit attribute actions."
+        "description": "Handles form submit events, executing onformsubmit attribute actions.",
+        "since": "1000000"
       },
       {
         "function": "app.element.operate",
-        "description": "Applies arithmetic operations (+, -, *, /) to numeric values in attributes or query params."
+        "description": "Applies arithmetic operations (+, -, *, /) to numeric values in attributes or query params.",
+        "since": "1000000"
       },
       {
         "function": "app.element.resolvebindingvalue",
-        "description": "Resolves a binding value, checking for defaults in {variable:default} syntax."
+        "description": "Resolves a binding value, checking for defaults in {variable:default} syntax.",
+        "since": "1000000"
       },
       {
         "function": "app.element.resolvecall",
-        "description": "Resolves the call context of an element into a normalized call structure."
+        "description": "Resolves the call context of an element into a normalized call structure.",
+        "since": "1000000"
       },
       {
         "function": "app.element.runonevent",
-        "description": "Checks and runs on[event] handlers after an attribute or action executes."
+        "description": "Checks and runs on[event] handlers after an attribute or action executes.",
+        "since": "1000000"
       },
       {
         "function": "app.element.saveoriginalvalues",
-        "description": "Saves the original state of an element for later reset operations."
+        "description": "Saves the original state of an element for later reset operations.",
+        "since": "1000000"
       },
       {
         "function": "app.element.select",
-        "description": "Selects elements by CSS selector. Supports [index] suffix for specific matches."
+        "description": "Selects elements by CSS selector. Supports [index] suffix for specific matches.",
+        "since": "1000000"
       },
       {
         "function": "app.element.set",
-        "description": "Sets a value or attribute on an element. Handles settext, sethtml, setattr, setvalue, sethref, setsrc."
+        "description": "Sets a value or attribute on an element. Handles settext, sethtml, setattr, setvalue, sethref, setsrc.",
+        "since": "1000000"
       },
       {
         "function": "app.element.toggle.class",
-        "description": "Toggles one or more CSS classes on an element."
+        "description": "Toggles one or more CSS classes on an element.",
+        "since": "1000000"
+      },
+      {
+        "function": "dom.placeholder",
+        "description": "Displays placeholder text on empty non-form elements.",
+        "since": "1001000"
       }
     ],
     "parser": [
       {
         "function": "app.parse.attribute",
-        "description": "Parses a semicolon-separated string into key-value pairs split at the first colon."
+        "description": "Parses a semicolon-separated string into key-value pairs split at the first colon.",
+        "since": "1000000"
       },
       {
         "function": "app.parse.callstring",
-        "description": "Parses a Front command string into a structured object with function name, elements, values, and delay settings."
+        "description": "Parses a Front command string into a structured object with function name, elements, values, and delay settings.",
+        "since": "1000000"
       },
       {
         "function": "app.parse.json",
-        "description": "Safely parses a JSON string. Returns object with value on success, or errorName/errorMessage on failure."
+        "description": "Safely parses a JSON string. Returns object with value on success, or errorName/errorMessage on failure.",
+        "since": "1000000"
       },
       {
         "function": "app.parse.text",
-        "description": "Parses an HTML string into a DOM node. Extracts html/body attributes and doctype."
+        "description": "Parses an HTML string into a DOM node. Extracts html/body attributes and doctype.",
+        "since": "1000000"
       }
     ],
     "variables": [
       {
         "function": "app.variables.reset.attributes",
-        "description": "Resets all element attributes to their original captured values."
+        "description": "Resets all element attributes to their original captured values.",
+        "since": "1000000"
       },
       {
         "function": "app.variables.reset.content",
-        "description": "Resets element innerHTML to its original value."
+        "description": "Resets element innerHTML to its original value.",
+        "since": "1000000"
       },
       {
         "function": "app.variables.update.attributes",
-        "description": "Replaces {variable} and {variable:default} patterns in element attributes."
+        "description": "Replaces {variable} and {variable:default} patterns in element attributes.",
+        "since": "1000000"
       },
       {
         "function": "app.variables.update.content",
-        "description": "Replaces {variable} patterns in element text nodes."
+        "description": "Replaces {variable} patterns in element text nodes.",
+        "since": "1000000"
       }
     ],
     "events": [
       {
         "function": "app.listeners.add",
-        "description": "Adds an event listener, removing any existing duplicate first."
+        "description": "Adds an event listener, removing any existing duplicate first.",
+        "since": "1000000"
       },
       {
         "function": "app.listeners.change",
-        "description": "Handles value change events, triggering onvaluechange, onstatevaluechange, and onselectchange callbacks."
+        "description": "Handles value change events, triggering onvaluechange, onstatevaluechange, and onselectchange callbacks.",
+        "since": "1000000"
       },
       {
         "function": "app.listeners.dispatch",
-        "description": "Dispatches a custom event on the window with optional detail data."
+        "description": "Dispatches a custom event on the window with optional detail data.",
+        "since": "1000000"
       },
       {
         "function": "app.listeners.remove",
-        "description": "Removes an event listener from an element."
+        "description": "Removes an event listener from an element.",
+        "since": "1000000"
       }
     ],
     "state": [
       {
         "function": "app.caches.get",
-        "description": "Retrieves cached data from local, session, cookie, or window memory."
+        "description": "Retrieves cached data from local, session, cookie, or window memory.",
+        "since": "1000000"
       },
       {
         "function": "app.caches.remove",
-        "description": "Removes a cached entry from local or session storage."
+        "description": "Removes a cached entry from local or session storage.",
+        "since": "1000000"
       },
       {
         "function": "app.caches.set",
-        "description": "Stores data in a cache mechanism with optional format parsing and TTL."
+        "description": "Stores data in a cache mechanism with optional format parsing and TTL.",
+        "since": "1000000"
       },
       {
         "function": "app.caches.validate",
-        "description": "Validates a cached entry against its TTL. Returns data if valid, removes if expired."
+        "description": "Validates a cached entry against its TTL. Returns data if valid, removes if expired.",
+        "since": "1001000"
       },
       {
         "function": "app.globals.get",
-        "description": "Gets the value of a global variable."
+        "description": "Gets the value of a global variable.",
+        "since": "1000000"
       },
       {
         "function": "app.globals.refresh",
-        "description": "Refreshes global variables and updates all live-bound elements via bindglobal."
+        "description": "Refreshes global variables and updates all live-bound elements via bindglobal.",
+        "since": "1000000"
       },
       {
         "function": "app.globals.set",
-        "description": "Sets a global variable accessible throughout the application."
+        "description": "Sets a global variable accessible throughout the application.",
+        "since": "1000000"
       }
     ],
     "rendering": [
       {
         "function": "app.attributes.run",
-        "description": "Runs FTML attribute processing on elements matching a selector. The core rendering engine."
+        "description": "Runs FTML attribute processing on elements matching a selector. The core rendering engine.",
+        "since": "1000000"
       },
       {
         "function": "app.attributes.rundeferred",
-        "description": "Executes deferred attributes (like clone) that depend on a fully processed DOM."
+        "description": "Executes deferred attributes (like clone) that depend on a fully processed DOM.",
+        "since": "1000000"
       },
       {
         "function": "app.templates.render",
-        "description": "Renders loaded templates into the document structure (header, aside, main, footer)."
+        "description": "Renders loaded templates into the document structure (header, aside, main, footer).",
+        "since": "1000000"
       },
       {
         "function": "app.templates.resolvebase",
-        "description": "Resolves relative src paths in HTML by prepending the base href."
+        "description": "Resolves relative src paths in HTML by prepending the base href.",
+        "since": "1000000"
       }
     ],
     "network": [
       {
         "function": "app.assets.get.extensions",
-        "description": "Loads all modules and plugins by injecting script tags."
+        "description": "Loads all modules and plugins by injecting script tags.",
+        "since": "1000000"
       },
       {
         "function": "app.assets.get.templates",
-        "description": "Loads template HTML files via XHR for multi-page rendering."
+        "description": "Loads template HTML files via XHR for multi-page rendering.",
+        "since": "1000000"
       },
       {
         "function": "app.assets.get.vars",
-        "description": "Loads variable JSON files from the configured varsDir."
+        "description": "Loads variable JSON files from the configured varsDir.",
+        "since": "1000000"
       },
       {
         "function": "app.assets.load",
-        "description": "Initiates loading of all application assets (extensions, vars, or templates)."
+        "description": "Initiates loading of all application assets (extensions, vars, or templates).",
+        "since": "1000000"
       },
       {
         "function": "app.assets.set",
-        "description": "Parses script element attributes to determine modules, plugins, and vars to load."
+        "description": "Parses script element attributes to determine modules, plugins, and vars to load.",
+        "since": "1000000"
       },
       {
         "function": "app.xhr.finalize",
-        "description": "Checks if all assets are loaded and finalizes the app by running attributes and showing the page."
+        "description": "Checks if all assets are loaded and finalizes the app by running attributes and showing the page.",
+        "since": "1000000"
       },
       {
         "function": "app.xhr.request",
-        "description": "Creates and sends an XHR request with caching, DOM updates, loaders, and callbacks."
+        "description": "Creates and sends an XHR request with caching, DOM updates, loaders, and callbacks.",
+        "since": "1000000"
       }
     ],
     "configuration": [
       {
         "function": "app.config.get",
-        "description": "Retrieves config from an element's conf attribute, merged with standard defaults."
+        "description": "Retrieves config from an element's conf attribute, merged with standard defaults.",
+        "since": "1000000"
       },
       {
         "function": "app.config.set",
-        "description": "Applies global configuration from the script element to the app object."
+        "description": "Applies global configuration from the script element to the app object.",
+        "since": "1000000"
       }
     ],
     "utility": [
       {
         "function": "app.log.error",
-        "description": "Logs errors to console when debugging is enabled."
+        "description": "Logs errors to console when debugging is enabled.",
+        "since": "1000000"
       },
       {
         "function": "app.log.info",
-        "description": "Logs information to console when debugging is enabled."
+        "description": "Logs information to console when debugging is enabled.",
+        "since": "1000000"
       },
       {
         "function": "app.log.warn",
-        "description": "Logs warnings to console when debugging is enabled."
+        "description": "Logs warnings to console when debugging is enabled.",
+        "since": "1000000"
       },
       {
         "function": "app.querystrings.get",
-        "description": "Gets a query string parameter value from a URL or the current page."
+        "description": "Gets a query string parameter value from a URL or the current page.",
+        "since": "1000000"
       }
     ]
   }

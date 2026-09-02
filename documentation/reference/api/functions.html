@@ -14,6 +14,7 @@
   <h1 color="white" zoom="0.9" bindglobal="title:title" settext="{title}" globalize-get marginbottom="2rem"
     runorder="bindglobal;settext;globalize-get"></h1>
   <form>
+    <!--<strong state="docVersion">{state}</strong>-->
     <input id="filter" type="text" placeholder="Filter" onvaluechange="filtersearch--run:#functionTable" width="15rem"
       padding="0.75rem 1rem" bgcolor="white01" radius="0.25rem" autocomplete="off" focus>
   </form>
@@ -27,7 +28,10 @@
           <hr color="darkgray" margin="0.5rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="function.core">
+      <tbody valign="top" class="z09" data-iterate="function.core"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#functionTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
           filtersearch--count="countCore" if="([{countCore}]:[0])/hide:#titleCore?show:#titleCore">
           <td data-get="function"></td>
@@ -40,7 +44,10 @@
           <hr color="darkgray" margin="0.5rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="function.element">
+      <tbody valign="top" class="z09" data-iterate="function.element"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#functionTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
           filtersearch--count="countElement" if="([{countElement}]:[0])/hide:#titleElement?show:#titleElement">
           <td data-get="function"></td>
@@ -53,7 +60,10 @@
           <hr color="darkgray" margin="0.5rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="function.parser">
+      <tbody valign="top" class="z09" data-iterate="function.parser"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#functionTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
           filtersearch--count="countParser" if="([{countParser}]:[0])/hide:#titleParser?show:#titleParser">
           <td data-get="function"></td>
@@ -66,7 +76,10 @@
           <hr color="darkgray" margin="0.5rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="function.variables">
+      <tbody valign="top" class="z09" data-iterate="function.variables"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#functionTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
           filtersearch--count="countVariables" if="([{countVariables}]:[0])/hide:#titleVariables?show:#titleVariables">
           <td data-get="function"></td>
@@ -79,7 +92,10 @@
           <hr color="darkgray" margin="0.5rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="function.events">
+      <tbody valign="top" class="z09" data-iterate="function.events"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#functionTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
           filtersearch--count="countEvents" if="([{countEvents}]:[0])/hide:#titleEvents?show:#titleEvents">
           <td data-get="function"></td>
@@ -92,7 +108,10 @@
           <hr color="darkgray" margin="0.5rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="function.state">
+      <tbody valign="top" class="z09" data-iterate="function.state"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#functionTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
           filtersearch--count="countState" if="([{countState}]:[0])/hide:#titleState?show:#titleState">
           <td data-get="function"></td>
@@ -105,7 +124,10 @@
           <hr color="darkgray" margin="0.5rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="function.rendering">
+      <tbody valign="top" class="z09" data-iterate="function.rendering"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#functionTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
           filtersearch--count="countRendering" if="([{countRendering}]:[0])/hide:#titleRendering?show:#titleRendering">
           <td data-get="function"></td>
@@ -118,7 +140,10 @@
           <hr color="darkgray" margin="0.5rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="function.network">
+      <tbody valign="top" class="z09" data-iterate="function.network"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#functionTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
           filtersearch--count="countNetwork" if="([{countNetwork}]:[0])/hide:#titleNetwork?show:#titleNetwork">
           <td data-get="function"></td>
@@ -131,7 +156,10 @@
           <hr color="darkgray" margin="0.5rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="function.configuration">
+      <tbody valign="top" class="z09" data-iterate="function.configuration"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#functionTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
           filtersearch--count="countConfiguration"
           if="([{countConfiguration}]:[0])/hide:#titleConfiguration?show:#titleConfiguration">
@@ -145,7 +173,10 @@
           <hr color="darkgray" margin="0.5rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="function.utility">
+      <tbody valign="top" class="z09" data-iterate="function.utility"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#functionTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
           filtersearch--count="countUtility" if="([{countUtility}]:[0])/hide:#titleUtility?show:#titleUtility">
           <td data-get="function"></td>

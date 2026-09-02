@@ -17,6 +17,7 @@
     runorder="bindglobal;settext;globalize-get"></h1>
 
   <form id="filterForm">
+    <!--<strong state="docVersion">{state}</strong>-->
     <input id="filter" type="text" placeholder="Filter" filtersearch--input
       onvaluechange="filtersearch--run:#attributeTable" width="15rem" padding="0.75rem 1rem" bgcolor="white01"
       radius="0.25rem" autocomplete="off" focus>
@@ -55,7 +56,8 @@
           <hr bgcolor="rgba(255,255,255, .2)" margin="1rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="attribute.interactive">
+      <tbody valign="top" class="z09" data-iterate="attribute.interactive" statebind="s:docVersion"
+        data-filter="since<:[{s}]" onstatebind="rerun:#attributeTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count5"
           if="([{count5}]:[0])/hide:#title5?show:#title5">
           <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute"
@@ -71,7 +73,10 @@
           <hr bgcolor="rgba(255,255,255, .2)" margin="1rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="attribute.content">
+      <tbody valign="top" class="z09" data-iterate="attribute.content"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#attributeTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select
           filtersearch--count="countContent" if="([{countContent}]:[0])/hide:#titleContent?show:#titleContent">
           <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute"
@@ -87,7 +92,10 @@
           <hr bgcolor="rgba(255,255,255, .2)" margin="1rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="attribute.value">
+      <tbody valign="top" class="z09" data-iterate="attribute.value"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#attributeTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count1"
           if="([{count1}]:[0])/hide:#title1?show:#title1">
           <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute"
@@ -103,7 +111,10 @@
           <hr bgcolor="rgba(255,255,255, .2)" margin="1rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="attribute.style">
+      <tbody valign="top" class="z09" data-iterate="attribute.style"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#attributeTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count2"
           if="([{count2}]:[0])/hide:#title2?show:#title2">
           <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute"
@@ -119,7 +130,10 @@
           <hr bgcolor="rgba(255,255,255, .2)" margin="1rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="attribute.event">
+      <tbody valign="top" class="z09" data-iterate="attribute.event"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#attributeTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count3"
           if="([{count3}]:[0])/hide:#title3?show:#title3">
           <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute"
@@ -135,7 +149,10 @@
           <hr bgcolor="rgba(255,255,255, .2)" margin="1rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="attribute.behavior">
+      <tbody valign="top" class="z09" data-iterate="attribute.behavior"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#attributeTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count4"
           if="([{count4}]:[0])/hide:#title4?show:#title4">
           <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute"
@@ -151,7 +168,10 @@
           <hr bgcolor="rgba(255,255,255, .2)" margin="1rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="attribute.binding">
+      <tbody valign="top" class="z09" data-iterate="attribute.binding"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#attributeTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count8"
           if="([{count8}]:[0])/hide:#title8?show:#title8">
           <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute"
@@ -167,7 +187,10 @@
           <hr bgcolor="rgba(255,255,255, .2)" margin="1rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="attribute.logic">
+      <tbody valign="top" class="z09" data-iterate="attribute.logic"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#attributeTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count6"
           if="([{count6}]:[0])/hide:#title6?show:#title6">
           <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute"
@@ -183,7 +206,10 @@
           <hr bgcolor="rgba(255,255,255, .2)" margin="1rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="attribute.mapping">
+      <tbody valign="top" class="z09" data-iterate="attribute.mapping"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#attributeTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count9"
           if="([{count9}]:[0])/hide:#title9?show:#title9">
           <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute"
@@ -199,7 +225,10 @@
           <hr bgcolor="rgba(255,255,255, .2)" margin="1rem 0">
         </td>
       </tr>
-      <tbody valign="top" class="z09" data-iterate="attribute.configuration">
+      <tbody valign="top" class="z09" data-iterate="attribute.configuration"
+        statebind="s:docVersion"
+        data-filter="since<:[{s}]"
+        onstatebind="rerun:#attributeTable">
         <tr mouseover="bgcolor:[white01]" mouseout="bgcolor:[inherit]" filtersearch--select filtersearch--count="count7"
           if="([{count7}]:[0])/hide:#title7?show:#title7">
           <td><a href="documentation/reference/ftml/attribute/?a={d}" data-set="d:attribute" data-get="attribute"
