@@ -4,62 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script
-    src="https://cdn.front.nu/nightly/front.js"
-    module="globalize;data;navigate;keyboard;screen"
-    plugin="syntaxhighlighting"
-    var="api"
-    conf="debug:false;debugLocalhost:true;varsDir:assets/json/vars;storageKey:code;frontSrcLocal:https://cdn.front.nu/nightly/front.js"
-    globalize-conf="folder:assets/json/locales"
-    syntaxhighlighting-conf="colors:slategray,silver,cornsilk,navajowhite,green"
-    navigate-conf="startpage:experimental/app/note;startpageLocal:app/code">
-  </script>
+  <script src="https://cdn.front.nu/1.1.0/front.js" module="data;screen" plugin="syntaxhighlighting" var="api"
+    conf="storageKey:code;resetStyle:true" syntaxhighlighting-conf="colors:slategray,silver,cornsilk,navajowhite,green">
+    </script>
   <link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/app.css"> <!-- Will be removed in future. -->
-  <link rel="stylesheet" href="https://cdn.front.nu/dist/design/front/theme/front.css"> <!-- Will be removed in future. -->
+  <!-- Will be removed in future. -->
   <title>Code</title>
 </head>
 
-<body class="light">
-  <div id="navloader" class="navloader pa t0 w100 bcblack03 h2px" hide><div class="bcblack08"></div></div>
-  <header class="topbar h4 pr1 bcblack white- white shade1" paddingleft="1rem" bold>Code
-    <button click="sethtml:#preview:#code" class="mr05 fr dark p05 br50 hover-"><i class="icon16">&#9658;</i></button>
+<body margin="0" screen-layout="ultimate" bgcolor="black" color="white" font="arial">
+  <header width="100vw" height="3rem" borderbottom="1px solid gray" flex alignitems="center" padding="1rem 1rem" bold>
+    <h1 flex="1" fontsize="100%" bold bindglobal="title:title">{title}</h1>
+    <button marginleft="auto" paddingtop="0.25rem" border="0" bgcolor="inherit" color="white" click="sethtml:#preview:#code" cursor="pointer"><i>&#9658;</i></button>
   </header>
-
-  <aside resize="horizontal">
-    <code
-      id="code"
-      margin="0"
-      class="markup br0"
-      name="note"
-      bgcolor="black"
-      bindasset="apikey:api.api_key;url:api.notes.url"
-      bindquery="id:id"
-      onvaluechange="data-reqpatch"
-      data-src="{url}?id=eq.{id:1}"
-      data-get="0.note"
-      data-ongetload="sethtml:#preview:#code"
-      data-onfinish="syntaxhighlighting--set:#code"
-      data-onsuccess="sethtml:#preview:#code"
-      data-header="apikey:{apikey}"
-      data-reqpatch="{url}?id=eq.{id:1}&limit=1&order=id"
-      data-enctype="application/json"
-      whitespace="pre-wrap"
-      contenteditable="plaintext-only"
-      spellcheck="false"
-      minheight="100%"
-      minwidth="50vw"
-      keyboard-translate="Tab:  "
-      disable-keyboard-untranslate="Backspace:  "
-      font="monospace"
-    >
-    </code>
+  <aside width="100vw">
+    <iframe width="100%" height="100%" border="0" bgcolor="white" id="preview" src="_includes/preview.html"></iframe>
   </aside>
-  <main>
-    <iframe class="w100 h100 bw0 bcwhite" id="preview" src="includes/preview.html"></iframe>
+  <main resize="horizontal" minwidth="30vw" width="50vw" height="100%">
+    <code id="code" margin="0" name="note" bgcolor="black" padding="1.5rem"
+      bindasset="apikey:api.api_key;url:api.notes.url" bindquery="id:id" onvaluechange="data-reqpatch"
+      data-src="{url}?id=eq.{id:1}" data-get="0.note" data-ongetload="sethtml:#preview:#code"
+      data-onfinish="syntaxhighlighting--set:#code" data-onsuccess="sethtml:#preview:#code"
+      data-header="apikey:{apikey}" data-reqpatch="{url}?id=eq.{id:1}&limit=1&order=id" data-enctype="application/json"
+      whitespace="pre-wrap" contenteditable="plaintext-only" spellcheck="false" minheight="100%" minwidth="100%"
+      keyboard-translate="Tab:  " disable-keyboard-untranslate="Backspace:  " font="12px monospace" lineheight="1.5">
+    </code>
   </main>
-  <aside></aside>
-  <footer></footer>
 </body>
 
 </html>
