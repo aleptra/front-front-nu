@@ -2409,7 +2409,19 @@
     "category": "behavior",
     "module": "screen",
     "description_short": "Sets a layout mode based on the current screen size.",
-    "example": "<div screen-layout=\"mobile:column;desktop:row\">Responsive layout</div>"
+    "example": "<div screen-layout=\"mobile:column;desktop:row\">Responsive layout</div>",
+    "values": [
+      "ultimate",
+      "advanced",
+      "standard",
+      "simple",
+      "centered",
+      "stacked",
+      "fullscreen",
+      "masonry",
+      "2column",
+      "2row"
+    ]
   },
   "screen-xxs": {
     "category": "behavior",
