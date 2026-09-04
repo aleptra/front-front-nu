@@ -2408,8 +2408,8 @@
   "screen-layout": {
     "category": "behavior",
     "module": "screen",
-    "description_short": "Sets a layout mode based on the current screen size.",
-    "example": "<div screen-layout=\"mobile:column;desktop:row\">Responsive layout</div>",
+    "description_short": "Sets a layout mode for the element.",
+    "example": "<div screen-layout=\"ultimate\" minheight=\"unset\" maxheight=\"4rem\">Ultimate layout</div>\n<div screen-layout=\"advanced\" minheight=\"unset\" maxheight=\"4rem\">Advanced layout</div>\n<div screen-layout=\"standard\" minheight=\"unset\" maxheight=\"4rem\">Standard layout</div>\n<div screen-layout=\"simple\" minheight=\"unset\" maxheight=\"4rem\">Simple layout</div>\n<div screen-layout=\"centered\" minheight=\"unset\" maxheight=\"4rem\">Centered layout</div>\n<div screen-layout=\"stacked\" minheight=\"unset\" maxheight=\"4rem\">Stacked layout</div>\n<div screen-layout=\"fullscreen\" minheight=\"unset\" maxheight=\"4rem\">Fullscreen layout</div>\n<div screen-layout=\"masonry\" minheight=\"unset\" maxheight=\"4rem\">Masonry layout</div>\n<div screen-layout=\"2column\" minheight=\"unset\" maxheight=\"4rem\">Two-column layout</div>\n<div screen-layout=\"2row\" minheight=\"unset\" maxheight=\"4rem\">Two-row layout</div>",
     "values": [
       "ultimate",
       "advanced",
