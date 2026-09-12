@@ -24,7 +24,7 @@
               style="flex: 1">FTML</span>
             <button bgcolor="unset" mouseover="color:[lightgray]" mouseout="color:[unset]" zoom="0.9"
               padding="0.45rem 0.6rem" minheight="0" margin="0"
-              click="if:([#editor]~[&lt;!DOCTYPE])/show:#c1ok&hide:#c1fail&hide:#c1idle?show:#c1fail&hide:#c1ok&hide:#c1idle;if:([#editor]~[&lt;html])/show:#c2ok&hide:#c2fail&hide:#c2idle?show:#c2fail&hide:#c2ok&hide:#c2idle;if:([#editor]~[&lt;script])/show:#c3ok&hide:#c3fail&hide:#c3idle?show:#c3fail&hide:#c3ok&hide:#c3idle;if:([#editor]~[&lt;body])/show:#c4ok&hide:#c4fail&hide:#c4idle?show:#c4fail&hide:#c4ok&hide:#c4idle;if:([#editor]~[&lt;h1]&[#editor]~[Hello World])/show:#c5ok&hide:#c5fail&hide:#c5idle?show:#c5fail&hide:#c5ok&hide:#c5idle">Check
+              click="if:([#editor]~[&lt;!DOCTYPE])/show:#c1ok&hide:#c1fail&hide:#c1idle?show:#c1fail&hide:#c1ok&hide:#c1idle;if:([#editor]~[&lt;html])/show:#c2ok&hide:#c2fail&hide:#c2idle?show:#c2fail&hide:#c2ok&hide:#c2idle;if:([#editor]~[&lt;head])/show:#c3ok&hide:#c3fail&hide:#c3idle?show:#c3fail&hide:#c3ok&hide:#c3idle;if:([#editor]~[https://cdn.front.nu/nightly/front.js])/show:#c4ok&hide:#c4fail&hide:#c4idle?show:#c4fail&hide:#c4ok&hide:#c4idle;if:([#editor]~[&lt;body])/show:#c5ok&hide:#c5fail&hide:#c5idle?show:#c5fail&hide:#c5ok&hide:#c5idle;if:([#editor]~[settext=&quot;Hello World&quot;])/show:#c6ok&hide:#c6fail&hide:#c6idle?show:#c6fail&hide:#c6ok&hide:#c6idle">Check
               ✓</button>
           </small>
           <code id="editor" contenteditable="true" bgcolor="white01" color="white" spellcheck="false"

@@ -70,7 +70,81 @@
     <p>Open <i>index.html</i> in your browser.</p>
   </section>
 
-  <section id="automatic" paddingtop="4rem">
+  <section id="crossplatform" paddingtop="4rem">
+    <h2 color="white" zoom="0.9" paddingbottom="1rem">Cross-platform WebView / Offline</h2>
+    <p>
+      The CDN works inside a WebView while the device has network access. For an offline iOS, Android, or desktop
+      application, bundle Front and the application files locally instead of depending on the CDN.
+    </p>
+
+    <h3 zoom="0.8" color="white" padding="2rem 0 1rem 0">Bundle the web application</h3>
+    <p>Keep the runtime and its supporting files under one application root. Preserve the runtime distribution structure
+      so modules and plugins can still be loaded by their relative paths:</p>
+    <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" padding="1rem" maxwidth="60rem"
+      font="monospace" syntaxhighlighting--set>app/
+  index.html
+  front/
+    front.js
+    front.css
+    modules/
+    plugins/
+  _templates/
+  _includes/
+  assets/
+    json/
+    img/
+    html/</code>
+    <p margintop="1rem">
+      Bundle every module or plugin named by the script tag, as well as templates, includes, JSON, locales, images, and
+      stylesheets used by the page. The Front runtime is not included in this repository, so obtain a compatible
+      distribution separately and keep its version aligned with your application.
+    </p>
+
+    <h3 zoom="0.8" color="white" padding="2rem 0 1rem 0">Load Front locally</h3>
+    <p>Use relative paths from the bundled entry page and avoid GitHub Pages-specific base mappings or root-relative
+      paths such as <i>/assets</i>:</p>
+    <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" padding="1rem" maxwidth="60rem"
+      font="monospace" syntaxhighlighting--set>&lt;script
+  src="front/front.js"
+  module="data;navigate;screen"&gt;
+&lt;/script&gt;
+&lt;link rel="stylesheet" href="front/front.css"&gt;</code>
+    <p margintop="1rem">
+      Load the entry page through a stable local origin when possible. Front fetches templates, variables, and data, so a
+      local HTTP(S)-style origin is more reliable than an unrestricted <i>file://</i> URL.
+    </p>
+
+    <h3 zoom="0.8" color="white" padding="2rem 0 1rem 0">Connect your iOS build</h3>
+    <p>
+      Your Makefile already forwards <b>FRONT_URL</b> to <b>xcodebuild</b>. That build setting is not consumed by
+      WKWebView automatically: expose it through the app's Info.plist and read it when creating the web view.
+    </p>
+    <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" padding="1rem" maxwidth="60rem"
+      font="monospace" syntaxhighlighting--set>&lt;key&gt;FRONT_URL&lt;/key&gt;
+&lt;string&gt;$(FRONT_URL)&lt;/string&gt;
+
+let configuredURL = Bundle.main.object(forInfoDictionaryKey: "FRONT_URL") as? String
+let pageURL = configuredURL ?? "http://127.0.0.1:5556/"
+webView.load(URLRequest(url: URL(string: pageURL)!))</code>
+    <code bgcolor="white01" color="white" spellcheck="false" whitespace="pre" padding="1rem" maxwidth="60rem"
+      font="monospace" syntaxhighlighting--bash># iOS Simulator: the simulator can reach a local development server
+URL=http://127.0.0.1:5556/ make ios
+
+# Physical iPhone: use the Mac's LAN address and configure HTTPS or ATS as needed
+URL=http://192.168.1.10:5556/ make ios</code>
+    <p margintop="1rem">
+      For a bundled offline build, replace the development URL with the local URL provided by your native asset loader.
+      On iOS, use <b>WKWebView.loadFileURL</b> with read access to the complete app directory, or serve the bundle from
+      a local custom scheme/server. On Android, use <b>WebViewAssetLoader</b> with a stable local HTTPS-style origin.
+      Desktop WebViews should use their equivalent resource server or custom scheme.
+    </p>
+
+    <div borderleft="2px solid white" paddingleft="1rem" margintop="1rem">
+      Keep all platforms on the same application-root layout and test template, data, localization, and navigation
+      requests from the WebView. Remote APIs, CDN stylesheets, external iframes, maps, and videos still require network
+      access even when Front itself is bundled.
+    </div>
+  </section>
     <h2 color="white" id="automatic" zoom="0.9" paddingbottom="1rem" globalize-get>Automatic Installation</h2>
     <p>Set up development environment automatically using <b>GIT</b> and <b>Front CLI</b> tool to generate a
       ready-to-use boilerplate application, complete with all necessary files and folder structure.</p>

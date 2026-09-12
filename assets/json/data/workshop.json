@@ -2,15 +2,14 @@
   "workshop": [
     {
       "id": 1,
-      "key": "syntaxhighlighting",
-      "title": "Basics",
+      "key": "basics",
+      "title": "Text Content",
       "mission": "Create your first FTML page and display a Hello World heading.",
       "instructions": [
-        "Start the document with the DOCTYPE declaration.",
-        "Create the root html element.",
-        "Load the Front runtime script before the body closes.",
-        "Add a body section inside it.",
-        "Inside the body, add a heading that says Hello World."
+        "Add the DOCTYPE declaration to the document.",
+        "Add the html, head, and body elements.",
+        "Add the Front runtime script inside the head.",
+        "Add an h1 to the body with settext=\"Hello World\"."
       ],
       "checks": [
         {
@@ -25,22 +24,202 @@
         },
         {
           "id": "c3",
-          "label": "script",
-          "match": "<script"
+          "label": "head",
+          "match": "<head"
         },
         {
           "id": "c4",
+          "label": "Front runtime",
+          "match": "https://cdn.front.nu/nightly/front.js"
+        },
+        {
+          "id": "c5",
           "label": "body",
           "match": "<body"
         },
         {
-          "id": "c5",
-          "label": "h1 Hello World",
-          "match": "<h1"
+          "id": "c6",
+          "label": "settext Hello World",
+          "match": "settext=\"Hello World\""
         }
       ],
-      "solution": "&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n  &lt;body&gt;\n    &lt;script src=\"https://cdn.front.nu/nightly/front.js\"&gt;&lt;/script&gt;\n    &lt;h1&gt;Hello World&lt;/h1&gt;\n  &lt;/body&gt;\n&lt;/html&gt;",
-      "author": "Front Labs"
+      "solution": "&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n  &lt;head&gt;\n    &lt;script src=\"https://cdn.front.nu/nightly/front.js\"&gt;&lt;/script&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;h1 settext=\"Hello World\"&gt;&lt;/h1&gt;\n  &lt;/body&gt;\n&lt;/html&gt;",
+      "author": "Front Academy"
+    },
+    {
+      "id": 2,
+      "key": "attributes",
+      "title": "Styling",
+      "mission": "Use declarative FTML attributes to render and style a message without writing JavaScript.",
+      "instructions": [
+        "Add the DOCTYPE declaration to the document.",
+        "Add the html, head, and body elements.",
+        "Add the Front runtime script inside the head.",
+        "Add an h1 element with settext=\"Hello from FTML\".",
+        "Add color=\"tomato\" and bgcolor=\"white\" to the h1 element."
+      ],
+      "checks": [
+        {
+          "id": "c1",
+          "label": "DOCTYPE",
+          "match": "<!DOCTYPE"
+        },
+        {
+          "id": "c2",
+          "label": "Front runtime",
+          "match": "https://cdn.front.nu/nightly/front.js"
+        },
+        {
+          "id": "c3",
+          "label": "settext content",
+          "match": "settext=\"Hello from FTML\""
+        },
+        {
+          "id": "c4",
+          "label": "tomato text color",
+          "match": "color=\"tomato\""
+        },
+        {
+          "id": "c5",
+          "label": "white background",
+          "match": "bgcolor=\"white\""
+        }
+      ],
+      "solution": "&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n  &lt;head&gt;\n    &lt;script src=\"https://cdn.front.nu/nightly/front.js\"&gt;&lt;/script&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;h1 id=\"message\" settext=\"Hello from FTML\" color=\"tomato\" bgcolor=\"white\"&gt;&lt;/h1&gt;\n  &lt;/body&gt;\n&lt;/html&gt;",
+      "author": "Front Academy"
+    },
+    {
+      "id": 3,
+      "key": "variables",
+      "title": "Reactive Variables",
+      "mission": "Bind a local variable to page content and connect an input so the value can change reactively.",
+      "instructions": [
+        "Add the DOCTYPE declaration to the document.",
+        "Add the html, head, and body elements.",
+        "Add the Front runtime script inside the head.",
+        "Add setvalue=\"Front\" to the input.",
+        "Add an output element with bindfield=\"name:#nameInput\".",
+        "Add settext=\"Hello {name}\" to display the bound value."
+      ],
+      "checks": [
+        {
+          "id": "c1",
+          "label": "DOCTYPE",
+          "match": "<!DOCTYPE"
+        },
+        {
+          "id": "c2",
+          "label": "name input",
+          "match": "id=\"nameInput\""
+        },
+        {
+          "id": "c3",
+          "label": "initial value",
+          "match": "setvalue=\"Front\""
+        },
+        {
+          "id": "c4",
+          "label": "bindfield name",
+          "match": "bindfield=\"name:#nameInput\""
+        },
+        {
+          "id": "c5",
+          "label": "bound output",
+          "match": "settext=\"Hello {name}\""
+        }
+      ],
+      "solution": "&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n  &lt;head&gt;\n    &lt;script src=\"https://cdn.front.nu/nightly/front.js\"&gt;&lt;/script&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;label for=\"nameInput\"&gt;Your name&lt;/label&gt;\n    &lt;input id=\"nameInput\" setvalue=\"Front\"&gt;\n    &lt;p id=\"nameOutput\" bindfield=\"name:#nameInput\" settext=\"Hello {name}\"&gt;&lt;/p&gt;\n  &lt;/body&gt;\n&lt;/html&gt;",
+      "author": "Front Academy"
+    },
+    {
+      "id": 4,
+      "key": "events",
+      "title": "Events and Visibility",
+      "mission": "Use a declarative click event to toggle a panel without writing an event listener.",
+      "instructions": [
+        "Add the DOCTYPE declaration to the document.",
+        "Add the html, head, and body elements.",
+        "Add the Front runtime script inside the head.",
+        "Add a button with a click attribute.",
+        "Add toggledisplay to target the panel.",
+        "Add the id message to the panel.",
+        "Add text inside the panel so its visibility is easy to observe.",
+        "Add the solution to Preview and click the button more than once."
+      ],
+      "checks": [
+        {
+          "id": "c1",
+          "label": "DOCTYPE",
+          "match": "<!DOCTYPE"
+        },
+        {
+          "id": "c2",
+          "label": "click event",
+          "match": "click=\"toggledisplay:#message\""
+        },
+        {
+          "id": "c3",
+          "label": "button",
+          "match": "<button"
+        },
+        {
+          "id": "c4",
+          "label": "message panel",
+          "match": "id=\"message\""
+        },
+        {
+          "id": "c5",
+          "label": "panel content",
+          "match": "This message can be toggled."
+        }
+      ],
+      "solution": "&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n  &lt;head&gt;\n    &lt;script src=\"https://cdn.front.nu/nightly/front.js\"&gt;&lt;/script&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;button click=\"toggledisplay:#message\"&gt;Toggle message&lt;/button&gt;\n    &lt;p id=\"message\"&gt;This message can be toggled.&lt;/p&gt;\n  &lt;/body&gt;\n&lt;/html&gt;",
+      "author": "Front Academy"
+    },
+    {
+      "id": 5,
+      "key": "data-rendering",
+      "title": "Data Rendering",
+      "mission": "Fetch JSON data and render a list with data-src, data-iterate, and data-get.",
+      "instructions": [
+        "Add the DOCTYPE declaration to the document.",
+        "Add the html, head, and body elements.",
+        "Add the Front runtime script inside the head.",
+        "Add data-src with the sample JSON.",
+        "Add data-iterate=\"results\" to iterate over the collection.",
+        "Add a list item for each result.",
+        "Add data-get=\"name\" to read each result name.",
+        "Add the solution to Preview and confirm that the country names are rendered."
+      ],
+      "checks": [
+        {
+          "id": "c1",
+          "label": "DOCTYPE",
+          "match": "<!DOCTYPE"
+        },
+        {
+          "id": "c2",
+          "label": "sample JSON source",
+          "match": "data-src=\"/assets/json/data/dummy.json\""
+        },
+        {
+          "id": "c3",
+          "label": "results iteration",
+          "match": "data-iterate=\"results\""
+        },
+        {
+          "id": "c4",
+          "label": "name binding",
+          "match": "data-get=\"name\""
+        },
+        {
+          "id": "c5",
+          "label": "list item",
+          "match": "<li"
+        }
+      ],
+      "solution": "&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n  &lt;head&gt;\n    &lt;script src=\"https://cdn.front.nu/nightly/front.js\"&gt;&lt;/script&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;ul data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\"&gt;\n      &lt;li data-get=\"name\"&gt;&lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/body&gt;\n&lt;/html&gt;",
+      "author": "Front Academy"
     }
   ]
 }

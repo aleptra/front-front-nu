@@ -11,7 +11,7 @@
   </section>
 
   <!--<canvas id="canvas"
-      canvas-target="#canvas" canvas-grad 
+      canvas-target="#canvas" canvas-grad
       canvas-grad-orientation="vertical" canvas-grad-stops="lightgreen[0],darkgreen[1]"
       canvas-rec="0,50,3000,2000"
       class="br1" width="1000" height="1000px" zindex="-1">
@@ -19,9 +19,7 @@
 
   <section screen-xs="padding:[1.5rem 1.5rem]" screen-sm="padding:[2rem 2rem]" screen-md="padding:[3rem 3rem]"
     screen-lg="padding:[1.5rem 4rem]">
-    <a href="#down">
-      <h3>Challenges</h3>
-    </a>
+    <h3>Challenges</h3>
     <hr class="bcblack01">
     <div id="loader" class="loader" flex></div>
     <div id="error" class="red mb2" hide>Something went wrong!</div>
@@ -29,22 +27,19 @@
     <div id="filterEmpty" class="mb2" hide>
       <b>No challenges match your filter.</b>
       <br>
-      <a screen-xxs="transform:[scale(1)]" screen-xl="transform:[scale(1.1)]"
-      minheight="2.0rem" radius="1rem" paddingleft="1.3rem" paddingright="1.3rem"
-        lineheight="2.5" bgcolor="white" color="black" fontsize="90%" margintop="2rem"
-        click="resetvalue:#filter;filtersearch--run:#items">Clear filter</a>
+      <a screen-xxs="transform:[scale(1)]" screen-xl="transform:[scale(1.1)]" minheight="2.0rem" radius="1rem"
+        paddingleft="1.3rem" paddingright="1.3rem" lineheight="2.5" bgcolor="white" color="black" fontsize="90%"
+        margintop="2rem" click="resetvalue:#filter;filtersearch--run:#items">Clear filter</a>
     </div>
     <div id="items" bindquery="page:page" data-src="./assets/json/data/workshop.json"
       data-set="page:#page;total_pages:#pages;total_results:#results" data-iterate="workshop" data-loader="#loader"
-      data-onerror="show:#error" 
-      data-onempty="show:#empty"
-      data-onnotempty="hide:#empty"
+      data-onerror="show:#error" data-onempty="show:#empty" data-onnotempty="hide:#empty"
       filtersearch--onempty="#filterEmpty" class="cards gut5-" width="inherit">
       <a href="workshop/challenge.html?k={k}" data-set="k:key" class="br05-" bgcolor="#212121" filtersearch--select>
-        <figure flexdirection="column" width="100%" class="bw1 p1">
-          <figcaption class="fwb" data-get="title"></figcaption>
-          <small data-get="author">Front</small>
-          <small class="z09" data-get="version" jsonbefore="Version: ">Version: 0.1</small>
+        <figure flexdirection="column" width="100%" padding="1rem">
+          <figcaption data-get="title" bold></figcaption>
+          <small data-get="mission"></small>
+          <small fontsize="90%" data-get="version" jsonbefore="Version: ">Version: 0.1</small>
         </figure>
       </a>
     </div>
