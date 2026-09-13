@@ -287,6 +287,11 @@
     "category": "binding",
     "description_short": "Retrieves and displays a value from the current bound data context.",
     "example": "<div data-src=\"/assets/json/data/dummy.json\" data-iterate=\"results\">\n  <b data-get=\"title\"></b>\n  <small data-get=\"population\"></small>\n</div>",
+    "values": [
+      "[*]",
+      "[*].<property>",
+      "[].<property>"
+    ],
     "depends_on": [
       "data-src"
     ],
