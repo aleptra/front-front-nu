@@ -4,6 +4,9 @@
   "direction": "ltr",
   "translations": {
     "Attributes": "Attributer",
+    "Config": "Konfiguration",
+    "Cross-Platform": "Plattformsoberoende",
+    "Description": "Beskrivning",
     "Documentation": "Dokumentation",
     "Explore repository": "Utforska kodarkivet",
     "Fundamentals": "Grunderna",
@@ -17,14 +20,18 @@
     "Modules": "Moduler",
     "Overview": "Översikt",
     "Pages": "Sidor",
+    "Paradigm": "Paradigm",
+    "Performance": "Prestanda",
+    "Playground": "Testmiljö",
     "Plugins": "Plugins",
     "Ready to build the future?": "Redo att bygga framtiden?",
     "Reference": "Referens",
-    "Paradigm": "Paradigm",
+    "Source Code": "Källkod",
     "Standard Page": "Standardsida",
     "Start Page": "Startsida",
     "Templates": "Mallar",
-    "The Intelligent Low-Code SDK": "Den intelligenta low-code-SDK:n",
-    "Variables": "Variabler"
+    "The Intelligent Low-Code Framework": "Det intelligenta low-code ramverket",
+    "Variables": "Variabler",
+    "Workshop": "Workshop"
   }
 }
