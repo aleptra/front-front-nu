@@ -5,19 +5,26 @@
   "translations": {
     "Attributes": "Attributer",
     "Documentation": "Dokumentation",
+    "Explore repository": "Utforska kodarkivet",
     "Fundamentals": "Grunderna",
     "Get Started": "Kom igång",
     "Getting Started": "Kom igång",
+    "Harness the power with FTML": "Utnyttja kraften med FTML",
     "Introduction": "Introduktion",
     "Installation": "Installation",
+    "Join developers & designers creating powerful applications with less code.": "Bli en del av utvecklare och designers som skapar kraftfulla applikationer med mindre kod.",
+    "Marketplace": "Marknadsplats",
     "Modules": "Moduler",
     "Overview": "Översikt",
     "Pages": "Sidor",
     "Plugins": "Plugins",
+    "Ready to build the future?": "Redo att bygga framtiden?",
     "Reference": "Referens",
+    "Paradigm": "Paradigm",
     "Standard Page": "Standardsida",
     "Start Page": "Startsida",
     "Templates": "Mallar",
+    "The Intelligent Low-Code SDK": "Den intelligenta low-code-SDK:n",
     "Variables": "Variabler"
   }
 }

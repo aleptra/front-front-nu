@@ -1,32 +1,35 @@
-<nav class="sidebar white-" bgcolor="black" zindex="0" flexdirection="row" wordbreak="normal" storage-bindlocal="front:version" bindquery="a:a">
+<nav class="sidebar white-" bgcolor="black" zindex="0" flexdirection="row" wordbreak="normal"
+  storage-bindlocal="front:version" bindquery="a:a">
   <!-- Backdrop -->
   <!-- End Backdrop -->
   <div padding="2%" screen-xs="flex;fontsize:[70%]" screen-md="fontsize:[90%]" screen-lg="hide" align="center">
-    <a href="documentation?version={version:1.1.0}" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href" onbindglobalchange="rerun:if"
+    <a href="documentation?version={version:1.1.0}" whitespace="nowrap" padding="0.5rem"><i class="icon32"
+        bindglobal="href:href" onbindglobalchange="rerun:if"
         if="([{href}]~[/documentation])/color:[white]?color:[#303030]">●</i>Documentation</a>
-    <a href="showcase" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href" onbindglobalchange="rerun:if"
-        if="([{href}]~[/showcase])/color:[white]?color:[#303030]">●</i>Showcase</a>
-    <a href="marketplace" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href" onbindglobalchange="rerun:if"
-        if="([{href}]~[/marketplace])/color:[white]?color:[#303030]">●</i>Marketplace</a>
-    <a href="playground.html" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href" onbindglobalchange="rerun:if"
-        if="([{href}]~[/playground])/color:[white]?color:[#303030]">●</i>Playground</a>
+    <a href="showcase" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href"
+        onbindglobalchange="rerun:if" if="([{href}]~[/showcase])/color:[white]?color:[#303030]">●</i>Showcase</a>
+    <a href="marketplace" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href"
+        onbindglobalchange="rerun:if" if="([{href}]~[/marketplace])/color:[white]?color:[#303030]">●</i>Marketplace</a>
+    <a href="playground.html" whitespace="nowrap" padding="0.5rem"><i class="icon32" bindglobal="href:href"
+        onbindglobalchange="rerun:if" if="([{href}]~[/playground])/color:[white]?color:[#303030]">●</i>Playground</a>
   </div>
-  <form id="docVersionForm" target="_top" width="inherit" screen-xs="padding:[0]" screen-sm="padding:[0]" screen-md="padding:[0 2.5rem 0 2.5rem]"
-    screen-lg="padding:[0px 2rem 0rem 2rem]" borderleft="1px solid rgb(32, 32, 32)" form-filter="true">
+  <form id="docVersionForm" target="_top" width="inherit" screen-xs="padding:[0]" screen-sm="padding:[0]"
+    screen-md="padding:[0 2.5rem 0 2.5rem]" screen-lg="padding:[0px 2rem 0rem 2rem]"
+    borderleft="1px solid rgb(32, 32, 32)" form-filter="true">
     <div screen-xs="show" screen-lg="hide">
       <div flex flexdirection="row" alignitems="center" height="4rem" width="100%">
         <img src="assets/img/logo.png" height="auto" width="4.5rem" margin="0.75rem auto auto 1.5rem">
-        <a click="hide:#mobileMenu" keyboard-key="Escape" keyboard-action="click" keyboard-scope="body"
-          padding="1.5rem" width="auto" fontsize="1.5em" lineheight="0">&#10005;</a>
+        <a click="hide:#mobileMenu" keyboard-key="Escape" keyboard-action="click" keyboard-scope="body" padding="1.5rem"
+          width="auto" fontsize="1.5em" lineheight="0">&#10005;</a>
       </div>
-      <input id="query2" bgcolor="white01" width="100%" height="3rem" margintop="1rem" padding="1rem" bindvar=":" type="text"
-        placeholder="Search in documentation ..." autocomplete="off">
+      <input id="query2" bgcolor="white01" width="100%" height="3rem" margintop="1rem" padding="1rem" bindvar=":"
+        type="text" placeholder="Search in documentation ..." autocomplete="off">
     </div>
     <hr color="gray" margin="1.5rem 0 0 0">
     <div flex flexdirection="row" alignitems="center" padding="0rem 1.5rem 0rem 1.5rem">
       <b color="white" width="unset">V</b>
-      <select id="docVersion" name="version" width="100%" height="unset" padding=".6rem .5rem"
-        bgcolor="black" color="white" border="0" state="docVersion" radius="0">
+      <select id="docVersion" name="version" width="100%" height="unset" padding=".6rem .5rem" bgcolor="black"
+        color="white" border="0" state="docVersion" radius="0">
         <option value="1001000" selected>1.1.0</option>
         <option value="1000000">1.0.0</option>
       </select>
@@ -41,8 +44,7 @@
       <a href="documentation/installation" globalize-get bindglobal="href:href"
         if="([{href}]~[/documentation/installation])/bold">Installation</a>
       <details paddingbottom="1rem" bindglobal="href:href" if="([{href}]~[/documentation/fundamentals])/setattr:[open]">
-        <summary globalize-get bindglobal="href:href" if="([{href}]~[/documentation/fundamentals])/bold">Fundamentals
-        </summary>
+        <summary globalize-get bindglobal="href:href" if="([{href}]~[/documentation/fundamentals])/bold">Fundamentals</summary>
         <a href="documentation/fundamentals/attributes.html" globalize-get bindglobal="href:href"
           if="([{href}]~[/fundamentals/attributes])/bold">Attributes</a>
         <a href="documentation/fundamentals/variables.html" globalize-get bindglobal="href:href"
