@@ -541,6 +541,61 @@
       "data-src"
     ]
   },
+  "data-reqget": {
+    "category": "behavior",
+    "description_short": "Sends a GET request to the specified URL.",
+    "example": "<a click=\"data-reqget\" data-reqget=\"/api/users?id=123\" data-onsuccess=\"sethtml:#result\">Fetch User</a>",
+    "see_also": [
+      "data-reqpost",
+      "data-reqput",
+      "data-reqpatch",
+      "data-reqdelete"
+    ]
+  },
+  "data-reqpost": {
+    "category": "behavior",
+    "description_short": "Sends a POST request with form data as the request body.",
+    "example": "<form data-reqpost=\"/api/login\" data-onsuccess=\"navigate-go:[dashboard.html]\">\n  <input name=\"username\" required>\n  <input name=\"password\" type=\"password\" required>\n  <button type=\"submit\">Login</button>\n</form>",
+    "see_also": [
+      "data-reqget",
+      "data-reqput",
+      "data-reqpatch",
+      "data-reqdelete"
+    ]
+  },
+  "data-reqput": {
+    "category": "behavior",
+    "description_short": "Sends a PUT request with form data as the request body.",
+    "example": "<form data-reqput=\"/api/users/123\" data-onsuccess=\"show:#success-message\">\n  <input name=\"name\" value=\"John Doe\">\n  <input name=\"email\" value=\"john@example.com\">\n  <button type=\"submit\">Update Profile</button>\n</form>",
+    "see_also": [
+      "data-reqget",
+      "data-reqpost",
+      "data-reqpatch",
+      "data-reqdelete"
+    ]
+  },
+  "data-reqpatch": {
+    "category": "behavior",
+    "description_short": "Sends a PATCH request with form data as the request body.",
+    "example": "<input type=\"checkbox\" data-reqpatch=\"/api/tasks/5?completed=true\" onvaluechange=\"data-reqpatch\" data-onsuccess=\"show:#task-complete\">",
+    "see_also": [
+      "data-reqget",
+      "data-reqpost",
+      "data-reqput",
+      "data-reqdelete"
+    ]
+  },
+  "data-reqdelete": {
+    "category": "behavior",
+    "description_short": "Sends a DELETE request to the specified URL.",
+    "example": "<button click=\"confirm:[Are you sure?]\" onconfirmvalue=\"true;data-reqdelete\" data-reqdelete=\"/api/users/123\" data-onsuccess=\"remove:#user-row\">Delete User</button>",
+    "see_also": [
+      "data-reqget",
+      "data-reqpost",
+      "data-reqput",
+      "data-reqpatch"
+    ]
+  },
   "escape": {
     "category": "content",
     "description_short": "Escapes HTML or special characters to display as plain text.",

@@ -1022,6 +1022,36 @@
         "description": "Defines the delay before executing the data request."
       },
       {
+        "module": "data",
+        "attribute": "data-reqget",
+        "since": "1000000",
+        "description": "Sends a GET request to the specified URL."
+      },
+      {
+        "module": "data",
+        "attribute": "data-reqpost",
+        "since": "1000000",
+        "description": "Sends a POST request to the specified URL with form data as the request body."
+      },
+      {
+        "module": "data",
+        "attribute": "data-reqput",
+        "since": "1000000",
+        "description": "Sends a PUT request to the specified URL with form data as the request body."
+      },
+      {
+        "module": "data",
+        "attribute": "data-reqpatch",
+        "since": "1000000",
+        "description": "Sends a PATCH request to the specified URL with form data as the request body."
+      },
+      {
+        "module": "data",
+        "attribute": "data-reqdelete",
+        "since": "1000000",
+        "description": "Sends a DELETE request to the specified URL."
+      },
+      {
         "attribute": "focus",
         "since": "1000000",
         "description": "Gives focus to the element."
