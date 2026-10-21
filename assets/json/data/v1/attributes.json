@@ -154,7 +154,7 @@
   "click": {
     "category": "interactive",
     "description_short": "Executes an action or expression when the element is clicked.",
-    "example": "<button click=\"settext:[Button clicked!]\">Click me</button>",
+    "example": "<button click=\"settext:[Button clicked!]\">Click me</button>\n<button click=\"data-reqget\" data-reqget=\"/assets/json/data/dummy.json\" data-onreqgetsuccess=\"settext:[success]\">Fetch Data</button>\n<button id=\"submit-btn\" onclicked=\"settext:[clicked]\">Submit Form</button>\n<button click=\"click:#submit-btn\">Trigger Submit</button>",
     "see_also": [
       "onclicked",
       "mouseover",

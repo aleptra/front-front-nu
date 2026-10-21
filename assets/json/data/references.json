@@ -1418,7 +1418,7 @@
       },
       {
         "attribute": "click",
-        "since": "1000000",
+        "since": "100000",
         "description": "Executes an action or expression when the element is clicked."
       },
       {
