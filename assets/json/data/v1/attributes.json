@@ -1288,6 +1288,24 @@
       "hide"
     ]
   },
+  "runtree": {
+    "category": "behavior",
+    "description_short": "Re-executes binding and data attributes on an element and its descendants.",
+    "example": "<div id=\"start\">\n  <div alert=\"Run 1!\" stop=\"alert\"></div>\n  <div alert=\"Run 2!\" stop=\"alert\"></div>\n</div>\n<button click=\"runtree:#start:[stop]\">Start</button>",
+    "see_also": [
+      "runself",
+      "rerun"
+    ]
+  },
+  "runself": {
+    "category": "behavior",
+    "description_short": "Re-executes binding and data attributes on the element only.",
+    "example": "<div id=\"start\" alert=\"Run!\" stop=\"alert\"></div>\n<button click=\"runself:#start:[stop]\">Start</button>",
+    "see_also": [
+      "runtree",
+      "rerun"
+    ]
+  },
   "setaction": {
     "category": "content",
     "description_short": "Sets or changes the action URL of a form.",
@@ -1381,7 +1399,7 @@
     "see_also": [
       "stop"
     ],
-    "example": "<div id=\"anim\" start>Running</div>"
+    "example": "<div id=\"start\" stop=\"settext;bgcolor\" settext=\"Running\" bgcolor=\"green\">...</div>\n<button click=\"start:#start:[*][bgcolor]\">Start</button>"
   },
   "sticky": {
     "category": "style",
@@ -1394,7 +1412,7 @@
     "see_also": [
       "start"
     ],
-    "example": "<div id=\"anim2\" stop>Stopped</div>"
+    "example": "<div stop=\"settext\" settext=\"Should not run\">...</div>"
   },
   "split": {
     "category": "content",
@@ -2138,7 +2156,7 @@
   "runrepeat": {
     "category": "behavior",
     "description_short": "Repeats execution of an action at a specified interval in milliseconds.",
-    "example": "<div runrepeat=\"1000\" settext=\"Tick\"></div>",
+    "example": "<div runrepeat=\"[500]:insertbeforeend:[.]\"></div>",
     "see_also": [
       "rundelay",
       "runattr",

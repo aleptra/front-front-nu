@@ -1154,6 +1154,16 @@
         "description": "Shows the element."
       },
       {
+        "attribute": "runtree",
+        "since": "1001000",
+        "description": "Re-executes binding and data attributes on an element and its descendants."
+      },
+      {
+        "attribute": "runself",
+        "since": "1001000",
+        "description": "Re-executes binding and data attributes on the element only."
+      },
+      {
         "attribute": "runorder",
         "since": "1000000",
         "description": "Runs attributes in the specified order inside the element."
