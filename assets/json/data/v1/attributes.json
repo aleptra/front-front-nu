@@ -1080,6 +1080,22 @@
       "mouseout"
     ]
   },
+  "open": {
+    "category": "behavior",
+    "description_short": "Opens elements such as <details> or <dialog>.",
+    "example": "<details id=\"myDetails\">\n  <summary>Click to expand</summary>\n  <p>Hidden content here</p>\n</details>\n<button click=\"open:#myDetails\">Open Details</button>",
+    "see_also": [
+      "close"
+    ]
+  },
+  "close": {
+    "category": "behavior",
+    "description_short": "Closes elements such as <details> or <dialog>.",
+    "example": "<details id=\"myDetails\" open>\n  <summary>Click to collapse</summary>\n  <p>Visible content</p>\n</details>\n<button click=\"close:#myDetails\">Close Details</button>",
+    "see_also": [
+      "open"
+    ]
+  },
   "navigate-go": {
     "category": "interactive",
     "module": "navigate",

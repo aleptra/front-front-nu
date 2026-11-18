@@ -1204,6 +1204,36 @@
         "description": "Stops an attribute or process."
       },
       {
+        "attribute": "open",
+        "since": "1000000",
+        "description": "Opens elements such as <details> or <dialog>.",
+        "examples": [
+          {
+            "title": "Open a details element",
+            "code": "<details id='myDetails'>\n  <summary>Click to expand</summary>\n  <p>Hidden content here</p>\n</details>\n<button onclicked='open:#myDetails'>Open Details</button>"
+          },
+          {
+            "title": "Open a dialog element",
+            "code": "<dialog id='myDialog'>\n  <h2>Dialog Title</h2>\n  <p>Dialog content</p>\n  <button onclicked='close:#myDialog'>Close</button>\n</dialog>\n<button onclicked='open:#myDialog'>Open Dialog</button>"
+          }
+        ]
+      },
+      {
+        "attribute": "close",
+        "since": "1000000",
+        "description": "Closes elements such as <details> or <dialog>.",
+        "examples": [
+          {
+            "title": "Close a details element",
+            "code": "<details id='myDetails' open>\n  <summary>Click to collapse</summary>\n  <p>Visible content</p>\n</details>\n<button onclicked='close:#myDetails'>Close Details</button>"
+          },
+          {
+            "title": "Close a dialog element",
+            "code": "<dialog id='myDialog' open>\n  <h2>Dialog Title</h2>\n  <p>Dialog content</p>\n  <button onclicked='close:#myDialog'>Close Dialog</button>\n</dialog>"
+          }
+        ]
+      },
+      {
         "attribute": "toggledisplay",
         "since": "1000000",
         "description": "Toggles element visibility."
